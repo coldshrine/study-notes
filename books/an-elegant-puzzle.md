@@ -235,3 +235,96 @@ Time management is an enduring meta-problem for leadership. To improve your abil
 ## Final Note
 
 You can become less busy by prioritising tasks with the goal of reducing your overall workload. Avoid the common misconception that being busy equates to being productive.
+
+# Communities of Learning
+
+To build effective communities of learning, consider the following recommended approaches:
+
+---
+
+## Key Strategies
+
+1. **Be a Facilitator, Not a Lecturer**  
+   Encourage learning from peers rather than relying solely on a single presenter.
+
+2. **Brief Presentations, Long Discussions**  
+   Limit the presentation to around five minutes, then move into extended discussions.
+
+3. **Small Breakout Groups**  
+   Create small, safe spaces for individuals to learn and engage in discussions. This ensures everyone has a chance to participate.
+
+4. **Bringing Learning to the Full Group**  
+   Allow each breakout group to share their discussions and insights with the larger group.
+
+5. **Choose Topics That People Already Know About**  
+   Select topics that participants are familiar with or have considered before to drive meaningful conversations.
+
+6. **Encourage Tenured Folks to Attend**  
+   Senior or tenured members often skip these sessions. Encourage their participation to enrich discussions.
+
+7. **Optional Pre-Reads**  
+   Provide a list of optional pre-reads to help participants prepare and engage more effectively.
+
+8. **Checking In**  
+   Begin by having each participant give a 20-30 second introduction, including:
+   - Their name.
+   - Their team.
+   - One sentence about what’s on their mind.
+
+---
+
+By fostering a collaborative environment, these strategies can help create impactful and engaging learning communities.
+
+# Consider the Team You Have for Senior Positions
+
+Promoting internal candidates for senior positions requires careful evaluation. Announcing each position and allowing individuals to apply is only the beginning. The real challenge lies in the evaluation process.
+
+---
+
+## Key Evaluation Categories
+
+When assessing candidates for senior roles, ensure they are tested in the following areas:
+
+1. **Partnership**  
+   Have they demonstrated effective collaboration with peers and the team they've managed?
+
+2. **Execution**  
+   Are they capable of supporting the team in achieving operational excellence?
+
+3. **Vision**  
+   Can they articulate a compelling and energising vision for their team's future state and scope?
+
+4. **Strategy**  
+   Are they able to identify the necessary steps to turn their vision into reality?
+
+5. **Spoken and Written Communication**  
+   Can they effectively explain complex topics in both written and verbal forms?
+
+6. **Stakeholder Management**  
+   Do they make others, particularly executives, feel heard and valued?
+
+---
+
+## Tools for Testing Candidates
+
+To evaluate these categories, use the following tools:
+
+1. **Peer and Team Feedback**  
+   Collect written feedback from peers and the team. Actively listen to dissenters and consider their concerns.
+
+2. **90-Day Plan**  
+   Ask the candidate to create a 90-day plan outlining how they would transition into the role and their initial priorities.
+
+3. **Vision/Strategy Document**  
+   Have the candidate write a document detailing:
+   - Where the team will be in two to three years (vision).
+   - The steps to get there (strategy).
+
+4. **Vision/Strategy Presentation**  
+   Request the candidate to present their vision/strategy document to a group of three to four peers.
+
+5. **Executive Presentation**  
+   Have the candidate present their strategy document one-on-one to an executive.
+
+---
+
