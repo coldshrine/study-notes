@@ -122,3 +122,69 @@ Metrics are a powerful tool for leading change, even without direct organisation
 - As a last resort, conduct **monthly or quarterly reviews**:
   - Evaluate each team's performance.
   - Address recurring issues and provide targeted feedback.
+
+# Presenting to Senior Leadership
+
+When preparing a presentation for senior leadership, consider the following tips to make your message clear and impactful:
+
+---
+
+## General Tips for Preparation
+
+1. **Communication is company-specific**  
+   Tailor your approach to align with your company’s culture and communication style.
+
+2. **Start with the conclusion**  
+   Present the key takeaway first rather than building up to it gradually.
+
+3. **Frame why the topic matters**  
+   Explain the relevance of your work to the company and its objectives.
+
+4. **Everyone loves a narrative**  
+   Use storytelling to connect the audience to your work.
+
+5. **Prepare for detours**  
+   Anticipate unexpected questions or tangents, and be ready to steer back to the main point.
+
+6. **Answer directly**  
+   Don’t shy away from challenges; instead, address them with plans and solutions.
+
+7. **Deep in the data**  
+   Spend time thoroughly exploring the data to understand all facets of the issue.
+
+8. **Derive actions from principles**  
+   Share the mental model behind your decision-making process to build trust and clarity.
+
+9. **Discuss the details**  
+   Be ready to explain granular details if asked.
+
+10. **Prepare a lot; practice a little**  
+    Leadership discussions often take unexpected turns, so prioritize deep preparation over rigid practice.
+
+11. **Make a clear ask**  
+    Frame your goal at the start of the meeting to set clear expectations.
+
+---
+
+## Approach to Presenting to Senior Leaders
+
+1. **Tie the topic to business value**  
+   Start by connecting your work to the company’s goals and objectives.
+
+2. **Establish a historical narrative**  
+   Provide context by explaining how the situation has evolved over time.
+
+3. **Explicit ask**  
+   Clearly state what you need from the leadership team.
+
+4. **Data-driven diagnosis**  
+   Present your analysis with data to back up your insights.
+
+5. **Decision-making principles**  
+   Explain the principles guiding your decisions to help align understanding.
+
+6. **What's next and when it’ll be done**  
+   Share your next steps and timelines.
+ 
+7. **Return to explicit ask**  
+   End by reiterating your ask to leave a lasting impression. 
