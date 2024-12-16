@@ -70,3 +70,55 @@ Goals are most effective when integrated into a structured **planning process**.
 
 This structure is a practical starting point for defining and managing goals effectively.
 
+# Guiding Broad Organisational Change with Metrics
+
+Metrics are a powerful tool for leading change, even without direct organisational authority. Here's a step-by-step approach:
+
+---
+
+## 1. Explore
+- Start by getting data into an **explorable format** within your data warehouse.
+- Make the data accessible for analysis and insights.
+
+---
+
+## 2. Dive
+- Conduct a deep dive to understand the **levers** that influence the metrics.
+
+---
+
+## 3. Attribute
+- During the dive, identify the **team** nominally accountable for the metric's performance.
+
+---
+
+## 4. Contextualise
+- Build context around each team's performance by:
+  - **Benchmarking** against small cohorts, such as:
+    - Backend
+    - Frontend
+    - Infrastructure
+  - Highlight comparisons that make performance clear.
+
+---
+
+## 5. Nudge
+- Encourage teams to take action:
+  - Send **push notifications** (e.g., emails) to teams whose metrics have recently changed.
+  - Track both:
+    - **Absolute change** in the metric.
+    - **Benchmarked performance** against their cohort.
+- For more insights, refer to the recommended read: **[Nudge](https://www.goodreads.com/book/show/3450744-nudge)**.
+
+---
+
+## 6. Baseline
+- In cases where contextualised nudges aren't effective:
+  - **Agree on baseline metrics** to set clear expectations for performance.
+
+---
+
+## 7. Review
+- As a last resort, conduct **monthly or quarterly reviews**:
+  - Evaluate each team's performance.
+  - Address recurring issues and provide targeted feedback.
