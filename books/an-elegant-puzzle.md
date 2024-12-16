@@ -188,3 +188,50 @@ When preparing a presentation for senior leadership, consider the following tips
  
 7. **Return to explicit ask**  
    End by reiterating your ask to leave a lasting impression. 
+
+# Time Management
+
+Time management is an enduring meta-problem for leadership. To improve your ability to manage time, focus on these impactful changes:
+
+---
+
+## Key Strategies for Time Management
+
+1. **Quarterly Time Retrospective**  
+   Review and categorise your calendar from the past three months to evaluate how you’ve invested your time.
+
+2. **Prioritise Long-Term Success Over Short-Term Quality**  
+   Focus on initiatives that ensure long-term success, even if they feel less rewarding in the short term.
+
+3. **Finish Small, Leveraged Things**  
+   Complete tasks that create more bandwidth for future work.
+
+4. **Stop Doing Things**  
+   Clearly communicate to your team and management that you’ll no longer handle certain responsibilities.
+
+5. **Size Backward, Not Forward**  
+   Define the number of hours you can dedicate to specific activities (e.g., two hours per week for skip-level meetings) and fit as many as possible within that limit.
+
+6. **Delegate Working "In the System"**  
+   Design a transition plan to enable someone else to take over operational tasks.
+
+7. **Trust the System You Build**  
+   Rely on the processes and systems you’ve put in place.
+
+8. **Decouple Participation from Productivity**  
+   Avoid the assumption that attending meetings or events equals productivity.
+
+9. **Hire Until You Are Slightly Ahead of Growth**  
+   Expand your team before reaching a point of overwhelm.
+
+10. **Calendar Blocking**  
+    Schedule three or four two-hour blocks throughout the week for focused, uninterrupted work.
+
+11. **Get Administrative Support**  
+    When all other strategies are exhausted, delegating administrative tasks can significantly reduce interruptions and improve focus.
+
+---
+
+## Final Note
+
+You can become less busy by prioritising tasks with the goal of reducing your overall workload. Avoid the common misconception that being busy equates to being productive.
