@@ -150,3 +150,100 @@ When complexity makes maintenance hard, budget and schedules are often overrun. 
 - **Functional Requirements**: What the application should do.
 - **Nonfunctional Requirements**: General properties like security, reliability, compliance, scalability, compatibility, and maintainability.
 """
+
+
+# Data Models and Query Language
+
+Most applications are built by layering one data model on top of another. Each layer hides the complexity of the layers below by providing a clean data model. These abstractions allow different groups of people to work effectively.
+
+## Relational Model vs Document Model
+
+The roots of relational databases lie in business data processing, transaction processing, and batch processing.
+
+The goal was to hide the implementation details behind a cleaner interface.
+
+Not Only SQL has a few driving forces:
+
+- Greater scalability
+- Preference for free and open source software
+- Specialized query optimizations
+- Desire for a more dynamic and expressive data model
+
+With a SQL model, if data is stored in relational tables, an awkward translation layer is introduced. This is called impedance mismatch.
+
+The JSON model reduces the impedance mismatch, and the lack of schema is often cited as an advantage.
+
+JSON representation has better locality than the multi-table SQL schema. All the relevant information is in one place, and one query is sufficient.
+
+In relational databases, it's normal to refer to rows in other tables by ID, because joins are easy. In document databases, joins are not needed for one-to-many tree structures, and support for joins is often weak.
+
+If the database itself does not support joins, you have to emulate a join in application code by making multiple queries.
+
+The most popular database for business data processing in the 1970s was IBM's Information Management System (IMS).
+
+IMS used a hierarchical model and, like document databases, worked well for one-to-many relationships. However, it made many-to-many relationships difficult and didn't support joins.
+
+## The Network Model
+
+Standardized by a committee called the Conference on Data Systems Languages (CODASYL), the network model was a generalization of the hierarchical model. In the tree structure of the hierarchical model, every record has exactly one parent, while in the network model, a record could have multiple parents.
+
+The links between records are like pointers in a programming language. The only way of accessing a record was to follow a path from a root record, called the access path.
+
+A query in CODASYL was performed by moving a cursor through the database by iterating over a list of records. If you didn't have a path to the data you wanted, you were in a difficult situation, as it was hard to make changes to an application's data model.
+
+## The Relational Model
+
+By contrast, the relational model was a way to lay out all the data "in the open." A relation (table) is simply a collection of tuples (rows), and that's it.
+
+The query optimizer automatically decides which parts of the query to execute in which order and which indexes to use (the access path).
+
+The relational model thus made it much easier to add new features to applications.
+
+The main arguments in favor of the document data model are schema flexibility, better performance due to locality, and sometimes closer data structures to those used by the applications. The relational model counters by providing better support for joins and many-to-one and many-to-many relationships.
+
+If the data in your application has a document-like structure, then it's probably a good idea to use a document model. The relational technique of shredding can lead to unnecessarily complicated application code.
+
+The poor support for joins in document databases may or may not be a problem.
+
+If your application does use many-to-many relationships, the document model becomes less appealing. Joins can be emulated in application code by making multiple requests. Using the document model can lead to significantly more complex application code and worse performance.
+
+## Schema Flexibility
+
+Most document databases do not enforce any schema on the data in documents. Arbitrary keys and values can be added to a document, but when reading, clients have no guarantees as to what fields the documents may contain.
+
+Document databases are sometimes called schemaless, but maybe a more appropriate term is schema-on-read, in contrast to schema-on-write.
+
+- Schema-on-read is similar to dynamic (runtime) type checking, whereas schema-on-write is similar to static (compile-time) type checking.
+- The schema-on-read approach is useful if the items in the collection don't have the same structure (heterogeneous data).
+
+### Many Different Types of Objects
+
+- Data determined by external systems
+
+### Data Locality for Queries
+
+If your application often needs to access the entire document, there is a performance advantage to this storage locality.
+
+The database typically needs to load the entire document, even if you access only a small portion of it. On updates, the entire document usually needs to be rewritten, so it is recommended that you keep documents fairly small.
+
+## Convergence of Document and Relational Databases
+
+- PostgreSQL supports JSON documents.
+- RethinkDB supports relational-like joins in its query language.
+- Some MongoDB drivers automatically resolve database references.
+
+Relational and document databases are becoming more similar over time.
+
+## Query Languages for Data
+
+SQL is a declarative query language. In an imperative language, you tell the computer to perform certain operations in order.
+
+In a declarative query language, you just specify the pattern of the data you want, but not how to achieve that goal.
+
+A declarative query language hides the implementation details of the database engine, making it possible for the database system to introduce performance improvements without requiring any changes to queries.
+
+Declarative languages often lend themselves to parallel execution, while imperative code is very hard to parallelize across multiple cores because it specifies instructions that must be performed in a particular order. Declarative languages specify only the pattern of the results, not the algorithm used to determine results.
+
+## Declarative Queries on the Web
+
+In a web browser, using declarative CSS styling is much better than manipulating styles imperatively in JavaScript. Declarative languages like SQL turned out to be much better than imperative query APIs.
