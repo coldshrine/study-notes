@@ -247,3 +247,40 @@ Declarative languages often lend themselves to parallel execution, while imperat
 ## Declarative Queries on the Web
 
 In a web browser, using declarative CSS styling is much better than manipulating styles imperatively in JavaScript. Declarative languages like SQL turned out to be much better than imperative query APIs.
+
+ # MapReduce Querying
+
+MapReduce is a programming model for processing large amounts of data in bulk across many machines, popularized by Google.
+
+Mongo offers a MapReduce solution:
+
+```javascript
+db.observations.mapReduce(
+    function map() { // 2
+        var year  = this.observationTimestamp.getFullYear();
+        var month = this.observationTimestamp.getMonth() + 1;
+        emit(year + "-" + month, this.numAnimals); // 3
+    },
+    function reduce(key, values) { // 4
+        return Array.sum(values); // 5
+    },
+    {
+        query: { family: "Sharks" }, // 1
+        out: "monthlySharkReport" // 6
+    }
+);
+
+The map and reduce functions must be pure functions. They cannot perform additional database queries and must not have any side effects. These restrictions allow the database to run the functions anywhere, in any order, and rerun them on failure.
+
+A usability problem with MapReduce is that you have to write two carefully coordinated functions. A declarative language offers more opportunities for a query optimizer to improve the performance of a query. For these reasons, MongoDB 2.2 added support for a declarative query language called the aggregation pipeline:
+
+db.observations.aggregate([
+    { $match: { family: "Sharks" } },
+    { $group: {
+        _id: {
+            year:  { $year:  "$observationTimestamp" },
+            month: { $month: "$observationTimestamp" }
+        },
+        totalAnimals: { $sum: "$numAnimals" }
+    } }
+]);
