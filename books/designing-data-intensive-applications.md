@@ -284,3 +284,58 @@ db.observations.aggregate([
         totalAnimals: { $sum: "$numAnimals" }
     } }
 ]);
+
+# Graph-like Data Models
+
+If many-to-many relationships are very common in your application, it becomes more natural to start modeling your data as a graph.
+
+A graph consists of:
+- **Vertices** (nodes or entities)  
+- **Edges** (relationships or arcs)  
+
+Well-known algorithms can operate on these graphs, like the shortest path between two points or the popularity of a web page.
+
+There are several ways of structuring and querying the data:
+- The **property graph model** (implemented by Neo4j, Titan, and Infinite Graph)  
+- The **triple-store model** (implemented by Datomic, AllegroGraph, and others)  
+
+There are also three declarative query languages for graphs:
+- Cypher  
+- SPARQL  
+- Datalog  
+
+---
+
+## Property Graphs
+
+Each **vertex** consists of:
+- Unique identifier  
+- Outgoing edges  
+- Incoming edges  
+- Collection of properties (key-value pairs)  
+
+Each **edge** consists of:
+- Unique identifier  
+- Vertex at which the edge starts (tail vertex)  
+- Vertex at which the edge ends (head vertex)  
+- Label to describe the kind of relationship between the two vertices  
+- A collection of properties (key-value pairs)  
+
+Graphs provide a great deal of flexibility for data modeling and are good for evolvability.
+
+---
+
+### Cypher
+
+Cypher is a declarative language for property graphs created by Neo4j.
+
+---
+
+### Graph Queries in SQL
+
+In a relational database, you usually know in advance which joins you need in your query. In a graph query, the number of joins is not fixed in advance.
+
+In Cypher, `:WITHIN*0...` expresses "follow a WITHIN edge, zero or more times" (like the `*` operator in a regular expression). 
+
+This idea of variable-length traversal paths in a query can be expressed using something called **recursive common table expressions** (the `WITH RECURSIVE` syntax).
+
