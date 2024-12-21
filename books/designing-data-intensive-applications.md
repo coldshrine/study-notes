@@ -339,3 +339,36 @@ In Cypher, `:WITHIN*0...` expresses "follow a WITHIN edge, zero or more times" (
 
 This idea of variable-length traversal paths in a query can be expressed using something called **recursive common table expressions** (the `WITH RECURSIVE` syntax).
 
+# Triple-stores and SPARQL
+
+In a triple-store, all information is stored in the form of very simple three-part statements:  
+**subject, predicate, object** (e.g., Jim, likes, bananas).  
+
+A triple is equivalent to a vertex in a graph.
+
+---
+
+## The SPARQL Query Language
+
+SPARQL is a query language for triple-stores using the RDF data model.
+
+---
+
+## The Foundation: Datalog
+
+Datalog provides the foundation that later query languages build upon. Its model is similar to the triple-store model, but generalized a bit.  
+
+Instead of writing a triple `(subject, predicate, object)`, we write it as `predicate(subject, object)`.
+
+### Rules in Datalog
+- Rules tell the database about new predicates.  
+- Rules can refer to other rules, just like functions can call other functions or recursively call themselves.  
+- Rules can be combined and reused in different queries.  
+
+### Advantages
+- Less convenient for simple one-off queries.  
+- Better suited for complex data.  
+
+---
+
+## Storage and Retrieval
