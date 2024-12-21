@@ -372,3 +372,96 @@ Instead of writing a triple `(subject, predicate, object)`, we write it as `pred
 ---
 
 ## Storage and Retrieval
+
+# Databases: Storage and Retrieval
+
+Databases need to do two things: 
+1. **Store the data**  
+2. **Give the data back to you**  
+
+---
+
+## Data Structures That Power Your Database
+
+Many databases use a **log**, which is an append-only data file. However, real databases also handle:
+- Concurrency control  
+- Reclaiming disk space to prevent unbounded log growth  
+- Handling errors and partially written records  
+
+### What Is a Log?  
+A log is an append-only sequence of records.  
+
+To efficiently find the value for a particular key, we need an additional structure: an **index**.  
+- An index is derived from the primary data.  
+- Well-chosen indexes speed up read queries but slow down writes.  
+- Databases require manual index configuration based on typical query patterns.
+
+---
+
+## Hash Indexes
+
+Key-value stores are similar to the dictionary type (hash map or hash table).
+
+### Simplest Strategy:
+- Use an **in-memory hash map** to map each key to a byte offset in the data file.  
+- Append new key-value pairs to the file and update the hash map.  
+
+#### Example: **Bitcask** (default storage engine in Riak)
+- Keys must fit in available RAM.  
+- Values can be loaded from disk if they exceed memory limits.  
+- Suitable for frequent updates to values.  
+
+---
+
+### Managing Disk Space
+1. **Segment Files**  
+   - Split the log into segments when it reaches a certain size.  
+   - Write subsequent data to a new segment.  
+
+2. **Compaction**  
+   - Remove duplicate keys and keep only the most recent update.  
+   - Merge segments during compaction to reduce the number of segments.  
+
+3. **Merged Segments**  
+   - Written to a new file, ensuring old segments remain immutable.  
+   - Read requests switch to the new segment after merging, and old segments are deleted.  
+
+4. **In-Memory Hash Table**  
+   - Each segment has its own hash table.  
+   - Lookups start with the most recent segment and move backward as needed.  
+
+---
+
+## Important Considerations in Real Implementations
+
+1. **File Format**  
+   - Binary formats are simpler.  
+
+2. **Deleting Records**  
+   - Use a special deletion record ("tombstone") to mark entries for removal during merging.  
+
+3. **Crash Recovery**  
+   - Store snapshots of segment hash maps on disk to speed up recovery.  
+   - Use checksums to detect and ignore corrupted parts of the log.  
+
+4. **Concurrency Control**  
+   - Sequential writes are handled by a single writer thread.  
+   - Immutable segments enable concurrent reads by multiple threads.  
+
+---
+
+## Advantages of Append-Only Design
+
+- Sequential writes (appending and merging) are faster than random writes, especially on magnetic spinning disks.  
+- Simplifies concurrency and crash recovery.  
+- Avoids file fragmentation over time.  
+
+---
+
+## Limitations of Hash Tables
+
+1. **Memory Requirements**  
+   - The hash table must fit in memory. On-disk hash maps are difficult to optimize.  
+
+2. **Inefficient Range Queries**  
+   - Hash tables are not suitable for range queries.  
