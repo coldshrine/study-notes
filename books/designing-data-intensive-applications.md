@@ -465,3 +465,34 @@ Key-value stores are similar to the dictionary type (hash map or hash table).
 
 2. **Inefficient Range Queries**  
    - Hash tables are not suitable for range queries.  
+
+# SSTables and LSM-Trees
+
+We introduce a new requirement for segment files:  
+The sequence of key-value pairs must be **sorted by key**.
+
+---
+
+## Sorted String Table (SSTable)
+
+An SSTable requires:
+1. Each key appears only once within a merged segment file (ensured by compaction).  
+
+### Advantages of SSTables Over Log Segments with Hash Indexes:
+
+1. **Efficient Merging**  
+   - Merging segments is simple and efficient, leveraging algorithms like mergesort.  
+   - When multiple segments contain the same key, the value from the most recent segment is kept, and older values are discarded.  
+
+2. **Reduced Memory Usage**  
+   - No need to keep an index of all keys in memory.  
+   - For a key like `handiwork`, knowing the offsets for nearby keys (`handback` and `handsome`) allows a targeted search.  
+   - You can jump to the offset for `handback` and scan until you find `handiwork`. If not found, the key is not present.  
+
+3. **In-Memory Index Optimization**  
+   - An in-memory index is still required to map some keys to offsets.  
+   - Storing one key for every few kilobytes of the segment file is sufficient.  
+
+4. **Compression**  
+   - Records in the requested range can be grouped into blocks.  
+   - Blocks are compressed before being written to disk.  
