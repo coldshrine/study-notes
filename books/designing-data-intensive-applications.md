@@ -496,3 +496,48 @@ An SSTable requires:
 4. **Compression**  
    - Records in the requested range can be grouped into blocks.  
    - Blocks are compressed before being written to disk.  
+   
+# How Do We Get the Data Sorted in the First Place?
+
+With red-black trees or AVL trees, you can insert keys in any order and read them back in sorted order.
+
+- When a write comes in, add it to an **in-memory balanced tree structure** (*memtable*).  
+- When the memtable gets bigger than some threshold (megabytes), write it out to disk as an **SSTable file**. Writes can continue to a new memtable instance.  
+- On a read request, try to find the key in the **memtable**, then in the most recent **on-disk segment**, then in the next-older segment, etc.  
+- From time to time, run **merging and compaction** in the background to discard overwritten and deleted values.  
+
+If the database crashes, the most recent writes are lost.  
+To handle this:  
+- Keep a separate **log on disk** where every write is immediately appended.  
+  - The log is not in sorted order but helps restore the memtable after a crash.  
+  - Every time the memtable is written out to an SSTable, the log can be discarded.  
+
+---
+
+# LSM-Structure Engines (Log Structured Merge-Tree)
+
+Storage engines based on this principle of merging and compacting sorted files are often called **LSM structure engines**.
+
+- **Lucene**, an indexing engine for full-text search used by Elasticsearch and Solr, uses a similar method for storing its term dictionary.  
+- The **LSM-tree algorithm** can be slow when looking up keys that don't exist in the database.  
+
+To optimize:  
+- Use additional **Bloom filters** (a memory-efficient data structure for approximating the contents of a set).  
+
+---
+
+# Strategies for SSTable Compaction and Merging
+
+There are different strategies to determine the order and timing of how SSTables are compacted and merged:  
+
+1. **Size-Tiered Compaction**  
+   - Newer and smaller SSTables are successively merged into older and larger SSTables.  
+   - Used by **HBase**.  
+
+2. **Leveled Compaction**  
+   - The key range is split into smaller SSTables.  
+   - Older data is moved into separate "levels", reducing disk space usage during compaction.  
+   - Used by **LevelDB** and **RocksDB**.  
+
+3. **Cassandra**  
+   - Supports both size-tiered and leveled compaction.  
