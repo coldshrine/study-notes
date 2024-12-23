@@ -541,3 +541,77 @@ There are different strategies to determine the order and timing of how SSTables
 
 3. **Cassandra**  
    - Supports both size-tiered and leveled compaction.  
+
+# B-Trees
+
+The **B-tree** is the most widely used indexing structure.  
+
+- **Key-value pairs** are sorted by key, enabling efficient key-value lookups and range queries.  
+- The database is broken into **fixed-size blocks or pages**, traditionally 4KB, instead of variable-size segments as in log-structured indexes.  
+
+---
+
+## Structure and Operations
+
+- **Root Page**: One page is designated as the root, and navigation starts from there.  
+  - Contains keys and references to child pages.  
+
+- **Updating an Existing Key**:  
+  1. Search for the leaf page containing the key.  
+  2. Update the value in that page.  
+  3. Write the page back to disk.  
+
+- **Adding a New Key**:  
+  1. Find the appropriate page.  
+  2. Add the key.  
+  3. If the page is full, split it into two half-full pages.  
+  4. Update the parent page to reflect the new subdivision of key ranges.  
+
+- **Balancing**:  
+  - B-trees remain balanced.  
+  - A B-tree with *n* keys always has a depth of **O(log n)**.
+
+---
+
+## Write Operations
+
+- **Overwrite-Based**:  
+  - The basic operation overwrites a page on disk with new data.  
+  - The location of the page remains unchanged, so references to the page remain intact.  
+  - In contrast, **LSM-trees** (log-structured indexes) only append to files.  
+
+- **Page Splits**:  
+  - Some operations require multiple page overwrites.  
+  - Example: When splitting a page, two pages are rewritten, and their parent page is also updated.  
+
+- **Crash Scenarios**:  
+  - If the database crashes after only some pages have been written, the index may be corrupted.  
+
+---
+
+## Write-Ahead Log (WAL)
+
+- To ensure durability and consistency, an additional data structure, the **write-ahead log (WAL)** (also known as the redo log), is often used.  
+
+---
+
+## Concurrency Control
+
+- If multiple threads access the B-tree:  
+  - Careful concurrency control is required.  
+  - Typically, **latches** (lightweight locks) protect the tree's internal data structures.  
+  
+
+# B-trees and LSM-trees
+
+LSM-trees are typically faster for writes, whereas B-trees are thought to be faster for reads. Reads are typically slower on LSM-trees as they have to check several different data structures and SSTables at different stages of compaction.
+
+## Advantages of LSM-trees:
+
+- LSM-trees are typically able to sustain higher write throughput than B-trees, party because they sometimes have lower write amplification: a write to the database results in multiple writes to disk. The more a storage engine writes to disk, the fewer writes per second it can handle.  
+- LSM-trees can be compressed better, and thus often produce smaller files on disk than B-trees. B-trees tend to leave disk space unused due to fragmentation.
+
+## Downsides of LSM-trees:
+
+- Compaction process can sometimes interfere with the performance of ongoing reads and writes. B-trees can be more predictable. The bigger the database, the more disk bandwidth is required for compaction. Compaction cannot keep up with the rate of incoming writes, if not configured properly you can run out of disk space.  
+- On B-trees, each key exists in exactly one place in the index. This offers strong transactional semantics. Transaction isolation is implemented using locks on ranges of keys, and in a B-tree index, those locks can be directly attached to the tree.
