@@ -621,3 +621,11 @@ LSM-trees are typically faster for writes, whereas B-trees are thought to be fas
 We've only discussed key-value indexes, which are like primary key index. There are also secondary indexes.
 
 A secondary index can be easily constructed from a key-value index. The main difference is that in a secondary index, the indexed values are not necessarily unique. There are two ways of doing this: making each value in the index a list of matching row identifiers or by making a each entry unique by appending a row identifier to it.
+
+# Full-text Search and Fuzzy Indexes
+
+Indexes don't allow you to search for similar keys, such as misspelled words. Such fuzzy querying requires different techniques.
+
+Full-text search engines allow synonyms, grammatical variations, occurrences of words near each other.
+
+Lucene uses SSTable-like structure for its term dictionary. Lucene, the in-memory index is a finite state automaton, similar to a trie.
