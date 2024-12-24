@@ -629,3 +629,19 @@ Indexes don't allow you to search for similar keys, such as misspelled words. Su
 Full-text search engines allow synonyms, grammatical variations, occurrences of words near each other.
 
 Lucene uses SSTable-like structure for its term dictionary. Lucene, the in-memory index is a finite state automaton, similar to a trie.
+
+# Keeping Everything in Memory
+
+Disks have two significant advantages: they are durable, and they have lower cost per gigabyte than RAM.
+
+It's quite feasible to keep them entirely in memory, this has led to in-memory databases.
+
+Key-value stores, such as Memcached, are intended for cache only; it's acceptable for data to be lost if the machine is restarted. Other in-memory databases aim for durability, with special hardware, writing a log of changes to disk, writing periodic snapshots to disk, or by replicating in-memory state to other machines.
+
+When an in-memory database is restarted, it needs to reload its state, either from disk or over the network from a replica. The disk is merely used as an append-only log for durability, and reads are served entirely from memory.
+
+Products such as VoltDB, MemSQL, and Oracle TimesTen are in-memory databases. Redis and Couchbase provide weak durability.
+
+In-memory databases can be faster because they can avoid the overheads of encoding in-memory data structures in a form that can be written to disk.
+
+Another interesting area is that in-memory databases may provide data models that are difficult to implement with disk-based indexes.
