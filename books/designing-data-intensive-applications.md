@@ -645,3 +645,11 @@ Products such as VoltDB, MemSQL, and Oracle TimesTen are in-memory databases. Re
 In-memory databases can be faster because they can avoid the overheads of encoding in-memory data structures in a form that can be written to disk.
 
 Another interesting area is that in-memory databases may provide data models that are difficult to implement with disk-based indexes.
+
+# Transaction Processing or Analytics?
+
+A transaction is a group of reads and writes that form a logical unit. This pattern became known as **online transaction processing (OLTP)**.
+
+Data analytics has very different access patterns. A query would need to scan over a huge number of records, only reading a few columns per record, and calculating aggregate statistics.
+
+These queries are often written by business analysts and fed into reports. This pattern became known as **online analytics processing (OLAP)**.
