@@ -681,3 +681,8 @@ Column-oriented storage is simple: don't store all the values from one row toget
 
 Column-oriented storage often lends itself very well to compression as the sequences of values for each column look quite repetitive, which is a good sign for compression. A technique that is particularly effective in data warehouses is bitmap encoding.
 
+Bitmap indexes are well suited for all kinds of queries that are common in a data warehouse.
+
+**Cassandra and HBase have a concept of column families, which they inherited from Bigtable.**
+
+Besides reducing the volume of data that needs to be loaded from disk, column-oriented storage layouts are also good for making efficient use of CPU cycles (vectorised processing).
