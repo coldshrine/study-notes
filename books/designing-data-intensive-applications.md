@@ -667,3 +667,10 @@ Data warehouses are used in a fairly formulaic style known as a **star schema**.
 
 - **Facts** are captured as individual events, allowing maximum flexibility for analysis later. 
 - The fact table can become extremely large.
+
+Dimensions represent the who, what, where, when, how and why of the event.
+
+The name "star schema" comes from the fact than when the table relationships are visualised, the fact table is in the middle, surrounded by its dimension tables, like the rays of a star.
+
+Fact tables often have over 100 columns, sometimes several hundred. Dimension tables can also be very wide.
+
