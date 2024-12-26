@@ -674,3 +674,10 @@ The name "star schema" comes from the fact than when the table relationships are
 
 Fact tables often have over 100 columns, sometimes several hundred. Dimension tables can also be very wide.
 
+Column-oriented storage  
+In a row-oriented storage engine, when you do a query that filters on a specific field, the engine will load all those rows with all their fields into memory, parse them and filter out the ones that don't meet the requirement. This can take a long time.
+
+Column-oriented storage is simple: don't store all the values from one row together, but store all values from each column together instead. If each column is stored in a separate file, a query only needs to read and parse those columns that are used in a query, which can save a lot of work.
+
+Column-oriented storage often lends itself very well to compression as the sequences of values for each column look quite repetitive, which is a good sign for compression. A technique that is particularly effective in data warehouses is bitmap encoding.
+
