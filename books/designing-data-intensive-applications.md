@@ -653,3 +653,17 @@ A transaction is a group of reads and writes that form a logical unit. This patt
 Data analytics has very different access patterns. A query would need to scan over a huge number of records, only reading a few columns per record, and calculating aggregate statistics.
 
 These queries are often written by business analysts and fed into reports. This pattern became known as **online analytics processing (OLAP)**.
+
+# Data Warehousing
+
+A data warehouse is a separate database that analysts can query to their heart's content without affecting OLTP operations. It contains a read-only copy of the data in all various OLTP systems in the company. Data is extracted out of OLTP databases (through periodic data dumps or a continuous stream of updates), transformed into an analysis-friendly schema, cleaned up, and then loaded into the data warehouse (process **Extract-Transform-Load** or **ETL**).
+
+A data warehouse is most commonly relational, but the internals of the systems can look quite different.
+
+- **Amazon RedShift** is a hosted version of ParAccel.  
+- Other tools include **Apache Hive**, **Spark SQL**, **Cloudera Impala**, **Facebook Presto**, **Apache Tajo**, and **Apache Drill**. Some of them are based on ideas from Google's **Dremel**.
+
+Data warehouses are used in a fairly formulaic style known as a **star schema**.
+
+- **Facts** are captured as individual events, allowing maximum flexibility for analysis later. 
+- The fact table can become extremely large.
