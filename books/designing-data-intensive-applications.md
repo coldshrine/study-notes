@@ -708,3 +708,13 @@ Old and new versions of the code, and old and new data formats, may potentially 
 
 - **Backward compatibility**: newer code can read data that was written by older code.  
 - **Forward compatibility**: older code can read data that was written by newer code.
+
+Formats for encoding data  
+Two different representations:  
+
+- **In memory**  
+- When you want to write data to a file or send it over the network, you have to encode it  
+
+Thus, you need a translation between the two representations. In-memory representation to byte sequence is called **encoding** (serialisation or marshalling), and the reverse is called **decoding** (parsing, deserialisation or unmarshalling).  
+
+Programming languages come with built-in support for encoding in-memory objects into byte sequences, but it is usually a bad idea to use them. Precisely because of a few problems.
