@@ -696,3 +696,15 @@ It's worth mentioning materialised aggregates as some cache of the counts ant th
 When the underlying data changes, a materialised view needs to be updated, because it is denormalised copy of the data. Database can do it automatically, but writes would become more expensive.
 
 A common special case of a materialised view is know as a data cube or OLAP cube, a grid of aggregates grouped by different dimensions.
+
+Encoding and evolution  
+Change to an application's features also requires a change to data it stores.
+
+Relational databases conform to one schema although that schema can be changed, there is one schema in force at any point in time. Schema-on-read (or schemaless) contain a mixture of older and newer data formats.
+
+In large applications changes don't happen instantaneously. You want to perform a rolling upgrade and deploy a new version to a few nodes at a time, gradually working your way through all the nodes without service downtime.
+
+Old and new versions of the code, and old and new data formats, may potentially all coexist. We need to maintain compatibility in both directions:
+
+- **Backward compatibility**: newer code can read data that was written by older code.  
+- **Forward compatibility**: older code can read data that was written by newer code.
