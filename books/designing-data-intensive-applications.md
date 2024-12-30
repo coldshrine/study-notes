@@ -813,3 +813,23 @@ Although textual formats such as JSON, XML, and CSV are widespread, binary encod
 
 - **Code generation:**  
   - Generating code from the schema is useful as it enables type checking at compile time.  
+
+## Modes of Dataflow  
+
+### Different Processes on How Data Flows Between Processes  
+
+#### Via Databases  
+- **Encoding and Decoding:**  
+  - The process that writes to the database encodes the data, and the process that reads from the database decodes it.  
+
+- **Version Compatibility:**  
+  - A value in the database may be written by a newer version of the code and subsequently read by an older version still running.  
+
+- **Code vs. Data Longevity:**  
+  - When deploying a new version of your application, you may replace the old version with the new one within minutes. However, the same does not apply to databases. Data outlives code, and five-year-old data will still exist in its original encoding unless explicitly rewritten.  
+
+- **Rewriting (Migration):**  
+  - Rewriting data is expensive.  
+  - Most relational databases support simple schema changes, like adding a new column with a `NULL` default value, without rewriting existing data.  
+  - When an old row is read, the database fills in `NULL` values for missing columns.  
+
