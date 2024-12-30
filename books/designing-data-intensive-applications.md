@@ -766,3 +766,36 @@ Schemas inevitably need to change over time (schema evolution). How do Thrift an
 
 - **Changing the data type of a field:**  
   - This carries the risk of values losing precision or getting truncated.  
+
+**Avro**  
+Apache Avro is another binary format that has two schema languages, one intended for human editing (Avro IDL), and one (based on JSON) that is more easily machine-readable.  
+
+You go through the fields in the order they appear in the schema and use the schema to tell you the datatype of each field. Any mismatch in the schema between the reader and the writer would mean incorrectly decoded data.  
+
+**Schema evolution:**  
+- When an application wants to encode some data, it encodes the data using whatever version of the schema it knows (writer's schema).  
+- When an application wants to decode some data, it expects the data to be in some schema (reader's schema).  
+
+In Avro, the writer's schema and the reader's schema don't have to be the same. The Avro library resolves the differences by looking at the writer's schema and the reader's schema.  
+
+- **Forward compatibility:**  
+  - A new version of the schema as writer and an old version of the schema as reader.  
+- **Backward compatibility:**  
+  - A new version of the schema as reader and an old version as writer.  
+
+To maintain compatibility, you may only add or remove a field that has a default value.  
+
+- Adding a field without a default value: New readers wouldn't be able to read data written by old writers.  
+- Changing the datatype of a field: Possible if Avro can convert the type.  
+- Changing the name of a field: Backward compatible but not forward compatible.  
+
+The schema is identified and encoded in the data.  
+- In a large file with lots of records, the writer can include the schema at the beginning of the file.  
+- In a database with individually written records, you cannot assume all the records will have the same schema, so you include a version number at the beginning of every encoded record.  
+- While sending records over the network, you can negotiate the schema version on connection setup.  
+
+Avro is friendlier to dynamically generated schemas (e.g., dumping into a file the database). You can easily generate an Avro schema in JSON.  
+
+If the database schema changes, you can generate a new Avro schema for the updated database schema and export data in the new Avro schema.  
+
+By contrast, with Thrift and Protocol Buffers, every time the database schema changes, you would have to manually update the mappings from database column names to field tags.  
