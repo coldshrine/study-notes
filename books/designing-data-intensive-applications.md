@@ -855,3 +855,45 @@ New generations of RPC frameworks are more explicit about the fact that a remote
 **RESTful API** has some significant advantages, such as being good for experimentation and debugging.
 
 REST seems to be the predominant style for public APIs. The main focus of RPC frameworks is on requests between services owned by the same organization, typically within the same datacenter.
+
+### Via Asynchronous Message Passing
+
+In an asynchronous message-passing system, a client's request (usually called a message) is delivered to another process with low latency. The message goes via an intermediary called a **message broker** (message queue or message-oriented middleware), which stores the message temporarily. This approach has several advantages compared to direct RPC:
+
+- It can act as a buffer if the recipient is unavailable or overloaded.
+- It can automatically redeliver messages to a process that has crashed, preventing message loss.
+- It avoids the sender needing to know the IP address and port number of the recipient (useful in a cloud environment).
+- It allows one message to be sent to several recipients.
+- It decouples the sender from the recipient.
+- The communication happens in one direction: the sender sends the message and then forgets about it (asynchronous).
+
+Open-source implementations for message brokers include **RabbitMQ**, **ActiveMQ**, **HornetQ**, **NATS**, and **Apache Kafka**.
+
+One process sends a message to a named **queue** or **topic**, and the broker ensures the message is delivered to one or more consumers or subscribers to that queue or topic. Message brokers typically don't enforce a particular data model, so you can use any encoding format.
+
+---
+
+### Actor Model
+
+The **actor model** is a programming model for concurrency in a single process. Instead of dealing with threads (and their complications), logic is encapsulated in **actors**. 
+
+- Each actor typically represents one client or entity.
+- An actor may have some local state and communicates with other actors by sending and receiving asynchronous messages.
+- **Message delivery is not guaranteed**. 
+- Since each actor processes only one message at a time, it doesn't need to worry about threads.
+
+In **distributed actor frameworks**, this programming model scales applications across multiple nodes. It integrates a message broker and the actor model into a single framework.
+
+---
+
+### Examples of Distributed Actor Frameworks
+
+- **Akka**:
+  - Uses Java's built-in serialization by default, which does not provide forward or backward compatibility.
+  - You can replace the default with something like **Protocol Buffers** to enable rolling upgrades.
+
+- **Orleans**:
+  - Uses a custom data encoding format by default, which does not support rolling upgrade deployments.
+
+- **Erlang OTP**:
+  - Making changes to record schemas is surprisingly difficult.
