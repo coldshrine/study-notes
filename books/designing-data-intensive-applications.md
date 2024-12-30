@@ -734,3 +734,35 @@ Standardised encodings can be written and read by many programming languages.
 - There is optional schema support for both XML and JSON.  
 - CSV does not have any schema.  
 
+**Binary encoding**  
+JSON is less verbose than XML, but both still use a lot of space compared to binary formats. There are binary encodings for JSON (MesagePack, BSON, BJSON, UBJSON, BISON, and Smile), and similar ones for XML (WBXML and Fast Infoset).  
+
+**Apache Thrift and Protocol Buffers (protobuf)** are binary encoding libraries.  
+
+- **Thrift offers two different protocols:**  
+  - **BinaryProtocol:** There are no field names like `userName`, `favouriteNumber`. Instead, the data contains field tags, which are numbers (e.g., 1, 2).  
+  - **CompactProtocol:** Equivalent to BinaryProtocol but packs the same information in less space. It combines the field type and the tag number into the same byte.  
+
+- **Protocol Buffers:**  
+  - Very similar to Thrift's CompactProtocol.  
+  - Bit packing is slightly different, which might allow for smaller compression.  
+
+**Schema evolution and compatibility:**  
+
+Schemas inevitably need to change over time (schema evolution). How do Thrift and Protocol Buffers handle schema changes while keeping backward and forward compatibility?  
+
+- **Forward compatible support:**  
+  - When adding new fields, assign new tag numbers.  
+  - Old code reading new data can simply ignore unrecognized tags.  
+
+- **Backward compatible support:**  
+  - As long as each field has a unique tag number, new code can always read old data.  
+  - Every field added after the initial schema deployment must be optional or have a default value.  
+
+- **Removing fields:**  
+  - Removing a field is like adding one but with reversed backward and forward concerns.  
+  - Only optional fields can be removed.  
+  - Never reuse the same tag number after removal.  
+
+- **Changing the data type of a field:**  
+  - This carries the risk of values losing precision or getting truncated.  
