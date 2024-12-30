@@ -799,3 +799,17 @@ Avro is friendlier to dynamically generated schemas (e.g., dumping into a file t
 If the database schema changes, you can generate a new Avro schema for the updated database schema and export data in the new Avro schema.  
 
 By contrast, with Thrift and Protocol Buffers, every time the database schema changes, you would have to manually update the mappings from database column names to field tags.  
+
+Although textual formats such as JSON, XML, and CSV are widespread, binary encodings based on schemas are also a viable option as they have nice properties:  
+
+- **Compactness:**  
+  - Binary formats can be much more compact as they can omit field names from the encoded data.  
+
+- **Schema as documentation:**  
+  - The schema is a valuable form of documentation, required for decoding, ensuring it is always up to date.  
+
+- **Compatibility checks:**  
+  - A database of schemas allows you to verify forward and backward compatibility changes.  
+
+- **Code generation:**  
+  - Generating code from the schema is useful as it enables type checking at compile time.  
