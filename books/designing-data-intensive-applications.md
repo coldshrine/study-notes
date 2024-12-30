@@ -833,3 +833,17 @@ Although textual formats such as JSON, XML, and CSV are widespread, binary encod
   - Most relational databases support simple schema changes, like adding a new column with a `NULL` default value, without rewriting existing data.  
   - When an old row is read, the database fills in `NULL` values for missing columns.  
 
+### Via Service Calls
+
+You have processes that need to communicate over a network of clients and servers.
+
+Services are similar to databases, each service should be owned by one team, and that team should be able to release versions of the service frequently, without having to coordinate with other teams. We should expect old and new versions of servers and clients to be running at the same time.
+
+Remote procedure calls (RPC) try to make a request to a remote network service look the same as calling a function or method in your programming language. It seems convenient at first, but the approach is flawed:
+
+- A network request is unpredictable.
+- A network request may return without a result due to a timeout.
+- Retrying will cause the action to be performed multiple times unless you build a mechanism for deduplication (idempotence).
+- A network request is much slower than a function call, and its latency is wildly variable.
+- Parameters need to be encoded into a sequence of bytes that can be sent over the network, which becomes problematic with larger objects.
+- The RPC framework must translate datatypes from one language to another; not all languages have the same types.
