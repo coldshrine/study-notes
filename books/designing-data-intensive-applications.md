@@ -847,3 +847,11 @@ Remote procedure calls (RPC) try to make a request to a remote network service l
 - A network request is much slower than a function call, and its latency is wildly variable.
 - Parameters need to be encoded into a sequence of bytes that can be sent over the network, which becomes problematic with larger objects.
 - The RPC framework must translate datatypes from one language to another; not all languages have the same types.
+
+There is no point trying to make a remote service look too much like a local object in your programming language because it's a fundamentally different thing.
+
+New generations of RPC frameworks are more explicit about the fact that a remote request is different from a local function call. Frameworks like **Finagle** and **Rest.li** use features like promises to encapsulate asynchronous actions.
+
+**RESTful API** has some significant advantages, such as being good for experimentation and debugging.
+
+REST seems to be the predominant style for public APIs. The main focus of RPC frameworks is on requests between services owned by the same organization, typically within the same datacenter.
