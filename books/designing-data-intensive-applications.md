@@ -718,3 +718,19 @@ Two different representations:
 Thus, you need a translation between the two representations. In-memory representation to byte sequence is called **encoding** (serialisation or marshalling), and the reverse is called **decoding** (parsing, deserialisation or unmarshalling).  
 
 Programming languages come with built-in support for encoding in-memory objects into byte sequences, but it is usually a bad idea to use them. Precisely because of a few problems.
+
+Often tied to a particular programming language.  
+The decoding process needs to be able to instantiate arbitrary classes, and this is frequently a security hole.  
+
+- **Versioning**  
+- **Efficiency**  
+
+Standardised encodings can be written and read by many programming languages.  
+
+**JSON, XML, and CSV** are human-readable and popular, especially as data interchange formats, but they have some subtle problems:  
+
+- Ambiguity around the encoding of numbers and dealing with large numbers.  
+- Support for Unicode character strings, but no support for binary strings. People get around this by encoding binary data as Base64, which increases the data size by 33%.  
+- There is optional schema support for both XML and JSON.  
+- CSV does not have any schema.  
+
