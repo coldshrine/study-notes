@@ -897,3 +897,12 @@ In **distributed actor frameworks**, this programming model scales applications 
 
 - **Erlang OTP**:
   - Making changes to record schemas is surprisingly difficult.
+
+What happens if multiple machines are involved in storage and retrieval of data?
+
+Reasons for distribute a database across multiple machines:
+
+- Scalability  
+- Fault tolerance/high availability  
+- Latency, having servers at various locations worldwide  
+
