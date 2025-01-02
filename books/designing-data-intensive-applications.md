@@ -906,3 +906,11 @@ Reasons for distribute a database across multiple machines:
 - Fault tolerance/high availability  
 - Latency, having servers at various locations worldwide  
 
+Replication  
+Reasons why you might want to replicate data:  
+
+- To keep data geographically close to your users  
+- Increase availability  
+- Increase read throughput  
+
+The difficulty in replication lies in handling changes to replicated data. Popular algorithms for replicating changes between nodes: single-leader, multi-leader, and leaderless replication.  
