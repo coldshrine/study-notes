@@ -914,3 +914,14 @@ Reasons why you might want to replicate data:
 - Increase read throughput  
 
 The difficulty in replication lies in handling changes to replicated data. Popular algorithms for replicating changes between nodes: single-leader, multi-leader, and leaderless replication.  
+
+Leaders and followers  
+Each node that stores a copy of the database is called a replica.  
+
+Every write to the database needs to be processed by every replica. The most common solution for this is called leader-based replication (active/passive or master-slave replication).  
+
+- One of the replicas is designated the leader (master or primary). Writes to the database must send requests to the leader.  
+- Other replicas are known as followers (read replicas, slaves, secondaries or hot standbys). The leader sends the data change to all of its followers as part of a replication log or change stream.  
+- Reads can be queried from the leader or any of the followers, while writes are only accepted on the leader.  
+
+MySQL, Oracle Data Guard, SQL Server's AlwaysOn Availability Groups, MongoDB, RethinkDB, Espresso, Kafka, and RabbitMQ are examples of these kinds of databases.  
