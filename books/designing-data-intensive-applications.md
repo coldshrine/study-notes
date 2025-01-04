@@ -925,3 +925,12 @@ Every write to the database needs to be processed by every replica. The most com
 - Reads can be queried from the leader or any of the followers, while writes are only accepted on the leader.  
 
 MySQL, Oracle Data Guard, SQL Server's AlwaysOn Availability Groups, MongoDB, RethinkDB, Espresso, Kafka, and RabbitMQ are examples of these kinds of databases.  
+
+
+Synchronous vs asynchronous  
+The advantage of synchronous replication is that the follower is guaranteed to have an up-to-date copy of the data that is consistent with the leader. The disadvantage is that if the synchronous follower doesn't respond, the write cannot be processed.  
+
+It's impractical for all followers to be synchronous. If you enable synchronous replication on a database, it usually means that one of the followers is synchronous, and the others are asynchronous. This guarantees an up-to-date copy of the data on at least two nodes (this is sometimes called semi-synchronous).  
+
+Often, leader-based replication is asynchronous. Writes are not guaranteed to be durable; the main advantage of this approach is that the leader can continue processing writes.  
+
