@@ -934,3 +934,11 @@ It's impractical for all followers to be synchronous. If you enable synchronous 
 
 Often, leader-based replication is asynchronous. Writes are not guaranteed to be durable; the main advantage of this approach is that the leader can continue processing writes.  
 
+Setting up new followers  
+Copying data files from one node to another is typically not sufficient.  
+
+Setting up a follower can usually be done without downtime. The process looks like:  
+- Take a snapshot of the leader's database  
+- Copy the snapshot to the follower node  
+- Follower requests data changes that have happened since the snapshot was taken  
+- Once the follower processes the backlog of data changes since the snapshot, it has caught up.  
