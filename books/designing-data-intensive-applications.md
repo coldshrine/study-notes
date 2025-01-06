@@ -942,3 +942,27 @@ Setting up a follower can usually be done without downtime. The process looks li
 - Copy the snapshot to the follower node  
 - Follower requests data changes that have happened since the snapshot was taken  
 - Once the follower processes the backlog of data changes since the snapshot, it has caught up.  
+
+Handling node outages  
+How does high availability work with leader-based replication?  
+
+**Follower failure: catchup recovery**  
+- A follower can connect to the leader and request all the data changes that occurred during the time when the follower was disconnected.  
+
+**Leader failure: failover**  
+- One of the followers needs to be promoted to be the new leader.  
+- Clients need to be reconfigured to send their writes to the new leader.  
+- Followers need to start consuming data changes from the new leader.  
+
+**Automatic failover consists of:**  
+- **Determining that the leader has failed.** If a node does not respond in a period of time, it's considered dead.  
+- **Choosing a new leader.** The best candidate for leadership is usually the replica with the most up-to-date changes from the old leader.  
+- **Reconfiguring the system to use the new leader.** The system needs to ensure that the old leader becomes a follower and recognizes the new leader.  
+
+**Things that could go wrong:**  
+- If asynchronous replication is used, the new leader may have received conflicting writes in the meantime.  
+- Discarding writes is especially dangerous if other storage systems outside of the database need to be coordinated with the database contents.  
+- It could happen that two nodes both believe that they are the leader (split brain). Data is likely to be lost or corrupted.  
+- What is the right time before the leader is declared dead?  
+
+For these reasons, some operations teams prefer to perform failovers manually, even if the software supports automatic failover.  
