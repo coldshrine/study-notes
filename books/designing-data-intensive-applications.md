@@ -986,3 +986,17 @@ The log is an append-only sequence of bytes containing all writes to the databas
 The main disadvantage is that the log describes the data at a very low level (like which bytes were changed in which disk blocks), coupling it to the storage engine.
 
 Usually, it is not possible to run different versions of the database in leaders and followers. This can have a big operational impact, like making it impossible to have a zero-downtime upgrade of the database.
+
+# Logical (row-based) log replication
+
+Basically, a sequence of records describing writes to database tables at the granularity of a row:
+
+- For an inserted row, the new values of all columns.
+- For a deleted row, the information that uniquely identifies that row.
+- For an updated row, the information to uniquely identify that row and all the new values of the columns.
+
+A transaction that modifies several rows generates several such logs, followed by a record indicating that the transaction was committed. MySQL binlog uses this approach.
+
+Since the logical log is decoupled from the storage engine internals, it's easier to make it backwards compatible.
+
+Logical logs are also easier for external applications to parse, making them useful for data warehouses, custom indexes, and caches (change data capture).
