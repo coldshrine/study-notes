@@ -978,3 +978,11 @@ This type of replication has some problems:
 - Statements with side effects may result on different results on each replica.  
 
 A solution to this is to replace any nondeterministic function with a fixed return value in the leader.  
+
+# Write-ahead log (WAL) shipping
+
+The log is an append-only sequence of bytes containing all writes to the database. The leader can send it to its followers. This way of replication is used in PostgresSQL and Oracle.
+
+The main disadvantage is that the log describes the data at a very low level (like which bytes were changed in which disk blocks), coupling it to the storage engine.
+
+Usually, it is not possible to run different versions of the database in leaders and followers. This can have a big operational impact, like making it impossible to have a zero-downtime upgrade of the database.
