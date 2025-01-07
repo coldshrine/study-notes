@@ -1000,3 +1000,11 @@ A transaction that modifies several rows generates several such logs, followed b
 Since the logical log is decoupled from the storage engine internals, it's easier to make it backwards compatible.
 
 Logical logs are also easier for external applications to parse, making them useful for data warehouses, custom indexes, and caches (change data capture).
+
+# Trigger-based replication
+
+There are some situations where you may need to move replication up to the application layer.
+
+A trigger lets you register custom application code that is automatically executed when a data change occurs. This is a good opportunity to log this change into a separate table, from which it can be read by an external process.
+
+The main disadvantages are that this approach has greater overhead, is more prone to bugs, but it may be useful due to its flexibility.
