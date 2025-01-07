@@ -966,3 +966,15 @@ How does high availability work with leader-based replication?
 - What is the right time before the leader is declared dead?  
 
 For these reasons, some operations teams prefer to perform failovers manually, even if the software supports automatic failover.  
+
+Implementation of replication logs  
+Statement-based replication  
+The leader logs every statement and sends it to its followers (every INSERT, UPDATE or DELETE).  
+
+This type of replication has some problems:  
+
+- Non-deterministic functions such as NOW() or RAND() will generate different values on replicas.  
+- Statements that depend on existing data, like auto-increments, must be executed in the same order in each replica.  
+- Statements with side effects may result on different results on each replica.  
+
+A solution to this is to replace any nondeterministic function with a fixed return value in the leader.  
