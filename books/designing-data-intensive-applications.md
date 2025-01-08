@@ -1008,3 +1008,45 @@ There are some situations where you may need to move replication up to the appli
 A trigger lets you register custom application code that is automatically executed when a data change occurs. This is a good opportunity to log this change into a separate table, from which it can be read by an external process.
 
 The main disadvantages are that this approach has greater overhead, is more prone to bugs, but it may be useful due to its flexibility.
+
+# Problems with replication lag
+
+Node failures is just one reason for wanting replication. Other reasons are scalability and latency.
+
+In a read-scaling architecture, you can increase the capacity for serving read-only requests simply by adding more followers. However, this only realistically works on asynchronous replication. The more nodes you have, the likelier is that one will be down, so a fully synchronous configuration would be unreliable.
+
+With an asynchronous approach, a follower may fall behind, leading to inconsistencies in the database (eventual consistency).
+
+The replication lag could be a fraction of a second or several seconds or even minutes.
+
+The problems that may arise and how to solve them.
+
+Reading your own writes  
+Read-after-write consistency, also known as read-your-writes consistency is a guarantee that if the user reloads the page, they will always see any updates they submitted themselves.
+
+How to implement it:
+
+When reading something that the user may have modified, read it from the leader. For example, user profile information on a social network is normally only editable by the owner. A simple rule is always read the user's own profile from the leader.  
+You could track the time of the latest update and, for one minute after the last update, make all reads from the leader.  
+The client can remember the timestamp of the most recent write, then the system can ensure that the replica serving any reads for that user reflects updates at least until that timestamp.  
+If your replicas are distributed across multiple datacenters, then any request needs to be routed to the datacenter that contains the leader.  
+Another complication is that the same user is accessing your service from multiple devices, you may want to provide cross-device read-after-write consistency.
+
+Some additional issues to consider:
+
+Remembering the timestamp of the user's last update becomes more difficult. The metadata will need to be centralised.  
+If replicas are distributed across datacenters, there is no guarantee that connections from different devices will be routed to the same datacenter. You may need to route requests from all of a user's devices to the same datacenter.
+
+Monotonic reads  
+Because of followers falling behind, it's possible for a user to see things moving backward in time.
+
+When you read data, you may see an old value; monotonic reads only means that if one user makes several reads in sequence, they will not see time go backward.
+
+Make sure that each user always makes their reads from the same replica. The replica can be chosen based on a hash of the user ID. If the replica fails, the user's queries will need to be rerouted to another replica.
+
+Consistent prefix reads  
+If a sequence of writes happens in a certain order, then anyone reading those writes will see them appear in the same order.
+
+This is a particular problem in partitioned (sharded) databases as there is no global ordering of writes.
+
+A solution is to make sure any writes casually related to each other are written to the same partition.
