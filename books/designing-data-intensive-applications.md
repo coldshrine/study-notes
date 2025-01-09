@@ -1044,9 +1044,12 @@ When you read data, you may see an old value; monotonic reads only means that if
 
 Make sure that each user always makes their reads from the same replica. The replica can be chosen based on a hash of the user ID. If the replica fails, the user's queries will need to be rerouted to another replica.
 
-Consistent prefix reads  
+# Consistent prefix reads  
 If a sequence of writes happens in a certain order, then anyone reading those writes will see them appear in the same order.
 
 This is a particular problem in partitioned (sharded) databases as there is no global ordering of writes.
 
-A solution is to make sure any writes casually related to each other are written to the same partition.
+# Solutions for Replication Lag
+A solution is to make sure any writes casually related to each other are written to the same partition.# Solutions for Replication Lag
+
+Transactions exist so there is a way for a database to provide stronger guarantees so that the application can be simpler.
