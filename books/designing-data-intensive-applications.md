@@ -1053,3 +1053,9 @@ This is a particular problem in partitioned (sharded) databases as there is no g
 A solution is to make sure any writes casually related to each other are written to the same partition.# Solutions for Replication Lag
 
 Transactions exist so there is a way for a database to provide stronger guarantees so that the application can be simpler.
+
+# Multi-Leader Replication
+
+Leader-based replication has one major downside: there is only one leader, and all writes must go through it.
+
+A natural extension is to allow more than one node to accept writes (multi-leader, master-master, or active/active replication) where each leader simultaneously acts as a follower to the other leaders.
