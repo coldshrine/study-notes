@@ -1059,3 +1059,53 @@ Transactions exist so there is a way for a database to provide stronger guarante
 Leader-based replication has one major downside: there is only one leader, and all writes must go through it.
 
 A natural extension is to allow more than one node to accept writes (multi-leader, master-master, or active/active replication) where each leader simultaneously acts as a follower to the other leaders.
+
+# Use Cases for Multi-Leader Replication
+
+## Multi-Datacenter Operation
+You can have a leader in each datacenter. Within each datacenter, regular leader-follower replication is used. Between datacenters, each datacenter leader replicates its changes to the leaders in other datacenters.
+
+Compared to a single-leader replication model in multi-datacenters:
+- Performance: With single-leader, every write must go across the internet to wherever the leader is, adding significant latency. In multi-leader, every write is processed in the local datacenter and replicated asynchronously to other datacenters. The network delay is hidden from users, improving perceived performance.
+- Tolerance of datacenter outages: In single-leader, if the datacenter with the leader fails, failover can promote a follower in another datacenter. In multi-leader, each datacenter can continue operating independently from others.
+- Tolerance of network problems: Single-leader is very sensitive to problems in the inter-datacenter link as writes are made synchronously over this link. Multi-leader, with asynchronous replication, can tolerate network problems better.
+
+Multi-leader replication is implemented with Tungsten Replicator for MySQL, BDR for PostgreSQL, or GoldenGate for Oracle. It's common to fall on subtle configuration pitfalls. Autoincrementing keys, triggers, and integrity constraints can be problematic. Multi-leader replication is often considered dangerous and avoided if possible.
+
+## Clients with Offline Operation
+If you have an application that needs to work while it is disconnected from the internet, every device that has a local database can act as a leader, and there will be some asynchronous multi-leader replication process (imagine, a Calendar application). CouchDB is designed for this mode of operation.
+
+## Collaborative Editing
+Real-time collaborative editing applications allow several people to edit a document simultaneously. Like Etherpad or Google Docs. The user edits a document, the changes are instantly applied to their local replica and asynchronously replicated to the server and any other user. If you want to avoid editing conflicts, you must lock the document before a user can edit it. For faster collaboration, you may want to make the unit of change very small (like a keystroke) and avoid locking.
+
+# Handling Write Conflicts
+The biggest problem with multi-leader replication is when conflict resolution is required. This problem does not happen in a single-leader database.
+
+## Synchronous vs Asynchronous Conflict Detection
+In single-leader, the second writer can be blocked and wait for the first one to complete, forcing the user to retry the write. On multi-leader, if both writes are successful, the conflict is only detected asynchronously later in time. If you want synchronous conflict detection, you might as well use single-leader replication.
+
+## Conflict Avoidance
+The simplest strategy for dealing with conflicts is to avoid them. If all writes for a particular record go through the same leader, then conflicts cannot occur. On an application where a user can edit their own data, you can ensure that requests from a particular user are always routed to the same datacenter and use the leader in that datacenter for reading and writing.
+
+## Converging Toward a Consistent State
+On single-leader, the last write determines the final value of the field. In multi-leader, it's not clear what the final value should be. The database must resolve the conflict in a convergent way, all replicas must arrive at the same final value when all changes have been replicated.
+
+Different ways of achieving convergent conflict resolution:
+1. Give each write a unique ID (timestamp, long random number, UUID, or a hash of the key and value), pick the write with the highest ID as the winner, and throw away the other writes. This is known as last write wins (LWW) and it is dangerously prone to data loss.
+2. Give each replica a unique ID, writes that originated at a higher-numbered replica always take precedence. This approach also implies data loss.
+3. Somehow merge the values together.
+4. Record the conflict and write application code that resolves it at some later time (perhaps prompting the user).
+
+## Custom Conflict Resolution
+Multi-leader replication tools let you write conflict resolution logic using application code.  
+On write: As soon as the database system detects a conflict in the log of replicated changes, it calls the conflict handler.  
+On read: All the conflicting writes are stored. On read, multiple versions of the data are returned to the application. The application may prompt the user or automatically resolve the conflict. CouchDB works this way.
+
+# Multi-Leader Replication Topologies
+A replication topology describes the communication paths along which writes are propagated from one node to another.
+
+The most general topology is all-to-all in which every leader sends its writes to every other leader. MySQL uses circular topology, where each node receives writes from one node and forwards those writes to another node. Another popular topology has the shape of a star, one designated node forwards writes to all of the other nodes.
+
+In circular and star topologies, a write might need to pass through multiple nodes before they reach all replicas. To prevent infinite replication loops, each node is given a unique identifier and the replication log tags each write with the identifiers of the nodes it has passed through. When a node fails, it can interrupt the flow of replication messages.
+
+In all-to-all topology, fault tolerance is better as messages can travel along different paths avoiding a single point of failure. It has some issues too, some network links may be faster than others, and some replication messages may "overtake" others. To order events correctly, there is a technique called version vectors. PostgreSQL BDR does not provide casual ordering of writes, and Tungsten Replicator for MySQL doesn't even try to detect conflicts.
