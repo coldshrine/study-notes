@@ -1109,3 +1109,16 @@ The most general topology is all-to-all in which every leader sends its writes t
 In circular and star topologies, a write might need to pass through multiple nodes before they reach all replicas. To prevent infinite replication loops, each node is given a unique identifier and the replication log tags each write with the identifiers of the nodes it has passed through. When a node fails, it can interrupt the flow of replication messages.
 
 In all-to-all topology, fault tolerance is better as messages can travel along different paths avoiding a single point of failure. It has some issues too, some network links may be faster than others, and some replication messages may "overtake" others. To order events correctly, there is a technique called version vectors. PostgreSQL BDR does not provide casual ordering of writes, and Tungsten Replicator for MySQL doesn't even try to detect conflicts.
+
+# Leaderless Replication
+
+Simply put, any replica can directly accept writes from clients. Databases like Amazon's in-house Dynamo datastore, Riak, Cassandra, and Voldemort follow the Dynamo style.
+
+In a leaderless configuration, failover does not exist. Clients send the write to all replicas in parallel.
+
+Read requests are also sent to several nodes in parallel. The client may get different responses. Version numbers are used to determine which value is newer.
+
+Eventually, all the data is copied to every replica. After an unavailable node comes back online, it has two different mechanisms to catch up:
+
+- **Read repair**: When a client detects any stale responses, it writes the newer value back to that replica.
+- **Anti-entropy process**: A background process constantly looks for differences in data between replicas and copies any missing data from one replica to the other. It does not copy writes in any particular order.
