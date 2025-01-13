@@ -1122,3 +1122,16 @@ Eventually, all the data is copied to every replica. After an unavailable node c
 
 - **Read repair**: When a client detects any stale responses, it writes the newer value back to that replica.
 - **Anti-entropy process**: A background process constantly looks for differences in data between replicas and copies any missing data from one replica to the other. It does not copy writes in any particular order.
+
+# Quorums for Reading and Writing
+
+If there are `n` replicas, every write must be confirmed by `w` nodes to be considered successful, and we must query at least `r` nodes for each read. As long as `w + r > n`, we expect to get an up-to-date value when reading. `r` and `w` values are called quorum reads and writes and are the minimum number of votes required for the read or write to be valid.
+
+A common choice is to make `n` an odd number (typically 3 or 5) and to set `w = r = (n + 1)/2` (rounded up).
+
+### Limitations:
+- **Sloppy quorum**: The `w` writes may end up on different nodes than the `r` reads, so there is no longer a guaranteed overlap.
+- If two writes occur concurrently and it is not clear which one happened first, the only safe solution is to merge them. Writes can be lost due to clock skew.
+- If a write happens concurrently with a read, the write may be reflected on only some of the replicas.
+- If a write succeeded on some replicas but failed on others, it is not rolled back on the replicas where it succeeded. Reads may or may not return the value from that write.
+- If a node carrying a new value fails, and its data is restored from a replica carrying an old value, the number of replicas storing the new value may break the quorum condition.
