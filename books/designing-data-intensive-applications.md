@@ -1135,3 +1135,19 @@ A common choice is to make `n` an odd number (typically 3 or 5) and to set `w = 
 - If a write happens concurrently with a read, the write may be reflected on only some of the replicas.
 - If a write succeeded on some replicas but failed on others, it is not rolled back on the replicas where it succeeded. Reads may or may not return the value from that write.
 - If a node carrying a new value fails, and its data is restored from a replica carrying an old value, the number of replicas storing the new value may break the quorum condition.
+
+Dynamo-style databases are generally optimised for use cases that can tolerate eventual consistency.
+
+### Sloppy quorums and hinted handoff
+Leaderless replication may be appealing for use cases that require high availability and low latency, and that can tolerate occasional stale reads.
+
+It's likely that the client won't be able to connect to some database nodes during a network interruption.
+
+- Is it better to return errors to all requests for which we cannot reach quorum of **w** or **r** nodes?  
+- Or should we accept writes anyway, and write them to some nodes that are reachable but aren't among the **n** nodes on which the value usually lives?
+
+The latter is known as **sloppy quorum**: writes and reads still require **w** and **r** successful responses, but those may include nodes that are not among the designated **n** "home" nodes for a value.
+
+Once the network interruption is fixed, any writes are sent to the appropriate "home" nodes (**hinted handoff**).
+
+Sloppy quorums are useful for increasing write availability: as long as any **w** nodes are available, the database can accept writes. This also means that you cannot be sure to read the latest value for a key, because it may have been temporarily written to some nodes outside of **n**.
