@@ -1151,3 +1151,22 @@ The latter is known as **sloppy quorum**: writes and reads still require **w** a
 Once the network interruption is fixed, any writes are sent to the appropriate "home" nodes (**hinted handoff**).
 
 Sloppy quorums are useful for increasing write availability: as long as any **w** nodes are available, the database can accept writes. This also means that you cannot be sure to read the latest value for a key, because it may have been temporarily written to some nodes outside of **n**.
+
+### Multi-datacenter operation
+Each write from a client is sent to all replicas, regardless of datacenter, but the client usually only waits for acknowledgement from a quorum of nodes within its local datacenter so that it is unaffected by delays and interruptions on cross-datacenter links.
+
+---
+
+### Detecting concurrent writes
+In order to become eventually consistent, the replicas should converge toward the same value. If you want to avoid losing data, you, the application developer, need to know a lot about the internals of your database's conflict handling.
+
+- **Last write wins (discarding concurrent writes):**  
+  Even though the writes don't have a natural ordering, we can force an arbitrary order on them. We can attach a timestamp to each write and pick the most recent.  
+  - There are some situations, such as caching, in which lost writes are acceptable.  
+  - If losing data is not acceptable, **LWW** is a poor choice for conflict resolution.
+
+- **The "happens-before" relationship and concurrency:**  
+  Whether one operation happens before another operation is the key to defining what concurrency means.  
+  - We can simply say that two operations are concurrent if neither happens before the other.  
+  - Either **A happened before B**, or **B happened before A**, or **A and B are concurrent**.
+
