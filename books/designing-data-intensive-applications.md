@@ -1170,3 +1170,24 @@ In order to become eventually consistent, the replicas should converge toward th
   - We can simply say that two operations are concurrent if neither happens before the other.  
   - Either **A happened before B**, or **B happened before A**, or **A and B are concurrent**.
 
+### Capturing the happens-before relationship
+The server can determine whether two operations are concurrent by looking at the version numbers.
+
+- **Versioning mechanism:**  
+  - The server maintains a version number for every key.  
+  - It increments the version number every time that key is written.  
+  - The new version number is stored along with the value written.
+
+- **Client operations:**  
+  - **Read:**  
+    - When a client reads a key, the server returns all values that have not been overwritten, as well as the latest version number.  
+    - A client must read a key before writing.  
+  - **Write:**  
+    - When a client writes a key, it must include the version number from the prior read.  
+    - The client must merge together all values that it received in the prior read.
+
+- **Server handling writes:**  
+  - When the server receives a write with a particular version number:  
+    - It can overwrite all values with that version number or below.  
+    - It must keep all values with a higher version number.
+
