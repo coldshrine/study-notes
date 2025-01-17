@@ -1191,3 +1191,18 @@ The server can determine whether two operations are concurrent by looking at the
     - It can overwrite all values with that version number or below.  
     - It must keep all values with a higher version number.
 
+Merging concurrently written values  
+No data is silently dropped. It requires clients to do some extra work; they have to clean up afterward by merging the concurrently written values. Riak calls these concurrent values siblings.  
+
+Merging sibling values is the same problem as conflict resolution in multi-leader replication. A simple approach is to just pick one of the values based on a version number or timestamp (last write wins). You may need to do something more intelligent in application code to avoid losing data.  
+
+If you want to allow people to remove things, the union of siblings may not yield the right result. An item cannot simply be deleted from the database when it is removed; the system must leave a marker with an appropriate version number to indicate that the item has been removed when merging siblings (tombstone).  
+
+Merging siblings in application code is complex and error-prone. There are efforts to design data structures that can perform this merging automatically (CRDTs).  
+
+Version vectors  
+We need a version number per replica as well as per key. Each replica increments its own version number when processing a write and also keeps track of the version numbers it has seen from each of the other replicas.  
+
+The collection of version numbers from all the replicas is called a version vector.  
+
+Version vectors are sent from the database replicas to clients when values are read and need to be sent back to the database when a value is subsequently written. Riak calls this causal context. Version vectors allow the database to distinguish between overwrites and concurrent writes.  
