@@ -1206,3 +1206,49 @@ We need a version number per replica as well as per key. Each replica increments
 The collection of version numbers from all the replicas is called a version vector.  
 
 Version vectors are sent from the database replicas to clients when values are read and need to be sent back to the database when a value is subsequently written. Riak calls this causal context. Version vectors allow the database to distinguish between overwrites and concurrent writes.  
+
+# Partitioning  
+Replication, for very large datasets or very high query throughput is not sufficient, we need to break the data up into partitions (sharding).  
+
+Basically, each partition is a small database of its own.  
+
+The main reason for wanting to partition data is scalability, query load can be load cabe distributed across many processors. Throughput can be scaled by adding more nodes.  
+
+---
+
+## Partitioning and replication  
+Each record belongs to exactly one partition, it may still be stored on several nodes for fault tolerance.  
+
+A node may store more than one partition.  
+
+---
+
+## Partition of key-value data  
+Our goal with partitioning is to spread the data and the query load evenly across nodes.  
+
+If partition is unfair, we call it skewed. It makes partitioning much less effective. A partition with disproportionately high load is called a hot spot.  
+
+The simplest approach is to assign records to nodes randomly. The main disadvantage is that if you are trying to read a particular item, you have no way of knowing which node it is on, so you have to query all nodes in parallel.  
+
+---
+
+## Partition by key range  
+Assign a continuous range of keys, like the volumes of a paper encyclopaedia. Boundaries might be chose manually by an administrator, or the database can choose them automatically. On each partition, keys are in sorted order so scans are easy.  
+
+The downside is that certain access patterns can lead to hot spots.  
+
+---
+
+## Partitioning by hash of key  
+A good hash function takes skewed data and makes it uniformly distributed. There is no need to be cryptographically strong (MongoDB uses MD5 and Cassandra uses Murmur3). You can assign each partition a range of hashes. The boundaries can be evenly spaced or they can be chosen pseudorandomly (consistent hashing).  
+
+Unfortunately we lose the ability to do efficient range queries. Keys that were once adjacent are now scattered across all the partitions. Any range query has to be sent to all partitions.  
+
+---
+
+## Skewed workloads and relieving hot spots  
+You can't avoid hot spots entirely. For example, you may end up with large volume of writes to the same key.  
+
+It's the responsibility of the application to reduce the skew. A simple technique is to add a random number to the beginning or end of the key.  
+
+Splitting writes across different keys, makes reads now to do some extra work and combine them.  
