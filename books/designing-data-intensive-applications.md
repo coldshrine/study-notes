@@ -1252,3 +1252,23 @@ You can't avoid hot spots entirely. For example, you may end up with large volum
 It's the responsibility of the application to reduce the skew. A simple technique is to add a random number to the beginning or end of the key.  
 
 Splitting writes across different keys, makes reads now to do some extra work and combine them.  
+
+# Partitioning and Secondary Indexes
+
+The situation gets more complicated if **secondary indexes** are involved. A **secondary index** usually doesn't identify the record uniquely. They don't map neatly to partitions.
+
+## Partitioning Secondary Indexes by Document
+
+Each partition maintains its **secondary indexes**, covering only the documents in that partition (**local index**).
+
+You need to send the query to all partitions and combine all the results you get back (**scatter/gather**). This is prone to **tail latency amplification** and is widely used in **MongoDB**, **Riak**, **Cassandra**, **Elasticsearch**, **SolrCloud**, and **VoltDB**.
+
+## Partitioning Secondary Indexes by Term
+
+We construct a **global index** that covers data in all partitions. The **global index** must also be partitioned so it doesn't become the bottleneck.
+
+It is called **term-partitioned** because the term we're looking for determines the partition of the index.
+
+Partitioning by term can be useful for **range scans**, whereas partitioning on a **hash of the term** gives a more even distribution load.
+
+The advantage is that it can make reads more efficient: rather than doing **scatter/gather** over all partitions, a client only needs to make a request to the partition containing the term that it wants. The downside of a **global index** is that **writes are slower and complicated**.
