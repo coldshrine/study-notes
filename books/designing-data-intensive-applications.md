@@ -1347,3 +1347,43 @@ A common challenge is determining how the component making the routing decision 
 # Parallel Query Execution
 
 Massively Parallel Processing (**MPP**) relational database products are much more sophisticated in the types of queries they support.
+
+# Transactions
+
+Implementing fault-tolerant mechanisms is a significant challenge.
+
+## The Slippery Concept of a Transaction
+
+Transactions simplify fault tolerance and concurrency issues by grouping reads and writes into a single operation. Conceptually:
+
+- **All reads and writes in a transaction are executed as one operation.**
+  - Either the entire transaction succeeds (**commit**) or it fails (**abort/rollback**).
+- Transactions allow applications to ignore certain potential error scenarios and concurrency issues while ensuring **safety guarantees**.
+
+---
+
+## ACID
+
+The ACID properties describe the key guarantees of transactions:
+
+1. **Atomicity**  
+   - Not about concurrency but about handling partial writes.  
+   - If a fault occurs after some writes have been processed, the transaction aborts, leaving no partial changes.  
+   - **Better term:** Abortability.
+
+2. **Consistency**  
+   - Ensures that invariants on your data are always true.  
+   - This depends on the **application's notion of invariants** (e.g., specific rules for valid data).  
+   - While **atomicity, isolation, and durability** are properties of the database, **consistency** (in the ACID sense) is a property of the application.
+
+3. **Isolation**  
+   - Ensures that concurrently executing transactions are **isolated** from one another.  
+   - Also known as **serializability**:  
+     - Transactions behave as if they are running serially (one after another), even when they are executed concurrently.
+
+4. **Durability**  
+   - Guarantees that once a transaction successfully commits, its changes will not be lost, even in the event of:  
+     - Hardware faults.  
+     - Database crashes.  
+   - In a **single-node database**, this means writing data to **nonvolatile storage**.  
+   - In a **replicated database**, this means data is successfully copied to a required number of nodes.
