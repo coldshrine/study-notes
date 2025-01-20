@@ -1486,3 +1486,9 @@ MongoDB provides atomic operations for making local modifications, and Redis pro
 ##### Explicit locking
 
 The application explicitly lock objects that are going to be updated.
+
+##### Automatically detecting lost updates
+
+Allow them to execute in parallel, if the transaction manager detects a lost update, abort the transaction and force it to retry its read-modify-write cycle.
+
+MySQL/InnoDB's repeatable read does not detect lost updates.
