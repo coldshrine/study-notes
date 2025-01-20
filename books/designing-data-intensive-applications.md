@@ -1390,3 +1390,30 @@ The ACID properties describe the key guarantees of transactions:
 
 Atomicity can be implemented using a log for crash recovery, and isolation can be implemented using a lock on each object, allowing only one thread to access an object at any one time.
 
+# Transactions and Error Recovery
+
+A key feature of transactions is their ability to be **aborted and safely retried** if an error occurs.
+
+- In **datastores with leaderless replication**, it is the **application's responsibility** to handle error recovery.
+- The purpose of aborts is to ensure **safe retries**, enabling the application to recover from transient issues.
+
+---
+
+## Weak Isolation Levels
+
+Concurrency issues (e.g., race conditions) arise when:  
+1. One transaction reads data that is concurrently modified by another transaction.  
+2. Two transactions attempt to simultaneously modify the same data.
+
+### Database Isolation and Concurrency
+
+Databases provide **transaction isolation** to hide concurrency issues, but this comes with trade-offs:  
+
+- **Serializable Isolation**:  
+  - Provides the highest level of isolation, ensuring transactions behave as if executed one at a time.  
+  - However, it incurs a significant **performance cost**.
+
+- **Weaker Isolation Levels**:  
+  - Common in practice to reduce performance overhead.  
+  - These levels protect against **some** concurrency issues but not all.  
+  - Applications must account for the remaining issues, potentially increasing complexity.
