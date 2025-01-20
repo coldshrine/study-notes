@@ -1312,3 +1312,38 @@ The number of partitions adapts to the total data volume.
 Fully automated rebalancing may seem convenient, but the process can overload the network or the nodes and harm the performance of other requests while the rebalancing is in progress.
 
 It can be good to have a human in the loop for rebalancing. You may avoid operational surprises.
+
+# Request Routing
+
+This problem is also called **service discovery**. There are different approaches:
+
+1. **Allow clients to contact any node**  
+   - The node handles the request directly or forwards it to the appropriate node.
+
+2. **Use a routing tier**  
+   - Send all requests from clients to a routing tier that acts as a partition-aware load balancer.
+
+3. **Make clients aware of partitioning**  
+   - Clients are informed about the partitioning and the assignment of partitions to nodes.
+
+### Handling Changes in Partition Assignment
+
+A common challenge is determining how the component making the routing decision learns about changes in the assignment of partitions to nodes.
+
+- Many distributed data systems rely on a **separate coordination service** such as **ZooKeeper** to track cluster metadata:
+  - Each node registers itself in ZooKeeper.
+  - ZooKeeper maintains the authoritative mapping of partitions to nodes.
+  - The routing tier or the partitioning-aware client can subscribe to this information in ZooKeeper.
+  
+- Examples of systems using ZooKeeper:
+  - **HBase**, **SolrCloud**, and **Kafka**.
+
+- Systems with alternative approaches:
+  - **MongoDB** uses its own config server.
+  - **Cassandra** and **Riak** use a **gossip protocol**.
+
+---
+
+# Parallel Query Execution
+
+Massively Parallel Processing (**MPP**) relational database products are much more sophisticated in the types of queries they support.
