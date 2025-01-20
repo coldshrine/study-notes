@@ -1387,3 +1387,6 @@ The ACID properties describe the key guarantees of transactions:
      - Database crashes.  
    - In a **single-node database**, this means writing data to **nonvolatile storage**.  
    - In a **replicated database**, this means data is successfully copied to a required number of nodes.
+
+Atomicity can be implemented using a log for crash recovery, and isolation can be implemented using a lock on each object, allowing only one thread to access an object at any one time.
+
