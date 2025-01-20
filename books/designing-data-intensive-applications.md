@@ -1417,3 +1417,33 @@ Databases provide **transaction isolation** to hide concurrency issues, but this
   - Common in practice to reduce performance overhead.  
   - These levels protect against **some** concurrency issues but not all.  
   - Applications must account for the remaining issues, potentially increasing complexity.
+
+# Weak Isolation Levels in Practice
+
+## Read Committed
+
+The **Read Committed** isolation level provides two key guarantees:
+
+1. **No Dirty Reads**  
+   - When reading from the database, only **committed data** is visible.  
+   - Writes by a transaction only become visible to others after the transaction **commits**.
+
+2. **No Dirty Writes**  
+   - Transactions will only overwrite committed data.  
+   - Dirty writes are prevented by ensuring that:
+     - A second write is delayed until the first write's transaction has either committed or aborted.
+
+### Implementation of Read Committed
+
+#### Preventing Dirty Writes
+- Most databases use **row-level locks** to prevent dirty writes:
+  - A lock is held by the transaction performing the write until it commits or aborts.
+  - Only **one transaction** can hold the lock for any given object at a time.
+
+#### Preventing Dirty Reads
+- Requiring **read locks** is impractical in many cases:
+  - A long-running write transaction can block multiple read-only transactions, leading to significant delays.
+- Instead, databases handle dirty reads by:
+  - Remembering both the **old committed value** and the **new value** set by the transaction holding the write lock.
+  - While the transaction is ongoing:
+    - Other transactions reading the object are given the **old committed value**.
