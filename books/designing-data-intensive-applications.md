@@ -1272,3 +1272,43 @@ It is called **term-partitioned** because the term we're looking for determines 
 Partitioning by term can be useful for **range scans**, whereas partitioning on a **hash of the term** gives a more even distribution load.
 
 The advantage is that it can make reads more efficient: rather than doing **scatter/gather** over all partitions, a client only needs to make a request to the partition containing the term that it wants. The downside of a **global index** is that **writes are slower and complicated**.
+
+# Rebalancing Partitions
+
+The process of moving load from one node in the cluster to another.
+
+## Strategies for Rebalancing
+
+### How Not to Do It: Hash Mod N
+
+The problem with **mod N** is that if the number of nodes **N** changes, most of the keys will need to be moved from one node to another.
+
+### Fixed Number of Partitions
+
+Create many more partitions than there are nodes and assign several partitions to each node. If a node is added to the cluster, we can steal a few partitions from every existing node until partitions are fairly distributed once again. 
+
+- The number of partitions does not change, nor does the assignment of keys to partitions. 
+- The only thing that changes is the assignment of partitions to nodes. 
+- This is used in **Riak**, **Elasticsearch**, **Couchbase**, and **Voldemort**. 
+- You need to choose a high enough number of partitions to accommodate future growth—neither too big nor too small.
+
+### Dynamic Partitioning
+
+The number of partitions adapts to the total data volume. 
+
+- An empty database starts with an empty partition. 
+- While the dataset is small, all writes have to be processed by a single node while the other nodes sit idle. 
+- **HBase** and **MongoDB** allow an initial set of partitions to be configured (**pre-splitting**).
+
+### Partitioning Proportionally to Nodes
+
+**Cassandra** and **Ketama** make the number of partitions proportional to the number of nodes. 
+
+- Have a fixed number of partitions per node. 
+- This approach also keeps the size of each partition fairly stable.
+
+## Automatic Versus Manual Rebalancing
+
+Fully automated rebalancing may seem convenient, but the process can overload the network or the nodes and harm the performance of other requests while the rebalancing is in progress.
+
+It can be good to have a human in the loop for rebalancing. You may avoid operational surprises.
