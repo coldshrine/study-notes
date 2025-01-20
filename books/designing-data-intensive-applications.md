@@ -1447,3 +1447,28 @@ The **Read Committed** isolation level provides two key guarantees:
   - Remembering both the **old committed value** and the **new value** set by the transaction holding the write lock.
   - While the transaction is ongoing:
     - Other transactions reading the object are given the **old committed value**.
+
+Snapshot isolation and repeatable read  
+There are still plenty of ways in which you can have concurrency bugs when using this isolation level.  
+
+Nonrepeatable read or read skew, when you read at the same time you committed a change you may see temporal and inconsistent results.  
+
+There are some situations that cannot tolerate such temporal inconsistencies:  
+
+Backups. During the time that the backup process is running, writes will continue to be made to the database. If you need to restore from such a backup, inconsistencies can become permanent.  
+Analytic queries and integrity checks. You may get nonsensical results if they observe parts of the database at different points in time.  
+
+Snapshot isolation is the most common solution. Each transaction reads from a consistent snapshot of the database.  
+
+The implementation of snapshots typically use write locks to prevent dirty writes.  
+
+The database must potentially keep several different committed versions of an object (multi-version concurrency control or MVCC).  
+
+Read committed uses a separate snapshot for each query, while snapshot isolation uses the same snapshot for an entire transaction.  
+
+How do indexes work in a multi-version database? One option is to have the index simply point to all versions of an object and require an index query to filter out any object versions that are not visible to the current transaction.  
+
+Snapshot isolation is called serializable in Oracle, and repeatable read in PostgreSQL and MySQL.  
+
+## Preventing lost updates
+This might happen if an application reads some value from the database, modifies it, and writes it back. If two transactions do this concurrently, one of the modifications can be lost (later write clobbers the earlier write).
