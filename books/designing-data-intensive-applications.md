@@ -1472,3 +1472,17 @@ Snapshot isolation is called serializable in Oracle, and repeatable read in Post
 
 ## Preventing lost updates
 This might happen if an application reads some value from the database, modifies it, and writes it back. If two transactions do this concurrently, one of the modifications can be lost (later write clobbers the earlier write).
+
+##### Atomic write operations
+
+A solution for this it to avoid the need to implement read-modify-write cycles and provide atomic operations such us
+
+```sql
+UPDATE counters SET value = value + 1 WHERE key = 'foo';
+```
+
+MongoDB provides atomic operations for making local modifications, and Redis provides atomic operations for modifying data structures.
+
+##### Explicit locking
+
+The application explicitly lock objects that are going to be updated.
