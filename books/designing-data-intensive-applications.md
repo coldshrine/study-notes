@@ -1492,3 +1492,69 @@ The application explicitly lock objects that are going to be updated.
 Allow them to execute in parallel, if the transaction manager detects a lost update, abort the transaction and force it to retry its read-modify-write cycle.
 
 MySQL/InnoDB's repeatable read does not detect lost updates.
+
+##### Compare-and-set
+
+If the current value does not match with what you previously read, the update has no effect.
+
+```SQL
+UPDATE wiki_pages SET content = 'new content'
+  WHERE id = 1234 AND content = 'old content';
+```
+
+##### Conflict resolution and replication
+
+With multi-leader or leaderless replication, compare-and-set do not apply.
+
+A common approach in replicated databases is to allow concurrent writes to create several conflicting versions of a value (also know as _siblings_), and to use application code or special data structures to resolve and merge these versions after the fact.
+
+#### Write skew and phantoms
+
+Imagine Alice and Bob are two on-call doctors for a particular shift. Imagine both the request to leave because they are feeling unwell. Unfortunately they happen to click the button to go off call at approximately the same time.
+
+    ALICE                                   BOB
+
+    ┌─ BEGIN TRANSACTION                    ┌─ BEGIN TRANSACTION
+    │                                       │
+    ├─ currently_on_call = (                ├─ currently_on_call = (
+    │   select count(*) from doctors        │    select count(*) from doctors
+    │   where on_call = true                │    where on_call = true
+    │   and shift_id = 1234                 │    and shift_id = 1234
+    │  )                                    │  )
+    │  // now currently_on_call = 2         │  // now currently_on_call = 2
+    │                                       │
+    ├─ if (currently_on_call  2) {          │
+    │    update doctors                     │
+    │    set on_call = false                │
+    │    where name = 'Alice'               │
+    │    and shift_id = 1234                ├─ if (currently_on_call >= 2) {
+    │  }                                    │    update doctors
+    │                                       │    set on_call = false
+    └─ COMMIT TRANSACTION                   │    where name = 'Bob'  
+                                            │    and shift_id = 1234
+                                            │  }
+                                            │
+                                            └─ COMMIT TRANSACTION
+
+Since database is using snapshot isolation, both checks return 2. Both transactions commit, and now no doctor is on call. The requirement of having at least one doctor has been violated.
+
+Write skew can occur if two transactions read the same objects, and then update some of those objects. You get a dirty write or lost update anomaly.
+
+Ways to prevent write skew are a bit more restricted:
+* Atomic operations don't help as things involve more objects.
+* Automatically prevent write skew requires true serializable isolation.
+* The second-best option in this case is probably to explicitly lock the rows that the transaction depends on.
+  ```sql
+  BEGIN TRANSACTION;
+
+  SELECT * FROM doctors
+  WHERE on_call = true
+  AND shift_id = 1234 FOR UPDATE;
+
+  UPDATE doctors
+  SET on_call = false
+  WHERE name = 'Alice'
+  AND shift_id = 1234;
+
+  COMMIT;
+  ```
