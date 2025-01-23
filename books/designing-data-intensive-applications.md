@@ -1558,3 +1558,12 @@ Ways to prevent write skew are a bit more restricted:
 
   COMMIT;
   ```
+
+### Serializability
+
+This is the strongest isolation level. It guarantees that even though transactions may execute in parallel, the end result is the same as if they had executed one at a time, _serially_, without concurrency. Basically, the database prevents _all_ possible race conditions.
+
+There are three techniques for achieving this:
+* Executing transactions in serial order
+* Two-phase locking
+* Serializable snapshot isolation.
