@@ -1567,3 +1567,7 @@ There are three techniques for achieving this:
 * Executing transactions in serial order
 * Two-phase locking
 * Serializable snapshot isolation.
+
+#### Actual serial execution
+
+The simplest way of removing concurrency problems is to remove concurrency entirely and execute only one transaction at a time, in serial order, on a single thread. This approach is implemented by VoltDB/H-Store, Redis and Datomic.
