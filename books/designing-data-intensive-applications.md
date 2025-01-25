@@ -1571,3 +1571,23 @@ There are three techniques for achieving this:
 #### Actual serial execution
 
 The simplest way of removing concurrency problems is to remove concurrency entirely and execute only one transaction at a time, in serial order, on a single thread. This approach is implemented by VoltDB/H-Store, Redis and Datomic.
+
+##### Encapsulating transactions in stored procedures
+
+With interactive style of transaction, a lot of time is spent in network communication between the application and the database.
+
+For this reason, systems with single-threaded serial transaction processing don't allow interactive multi-statement transactions. The application must submit the entire transaction code to the database ahead of time, as a _stored procedure_, so all the data required by the transaction is in memory and the procedure can execute very fast.
+
+There are a few pros and cons for stored procedures:
+* Each database vendor has its own language for stored procedures. They usually look quite ugly and archaic from today's point of view, and they lack the ecosystem of libraries.
+* It's harder to debug, more awkward to keep in version control and deploy, trickier to test, and difficult to integrate with monitoring.
+
+Modern implementations of stored procedures include general-purpose programming languages instead: VoltDB uses Java or Groovy, Datomic uses Java or Clojure, and Redis uses Lua.
+
+##### Partitioning
+
+Executing all transactions serially limits the transaction throughput to the speed of a single CPU.
+
+In order to scale to multiple CPU cores you can potentially partition your data and each partition can have its own transaction processing thread. You can give each CPU core its own partition.
+
+For any transaction that needs to access multiple partitions, the database must coordinate the transaction across all the partitions. They will be vastly slower than single-partition transactions.
