@@ -1605,3 +1605,8 @@ Blocking readers and writers is implemented by a having lock on each object in t
 * If a transaction wants to write to an object, it must first acquire the lock in exclusive mode.
 * If a transaction first reads and then writes an object, it may upgrade its shared lock to an exclusive lock.
 * After a transaction has acquired the lock, it must continue to hold the lock until the end of the transaction (commit or abort). **First phase is when the locks are acquired, second phase is when all the locks are released.**
+
+
+It can happen that transaction A is stuck waiting for transaction B to release its lock, and vice versa (_deadlock_).
+
+**The performance for transaction throughput and response time of queries are significantly worse under two-phase locking than under weak isolation.**
