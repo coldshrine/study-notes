@@ -1591,3 +1591,17 @@ Executing all transactions serially limits the transaction throughput to the spe
 In order to scale to multiple CPU cores you can potentially partition your data and each partition can have its own transaction processing thread. You can give each CPU core its own partition.
 
 For any transaction that needs to access multiple partitions, the database must coordinate the transaction across all the partitions. They will be vastly slower than single-partition transactions.
+
+#### Two-phase locking (2PL)
+
+> Two-phase locking (2PL) sounds similar to two-phase _commit_ (2PC) but be aware that they are completely different things.
+
+Several transactions are allowed to concurrently read the same object as long as nobody is writing it. When somebody wants to write (modify or delete) an object, exclusive access is required.
+
+Writers don't just block other writers; they also block readers and vice versa. It protects against all the race conditions discussed earlier.
+
+Blocking readers and writers is implemented by a having lock on each object in the database. The lock is used as follows:
+* if a transaction want sot read an object, it must first acquire a lock in shared mode.
+* If a transaction wants to write to an object, it must first acquire the lock in exclusive mode.
+* If a transaction first reads and then writes an object, it may upgrade its shared lock to an exclusive lock.
+* After a transaction has acquired the lock, it must continue to hold the lock until the end of the transaction (commit or abort). **First phase is when the locks are acquired, second phase is when all the locks are released.**
