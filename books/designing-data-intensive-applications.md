@@ -1630,3 +1630,7 @@ Predicate locks do not perform well. Checking for matching locks becomes time-co
 It's safe to simplify a predicate by making it match a greater set of objects.
 
 These locks are not as precise as predicate locks would be, but since they have much lower overheads, they are a good compromise.
+
+#### Serializable snapshot isolation (SSI)
+
+It provides full serializability and has a small performance penalty compared to snapshot isolation. SSI is fairly new and might become the new default in the future.
