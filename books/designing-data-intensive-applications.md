@@ -1610,3 +1610,15 @@ Blocking readers and writers is implemented by a having lock on each object in t
 It can happen that transaction A is stuck waiting for transaction B to release its lock, and vice versa (_deadlock_).
 
 **The performance for transaction throughput and response time of queries are significantly worse under two-phase locking than under weak isolation.**
+
+A transaction may have to wait for several others to complete before it can do anything.
+
+Databases running 2PL can have unstable latencies, and they can be very slow at high percentiles. One slow transaction, or one transaction that accesses a lot of data and acquires many locks can cause the rest of the system to halt.
+
+##### Predicate locks
+
+With _phantoms_, one transaction may change the results of another transaction's search query.
+
+In order to prevent phantoms, we need a _predicate lock_. Rather than a lock belonging to a particular object, it belongs to all objects that match some search condition.
+
+Predicate locks applies even to objects that do not yet exist in the database, but which might be added in the future (phantoms).
