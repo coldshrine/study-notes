@@ -1622,3 +1622,11 @@ With _phantoms_, one transaction may change the results of another transaction's
 In order to prevent phantoms, we need a _predicate lock_. Rather than a lock belonging to a particular object, it belongs to all objects that match some search condition.
 
 Predicate locks applies even to objects that do not yet exist in the database, but which might be added in the future (phantoms).
+
+##### Index-range locks
+
+Predicate locks do not perform well. Checking for matching locks becomes time-consuming and for that reason most databases implement _index-range locking_.
+
+It's safe to simplify a predicate by making it match a greater set of objects.
+
+These locks are not as precise as predicate locks would be, but since they have much lower overheads, they are a good compromise.
