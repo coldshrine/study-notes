@@ -1698,3 +1698,10 @@ A long timeout means a long wait until a node is declared dead. A short timeout 
 Premature declaring a node is problematic, if the node is actually alive the action may end up being performed twice.
 
 When a node is declared dead, its responsibilities need to be transferred to other nodes, which places additional load on other nodes and the network.
+
+#### Network congestion and queueing
+
+- Different nodes try to send packets simultaneously to the same destination, the network switch must queue them and feed them to the destination one by one. The switch will discard packets when filled up.
+- If CPU cores are busy, the request is queued by the operative system, until applications are ready to handle it.
+- In virtual environments, the operative system is often paused while another virtual machine uses a CPU core. The VM queues the incoming data.
+- TCP performs _flow control_, in which a node limits its own rate of sending in order to avoid overloading a network link or the receiving node. This means additional queuing at the sender.
