@@ -1650,3 +1650,51 @@ SSI is based on snapshot isolation, reads within a transaction are made from a c
 The database knows which transactions may have acted on an outdated premise and need to be aborted by:
 * **Detecting reads of a stale MVCC object version.** The database needs to track when a transaction ignores another transaction's writes due to MVCC visibility rules. When a transaction wants to commit, the database checks whether any of the ignored writes have now been committed. If so, the transaction must be aborted.
 * **Detecting writes that affect prior reads.** As with two-phase locking, SSI uses index-range locks except that it does not block other transactions. When a transaction writes to the database, it must look in the indexes for any other transactions that have recently read the affected data. It simply notifies the transactions that the data they read may no longer be up to date.
+
+##### Performance of serializable snapshot isolation
+
+Compared to two-phase locking, the big advantage of SSI is that one transaction doesn't need to block waiting for locks held by another transaction. Writers don't block readers, and vice versa.
+
+Compared to serial execution, SSI is not limited to the throughput of a single CPU core. Transactions can read and write data in multiple partitions while ensuring serializable isolation.
+
+The rate of aborts significantly affects the overall performance of SSI. SSI requires that read-write transactions be fairly short (long-running read-only transactions may be okay).
+
+## The trouble with distributed systems
+
+### Faults and partial failures
+
+A program on a single computer either works or it doesn't. There is no reason why software should be flaky (non deterministic).
+
+In a distributed systems we have no choice but to confront the messy reality of the physical world. There will be parts that are broken in an unpredictable way, while others work. Partial failures are _nondeterministic_. Things will unpredicably fail.
+
+We need to accept the possibility of partial failure and build fault-tolerant mechanism into the software. **We need to build a reliable system from unreliable components.**
+
+### Unreliable networks
+
+Focusing on _shared-nothing systems_ the network is the only way machines communicate.
+
+The internet and most internal networks are _asynchronous packet networks_. A message is sent and the network gives no guarantees as to when it will arrive, or whether it will arrive at all. Things that could go wrong:
+1. Request lost
+2. Request waiting in a queue to be delivered later
+3. Remote node may have failed
+4. Remote node may have temporarily stoped responding
+5. Response has been lost on the network
+6. The response has been delayed and will be delivered later
+
+If you send a request to another node and don't receive a response, it is _impossible_ to tell why.
+
+**The usual way of handling this issue is a _timeout_**: after some time you give up waiting and assume that the response is not going to arrive.
+
+Nobody is immune to network problems. You do need to know how your software reacts to network problems to ensure that the system can recover from them. It may make sense to deliberately trigger network problems and test the system's response.
+
+If you want to be sure that a request was successful, you need a positive response from the application itself.
+
+If something has gone wrong, you have to assume that you will get no response at all.
+
+#### Timeouts and unbounded delays
+
+A long timeout means a long wait until a node is declared dead. A short timeout detects faults faster, but carries a higher risk of incorrectly declaring a node dead (when it could be a slowdown).
+
+Premature declaring a node is problematic, if the node is actually alive the action may end up being performed twice.
+
+When a node is declared dead, its responsibilities need to be transferred to other nodes, which places additional load on other nodes and the network.
