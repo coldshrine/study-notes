@@ -1709,3 +1709,9 @@ When a node is declared dead, its responsibilities need to be transferred to oth
 You can choose timeouts experimentally by measuring the distribution of network round-trip times over an extended period.
 
 Systems can continually measure response times and their variability (_jitter_), and automatically adjust timeouts according to the observed response time distribution.
+
+#### Synchronous vs ashynchronous networks
+
+A telephone network estabilishes a _circuit_, we say is _synchronous_ even as the data passes through several routers as it does not suffer from queing. The maximum end-to-end latency of the network is fixed (_bounded delay_).
+
+A circuit is a fixed amount of reserved bandwidth which nobody else can use while the circuit is established, whereas packets of a TCP connection opportunistically use whatever network bandwidth is available.
