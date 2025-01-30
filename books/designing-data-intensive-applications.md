@@ -1705,3 +1705,7 @@ When a node is declared dead, its responsibilities need to be transferred to oth
 - If CPU cores are busy, the request is queued by the operative system, until applications are ready to handle it.
 - In virtual environments, the operative system is often paused while another virtual machine uses a CPU core. The VM queues the incoming data.
 - TCP performs _flow control_, in which a node limits its own rate of sending in order to avoid overloading a network link or the receiving node. This means additional queuing at the sender.
+
+You can choose timeouts experimentally by measuring the distribution of network round-trip times over an extended period.
+
+Systems can continually measure response times and their variability (_jitter_), and automatically adjust timeouts according to the observed response time distribution.
