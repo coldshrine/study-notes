@@ -1732,3 +1732,11 @@ Each machine on the network has its own clock, slightly faster or slower than th
 If some piece of sofware is relying on an accurately synchronised clock, the result is more likely to be silent and subtle data loss than a dramatic crash.
 
 You need to carefully monitor the clock offsets between all the machines.
+
+#### Timestamps for ordering events
+
+**It is tempting, but dangerous to rely on clocks for ordering of events across multiple nodes.** This usually imply that _last write wins_ (LWW), often used in both multi-leader replication and leaderless databases like Cassandra and Riak, and data-loss may happen.
+
+The definition of "recent" also depends on local time-of-day clock, which may well be incorrect.
+
+_Logical clocks_, based on counters instead of oscillating quartz crystal, are safer alternative for ordering events. Logical clocks do not measure time of the day or elapsed time, only relative ordering of events. This contrasts with time-of-the-day and monotic clocks (also known as _physical clocks_).
