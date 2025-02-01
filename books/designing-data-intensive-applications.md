@@ -1754,3 +1754,4 @@ A = [A earliest, A latest]
 B = [B earliest, B latest]
 ```
 
+And those two intervals do not overlap (`A earliest` < `A latest` < `B earliest` < `B latest`), then B definetively happened after A.
