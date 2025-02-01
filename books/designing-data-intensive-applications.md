@@ -1746,3 +1746,11 @@ _Logical clocks_, based on counters instead of oscillating quartz crystal, are s
 It doesn't make sense to think of a clock reading as a point in time, it is more like a range of times, within a confidence internval: for example, 95% confident that the time now is between 10.3 and 10.5.
 
 The most common implementation of snapshot isolation requires a monotonically increasing transaction ID.
+
+Spanner implements snapshot isolation across datacenters by using clock's confidence interval. If you have two confidence internvals where
+
+```
+A = [A earliest, A latest]
+B = [B earliest, B latest]
+```
+
