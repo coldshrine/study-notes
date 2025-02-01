@@ -1740,3 +1740,7 @@ You need to carefully monitor the clock offsets between all the machines.
 The definition of "recent" also depends on local time-of-day clock, which may well be incorrect.
 
 _Logical clocks_, based on counters instead of oscillating quartz crystal, are safer alternative for ordering events. Logical clocks do not measure time of the day or elapsed time, only relative ordering of events. This contrasts with time-of-the-day and monotic clocks (also known as _physical clocks_).
+
+#### Clock readings have a confidence interval
+
+It doesn't make sense to think of a clock reading as a point in time, it is more like a range of times, within a confidence internval: for example, 95% confident that the time now is between 10.3 and 10.5.
