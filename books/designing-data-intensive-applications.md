@@ -1759,3 +1759,7 @@ And those two intervals do not overlap (`A earliest` < `A latest` < `B earliest`
 Spanner deliberately waits for the length of the confidence interval before commiting a read-write transaction, so their confidence intervals do not overlap.
 
 Spanner needs to keep the clock uncertainty as small as possible, that's why Google deploys a GPS receiver or atomic clock in each datacenter.
+
+#### Process pauses
+
+How does a node know that it is still leader?
