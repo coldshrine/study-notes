@@ -1763,3 +1763,5 @@ Spanner needs to keep the clock uncertainty as small as possible, that's why Goo
 #### Process pauses
 
 How does a node know that it is still leader?
+
+One option is for the leader to obtain a _lease_ from other nodes (similar ot a lock with a timeout). It will be the leader until the lease expires; to remain leader, the node must periodically renew the lease. If the node fails, another node can takeover when it expires.
