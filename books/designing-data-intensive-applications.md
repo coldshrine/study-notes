@@ -1755,3 +1755,5 @@ B = [B earliest, B latest]
 ```
 
 And those two intervals do not overlap (`A earliest` < `A latest` < `B earliest` < `B latest`), then B definetively happened after A.
+
+Spanner deliberately waits for the length of the confidence interval before commiting a read-write transaction, so their confidence intervals do not overlap.
