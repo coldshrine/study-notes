@@ -1774,3 +1774,12 @@ We have to be very careful making assumptions about the time that has passed for
 * Synchronous disk access
 * Swapping to disk (paging)
 * Unix process can be stopped (`SIGSTOP`)
+
+
+**You cannot assume anything about timing**
+
+##### Response time guarantees
+
+There are systems that require software to respond before a specific _deadline_ (_real-time operating system, or RTOS_).
+
+Library functions must document their worst-case execution times; dynamic memory allocation may be restricted or disallowed and enormous amount of testing and measurement must be done.
