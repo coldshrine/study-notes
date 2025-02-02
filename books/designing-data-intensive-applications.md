@@ -1765,3 +1765,12 @@ Spanner needs to keep the clock uncertainty as small as possible, that's why Goo
 How does a node know that it is still leader?
 
 One option is for the leader to obtain a _lease_ from other nodes (similar ot a lock with a timeout). It will be the leader until the lease expires; to remain leader, the node must periodically renew the lease. If the node fails, another node can takeover when it expires.
+
+We have to be very careful making assumptions about the time that has passed for processing requests (and holding the lease), as there are many reasons a process would be paused:
+* Garbage collector (stop the world)
+* Virtual machine can be suspended
+* In laptops execution may be suspended
+* Operating system context-switches
+* Synchronous disk access
+* Swapping to disk (paging)
+* Unix process can be stopped (`SIGSTOP`)
