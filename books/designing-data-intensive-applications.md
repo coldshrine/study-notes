@@ -1783,3 +1783,7 @@ We have to be very careful making assumptions about the time that has passed for
 There are systems that require software to respond before a specific _deadline_ (_real-time operating system, or RTOS_).
 
 Library functions must document their worst-case execution times; dynamic memory allocation may be restricted or disallowed and enormous amount of testing and measurement must be done.
+
+Garbage collection could be treated like brief planned outages. If the runtime can warn the application that a node soon requires a GC pause, the application can stop sending new requests to that node and perform GC while no requests are in progress.
+
+A variant of this idea is to use the garbage collector only for short-lived objects and to restart the process periodically.
