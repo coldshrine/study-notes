@@ -1787,3 +1787,17 @@ Library functions must document their worst-case execution times; dynamic memory
 Garbage collection could be treated like brief planned outages. If the runtime can warn the application that a node soon requires a GC pause, the application can stop sending new requests to that node and perform GC while no requests are in progress.
 
 A variant of this idea is to use the garbage collector only for short-lived objects and to restart the process periodically.
+
+### Knowledge, truth and lies
+
+A node cannot necessarily trust its own judgement of a situation. Many distributed systems rely on a _quorum_ (voting among the nodes).
+
+Commonly, the quorum is an absolute majority of more than half of the nodes.
+
+#### Fencing tokens
+
+Assume every time the lock server grant sa lock or a lease, it also returns a _fencing token_, which is a number that increases every time a lock is granted (incremented by the lock service). Then we can require every time a client sends a write request to the storage service, it must include its current fencing token.
+
+The storage server remembers that it has already processed a write with a higher token number, so it rejects the request with the last token.
+
+If ZooKeeper is used as lock service, the transaciton ID `zcid` or the node version `cversion` can be used as a fencing token.
