@@ -1801,3 +1801,13 @@ Assume every time the lock server grant sa lock or a lease, it also returns a _f
 The storage server remembers that it has already processed a write with a higher token number, so it rejects the request with the last token.
 
 If ZooKeeper is used as lock service, the transaciton ID `zcid` or the node version `cversion` can be used as a fencing token.
+
+#### Byzantine faults
+
+Fencing tokens can detect and block a node that is _inadvertently_ acting in error.
+
+Distributed systems become much harder if there is a risk that nodes may "lie" (_byzantine fault_).
+
+A system is _Byzantine fault-tolerant_ if it continues to operate correctly even if some of the nodes are malfunctioning.
+* Aerospace environments
+* Multiple participating organisations, some participants may attempt ot cheat or defraud others
