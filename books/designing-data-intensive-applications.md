@@ -1815,3 +1815,11 @@ A system is _Byzantine fault-tolerant_ if it continues to operate correctly even
 ## Consistency and consensus
 
 The simplest way of handling faults is to simply let the entire service fail. We need to find ways of _tolerating_ faults.
+
+### Consistency guarantees
+
+Write requests arrive on different nodes at different times.
+
+Most replicated databases provide at least _eventual consistency_. The inconsistency is temporary, and eventually resolves itself (_convergence_).
+
+With weak guarantees, you need to be constantly aware of its limitations. Systems with stronger guarantees may have worse performance or be less fault-tolerant than systems with weaker guarantees.
