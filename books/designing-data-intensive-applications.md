@@ -1811,3 +1811,7 @@ Distributed systems become much harder if there is a risk that nodes may "lie" (
 A system is _Byzantine fault-tolerant_ if it continues to operate correctly even if some of the nodes are malfunctioning.
 * Aerospace environments
 * Multiple participating organisations, some participants may attempt ot cheat or defraud others
+
+## Consistency and consensus
+
+The simplest way of handling faults is to simply let the entire service fail. We need to find ways of _tolerating_ faults.
