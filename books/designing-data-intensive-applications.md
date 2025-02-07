@@ -1823,3 +1823,18 @@ Write requests arrive on different nodes at different times.
 Most replicated databases provide at least _eventual consistency_. The inconsistency is temporary, and eventually resolves itself (_convergence_).
 
 With weak guarantees, you need to be constantly aware of its limitations. Systems with stronger guarantees may have worse performance or be less fault-tolerant than systems with weaker guarantees.
+
+### Linearizability
+
+Make a system appear as if there were only one copy of the data, and all operaitons on it are atomic.
+
+* `read(x) => v` Read from register _x_, database returns value _v_.
+* `write(x,v) => r` _r_ could be _ok_ or _error_.
+
+If one client read returns the new value, all subsequent reads must also return the new value.
+
+* `cas(x_old, v_old, v_new) => r` an atomic _compare-and-set_ operation. If the value of the register _x_ equals _v_old_, it is atomically set to _v_new_. If `x != v_old` the registers is unchanged and it returns an error.
+
+**Serializability**: Transactions behave the same as if they had executed _some_ serial order.
+
+**Linearizability**: Recency guarantee on reads and writes of a register (individual object).
