@@ -1838,3 +1838,42 @@ If one client read returns the new value, all subsequent reads must also return 
 **Serializability**: Transactions behave the same as if they had executed _some_ serial order.
 
 **Linearizability**: Recency guarantee on reads and writes of a register (individual object).
+
+#### Locking and leader election
+
+To ensure that there is indeed only one leader, a lock is used. It must be linearizable: all nodes must agree which nodes owns the lock; otherwise is useless.
+
+Apache ZooKeepr and etcd are often used for distributed locks and leader election.
+
+#### Constraints and uniqueness guarantees
+
+Unique constraints, like a username or an email address require a situation similiar to a lock.
+
+A hard uniqueness constraint in relational databases requires linearizability.
+
+#### Implementing linearizable systems
+
+The simplest approach would be to have a single copy of the data, but this would not be able to tolerate faults.
+
+* Single-leader repolication is potentially linearizable.
+* Consensus algorithms is linearizable.
+* Multi-leader replication is not linearizable.
+* Leaderless replication is probably not linearizable.
+
+Multi-leader replication is often a good choice for multi-datacenter replication. On a network interruption betwen data-centers will force a choice between linearizability and availability.
+
+With multi-leader configuraiton, each data center can operate normally with interruptions.
+
+With single-leader replication, the leader must be in one of the datacenters. If the application requires linearizable reads and writes, the network interruption causes the application to become unavailable.
+
+* If your applicaiton _requires_ linearizability, and some replicas are disconnected from the other replicas due to a network problem, the some replicas cannot process request while they are disconnected (unavailable).
+
+* If your application _does not require_, then it can be written in a way tha each replica can process requests independently, even if it is disconnected from other replicas (peg: multi-leader), becoming _available_.
+
+**If an application does not require linearizability it can be more tolerant of network problems.**
+
+#### The unhelpful CAP theorem
+
+CAP is sometimes presented as _Consistency, Availability, Partition tolerance: pick 2 out of 3_. Or being said in another way _either Consistency or Available when Partitioned_.
+
+CAP only considers one consistency model (linearizability) and one kind of fault (_network partitions_, or nodes that are alive but disconnected from each other). It doesn't say anything about network delays, dead nodes, or other trade-offs. CAP has been historically influential, but nowadays has little practical value for designing systems.
