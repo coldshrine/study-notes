@@ -1877,3 +1877,24 @@ With single-leader replication, the leader must be in one of the datacenters. If
 CAP is sometimes presented as _Consistency, Availability, Partition tolerance: pick 2 out of 3_. Or being said in another way _either Consistency or Available when Partitioned_.
 
 CAP only considers one consistency model (linearizability) and one kind of fault (_network partitions_, or nodes that are alive but disconnected from each other). It doesn't say anything about network delays, dead nodes, or other trade-offs. CAP has been historically influential, but nowadays has little practical value for designing systems.
+
+---
+
+The main reason for dropping linearizability is _performance_, not fault tolerance. Linearizabilit is slow and this is true all the time, not on only during a network fault.
+
+### Ordering guarantees
+
+Cause comes before the effect. Causal order in the system is what happened before what (_causally consistent_).
+
+_Total order_ allows any two elements to be compared. Peg, natural numbers are totally ordered.
+
+Some cases one set is greater than another one.
+
+Different consistency models:
+
+* Linearizablity. _total order_ of operations: if the system behaves as if there is only a single copy of the data.
+* Causality. Two events are ordered if they are causally related. Causality defines _a partial order_, not a total one (incomparable if they are concurrent).
+
+Linearizability is not the only way of preserving causality. **Causal consistency is the strongest possible consistency model that does not slow down due to network delays, and remains available in the face of network failures.**
+
+You need to know which operation _happened before_.
