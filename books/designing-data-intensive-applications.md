@@ -1900,3 +1900,7 @@ Linearizability is not the only way of preserving causality. **Causal consistenc
 You need to know which operation _happened before_.
 
 In order to determine the causal ordering, the database needs to know which version of the data was read by the application. **The version number from the prior operation is passed back to the database on a write.**
+
+We can create sequence numbers in a total order that is _consistent with causality_.
+
+With a single-leader replication, the leader can simply increment a counter for each operation, and thus assign a monotonically increasing sequence number to each operation in the replication log.
