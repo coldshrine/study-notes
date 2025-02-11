@@ -1898,3 +1898,5 @@ Different consistency models:
 Linearizability is not the only way of preserving causality. **Causal consistency is the strongest possible consistency model that does not slow down due to network delays, and remains available in the face of network failures.**
 
 You need to know which operation _happened before_.
+
+In order to determine the causal ordering, the database needs to know which version of the data was read by the application. **The version number from the prior operation is passed back to the database on a write.**
