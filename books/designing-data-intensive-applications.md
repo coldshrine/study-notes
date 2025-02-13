@@ -1925,3 +1925,7 @@ Total order of oepration only emerges after you have collected all of the operat
 Total order broadcast:
 * Reliable delivery: If a message is delivered to one node, it is delivered to all nodes.
 * Totally ordered delivery: Mesages are delivered to every node in the same order.
+
+ZooKeeper and etcd implement total order broadcast.
+
+If every message represents a write to the database, and every replica processes the same writes in the same order, then the replcias will remain consistent with each other (_state machine replication_).
