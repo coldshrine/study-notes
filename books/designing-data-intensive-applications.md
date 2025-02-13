@@ -1904,3 +1904,8 @@ In order to determine the causal ordering, the database needs to know which vers
 We can create sequence numbers in a total order that is _consistent with causality_.
 
 With a single-leader replication, the leader can simply increment a counter for each operation, and thus assign a monotonically increasing sequence number to each operation in the replication log.
+
+If there is not a single leader (multi-leader or leaderless database):
+* Each node can generate its own independent set of sequence numbers. One node can generate only odd numbers and the other only even numbers.
+* Attach a timestamp from a time-of-day clock.
+* Preallocate blocks of sequence numbers.
