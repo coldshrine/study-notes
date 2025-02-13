@@ -1911,3 +1911,5 @@ If there is not a single leader (multi-leader or leaderless database):
 * Preallocate blocks of sequence numbers.
 
 The only problem is that the sequence numbers they generate are _not consistent with causality_. They do not correctly capture ordering of operations across different nodes.
+
+There is simple method for generating sequence numbers that _is_ consistent with causality: _Lamport timestamps_.
