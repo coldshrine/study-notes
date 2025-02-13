@@ -1913,3 +1913,5 @@ If there is not a single leader (multi-leader or leaderless database):
 The only problem is that the sequence numbers they generate are _not consistent with causality_. They do not correctly capture ordering of operations across different nodes.
 
 There is simple method for generating sequence numbers that _is_ consistent with causality: _Lamport timestamps_.
+
+Each node has a unique identifier, and each node keeps a counter of the number of operations it has processed. The lamport timestamp is then simply a pair of (_counter_, _node ID_). It provides total order, as if you have two timestamps one with a greater counter value is the greater timestamp. If the counter values are the same, the one with greater node ID is the greater timestamp.
