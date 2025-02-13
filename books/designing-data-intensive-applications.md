@@ -1909,3 +1909,5 @@ If there is not a single leader (multi-leader or leaderless database):
 * Each node can generate its own independent set of sequence numbers. One node can generate only odd numbers and the other only even numbers.
 * Attach a timestamp from a time-of-day clock.
 * Preallocate blocks of sequence numbers.
+
+The only problem is that the sequence numbers they generate are _not consistent with causality_. They do not correctly capture ordering of operations across different nodes.
