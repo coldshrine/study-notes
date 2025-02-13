@@ -1919,3 +1919,9 @@ Each node has a unique identifier, and each node keeps a counter of the number o
 Every node and every client keeps track of the _maximum_ counter value it has seen so far, and includes that maximum on every request. When a node receives a request of response with a maximum counter value greater than its own counter value, it inmediately increases its own counter to that maximum.
 
 As long as the maximum counter value is carried along with every operation, this scheme  ensure that the ordering from the lamport timestamp is consistent with causality.
+
+Total order of oepration only emerges after you have collected all of the operations.
+
+Total order broadcast:
+* Reliable delivery: If a message is delivered to one node, it is delivered to all nodes.
+* Totally ordered delivery: Mesages are delivered to every node in the same order.
