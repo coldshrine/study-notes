@@ -1929,3 +1929,7 @@ Total order broadcast:
 ZooKeeper and etcd implement total order broadcast.
 
 If every message represents a write to the database, and every replica processes the same writes in the same order, then the replcias will remain consistent with each other (_state machine replication_).
+
+A node is not allowed to retroactgively insert a message into an earlier position in the order if subsequent messages have already been dlivered.
+
+Another way of looking at total order broadcast is that it is a way of creating a _log_. Delivering a message is like appending to the log.
