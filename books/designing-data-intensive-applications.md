@@ -1961,3 +1961,6 @@ A transaction either succesfully _commit_, or _abort_. Atomicity prevents half-f
 
 On a single node, transaction commitment depends on the _order_ in which data is writen to disk: first the data, then the commit record.
 2PC uses a coordinartor (_transaction manager_). When the application is ready to commit, the coordinator begins phase 1: it sends a _prepare_ request to each of the nodes, asking them whether are able to commit.
+
+* If all participants reply "yes", the coordinator sends out a _commit_ request in phase 2, and the commit takes place.
+* If any of the participants replies "no", the coordinator sends an _abort_ request to all nodes in phase 2.
