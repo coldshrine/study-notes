@@ -1966,3 +1966,5 @@ On a single node, transaction commitment depends on the _order_ in which data is
 * If any of the participants replies "no", the coordinator sends an _abort_ request to all nodes in phase 2.
 
 When a participant votes "yes", it promises that it will definitely be able to commit later; and once the coordiantor decides, that decision is irrevocable. Those promises ensure the atomicity of 2PC.
+
+If one of the participants or the network fails during 2PC (prepare requests fail or time out), the coordinator aborts the transaction. If any of the commit or abort request fail, the coordinator retries them indefinitely.
