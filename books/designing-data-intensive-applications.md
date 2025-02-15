@@ -1950,3 +1950,6 @@ For every message you want to send through total order broadcast, you increment-
 ### Distributed transactions and consensus
 
 Basically _getting several nodes to agree on something_.
+
+There are situations in which it is important for nodes to agree:
+* Leader election: All nodes need to agree on which node is the leader.
