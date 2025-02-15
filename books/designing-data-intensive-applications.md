@@ -1933,3 +1933,9 @@ If every message represents a write to the database, and every replica processes
 A node is not allowed to retroactgively insert a message into an earlier position in the order if subsequent messages have already been dlivered.
 
 Another way of looking at total order broadcast is that it is a way of creating a _log_. Delivering a message is like appending to the log.
+
+If you have total order broadcast, you can build linearizable storage on top of it.
+
+Because log entries are delivered to all nodes in the same order, if therer are several concurrent writes, all nodes will agree on which one came first. Choosing the first of the conflicting writes as the winner and aborting later ones ensures that all nodes agree on whether a write was commited or aborted.
+
+This procedure ensures linearizable writes, it doesn't guarantee linearizable reads.
