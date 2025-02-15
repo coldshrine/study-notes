@@ -1953,3 +1953,4 @@ Basically _getting several nodes to agree on something_.
 
 There are situations in which it is important for nodes to agree:
 * Leader election: All nodes need to agree on which node is the leader.
+* Atomic commit: Get all nodes to agree on the outcome of the transacction, either they all abort or roll back.
