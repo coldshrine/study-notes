@@ -1946,3 +1946,7 @@ To make reads linearizable:
 * You can make your read from a replica that is synchronously updated on writes.
 
 For every message you want to send through total order broadcast, you increment-and-get the linearizable integer and then attach the value you got from the register as a sequence number to the message. YOu can send the message to all nodes, and the recipients will deliver the message consecutively by sequence number.
+
+### Distributed transactions and consensus
+
+Basically _getting several nodes to agree on something_.
