@@ -1972,3 +1972,11 @@ If one of the participants or the network fails during 2PC (prepare requests fai
 If the coordinator fails before sending the prepare requests, a participant can safely abort the transaction.
 
 The only way 2PC can complete is by waiting for the coordinator to revover in case of failure. This is why the coordinator must write its commit or abort decision to a transaction log on disk before sending commit or abort requests to participants.
+
+#### Three-phase commit
+
+2PC is also called a _blocking_ atomic commit protocol, as 2Pc can become stuck waiting for the coordinator to recover.
+
+There is an alternative called _three-phase commit_ (3PC) that requires a _perfect failure detector_.
+
+---
