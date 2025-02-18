@@ -1980,3 +1980,13 @@ The only way 2PC can complete is by waiting for the coordinator to revover in ca
 There is an alternative called _three-phase commit_ (3PC) that requires a _perfect failure detector_.
 
 ---
+
+Distributed transactions carry a heavy performance penalty due the disk forcing in 2PC required for crash recovery and additional network round-trips.
+
+XA (X/Open XA for eXtended Architecture) is a standard for implementing two-phase commit across heterogeneous technologies. Supported by many traditional relational databases (PostgreSQL, MySQL, DB2, SQL Server, and Oracle) and message brokers (ActiveMQ, HornetQ, MSQMQ, and IBM MQ).
+
+The problem with _locking_ is that database transactions usually take a row-level exclusive lock on any rows they modify, to prevent dirty writes.
+
+While those locks are held, no other transaction can modify those rows.
+
+When a coordinator fails, _orphaned_ in-doubt transactions do ocurr, and the only way out is for an administrator to manually decide whether to commit or roll back the transaction.
