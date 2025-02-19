@@ -1990,3 +1990,17 @@ The problem with _locking_ is that database transactions usually take a row-leve
 While those locks are held, no other transaction can modify those rows.
 
 When a coordinator fails, _orphaned_ in-doubt transactions do ocurr, and the only way out is for an administrator to manually decide whether to commit or roll back the transaction.
+
+#### Fault-tolerant consensus
+
+One or more nodes may _propose_ values, and the consensus algorithm _decides_ on those values.
+
+Consensus algorithm must satisfy the following properties:
+* Uniform agreement: No two nodes decide differently.
+* Integrity: No node decides twice.
+* Validity: If a node decides the value _v_, then _v_ was proposed by some node.
+* Termination: Every node that does not crash eventually decides some value.
+
+If you don't care about fault tolerance, then satisfying the first three properties is easy: you can just hardcode one node to be the "dictator" and let that node make all of the decisions.
+
+The termination property formalises the idea of fault tolerance. Even if some nodes fail, the other nodes must still reach a decision. Termination is a liveness property, whereas the other three are safety properties.
