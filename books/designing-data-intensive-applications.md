@@ -2004,3 +2004,13 @@ Consensus algorithm must satisfy the following properties:
 If you don't care about fault tolerance, then satisfying the first three properties is easy: you can just hardcode one node to be the "dictator" and let that node make all of the decisions.
 
 The termination property formalises the idea of fault tolerance. Even if some nodes fail, the other nodes must still reach a decision. Termination is a liveness property, whereas the other three are safety properties.
+
+**The best-known fault-tolerant consensus algorithms are Viewstamped Replication (VSR), Paxos, Raft and Zab.**
+
+Total order broadcast requires messages to be delivered exactly once, in the same order, to all nodes.
+
+So total order broadcast is equivalent to repeated rounds of consensus:
+* Due to agreement property, all nodes decide to deliver the same messages in the same order.
+* Due to integrity, messages are not duplicated.
+* Due to validity, messages are not corrupted.
+* Due to termination, messages are not lost.
