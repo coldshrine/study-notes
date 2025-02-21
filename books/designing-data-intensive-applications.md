@@ -2014,3 +2014,23 @@ So total order broadcast is equivalent to repeated rounds of consensus:
 * Due to integrity, messages are not duplicated.
 * Due to validity, messages are not corrupted.
 * Due to termination, messages are not lost.
+
+##### Single-leader replication and consensus
+
+All of the consensus protocols dicussed so far internally use a leader, but they don't guarantee that the lader is unique. Protocols define an _epoch number_ (_ballot number_ in Paxos, _view number_ in Viewstamped Replication, and _term number_ in Raft). Within each epoch, the leader is unique.
+
+Every time the current leader is thought to be dead, a vote is started among the nodes to elect a new leader. This election is given an incremented epoch number, and thus epoch numbers are totallly ordered and monotonically increasing. If there is a conflic, the leader with the higher epoch number prevails.
+
+A node cannot trust its own judgement. It must collect votes from a _quorum_ of nodes. For every decision that a leader wants to make, it must send the proposed value to the other nodes and wait for a quorum of nodes to respond in favor of the proposal.
+
+There are two rounds of voting, once to choose a leader, and second time to vote on a leader's proposal. The quorums for those two votes must overlap.
+
+The biggest difference with 2PC, is that 2PC requires a "yes" vote for _every_ participant.
+
+The benefits of consensus come at a cost. The process by which nodes vote on proposals before they are decided is kind of synchronous replication.
+
+Consensus always require a strict majority to operate.
+
+Most consensus algorithms assume a fixed set of nodes that participate in voting, which means that you can't just add or remove nodes in the cluster. _Dynamic membership_ extensions are much less well understood than static membership algorithms.
+
+Consensus systems rely on timeouts to detect failed nodes. In geographically distributed systems, it often happens that a node falsely believes the leader to have failed due to a network issue. This implies frequest leader elecctions resulting in terrible performance, spending more time choosing a leader than doing any useful work.
