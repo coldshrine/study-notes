@@ -2034,3 +2034,15 @@ Consensus always require a strict majority to operate.
 Most consensus algorithms assume a fixed set of nodes that participate in voting, which means that you can't just add or remove nodes in the cluster. _Dynamic membership_ extensions are much less well understood than static membership algorithms.
 
 Consensus systems rely on timeouts to detect failed nodes. In geographically distributed systems, it often happens that a node falsely believes the leader to have failed due to a network issue. This implies frequest leader elecctions resulting in terrible performance, spending more time choosing a leader than doing any useful work.
+
+#### Membership and coordination services
+
+ZooKeeper or etcd are often described as "distributed key-value stores" or "coordination and configuration services".
+
+They are designed to hold small amounts of data that can fit entirely in memory, you wouldn't want to store all of your application's data here. Data is replicated across all the nodes using a fault-tolerant total order broadcast algorithm.
+
+ZooKeeper is modeled after Google's Chubby lock service and it provides some useful features:
+* Linearizable atomic operations: Usuing an atomic compare-and-set operation, you can implement a lock.
+* Total ordering of operations: When some resource is protected by a lock or lease, you need a _fencing token_ to prevent clients from conflicting with each other in the case of a process pause. The fencing token is some number that monotonically increases every time the lock is acquired.
+* Failure detection: Clients maintain a long-lived session on ZooKeeper servers. When a ZooKeeper node fails, the session remains active. When ZooKeeper declares the session to be dead all locks held are automatically released.
+* Change notifications: Not only can one client read locks and values, it can also watch them for changes.
