@@ -2059,3 +2059,9 @@ The kind of data managed by ZooKeeper is quite slow-changing like "the node runn
 ZooKeeper, etcd, and Consul are also often used for _service discovery_, find out which IP address you need to connect to in order to reach a particular service. In cloud environments, it is common for virtual machines to continually come an go, you often don't know the IP addresses of your services ahead of time. Your services when they start up they register their network endpoints ina  service registry, where they can then be found by other services.
 
 ZooKeeper and friends can be seen as part of a long history of research into _membership services_, determining which nodes are currently active and live members of a cluster.
+
+## Batch processing
+
+* Service (online): waits for a request, sends a response back
+* Batch processing system (offline): takes a large amount of input data, runs a _job_ to process it, and produces some output.
+* Stream processing systems (near-real-time): a stream processor consumes input and produces outputs. A stream job operates on events shortly after they happen.
