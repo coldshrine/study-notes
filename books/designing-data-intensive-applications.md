@@ -2065,3 +2065,28 @@ ZooKeeper and friends can be seen as part of a long history of research into _me
 * Service (online): waits for a request, sends a response back
 * Batch processing system (offline): takes a large amount of input data, runs a _job_ to process it, and produces some output.
 * Stream processing systems (near-real-time): a stream processor consumes input and produces outputs. A stream job operates on events shortly after they happen.
+
+### Batch processing with Unix tools
+
+We can build a simple log analysis job to get the five most popular pages on your site
+
+```
+cat /var/log/nginx/access.log |
+  awk '{print $7}' |
+  sort             |
+  uniq -c          |
+  sort -r -n       |
+  head -n 5        |
+```
+
+You could write the same thing with a simpel program.
+
+The difference is that with Unix commands automatically handle larger-than-memory datasets and automatically paralelizes sorting across multiple CPU cores.
+
+Programs must have the same data format to pass information to one another. In Unix, that interface is a file (file descriptor), an ordered sequence of bytes.
+
+By convention Unix programs treat this sequence of bytes as ASCII text.
+
+The unix approach works best if a program simply uses `stdin` and `stdout`. This allows a shell user to wire up the input and output in whatever way they want; the program doesn't know or care where the input is coming from and where the output is going to.
+
+Part of what makes Unix tools so successful is that they make it quite easy to see what is going on.
