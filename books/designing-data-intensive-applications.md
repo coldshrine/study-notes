@@ -2090,3 +2090,31 @@ By convention Unix programs treat this sequence of bytes as ASCII text.
 The unix approach works best if a program simply uses `stdin` and `stdout`. This allows a shell user to wire up the input and output in whatever way they want; the program doesn't know or care where the input is coming from and where the output is going to.
 
 Part of what makes Unix tools so successful is that they make it quite easy to see what is going on.
+
+
+### Map reduce and distributed filesystems
+
+A single MapReduce job is comparable to a single Unix process.
+
+Running a MapReduce job normally does not modify the input and does not have any side effects other than producing the output.
+
+While Unix tools use `stdin` and `stdout` as input and output, MapReduce jobs read and write files on a distributed filesystem. In Hadoop, that filesystem is called HDFS (Haddoop Distributed File System).
+
+HDFS is based on the _shared-nothing_ principe. Implemented by centralised storage appliance, often using custom hardware and special network infrastructure.
+
+HDFS consists of a daemon process running on each machine, exposing a network service that allows other nodes to access files stored on that machine. A central server called the _NameNode_ keeps track of which file blocks are stored on which machine.
+
+File blocks are replciated on multiple machines. Reaplication may mean simply several copies of the same data on multiple machines, or an _erasure coding_ scheme such as Reed-Solomon codes, which allow lost data to be recovered.
+
+MapReduce is a programming framework with which you can write code to process large datasets in a distributed filesystem like HDFS.
+1. Read a set of input files, and break it up into _records_.
+2. Call the mapper function to extract a key and value from each input record.
+3. Sort all of the key-value pairs by key.
+4. Call the reducer function to iterate over the sorted key-value pairs.
+
+* Mapper: Called once for every input record, and its job is to extract the key and value from the input record.
+* Reducer: Takes the key-value pairs produced by the mappers, collects all the values belonging to the same key, and calls the reducer with an interator over that collection of vaues.
+
+MapReduce can parallelise a computation across many machines, without you having ot write code to explicitly handle the parallelism. THe mapper and reducer only operate on one record at a time; they don't need to know where their input is coming from or their output is going to.
+
+In Hadoop MapReduce, the mapper and reducer are each a Java class that implements a particular interface.
