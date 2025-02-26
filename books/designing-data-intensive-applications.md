@@ -2118,3 +2118,34 @@ MapReduce is a programming framework with which you can write code to process la
 MapReduce can parallelise a computation across many machines, without you having ot write code to explicitly handle the parallelism. THe mapper and reducer only operate on one record at a time; they don't need to know where their input is coming from or their output is going to.
 
 In Hadoop MapReduce, the mapper and reducer are each a Java class that implements a particular interface.
+
+
+The MapReduce scheduler tries to run each mapper on one of the machines that stores a replica of the input file, _putting the computation near the data_.
+
+The reduce side of the computation is also partitioned. While the number of map tasks is determined by the number of input file blocks, the number of reduce tasks is configured by the job author. To ensure that all key-value pairs with the same key end up in the same reducer, the framework uses a hash of the key.
+
+The dataset is likely too large to be sorted with a conventional sorting algorithm on a single machine. Sorting is performed in stages.
+
+Whenever a mapper finishes reading its input file and writing its sorted output files, the MapReduce scheduler notifies the reducers that they can start fetching the output files from that mapper. The reducers connect to each of the mappers and download the files of sorted key-value pairs for their partition. Partitioning by reducer, sorting and copying data partitions from mappers to reducers is called _shuffle_.
+
+The reduce task takes the files from the mappers and merges them together, preserving the sort order.
+
+MapReduce jobs can be chained together into _workflows_, the output of one job becomes the input to the next job. In Hadoop this chaining is done implicitly by directory name: the first job writes its output to a designated directory in HDFS, the second job reads that same directory name as its input.
+
+Compared with the Unix example, it could be seen as in each sequence of commands each command output is written to a temporary file, and the next command reads from the temporary file.
+
+It is common in datasets for one record to have an association with another record: a _foreign key_ in a relational model, a _document reference_ in a document model, or an _edge_ in graph model.
+
+If the query involves joins, it may require multiple index lookpus. MapReduce has no concept of indexes.
+
+When a MapReduce job is given a set of files as input, it reads the entire content of all of those files, like a _full table scan_.
+
+In analytics it is common to want to calculate aggregates over a large number of records. Scanning the entire input might be quite reasonable.
+
+In order to achieve good throughput in a batch process, the computation must be local to one machine. Requests over the network are too slow and nondeterministic. Queries to other database for example would be prohibitive.
+
+A better approach is to take a copy of the data (peg: the database) and put it in the same distributed filesystem.
+
+MapReduce programming model has separated the physical network communication aspects of the computation (getting the data to the right machine) from the application logic (processing the data once you have it).
+
+In an example of a social network, small number of celebrities may have many millions of followers. Such disproportionately active database records are known as _linchpin objects_ or _hot keys_.
