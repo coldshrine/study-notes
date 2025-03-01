@@ -2166,3 +2166,18 @@ Google's original use of MapReduce was to build indexes for its search engine. H
 If you need to perform a full-text search, a batch process is very effective way of building indexes: the mappers partition the set of documents as needed, each reducer builds the index for its partition, and the index files are written to the distributed filesystem. It pararellises very well.
 
 Machine learning systems such as clasifiers and recommendation systems are a common use for batch processing.
+
+#### Key-value stores as batch process output
+
+The output of those batch jobs is often some kind of database.
+
+So, how does the output from the batch process get back into a database?
+
+Writing from the batch job directly to the database server is a bad idea:
+* Making a network request for every single record is magnitude slower than the normal throughput of a batch task.
+* Mappers or reducers concurrently write to the same output database an it can be easily overwhelmed.
+* You have to worry about the results from partially completed jobs being visible to other systems.
+
+A much better solution is to build a brand-new database _inside_ the batch job an write it as files to the job's output directory, so it can be loaded in bulk into servers that handle read-only queries. Various key-value stores support building database files in MapReduce including Voldemort, Terrapin, ElephanDB and HBase bulk loading.
+
+---
