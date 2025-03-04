@@ -2196,3 +2196,14 @@ Hadoop opened up the possibility of indiscriminately dumpint data into HDFS. MPP
 In MapReduce instead of forcing the producer of a dataset to bring it into a standarised format, the interpretation of the data becomes the consumer's problem.
 
 If you have HDFS and MapReduce, you _can_ build a SQL query execution engine on top of it, and indeed this is what the Hive project did.
+
+
+If a node crashes while a query is executing, most MPP databases abort the entire query. MPP databases also prefer to keep as much data as possible in memory.
+
+MapReduce can tolerate the failure of a map or reduce task without it affecting the job. It is also very eager to write data to disk, partly for fault tolerance, and partly because the dataset might not fit in memory anyway.
+
+MapReduce is more appropriate for larger jobs.
+
+At Google, a MapReduce task that runs for an hour has an approximately 5% risk of being terminated to make space for higher-priority process.
+
+Ths is why MapReduce is designed to tolerate frequent unexpected task termination.
