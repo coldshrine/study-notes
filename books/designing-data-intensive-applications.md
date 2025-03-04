@@ -2207,3 +2207,14 @@ MapReduce is more appropriate for larger jobs.
 At Google, a MapReduce task that runs for an hour has an approximately 5% risk of being terminated to make space for higher-priority process.
 
 Ths is why MapReduce is designed to tolerate frequent unexpected task termination.
+
+
+### Beyond MapReduce
+
+In response to the difficulty of using MapReduce directly, various higher-level programming models emerged on top of it: Pig, Hive, Cascading, Crunch.
+
+MapReduce has poor performance for some kinds of processing. It's very robust, you can use it to process almost arbitrarily large quantities of data on an unreliable multi-tenant system with frequent task terminations, and it will still get the job done.
+
+The files on the distributed filesystem are simply _intermediate state_: a means of passing data from one job to the next.
+
+The process of writing out the intermediate state to files is called _materialisation_.
