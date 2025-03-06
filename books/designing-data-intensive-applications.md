@@ -2218,3 +2218,11 @@ MapReduce has poor performance for some kinds of processing. It's very robust, y
 The files on the distributed filesystem are simply _intermediate state_: a means of passing data from one job to the next.
 
 The process of writing out the intermediate state to files is called _materialisation_.
+
+MapReduce's approach of fully materialising state has some downsides compared to Unix pipes:
+
+* A MapReduce job can only start when all tasks in the preceding jobs have completed, whereas rocesses connected by a Unix pipe are started at the same time.
+* Mappers are often redundant: they just read back the same file that was just written by a reducer.
+* Files are replicated across several nodes, which is often overkill for such temporary data.
+
+To fix these problems with MapReduce, new execution engines for distributed batch computations were developed, Spark, Tez and Flink. These new ones can handle an entire workflow as one job, rather than breaking it up into independent subjobs (_dataflow engines_).
