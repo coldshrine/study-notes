@@ -2268,3 +2268,7 @@ A record is more commonly known as an _event_. Something that happened at some p
 An event is generated once by a _producer_ (_publisher_ or _sender_), and then potentially processed by multiple _consumers_ (_subcribers_ or _recipients_). Related events are usually grouped together into a _topic_ or a _stream_.
 
 A file or a database is sufficient to connect producers and consumers: a producer writes every event that it generates to the datastore, and each consumer periodically polls the datastore to check for events that have appeared since it last ran.
+
+However, when moving toward continual processing, polling becomes expensive. It is better for consumers to be notified when new events appear.
+
+Databases offer _triggers_ but they are limited, so specialised tools have been developed for the purpose of delivering event notifications.
