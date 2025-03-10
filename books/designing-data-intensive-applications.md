@@ -2242,3 +2242,9 @@ It's interesting to look at graphs in batch processing context, where the goal i
 "repeating until done" cannot be expressed in plain MapReduce as it runs in a single pass over the data and some extra trickery is necessary.
 
 An optimisation for batch processing graphs, the _bulk synchronous parallel_ (BSP) has become popular. It is implemented by Apache Giraph, Spark's GraphX API, and Flink's Gelly API (_Pregel model, as Google Pregel paper popularised it).
+
+One vertex can "send a message" to another vertex, and typically those messages are sent along the edges in a graph.
+
+The difference from MapReduce is that a vertex remembers its state in memory from one iteration to the next.
+
+The fact that vertices can only communicate by message passing helps improve the performance of Pregel jobs, since messages can be batched.
