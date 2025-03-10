@@ -2256,3 +2256,7 @@ The framework may partition the graph in arbitrary ways.
 Graph algorithms often have a lot of cross-machine communication overhead, and the intermediate state is often bigger than the original graph.
 
 If your graph can fit into memory on a single computer, it's quite likely that a single-machine algorithm will outperform a distributed batch process. If the graph is too big to fit on a single machine, a distributed approach such as Pregel is unavoidable.
+
+## Stream processing
+
+We can run the processing continuously, abandoning the fixed time slices entirely and simply processing every event as it happens, that's the idea behind _stream processing_. Data that is incrementally made available over time.
