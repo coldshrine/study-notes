@@ -2226,3 +2226,10 @@ MapReduce's approach of fully materialising state has some downsides compared to
 * Files are replicated across several nodes, which is often overkill for such temporary data.
 
 To fix these problems with MapReduce, new execution engines for distributed batch computations were developed, Spark, Tez and Flink. These new ones can handle an entire workflow as one job, rather than breaking it up into independent subjobs (_dataflow engines_).
+
+
+These functions need not to take the strict roles of alternating map and reduce, they are assembled in flexible ways, in functions called _operators_.
+
+Spark, Flink, and Tex avoid writing intermediate state to HDFS, so they take a different approach to tolerating faults: if a machine fails and the intermediate state on that machine is lost, it is recomputed from other data that is still available.
+
+The framework must keep track of how a given piece of data was computed. Spark uses the resilient distributed dataset (RDD) to track ancestry data, while Flink checkpoints operator state, allowing it to resume running an operator that ran into a fault during its execution.
