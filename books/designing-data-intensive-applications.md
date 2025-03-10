@@ -2248,3 +2248,9 @@ One vertex can "send a message" to another vertex, and typically those messages 
 The difference from MapReduce is that a vertex remembers its state in memory from one iteration to the next.
 
 The fact that vertices can only communicate by message passing helps improve the performance of Pregel jobs, since messages can be batched.
+
+Fault tolerance is achieved by periodically checkpointing the state of all vertices at the end of an interation.
+
+The framework may partition the graph in arbitrary ways.
+
+Graph algorithms often have a lot of cross-machine communication overhead, and the intermediate state is often bigger than the original graph.
