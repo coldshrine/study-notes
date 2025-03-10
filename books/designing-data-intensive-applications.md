@@ -2260,3 +2260,7 @@ If your graph can fit into memory on a single computer, it's quite likely that a
 ## Stream processing
 
 We can run the processing continuously, abandoning the fixed time slices entirely and simply processing every event as it happens, that's the idea behind _stream processing_. Data that is incrementally made available over time.
+
+### Transmitting event streams
+
+A record is more commonly known as an _event_. Something that happened at some point in time, it usually contains a timestamp indicating when it happened acording to a time-of-day clock.
