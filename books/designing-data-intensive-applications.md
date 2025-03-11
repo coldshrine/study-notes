@@ -2287,3 +2287,8 @@ A number of messaging systems use direct communication between producers and con
 * Brokerless messaging libraries such as ZeroMQ
 * StatsD and Brubeck use unreliable UDP messaging for collecting metrics
 * If the consumer expose a service on the network, producers can make a direct HTTP or RPC request to push messages to the consumer. This is the idea behind webhooks, a callback URL of one service is registered with another service, and makes a request to that URL whenever an event occurs
+
+
+These direct messaging systems require the application code to be aware of the possibility of message loss. The faults they can tolerate are quite limited as they assume that producers and consumers are constantly online.
+
+If a consumer if offline, it may miss messages. Some protocols allow the producer to retry failed message deliveries, but it may break down if the producer crashes losing the buffer or messages.
