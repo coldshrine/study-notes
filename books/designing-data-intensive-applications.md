@@ -2272,3 +2272,18 @@ A file or a database is sufficient to connect producers and consumers: a produce
 However, when moving toward continual processing, polling becomes expensive. It is better for consumers to be notified when new events appear.
 
 Databases offer _triggers_ but they are limited, so specialised tools have been developed for the purpose of delivering event notifications.
+
+
+#### Messaging systems
+
+##### Direct messaging from producers to consumers
+
+Within the _publish_/_subscribe_ model, we can differentiate the systems by asking two questions:
+1. _What happens if the producers send messages faster than the consumers can process them?_ The system can drop messages, buffer the messages in a queue, or apply _backpressure_ (_flow control_, blocking the producer from sending more messages).
+2. _What happens if nodes crash or temporarily go offline, are any messages lost?_ Durability may require some combination of writing to disk and/or replication.
+
+A number of messaging systems use direct communication between producers and consumers without intermediary nodes:
+* UDP multicast, where low latency is important, application-level protocols can recover lost packets.
+* Brokerless messaging libraries such as ZeroMQ
+* StatsD and Brubeck use unreliable UDP messaging for collecting metrics
+* If the consumer expose a service on the network, producers can make a direct HTTP or RPC request to push messages to the consumer. This is the idea behind webhooks, a callback URL of one service is registered with another service, and makes a request to that URL whenever an event occurs
