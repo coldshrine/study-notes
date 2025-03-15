@@ -2308,3 +2308,12 @@ Some brokers can even participate in two-phase commit protocols using XA and JTA
 * Most message brokers assume that their working set is fairly small. If the broker needs to buffer a lot of messages, each individual message takes longer to process, and the overall throughput may degrade.
 * Message brokers often support some way of subscribing to a subset of topics matching some pattern.
 * Message brokers do not support arbitrary queries, but they do notify clients when data changes.
+
+
+This is the traditional view of message brokers, encapsulated in standards like JMS and AMQP, and implemented in RabbitMQ, ActiveMQ, HornetQ, Qpid, TIBCO Enterprise Message Service, IBM MQ, Azure Service Bus, and Google Cloud Pub/Sub.
+
+When multiple consumers read messages in the same topic, to main patterns are used:
+* Load balancing: Each message is delivered to _one_ of the consumers. The broker may assign messages to consumers arbitrarily.
+* Fan-out: Each message is delivered to _all_ of the consumers.
+
+In order to ensure that the message is not lost, message brokers use _acknowledgements_: a client must explicitly tell the broker when it has finished processing a message so that the broker can remove it from the queue.
