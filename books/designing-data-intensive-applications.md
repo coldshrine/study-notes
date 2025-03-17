@@ -2348,3 +2348,30 @@ It is easy to tell which messages have been processed: al messages with an offse
 The offset is very similar to the _log sequence number_ that is commonly found in single-leader database replication. The message broker behaves like a leader database, and the consumer like a follower.
 
 If a consumer node fails, another node in the consumer group starts consuming messages at the last recorded offset. If the consumer had processed subsequent messages but not yet recorded their offset, those messages will be processed a second time upon restart.
+
+
+If you only ever append the log, you will eventually run out of disk space. From time to time old segments are deleted or moved to archive.
+
+If a slow consumer cannot keep with the rate of messages, and it falls so far behind that its consumer offset poitns to a deleted segment, it will miss some of the messages.
+
+The throughput of a log remains more or less constant, since every message is written to disk anyway. This is in contrast to messaging systems that keep messages in memory by default and only write them to disk if the queue grows too large: systems are fast when queues are short and become much slower when they start writing to disk, throughput depends on the amount of history retained.
+
+If a consumer cannot keep up with producers, the consumer can drop messages, buffer them or applying backpressure.
+
+You can monitor how far a consumer is behind the head of the log, and raise an alert if it falls behind significantly.
+
+If a consumer does fall too far behind and start missing messages, only that consumer is affected.
+
+With AMQP and JMS-style message brokers, processing and acknowledging messages is a destructive operation, since it causes the messages to be deleted on the broker. In a log-based message broker, consuming messages is more like reading from a file.
+
+The offset is under the consumer's control, so you can easily be manipulated if necessary, like for replaying old messages.
+
+### Databases and streams
+
+A replciation log is a stream of a database write events, produced by the leader as it processes transactions. Followers apply that stream of writes to their own copy of the database and thus end up with an accurate copy of the same data.
+
+If periodic full database dumps are too slow, an alternative that is sometimes used is _dual writes_. For example, writing to the database, then updating the search index, then invalidating the cache.
+
+Dual writes have some serious problems, one of which is race conditions. If you have concurrent writes, one value will simply silently overwrite another value.
+
+One of the writes may fail while the other succeeds and two systems will become inconsistent.
