@@ -2375,3 +2375,12 @@ If periodic full database dumps are too slow, an alternative that is sometimes u
 Dual writes have some serious problems, one of which is race conditions. If you have concurrent writes, one value will simply silently overwrite another value.
 
 One of the writes may fail while the other succeeds and two systems will become inconsistent.
+
+
+The problem with most databases replication logs is that they are considered an internal implementation detail, not a public API.
+
+Recently there has been a growing interest in _change data capture_ (CDC), which is the process of observing all data changes written to a database and extracting them in a form in which they can be replicated to other systems.
+
+For example, you can capture the changes in a database and continually apply the same changes to a search index.
+
+We can call log consumers _derived data systems_: the data stored in the search index and the data warehouse is just another view. Change data capture is a mechanism for ensuring that all changes made to the system of record are also reflected in the derived data systems.
