@@ -2384,3 +2384,14 @@ Recently there has been a growing interest in _change data capture_ (CDC), which
 For example, you can capture the changes in a database and continually apply the same changes to a search index.
 
 We can call log consumers _derived data systems_: the data stored in the search index and the data warehouse is just another view. Change data capture is a mechanism for ensuring that all changes made to the system of record are also reflected in the derived data systems.
+
+
+Change data capture makes one database the leader, and turns the others into followers.
+
+Database triggers can be used to implement change data capture, but they tend to be fragile and have significant performance overheads. Parsing the replication log can be a more robust approach.
+
+LinkedIn's Databus, Facebook's Wormhole, and Yahoo!'s Sherpa use this idea at large scale. Bottled Watter implements CDC for PostgreSQL decoding the write-ahead log, Maxwell and Debezium for something similar for MySQL by parsing the binlog, Mongoriver reads the MongoDB oplog, and GoldenGate provide similar facilities for Oracle.
+
+Keeping all changes forever would require too much disk space, and replaying it would take too long, so the log needs to be truncated.
+
+You can start with a consistent snapshot of the database, and it must correspond to a known position or offset in the change log.
