@@ -2395,3 +2395,14 @@ LinkedIn's Databus, Facebook's Wormhole, and Yahoo!'s Sherpa use this idea at la
 Keeping all changes forever would require too much disk space, and replaying it would take too long, so the log needs to be truncated.
 
 You can start with a consistent snapshot of the database, and it must correspond to a known position or offset in the change log.
+
+
+The storage engine periodically looks for log records with the same key, throws away any duplicates, and keeps only the most recent update for each key.
+
+An update with a special null value (a _tombstone_) indicates that a key was deleted.
+
+The same idea works in the context of log-based mesage brokers and change data capture.
+
+RethinkDB allows queries to subscribe to notifications, Firebase and CouchDB provide data synchronisation based on change feed.
+
+Kafka Connect integrates change data capture tools for a wide range of database systems with Kafka.
