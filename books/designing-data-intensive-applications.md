@@ -2406,3 +2406,30 @@ The same idea works in the context of log-based mesage brokers and change data c
 RethinkDB allows queries to subscribe to notifications, Firebase and CouchDB provide data synchronisation based on change feed.
 
 Kafka Connect integrates change data capture tools for a wide range of database systems with Kafka.
+
+
+#### Event sourcing
+
+There are some parallels between the ideas we've discussed here and _event sourcing_.
+
+Similarly to change data capture, event sourcing involves storing all changes to the application state as a log of change events. Event sourcing applyies the idea at a different level of abstraction.
+
+Event sourcing makes it easier to evolve applications over time, helps with debugging by making it easier to understand after the fact why something happened, and guards against application bugs.
+
+Specialised databases such as Event Store have been developed to support applications using event sourcing.
+
+Applications that use event sourcing need to take the log of evetns and transform it into application state that is suitable for showing to a user.
+
+Replying the event log allows you to reconstruct the current state of the system.
+
+Applications that use event sourcing typically have some mechanism for storing snapshots.
+
+Event sourcing philosophy is careful to distinguis between _events_ and _commands_. When a request from a user first arrives, it is initially a command: it may still fail (like some integrity condition is violated). If the validation is successful, it becomes an event, which is durable and immutable.
+
+A consumer of the event stream is not allowed to reject an event: Any validation of a command needs to happen synchronously, before it becomes an event. For example, by using a serializable transaction that atomically validates the command and publishes the event.
+
+Alternatively, the user request to serve a seat could be split into two events: first a tentative reservation, and then a separate confirmation event once the reservation has been validated. This split allows the validation to take place in an asynchronous process.
+
+Whenever you have state changes, that state is the result of the events that mutated it over time.
+
+Mutable state and an append-only log of immutable events do not contradict each other.
