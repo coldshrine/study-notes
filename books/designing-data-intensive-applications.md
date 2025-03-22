@@ -2433,3 +2433,12 @@ Alternatively, the user request to serve a seat could be split into two events: 
 Whenever you have state changes, that state is the result of the events that mutated it over time.
 
 Mutable state and an append-only log of immutable events do not contradict each other.
+
+
+As an example, financial bookkeeping is recorded as an append-only _ledger_. It is a log of events describing money, good, or services that have changed hands. Profit and loss or the balance sheet are derived from the ledger by adding them up.
+
+If a mistake is made, accountants don't erase or change the incorrect transaction, instead, they add another transaction that compensates for the mistake.
+
+If buggy code writes bad data to a database, recovery is much harder if the code is able to destructively overwrite data.
+
+Immutable events also capture more information than just the current state. If you persisted a cart into a regular database, deleting an item would effectively loose that event.
