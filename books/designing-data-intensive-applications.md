@@ -2442,3 +2442,10 @@ If a mistake is made, accountants don't erase or change the incorrect transactio
 If buggy code writes bad data to a database, recovery is much harder if the code is able to destructively overwrite data.
 
 Immutable events also capture more information than just the current state. If you persisted a cart into a regular database, deleting an item would effectively loose that event.
+
+
+You can derive views from the same event log, Druid ingests directly from Kafka, Pistachio is a distributed key-value sotre that uses Kafka as a commit log, Kafka Connect sinks can export data from Kafka to various different databases and indexes.
+
+Storing data is normally quite straightforward if you don't have to worry about how it is going to be queried and accessed. You gain a lot of flexibility by separating the form in which data is written from the form it is read, this idea is known as _command query responsibility segregation_ (CQRS).
+
+There is this fallacy that data must be written in the same form as it will be queried.
