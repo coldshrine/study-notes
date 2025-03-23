@@ -2449,3 +2449,12 @@ You can derive views from the same event log, Druid ingests directly from Kafka,
 Storing data is normally quite straightforward if you don't have to worry about how it is going to be queried and accessed. You gain a lot of flexibility by separating the form in which data is written from the form it is read, this idea is known as _command query responsibility segregation_ (CQRS).
 
 There is this fallacy that data must be written in the same form as it will be queried.
+
+
+The biggest downside of event sourcing and change data capture is that consumers of the event log are usually asynchronous, a user may make a write to the log, then read from a log derived view and find that their write has not yet been reflected.
+
+The limitations on immutable event history depends on the amount of churn in the dataset. Some workloads mostly add data and rarely update or delete; they are wasy to make immutable. Other workloads have a high rate of updates and deletes on a comparaively small dataset; in these cases immutable history becomes an issue because of fragmentation, performance compaction and garbage collection.
+
+There may also be circumstances in which you need data to be deleted for administrative reasons.
+
+Sometimes you may want to rewrite history, Datomic calls this feature _excision_.
