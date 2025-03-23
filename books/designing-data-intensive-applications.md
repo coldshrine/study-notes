@@ -2464,3 +2464,6 @@ Sometimes you may want to rewrite history, Datomic calls this feature _excision_
 What you can do with the stream once you have it:
 1. You can take the data in the events and write it to the database, cache, search index, or similar storage system, from where it can thenbe queried by other clients.
 2. You can push the events to users in some way, for example by sending email alerts or push notifications, or to a real-time dashboard.
+3. You can process one or more input streams to produce one or more output streams.
+
+Processing streams to produce other, derived streams is what an _operator job_ does. The one crucial difference to batch jobs is that a stream never ends.
