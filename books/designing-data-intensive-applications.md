@@ -2458,3 +2458,9 @@ The limitations on immutable event history depends on the amount of churn in the
 There may also be circumstances in which you need data to be deleted for administrative reasons.
 
 Sometimes you may want to rewrite history, Datomic calls this feature _excision_.
+
+
+
+What you can do with the stream once you have it:
+1. You can take the data in the events and write it to the database, cache, search index, or similar storage system, from where it can thenbe queried by other clients.
+2. You can push the events to users in some way, for example by sending email alerts or push notifications, or to a real-time dashboard.
