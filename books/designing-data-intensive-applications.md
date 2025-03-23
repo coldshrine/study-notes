@@ -2472,3 +2472,7 @@ Processing streams to produce other, derived streams is what an _operator job_ d
 _Complex event processing_ (CEP) is an approach for analising event streams where you can specify rules to search for certain patterns of events in them.
 
 When a match is found, the engine emits a _complex event_.
+
+Queries are stored long-term, and events from the input streams continuously flow past them in search of a query that matches an event pattern.
+
+Implementations of CEP include Esper, IBM InfoSphere Streams, Apama, TIBCO StreamBase, and SQLstream.
