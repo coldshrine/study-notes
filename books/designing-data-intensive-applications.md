@@ -2476,3 +2476,5 @@ When a match is found, the engine emits a _complex event_.
 Queries are stored long-term, and events from the input streams continuously flow past them in search of a query that matches an event pattern.
 
 Implementations of CEP include Esper, IBM InfoSphere Streams, Apama, TIBCO StreamBase, and SQLstream.
+
+The boundary between CEP and stream analytics is blurry, analytics tends to be less interested in finding specific event sequences and is more oriented toward aggregations and statistical metrics.
