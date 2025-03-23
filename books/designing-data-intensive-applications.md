@@ -2467,3 +2467,8 @@ What you can do with the stream once you have it:
 3. You can process one or more input streams to produce one or more output streams.
 
 Processing streams to produce other, derived streams is what an _operator job_ does. The one crucial difference to batch jobs is that a stream never ends.
+
+
+_Complex event processing_ (CEP) is an approach for analising event streams where you can specify rules to search for certain patterns of events in them.
+
+When a match is found, the engine emits a _complex event_.
