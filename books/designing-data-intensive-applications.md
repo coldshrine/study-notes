@@ -2478,3 +2478,8 @@ Queries are stored long-term, and events from the input streams continuously flo
 Implementations of CEP include Esper, IBM InfoSphere Streams, Apama, TIBCO StreamBase, and SQLstream.
 
 The boundary between CEP and stream analytics is blurry, analytics tends to be less interested in finding specific event sequences and is more oriented toward aggregations and statistical metrics.
+
+
+Frameworks with analytics in mind are: Apache Storm, Spark Streaming, Flink, Concord, Samza, and Kafka Streams. Hosted services include Google Cloud Dataflow and Azure Stream Analytics.
+
+Sometimes there is a need to search for individual events continually, such as full-text search queries over streams.
