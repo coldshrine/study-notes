@@ -2483,3 +2483,10 @@ The boundary between CEP and stream analytics is blurry, analytics tends to be l
 Frameworks with analytics in mind are: Apache Storm, Spark Streaming, Flink, Concord, Samza, and Kafka Streams. Hosted services include Google Cloud Dataflow and Azure Stream Analytics.
 
 Sometimes there is a need to search for individual events continually, such as full-text search queries over streams.
+
+
+Message-passing ystems are also based on messages and events, we normally don't think of them as stream processors.
+
+There is some crossover area between RPC-like systems and stream processing. Apache Storm has a feature called _distributed RPC_.
+
+In a batch process, the time at which the process is run has nothing to do with the time at which the events actually occurred.
