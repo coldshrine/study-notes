@@ -2490,3 +2490,10 @@ Message-passing ystems are also based on messages and events, we normally don't 
 There is some crossover area between RPC-like systems and stream processing. Apache Storm has a feature called _distributed RPC_.
 
 In a batch process, the time at which the process is run has nothing to do with the time at which the events actually occurred.
+
+
+Many stream processing frameworks use the local system clock on the processing machine (_processing time_) to determine windowing. It is a simple approach that breaks down if there is any significant processing lag.
+
+Confusing event time and processing time leads to bad data. Processing time may be unreliable as the stream processor may queue events, restart, etc. It's better to take into account the original event time to count rates.
+
+You can never be sure when you have received all the events.
