@@ -2497,3 +2497,14 @@ Many stream processing frameworks use the local system clock on the processing m
 Confusing event time and processing time leads to bad data. Processing time may be unreliable as the stream processor may queue events, restart, etc. It's better to take into account the original event time to count rates.
 
 You can never be sure when you have received all the events.
+
+
+You can time out and declare a window ready after you have not seen any new events for a while, but it could still happen that some events are delayed due a network interruption. You need to be able to handle such _stranggler_ events that arrive after the window has already been declared complete.
+
+1. You can ignore the stranggler events, tracking the number of dropped events as a metric.
+2. Publish a _correction_, an updated value for the window with stranglers included. You may also need to retrat the previous output.
+
+To adjust for incofrrect device clocks, one approach is to log three timestamps:
+* The time at which the event occurred, according to the device clock
+* The time at which the event was sent to the server, according to the device clock
+* The time at which the event was received by the server, according to the server clock.
