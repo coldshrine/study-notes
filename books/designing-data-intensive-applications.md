@@ -2508,3 +2508,14 @@ To adjust for incofrrect device clocks, one approach is to log three timestamps:
 * The time at which the event occurred, according to the device clock
 * The time at which the event was sent to the server, according to the device clock
 * The time at which the event was received by the server, according to the server clock.
+
+
+You can estimate the offset between the device clock and the server clock, then apply that offset to the event timestamp, and thus estimate the true time at which the event actually ocurred.
+
+Several types of windows are in common use:
+* Tumbling window: Fixed length. If you have a 1-minute tumbling window, all events between 10:03:00 and 10:03:59 will be grouped in one window, next window would be 10:04:00-10:04:59
+* Hopping window: Fixed length, but allows windows to overlap in order to provide some smoothing. If you have a 5-minute window with a hop size of 1 minute, it would contain the events between 10:03:00 and 10:07:59, next window would cover 10:04:00-10:08:59
+* Sliding window: Events that occur within some interval of each other. For example, a 5-minute sliding window would cover 10:03:39 and 10:08:12 because they are less than 4 minutes apart.
+* Session window: No fixed duration. All events for the same user, the window ends when the user has been inactive for some time (30 minutes). Common in website analytics
+
+The fact that new events can appear anytime on a stream makes joins on stream challenging.
