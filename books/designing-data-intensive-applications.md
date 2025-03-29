@@ -2519,3 +2519,9 @@ Several types of windows are in common use:
 * Session window: No fixed duration. All events for the same user, the window ends when the user has been inactive for some time (30 minutes). Common in website analytics
 
 The fact that new events can appear anytime on a stream makes joins on stream challenging.
+
+
+
+#### Stream-stream joins
+
+You want to detect recent trends in searched-for URLs. You log an event containing the query. Someone clicks one of the search results, you log another event recording the click. You need to bring together the events for the search action and the click action.
