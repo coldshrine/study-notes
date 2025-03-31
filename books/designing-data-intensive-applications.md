@@ -2520,8 +2520,8 @@ Several types of windows are in common use:
 
 The fact that new events can appear anytime on a stream makes joins on stream challenging.
 
-
-
 #### Stream-stream joins
 
 You want to detect recent trends in searched-for URLs. You log an event containing the query. Someone clicks one of the search results, you log another event recording the click. You need to bring together the events for the search action and the click action.
+
+For this type of join, a stream processor needs to maintain _state_: All events that occurred in the last hour, indexed by session ID. Whenever a search event or click event occurs, it is added to the appropriate index, and the stream processor also checks the other index to see if another event for the same session ID has already arrived. If there is a matching event, you emit an event saying search result was clicked.
