@@ -2561,3 +2561,5 @@ Even though restarting tasks means records can be processed multiple times, the 
 
 
 With stream processing waiting until a tasks if finished before making its ouput visible is not an option, stream is infinite.
+
+One solution is to break the stream into small blocks, and treat each block like a minuature batch process (_micro-batching_). This technique is used in Spark Streaming, and the batch size is typically around one second.
