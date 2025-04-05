@@ -2558,3 +2558,6 @@ This issue is known as _slowly changing dimension_ (SCD), often addressed by usi
 Batch processing frameworks can tolerate faults fairly easy:if a task in a MapReduce job fails, it can simply be started again on another machine, input files are immutable and the output is written to a separate file.
 
 Even though restarting tasks means records can be processed multiple times, the visible effect in the output is as if they had only been processed once (_exactly-once-semantics_ or _effectively-once_).
+
+
+With stream processing waiting until a tasks if finished before making its ouput visible is not an option, stream is infinite.
