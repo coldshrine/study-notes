@@ -2550,3 +2550,9 @@ If state changes over time, and you join with some state, what point in time do 
 If the ordering of events across streams is undetermined, the join becomes nondeterministic.
 
 This issue is known as _slowly changing dimension_ (SCD), often addressed by using a unique identifier for a particular version of the joined record. For example, we can turn the system deterministic if every time the tax rate changes, it is given a new identifier, and the invoice includes the identifier for the tax rate at the time of sale. But as a consequence makes log compation impossible.
+
+
+
+#### Fault tolerance
+
+Batch processing frameworks can tolerate faults fairly easy:if a task in a MapReduce job fails, it can simply be started again on another machine, input files are immutable and the output is written to a separate file.
