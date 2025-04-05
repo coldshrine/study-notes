@@ -2563,3 +2563,7 @@ Even though restarting tasks means records can be processed multiple times, the 
 With stream processing waiting until a tasks if finished before making its ouput visible is not an option, stream is infinite.
 
 One solution is to break the stream into small blocks, and treat each block like a minuature batch process (_micro-batching_). This technique is used in Spark Streaming, and the batch size is typically around one second.
+
+An alternative approach, used in Apache Flint, is to periodically generate rolling checkpoints of state and write them to durable storage. If a stream operator crashes, it can restart from its most recent checkpoint.
+
+Microbatching and chekpointing approaches provide the same exactly-once semantics as batch processing. However, as soon as output leaves the stream processor, the framework is no longer able to discard the output of a failed batch.
