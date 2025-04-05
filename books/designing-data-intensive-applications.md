@@ -2539,3 +2539,14 @@ Another approach is to load a copy of the database into the stream processor so 
 #### Table-table join
 
 The stream process needs to maintain a database containing the set of followers for each user so it knows which timelines need to be updated when a new tweet arrives.
+
+
+#### Time-dependence join
+
+The previous three types of join require the stream processor to maintain some state.
+
+If state changes over time, and you join with some state, what point in time do you use for the join?
+
+If the ordering of events across streams is undetermined, the join becomes nondeterministic.
+
+This issue is known as _slowly changing dimension_ (SCD), often addressed by using a unique identifier for a particular version of the joined record. For example, we can turn the system deterministic if every time the tax rate changes, it is given a new identifier, and the invoice includes the identifier for the tax rate at the time of sale. But as a consequence makes log compation impossible.
