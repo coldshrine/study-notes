@@ -2574,3 +2574,18 @@ In order to give appearance of exactly-once processing, things either need to ha
 This approach is used in Google Cloud Dataflow and VoltDB, and there are plans to add similar features to Apache Kafka.
 
 Our goal is to discard the partial output of failed tasks so that they can be safely retired without taking effect twice. Distributed transactions are one way of achieving that goal, but another way is to rely on _idempotence_.
+
+
+An idempotent operation is one that you can perform multiple times, and it has the same effect as if you performed it only once.
+
+Even if an operation is not naturally idempotent, it can often be made idempotent with a bit of extra metadata. You can tell wether an update has already been applied.
+
+Idempotent operations can be an effective way of achieving exactly-once semantics with only a small overhead.
+
+Any stream process that requires state must ensure tha this state can be recovered after a failure.
+
+One option is to keep the state in a remote datastore and replicate it, but it is slow.
+
+An alternative is to keep state local to the stream processor and replicate it periodically.
+
+Flink periodically captures snapshots and writes them to durable storage such as HDFS; Samza and Kafka Streams replicate state changes by sending them to a dedicated Kafka topic with log compaction. VoltDB replicates state by redundantly processing each input message on several nodes.
