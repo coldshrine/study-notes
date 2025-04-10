@@ -2589,3 +2589,12 @@ One option is to keep the state in a remote datastore and replicate it, but it i
 An alternative is to keep state local to the stream processor and replicate it periodically.
 
 Flink periodically captures snapshots and writes them to durable storage such as HDFS; Samza and Kafka Streams replicate state changes by sending them to a dedicated Kafka topic with log compaction. VoltDB replicates state by redundantly processing each input message on several nodes.
+
+
+## The future of data systems
+
+### Data integration
+
+Updating a derived data system based on an event log can often be made determinisitic and idempotent.
+
+Distributed transactions decide on an ordering of writes by using locks for mutual exclusion, while CDC and event sourcing use a log for ordering. Distributed transactions use atomic commit to ensure exactly once semantics, while log-based systems are based on deterministic retry and idempotence.
