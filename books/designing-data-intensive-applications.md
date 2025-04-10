@@ -2602,3 +2602,10 @@ Distributed transactions decide on an ordering of writes by using locks for mutu
 Transaction systems provide linearizability, useful guarantees as reading your own writes. On the other hand, derived systems are often updated asynchronously, so they do not by default offer the same timing guarantees.
 
 In the absence of widespread support for a good distributed transaction protocol, log-based derived data is the most promising approach for integrating different data systems.
+
+
+However, as systems are scaled towards bigger and more coplex worloads, limitiations emerge:
+* Constructing a totally ordered log requires all events to pass through a _single leader node_ that decides on the ordering.
+* An undefined ordering of events that originate on multiple datacenters.
+* When two events originate in different services, there is no defined order for those events.
+* Some applications maintain client-side state. Clients and servers are very likely to see events in different orders.
