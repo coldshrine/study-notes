@@ -2598,3 +2598,5 @@ Flink periodically captures snapshots and writes them to durable storage such as
 Updating a derived data system based on an event log can often be made determinisitic and idempotent.
 
 Distributed transactions decide on an ordering of writes by using locks for mutual exclusion, while CDC and event sourcing use a log for ordering. Distributed transactions use atomic commit to ensure exactly once semantics, while log-based systems are based on deterministic retry and idempotence.
+
+Transaction systems provide linearizability, useful guarantees as reading your own writes. On the other hand, derived systems are often updated asynchronously, so they do not by default offer the same timing guarantees.
