@@ -2609,3 +2609,5 @@ However, as systems are scaled towards bigger and more coplex worloads, limitiat
 * An undefined ordering of events that originate on multiple datacenters.
 * When two events originate in different services, there is no defined order for those events.
 * Some applications maintain client-side state. Clients and servers are very likely to see events in different orders.
+
+Deciding on a total order of events is known as _total order broadcast_, which is equivalent to consensus. It is still an open research problem to design consensus algorithms that can scale beyond the throughput of a single node.
