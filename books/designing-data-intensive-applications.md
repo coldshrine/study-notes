@@ -2692,3 +2692,9 @@ It is also possible to represent read requests as streams of events, and send bo
 It would allow you to reconstruct what the user saw before they made a particular decision.
 
 Enables better tracking of casual dependencies.
+
+### Aiming for correctness
+
+If your application can tolerate occasionally corrupting or losing data in unpredictable ways, life is a lot simpler. If you need stronger assurances of correctness, the serializability and atomic commit are established approaches.
+
+While traditional transaction approach is not going away, there are some ways of thinking about correctness in the context of dataflow architectures.
