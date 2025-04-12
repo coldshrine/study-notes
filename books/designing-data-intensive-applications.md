@@ -2684,3 +2684,11 @@ A full-text search index is a good example: the write path updates the index, an
 If you don't have an index, a search query would have to scan over all documents, which is very expensive. No index means less work on the write path (no index to update), but a lot more work on the read path.
 
 Another option would be to precompute the search results for only a fixed set of the most common queries. The uncommon queries can still be served from the inxed. This is what we call a _cache_ although it could also be called a materialised view.
+
+##### Read are events too
+
+It is also possible to represent read requests as streams of events, and send both the read events and write events through a stream processor; the processor responds to read events by emiting the result of the read to an output stream.
+
+It would allow you to reconstruct what the user saw before they made a particular decision.
+
+Enables better tracking of casual dependencies.
