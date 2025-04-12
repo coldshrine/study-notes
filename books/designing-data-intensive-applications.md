@@ -2722,3 +2722,13 @@ Low-level reliability mechanisms such as those in TCP, work quite well, and so t
 Transactions have long been seen as a good abstraction, they are useful but not enough.
 
 It is worth exploring F=fault-tolerance abstractions that make it easy to provide application-specific end-to-end correctness properties, but also maintain good performance and good operational characteristics.
+
+#### Enforcing constraints
+
+##### Uniqueness constraints require consensus
+
+The most common way of achieving consensus is to make a single node the leadder, and put it in charge of making all decisions. If you need to tolerate the leader failing, you're back at the consensus problem again.
+
+Uniqueness checking can be scaled out by partitioning based on the value that needs to be unique. For example, if you need usernames to be unique, you can partition by hash or username.
+
+Asynchronous multi-master replication is ruled out as different masters concurrently may accept conflicting writes, so values are no longer unique. If you want to be able to immediately reject any writes that would violate the constraint, synchronous coordination is unavoidable.
