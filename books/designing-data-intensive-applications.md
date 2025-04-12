@@ -2634,3 +2634,33 @@ The whole idea behind lambda architecture is that incoming data should be record
 The stream processor produces an approximate update to the view: the batch processor produces a corrected version of the derived view.
 
 The stream process can use fast approximation algorithms while the batch process uses slower exact algorithms.
+
+### Unbundling databases
+
+#### Creating an index
+
+Batch and stream processors are like elaborate implementations of triggers, stored procedures, and materialised view maintenance routines. The derived data systems they maintain are like different index types.
+
+There are two avenues by which different storate and processing tools can nevertheless be composed into a cohesive system:
+* Federated databases: unifying reads. It is possible to provide a unified query interface to a wide variety of underlying storate engines and processing methods, this is known as _federated database_ or _polystore_. An example is PostgreSQL's _foreign data wrapper_.
+* Unbundled databases: unifying writes. When we compose several storage systems, we need to ensure that all data changes end up in all the right places, even in the face of faults, it is like _unbundling_ a database's index-maintenance features in a way that can synchronise writes across disparate technologies.
+
+Keeping the writes to several storage systems in sync is the harder engineering problem.
+
+Synchronising writes requires distributed transactions across heterogeneous storage systems which may be the wrong solution. An asynchronous event log with idempotent writes is a much more robust and practical approach.
+
+The big advantage is _loose coupling_ between various components:
+1. Asynchronous event streams make the system as a whole more robust to outages or performance degradation of individual components.
+2. Unbundling data systems allows different software components and services to be developed, improved and maintained independently from each other by different teams.
+
+If there is a single technology that does everything you need, you're most likely best off simply using that product rather than trying to reimplement it yourself from lower-level components. The advantages of unbundling and composition only come into the picture when there is no single piece of software that satisfies all your requirements.
+
+#### Separation of application code and state
+
+It makes sense to have some parts of a system that specialise in durable data storage, and other parts that specialise in running application code. The two can interact while still remaining independent.
+
+The trend has been to keep stateless application logic separate from state management (databases): not putting application logic in the database and not putting persistent state in the application.
+
+#### Dataflow, interplay between state changes and application code
+
+Instead of treating the database as a passive variable that is manipulated by the application, application code responds to state changes in one place by triggering state changes in another place.
