@@ -2626,3 +2626,11 @@ Derived data systems could be maintained synchronously. However, asynchrony is w
 Stream processing allows changes in the input to be reflected in derived views with low delay, whereas batch processing allows large amounts of accumulated historical data to be reprocessed in order to derive new views onto an existing dataset.
 
 Derived views allow _gradual_ evolution. If you want to restructure a dataset, you do not need to perform the migration as a sudden switch. Instead, you can maintain the old schema and the new schema side by side as two independent derived views onto the same underlying data, eventually you can drop the old view.
+
+#### Lambda architecture
+
+The whole idea behind lambda architecture is that incoming data should be recorded by appending immutable events to an always-growing dataset, similarly to event sourcing. From these events, read-optimised vuews are derived. Lambda architecture proposes running two different systems in parallel: a batch processing system such as Hadoop MapReduce, and a stream-processing system as Storm.
+
+The stream processor produces an approximate update to the view: the batch processor produces a corrected version of the derived view.
+
+The stream process can use fast approximation algorithms while the batch process uses slower exact algorithms.
