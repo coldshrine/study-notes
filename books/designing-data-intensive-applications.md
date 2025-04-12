@@ -2664,3 +2664,13 @@ The trend has been to keep stateless application logic separate from state manag
 #### Dataflow, interplay between state changes and application code
 
 Instead of treating the database as a passive variable that is manipulated by the application, application code responds to state changes in one place by triggering state changes in another place.
+
+#### Stream processors and services
+
+A customer is purchasing an item that is priced in one currency but paid in another currency. In order to perform the currency conversion, you need to know the current exchange rate.
+
+This could be implemented in two ways:
+* Microservices approach, the code that processes the purchase would probably wuery an exchange-rate service or a database in order to obtain the current rate for a particular currency.
+* Dataflow approach, the code that processes purchases would subscribe to a stream of exchange rate updates ahead of time, and record the current rate in a local database whenever it changes. When it comes to processing the purchase, it only needs to query the local database.
+
+The dataflow is not only faster, but it is also more robust to the failure of another service.
