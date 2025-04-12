@@ -2698,3 +2698,17 @@ Enables better tracking of casual dependencies.
 If your application can tolerate occasionally corrupting or losing data in unpredictable ways, life is a lot simpler. If you need stronger assurances of correctness, the serializability and atomic commit are established approaches.
 
 While traditional transaction approach is not going away, there are some ways of thinking about correctness in the context of dataflow architectures.
+
+#### The end-to-end argument for databases
+
+Bugs occur, and people make mistakes. Favour of immutable and append-only data, because it is easier to recover from such mistakes.
+
+We've seen the idea of _exactly-once_ (or _effectively-once_) semantics. If something goes wrong while processing a message, you can either give up or try again. If you try again, there is the risk that it actually succeeded the first time, the message ends up being processed twice.
+
+_Exactly-once_ means arranging the computation such that the final effect is the same as if no faults had occurred.
+
+One of the most effective approaches is to make the operation _idempotent_, to ensure that it has the same effect, no matter whether it is executed once or multiple times. Idempotence requires some effort and care: you may need to maintain some additional metadata (operation IDs), and ensure fencing when failing over from one node to another.
+
+Two-phase commit unfortunately is not sufficient to ensure that the transaction will only be executed once.
+
+You need to consider _end-to-end_ flow of the request.
