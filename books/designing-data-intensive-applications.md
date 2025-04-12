@@ -2712,3 +2712,13 @@ One of the most effective approaches is to make the operation _idempotent_, to e
 Two-phase commit unfortunately is not sufficient to ensure that the transaction will only be executed once.
 
 You need to consider _end-to-end_ flow of the request.
+
+You can generate a unique identifier for an operation (such as a UUID) and include it as a hidden form field in the client application, or calculate a hash of all the relevant form fields to derive the operation ID. If the web browser submits the POST request twice, the two requests will have the same operation ID. You can then pass that operation ID all the way through to the database and check that you only ever execute one operation with a given ID. You can then save those requests to be processed, uniquely identified by the operation ID.
+
+Is not enough to prevent a user from submitting a duplicate request if the first one times out. Solving the problem requires an end-to-end solution: a transaction indentifier that is passed all the way from the end-user client to the database.
+
+Low-level reliability mechanisms such as those in TCP, work quite well, and so the remaining higher-level faults occur fairly rarely.
+
+Transactions have long been seen as a good abstraction, they are useful but not enough.
+
+It is worth exploring F=fault-tolerance abstractions that make it easy to provide application-specific end-to-end correctness properties, but also maintain good performance and good operational characteristics.
