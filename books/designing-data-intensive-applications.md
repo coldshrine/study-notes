@@ -2674,3 +2674,13 @@ This could be implemented in two ways:
 * Dataflow approach, the code that processes purchases would subscribe to a stream of exchange rate updates ahead of time, and record the current rate in a local database whenever it changes. When it comes to processing the purchase, it only needs to query the local database.
 
 The dataflow is not only faster, but it is also more robust to the failure of another service.
+
+#### Observing derived state
+
+##### Materialised views and caching
+
+A full-text search index is a good example: the write path updates the index, and the read path searches the index for keywords.
+
+If you don't have an index, a search query would have to scan over all documents, which is very expensive. No index means less work on the write path (no index to update), but a lot more work on the read path.
+
+Another option would be to precompute the search results for only a fixed set of the most common queries. The uncommon queries can still be served from the inxed. This is what we call a _cache_ although it could also be called a materialised view.
