@@ -2732,3 +2732,13 @@ The most common way of achieving consensus is to make a single node the leadder,
 Uniqueness checking can be scaled out by partitioning based on the value that needs to be unique. For example, if you need usernames to be unique, you can partition by hash or username.
 
 Asynchronous multi-master replication is ruled out as different masters concurrently may accept conflicting writes, so values are no longer unique. If you want to be able to immediately reject any writes that would violate the constraint, synchronous coordination is unavoidable.
+
+
+##### Uniqueness in log-based messaging
+
+A stream processor consumes all the messages in a log partition sequentially on a single thread. A stream processor can unambiguously and deterministically decide which one of several conflicting operations came first.
+1. Every request for a username is encoded as a message.
+2. A stream processor sequentially reads the requests in the log. For every request for a username tht is available, it records the name as taken and emits a success message to an output stream. For every request for a username that is already taken, it emits a rejection message to an output stream.
+3. The client waits for a success or rejection message corresponding to its request.
+
+The approach works not only for uniqueness constraints, but also for many other kinds of constraints.
