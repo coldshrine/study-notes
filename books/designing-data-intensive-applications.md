@@ -2742,3 +2742,16 @@ A stream processor consumes all the messages in a log partition sequentially on 
 3. The client waits for a success or rejection message corresponding to its request.
 
 The approach works not only for uniqueness constraints, but also for many other kinds of constraints.
+
+
+##### Multi-partition request processing
+
+There are potentially three partitions: the one containing the request ID, the one containing the payee account, and one containing the payer account.
+
+The traditional approach to databases, executing this transaction would require an atomic commit across all three partitions.
+
+Equivalent correctness can be achieved with partitioned logs, and without an atomic commit.
+
+1. The request to transfer money from account A to account B is given a unique request ID by the client, and appended to a log partition based on the request ID.
+2. A stream processor reads the log of requests. For each request message it emits two messages to output streams: a debit instruction to the payer account A (partitioned by A), and a credit instruction to the payee account B (partitioned by B). The original request ID is included in those emitted messages.
+3. Further processors consume the streams of credit and debit instructions, deduplicate by request ID, and apply the chagnes to the account balances.
