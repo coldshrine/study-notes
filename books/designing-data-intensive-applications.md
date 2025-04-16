@@ -2755,3 +2755,15 @@ Equivalent correctness can be achieved with partitioned logs, and without an ato
 1. The request to transfer money from account A to account B is given a unique request ID by the client, and appended to a log partition based on the request ID.
 2. A stream processor reads the log of requests. For each request message it emits two messages to output streams: a debit instruction to the payer account A (partitioned by A), and a credit instruction to the payee account B (partitioned by B). The original request ID is included in those emitted messages.
 3. Further processors consume the streams of credit and debit instructions, deduplicate by request ID, and apply the chagnes to the account balances.
+
+
+
+#### Timeliness and integrity
+
+Consumers of a log are asynchronous by design, so a sender does not wait until its message has been proccessed by consumers. However, it is possible for a client to wait for a message to appear on an output stream.
+
+_Consistency_ conflates two different requirements:
+* Timeliness: users observe the system in an up-to-date state.
+* Integrity: Means absence of corruption. No data loss, no contradictory or false data. The derivation must be correct.
+
+Violations of timeless are "eventual consistency" whereas violations of integrity are "perpetual inconsistency".
