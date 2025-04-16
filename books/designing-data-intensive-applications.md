@@ -2767,3 +2767,18 @@ _Consistency_ conflates two different requirements:
 * Integrity: Means absence of corruption. No data loss, no contradictory or false data. The derivation must be correct.
 
 Violations of timeless are "eventual consistency" whereas violations of integrity are "perpetual inconsistency".
+
+
+#### Correctness and dataflow systems
+
+When processing event streams asynchronously, there is no guarantee of timeliness, unless you explicitly build consumers that wait for a message to arrive before returning. But integrity is in fact central to streaming systems.
+
+_Exactly-once_ or _effectively-once_ semantics is a mechanism for preserving integrity. Fault-tolerant message delivery and duplicate supression are important for maintaining the integrity of a data system in the face of faults.
+
+Stream processing systems can preserve integrity without requireing distributed transactions and an atomic commit protocol, which means they can potentially achieve comparable correctness with much better performance and operational robustness. Integrity can be achieved through a combination of mechanisms:
+* Representing the content of the write operation as a single message, this fits well with event-sourcing
+* Deriving all other state updates from that single message using deterministic derivation functions
+* Passing a client-generated request ID, enabling end-to-end duplicate supression and idempotence
+* Making messages immutable and allowing derived data to be reprocessed from time to time
+
+In many businesses contexts, it is actually acceptable to temporarily violate a constraint and fix it up later apologising. The cost of the apology (money or reputation), it is often quite low.
