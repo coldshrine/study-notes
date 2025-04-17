@@ -2790,3 +2790,18 @@ In many businesses contexts, it is actually acceptable to temporarily violate a 
 2. Although strict uniqueness constraints require timeliness and coordination, many applications are actually fine with loose constraints than may be temporarily violated and fixed up later.
 
 Dataflow systems can provide the data management services for many applications without requiring coordination, while still giving strong integrity guarantees. _Coordination-avoiding_ data systems can achieve better performance and fault tolerance than systems that need to perform synchronous coordination.
+
+
+#### Trust, but verify
+
+Checking the integrity of data is know as _auditing_.
+
+If you want to be sure that your data is still there, you have to actually read it and check. It is important to try restoring from your backups from time to time. Don't just blindly trust that it is working.
+
+_Self-validating_ or _self-auditing_ systems continually check their own integrity.
+
+ACID databases has led us toward developing applications on the basis of blindly trusting technology, neglecting any sort of auditability in the process.
+
+By contrast, event-based systems can provide better auditability (like with event sourcing).
+
+Cryptographic auditing and integrity checking often relies on _Merkle trees_. Outside of the hype for cryptocurrencies, _certificate transparency_ is a security technology that relies on Merkle trees to check the validity of TLS/SSL certificates.
