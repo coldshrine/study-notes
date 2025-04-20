@@ -2805,3 +2805,30 @@ ACID databases has led us toward developing applications on the basis of blindly
 By contrast, event-based systems can provide better auditability (like with event sourcing).
 
 Cryptographic auditing and integrity checking often relies on _Merkle trees_. Outside of the hype for cryptocurrencies, _certificate transparency_ is a security technology that relies on Merkle trees to check the validity of TLS/SSL certificates.
+
+
+### Doing the right thing
+
+Many datasets are about people: their behaviour, their interests, their identity. We must treat such data with humanity and respect. Users are humans too, and human dignitity is paramount.
+
+There are guidelines to navigate these issues such as ACM's Software Engineering Code of Ethics and Professional Practice
+
+It is not sufficient for software engineers to focus exclusively on the technology and ignore its consequences: the ethical responsibility is ours to bear also.
+
+In countries that respect human rights, the criminal justice system presumes innocence until proven guilty; on the other hand, automated systems can systematically and artbitrarily exclude a person from participating in society without any proof of guilt, and with little chance of appeal.
+
+If there is a systematic bias in the input to an algorithm, the system will most likely learn and amplify bias in its output.
+
+It seems ridiculous to believe that an algorithm could somehow take biased data as input and produce fair and impartial output from it. Yet this believe often seems to be implied by proponents of data-driven decision making.
+
+If we want the future to be better than the past, moral imagination is required, and that's something only humans can provide. Data and models should be our tools, not our masters.
+
+If a human makes a mistake, they can be held accountable. Algorithms make mistakes too, but who is accountable if they go wrong?
+
+A credit score summarises "How did you behave in the past?" whereas predictive analytics usually work on the basis of "Who is similar to you, and how did people like you behave in the past?" Drawing parallels to others' behaviour implies stereotyping people.
+
+We will also need to figure outhow to prevent data being used to harm people, and realise its positive potential instead, this power could be used to focus aid an support to help people who most need it.
+
+When services become good at predicting what content users want to se, they may end up showing people only opinions they already agree with, leading to echo chambers in which stereotypes, misinformation and polaristaion can breed.
+
+Many consequences can be predicted by thinking about the entire system (not just the computerised parts), an approach known as _systems thinking_.
