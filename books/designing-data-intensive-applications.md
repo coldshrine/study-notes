@@ -2861,3 +2861,13 @@ Declining to use a service due to its tracking of users is only an option for th
 Having privacy does not mean keeping everything secret; it means having the freedom to choose which things to reveal to whom, what to make public, and what to keep secret.
 
 Companies that acquire data essentially say "trust us to do the right thing with your data" which means that the right to decide what to reveal and what to keep secret is transferred from the individual to the company.
+
+
+
+Even if the service promises not to sell the data to third parties, it usually grants itself unrestricted rights to process and analyse the data internally, often going much further than what is overtly visible to users.
+
+If targeted advertising is what pays for a service, then behavioral data about people is the service's core asset.
+
+When collecting data, we need to consider not just today's political environment, but also future governments too. There is no guarantee that every government elected in the future will respect human rights and civil liberties, so "it is poor civic hygiene to install technologies that could someday facilitate a police state".
+
+To scrutinise others while avoiding scrutiny oneself is one of the most important forms of power.
