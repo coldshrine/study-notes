@@ -2871,3 +2871,12 @@ If targeted advertising is what pays for a service, then behavioral data about p
 When collecting data, we need to consider not just today's political environment, but also future governments too. There is no guarantee that every government elected in the future will respect human rights and civil liberties, so "it is poor civic hygiene to install technologies that could someday facilitate a police state".
 
 To scrutinise others while avoiding scrutiny oneself is one of the most important forms of power.
+
+
+In the industrial revolution tt took a long time before safeguards were established, such as environmental protection regulations, safety protocols for workplaces, outlawing child labor, and health inspections for food. Undoubtedly the cost of doing business increased when factories could no longer dump their waste into rivers, sell tainted foods, or exploit workers. But society as a whole benefited hugely, and few of us would want to return to a time before those regulations.
+
+We should stop regarding users as metrics to be optimised, and remember that they are humans who deserve respect, dignity, and agency. We should self-regulate our data collection and processing practices in order to establish an maintain the trust of the people who depend on our software. And we should take it upon ourselves to educate end users about how their data is used, rather than keeping them in the dark.
+
+We should allow each individual to maintain their privacy, their control over their own data, and not steal that control from them through surveillance.
+
+We should not retain data forever, but purge it as soon as it is no longer needed.
