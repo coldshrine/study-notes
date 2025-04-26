@@ -65,3 +65,24 @@ Kanban uses five core properties to create an emergent set of Lean behaviours in
 Kanban is not a software development lifecycle methodology or an approach to project management. It requires that some process is already in place so that Kanban can be applied to incrementally change the underlying process.
 
 Your situation is unique and you deserve to develop a unique process definition tailored and optimised to your domain.
+
+
+## Recipe for success
+
+Asking people to change their behaviour creates fear and lowers self-esteem, as it communicates that existing skills are clearly no longer valued.
+
+The recipe for success presents guidelines for a new manager adopting a new existing team.
+* **Focus on quality**: Excessive defects are the biggest waste in software development.
+  - Both agile and traditional approaches to quality have merit
+  - Code inspections improve quality
+  - Collaborative analysis and design improve quality
+  - The use of design patterns improves quality
+  - The use of modern development tools improves quality
+  - Reducing the quality of design-in-progress boosts software quality
+* Reduce work-in-progress
+* Deliver often
+* Balance demand against throughput
+* Prioritise
+* Attack sources of variability to improve predictability
+
+Working down the list, there is gradually less control and more collaboration required with other downstream and upstream groups. The final step it's the one that separates the truly great technical leaders from the merely competent managers.
