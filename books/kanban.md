@@ -86,3 +86,22 @@ The recipe for success presents guidelines for a new manager adopting a new exis
 * Attack sources of variability to improve predictability
 
 Working down the list, there is gradually less control and more collaboration required with other downstream and upstream groups. The final step it's the one that separates the truly great technical leaders from the merely competent managers.
+
+### WIP, lead time, and defects
+
+Longer lead times (from starting to done) seem to be associated with significantly poorer quality. In fact, an approximately 6.5x increase in average lead time resulted in greater than 30x in initial defects. Longer average lead times result from greater amounts of work-in-progress. Hence, the management leverage point for improving quality is to reduce the quantity of work-in-progress. **Shorter iterations will drive higher quality.**
+
+### Frequent releases build trust
+
+Reducing WIP shortens lead time and frequent releases build trust with external teams (social capital). Trust is event driven and that small, **frequent gestures or events enhance trust more than larger gestures made only occasionally.**
+
+Small gestures often cost nothing but build more trust than large, expensive gestures bestowed occasionally.
+
+
+### Tacit knowledge
+
+Information discovery in software development is tacit in nature and is created during collaborative working sessions, face-to-face. Our minds have a limited capacity to store all this tacit knowledge. Knowledge depreciates with time, so shorter lead times are essential.
+
+### Balance demand against throughput
+
+By setting the rate at which we accept new requirements, we are effectively fixing our work-in-progress to a given size. As work is delivered, we will pull new work from the people creating demand.
