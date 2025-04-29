@@ -105,3 +105,23 @@ Information discovery in software development is tacit in nature and is created 
 ### Balance demand against throughput
 
 By setting the rate at which we accept new requirements, we are effectively fixing our work-in-progress to a given size. As work is delivered, we will pull new work from the people creating demand.
+
+### Create slack
+
+Slack capacity created by the act of limiting work-in-progress enables improvement. **You need slack to enable continuous improvement.** You need to balance demand against throughput and limit the quantity of work-in-progress to enable slack.
+
+In order to have slack, you must have an unbalanced value stream with a bottleneck resource. Optimising for utilisation is not desirable.
+
+### Prioritise
+
+At this point, management attention can turn to optimising the value delivered rather than merely the quantity of code delivered.
+
+**Prioritisation should not be controlled by engineering.** Improving prioritisation requires the product owner, business sponsor, or marketing department. Engineering can seek only to influence how prioritisation is done.
+
+### Building maturity
+
+First, learn to build high-quality code. Then reduce the work-in-progress, shorten lead times, and release often. Next, balance demand against throughput, limit work-in-progress, and create slack to free up bandwidth, which enable improvements. Then, with a smoothly functioning and optimising software development capability, improve prioritisation to optimise value delivery.
+
+### Attack sources of variability to improve predictability
+
+Reducing variability in software development requires knowledge workers to change the way they work, to learn new techniques and change their personal behaviour. All of this is hard. Variability creates a greater need for slack.
