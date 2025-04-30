@@ -125,3 +125,21 @@ First, learn to build high-quality code. Then reduce the work-in-progress, short
 ### Attack sources of variability to improve predictability
 
 Reducing variability in software development requires knowledge workers to change the way they work, to learn new techniques and change their personal behaviour. All of this is hard. Variability creates a greater need for slack.
+
+## From the worst to the best in five quarters
+
+### Adjusting policies
+
+> So how prioritisation was facilitated? If something was important and valuable, it was selected for the input queue from the backlog; if it wasn't then it wasn't selected. Any item older than six months was purged from the backlog.
+
+> The weekly meeting with product owners also disappeared, when a slot became available in the input queue. It would alert the product owners to pick again.
+
+## A continuous improvement culture
+
+Continually improving quality, productivity, and customer satisfaction is known as "kaizen culture".
+
+Workforce is empowered. Individuals feel free to take action; free to do the right thing without fear. Management is tolerant with failure and individuals are free to self-organise around the work they do and how they do it. Everyone looks out for the performance of the team and the business above themselves.
+
+A kaizen culture has a high level of social capital, a trusting culture where individuals respect each other. High-trust cultures tend to have flatter structures than lower-trust cultures. It is the degree of empowerment that enables a flatter structure to work effectively. Achieving kaizen culture may enable elimination of wasteful layers of management and reduce coordination costs as a result.
+
+**Introducing a radical change is harder than incrementally improving an existing one.**
