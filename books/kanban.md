@@ -143,3 +143,40 @@ Workforce is empowered. Individuals feel free to take action; free to do the rig
 A kaizen culture has a high level of social capital, a trusting culture where individuals respect each other. High-trust cultures tend to have flatter structures than lower-trust cultures. It is the degree of empowerment that enables a flatter structure to work effectively. Achieving kaizen culture may enable elimination of wasteful layers of management and reduce coordination costs as a result.
 
 **Introducing a radical change is harder than incrementally improving an existing one.**
+
+### Unanticipated effects of introducing Kanban
+
+> The physical board had a huge psychological effect. By attending standup each day, team members were exposed to a sort of time-lapse photography of the flow work across the board.
+
+### Sociological change
+
+Kanban method appear to achieve a kaizen culture faster and more effectively than typical Agile software development teams. Kanban enables every stakeholder to see the effects of his or her actions or inactions.
+
+## Mapping the value stream
+
+Kanban drives change by optimising your existing process. The main change will be quantity of WIP and the interface to add interaction with upstream and downstream parts of your business. So you must work with your team to map the value stream as it exists. Map the process they actually use.
+
+### Defining a start and end point for control
+
+Define interface points with upstream and downstream partners.
+
+### Work item types
+
+Identify the types of work that arrive at that point in any others that exist within the workflow that will need to be limited. A few examples:
+* Requirement
+* Feature
+* User story
+* Use case
+* Change request
+* Production defect
+* Maintenance
+* Refactoring
+* Bug
+* Improvement suggestion
+* Blocking issue
+
+### Drawing a card wall
+
+Once you have understood your workflow by sketching or modelling it, start to define a card wall by drawing columns on the board that represent the activities performed, in the order hey are performed.
+
+Where to put buffers: do not try to second-guess the location of bottleneck that will require a buffer. Rather, implement a system and wait for the bottleneck to reveal itself, then make changes to introduce a buffer.
