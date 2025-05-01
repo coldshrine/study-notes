@@ -180,3 +180,40 @@ Identify the types of work that arrive at that point in any others that exist wi
 Once you have understood your workflow by sketching or modelling it, start to define a card wall by drawing columns on the board that represent the activities performed, in the order hey are performed.
 
 Where to put buffers: do not try to second-guess the location of bottleneck that will require a buffer. Rather, implement a system and wait for the bottleneck to reveal itself, then make changes to introduce a buffer.
+
+### Demand
+
+For each type of work identified, you should make a study of the demand.
+
+Decide to allocate capacity within the Kanban system to cope with that demand.
+
+> The allocation is 60% change requests, 10% code refactorings, and 30% production text changes
+
+### Anatomy of a work item card
+
+The information on the cards must facilitate the pull system and empower individuals to make their own pull decisions.
+
+Cards may include:
+* Electronic tracking number as a link to the electronic card
+* Title of the item
+* Date the ticket entered the system. Facilitates first-in, first-out queuing for standard class of service
+* Name of assigned person. Name tags, stickers or magnets are a good idea to represent members.
+
+Basically sufficient information to facilitate project-management decisions without the intervention or direction of a manager.
+
+### Electronic tracking
+
+For teams that are distributed geographically, or those who have policies that allow team members to work from their homes, electronic tracking is essential. They allow you to visualise the work item tracking as if it were on a card wall.
+
+### Coping with concurrency
+
+Two or more activities can happen concurrently. There are two ways for coping with this.
+* One is not to model it at all; just leave a single column where both activities can occur together. Using different colours or shapes of ticket to show the different activities.
+* The other option is to split the board vertically into two (or more) sections
+  ```
+  ┌─────────────┬────────────────┬────────────────┬────────────┐
+  │ INPUT QUEUE │   ANALYSIS     │ DEV & TEST DEV │ TEST READY │
+  ├─────────────┼─────────┬──────┼─────────┬──────┼────────────┤
+  │             │ IN PROG │ DONE │ IN PROG │ DONE │            │
+  ·             ·         ·      ·         ·      ·            ·
+  ```
