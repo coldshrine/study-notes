@@ -217,3 +217,23 @@ Two or more activities can happen concurrently. There are two ways for coping wi
   │             │ IN PROG │ DONE │ IN PROG │ DONE │            │
   ·             ·         ·      ·         ·      ·            ·
   ```
+
+
+### Coping with unordered activities
+
+Usually happens in highly innovative and experimental work.
+
+First, simply have a single column as a bucket for the activities and do not explicitly track on the board which of them is complete.
+Second, tickets have to move vertically up and down the column they are pulled into each of the specific activities. When the activity is complete, the checkbox can be filled to visually signal that the item is ready to be pulled to another activity in the same column. If all the checkboxes are filled, the item is ready to be pulled to the next column on the board or it can be moved to "done".
+
+    ┌──────────────────────────┐
+    │ DEV & TEST DEV           │
+    ├───────────────────┬──────┤
+    │ IN PROGRESS       │ DONE │
+    ├───────────────────┼──────┤
+    │ ┌───────────────┐ │      │
+    │ │ ☒ UI DESIGN   │ │      │
+    │ │ ☒ SECURITY    │ │      │
+    │ │ ☐ PERSISTENCE │ │      │
+    │ │ ☐ BIZ LOGIC   │ │      │
+    · └───────────────┘ ·      ·
