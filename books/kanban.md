@@ -237,3 +237,25 @@ Second, tickets have to move vertically up and down the column they are pulled i
     │ │ ☐ PERSISTENCE │ │      │
     │ │ ☐ BIZ LOGIC   │ │      │
     · └───────────────┘ ·      ·
+
+## Coordination with Kanban systems
+
+### Visual control and pull
+
+You are likely to want to visually capture the assigned staff member, the start date, the electronic tracking number, the work item type, the class of service, and some status information, such as whether the item is late.
+
+Visually communicate enough information to make the system self-organising and self-expediting ad the team level. It should enable team members to pull work without direction from their manager.
+
+### Electronic tracking
+
+As an alternative or as a supplement
+
+### Daily standup meetings
+
+In Agile a typical standup meeting is for a single team of up of twelve people, usually about six. Involving answering three questions: **What did you achieve yesterday? What will you do today? Are you blocked or do you need assistance?**
+
+In Kanban, the wall contains all the information so the focus will be on the flow of work. The facilitator will "walk the board". Work backward, from right to left (in direction of the pull), through the tickets on the board. Making emphasis on items that are blocked, delayed due to defects or stuck for a few days. There will also a call for any other blocking issues that are not on the board and for anyone who needs help to speak up. Mature teams do not need to walk through every card. They will tend to focus only on the tickets that are blocked or have defects.
+
+### The after meeting
+
+Huddles of small groups of 2 or 3 people. Team members that want to discuss something on their minds. After meetings generate improvement ideas and result in process tailoring and innovation.
