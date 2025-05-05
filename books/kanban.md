@@ -283,3 +283,28 @@ There is a relationship between the size of the backlog, the volatility of the d
 ### Issue log review and escalation
 
 When work items are impeded, an issue work item will be created. The issue will remain open until the impediment is removed and the original work item can progress through the system. Issues that are not progressing should be escalated.
+
+
+### Sticky buddies
+
+Each person not physically present in the office and able to move the sticky note on the card wall, make a peer-to-peer agreement with someone who would be present in the office to act as their delegate.
+
+### Synchronising across geographic locations
+
+The key coordination across multiple site is to use an electronic system. It isn't enough to have only a card wall. It will be necessary to keep physical card walls synchronised on a daily basis. It is important to assign someone to take responsibility to this at each location.
+
+## Establishing a delivery cadence
+
+Kanban avoids any dysfunction introduced by artificially forcing things into time-boxes. It decouples the time it takes to create a user story from the delivery rate. While some work is complete and ready for delivery, some other work will be in progress. It makes sense to question how often prioritisation (and perhaps planning estimation) should happen.
+
+### Coordination costs of delivery
+
+Activities involved in successfully delivering software need to be accounted for, planned, scheduled, resourced and then actually performed.
+
+#### Efficiency of delivery
+
+To be more efficient, focus on reducing waste by reducing coordination and transaction costs in order to make the batch size efficient.
+
+#### Agreeing a delivery cadence
+
+You, the team, and the organisation are aware of the costs of making a delivery and are capable of making some form of ration assessment about the acceptable frequency of delivery.
