@@ -259,3 +259,27 @@ In Kanban, the wall contains all the information so the focus will be on the flo
 ### The after meeting
 
 Huddles of small groups of 2 or 3 people. Team members that want to discuss something on their minds. After meetings generate improvement ideas and result in process tailoring and innovation.
+
+### Queue replenishment meetings
+
+These serve the purpose of prioritisation in Kanban. They happen at regular intervals providing cadence for queue replenishment.
+Ideally they will involve several product owners or business people from potentially competing groups. The tension becomes a positive influence.
+Mature teams evolve towards demand-driven prioritisation where stakeholders can be available on demand.
+
+### Release planning meetings
+
+Basically plan downstream delivery.
+
+### Triage
+
+Triage is used to classify bugs that will be fixed, and their priority, versus bugs that will not be fixed.
+
+The most useful application of triage is the backlog of items waiting to enter the system.
+
+The purpose of triaging the backlog is to reduce its size. A good rule of thumb is to trim the backlog for anything more than 3 months of work.
+
+There is a relationship between the size of the backlog, the volatility of the domain and the delivery velocity.
+
+### Issue log review and escalation
+
+When work items are impeded, an issue work item will be created. The issue will remain open until the impediment is removed and the original work item can progress through the system. Issues that are not progressing should be escalated.
