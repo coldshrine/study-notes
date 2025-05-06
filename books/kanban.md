@@ -308,3 +308,118 @@ To be more efficient, focus on reducing waste by reducing coordination and trans
 #### Agreeing a delivery cadence
 
 You, the team, and the organisation are aware of the costs of making a delivery and are capable of making some form of ration assessment about the acceptable frequency of delivery.
+
+#### Improve efficiency to increase delivery cadence
+
+Choose conservatively initially. Let the organisation prove that it can achieve this level of consistency. After, improve configuration management.
+
+Reducing coordination and transaction costs is at the hart of Lean. Deliver more value to your customers more often.
+
+#### Making on-demand deliveries
+
+Regular delivery helps to build trust. Lack of predictability destroys trust. Choose a regular cadence except in circumstances in which trust already exists, where near-continuous deployment is desirable.
+
+Under special circumstances, it makes sense to plan a special, off-cycle release. It should be treated as exceptional.
+
+## Establishing an input cadence
+
+### Agreeing on a prioritisation cadence
+
+Weekly is a good schedule for prioritisation cadence. It provides frequent interaction with business owners, builds trust through the interaction involved and enables the players to move the pieces once a week.
+
+It's a collaborative experience, there is transparency to the work and to the work flow; progress can be reported every week; everyone gets to feel that they are contributing to something valuable.
+
+### Efficiency of prioritisation
+
+Some teams sit together, so there is no need for a meeting, a quick discussion across the desk will be enough. Other teams may have people in multiple zones, so weekly meetings may not be so easily scheduled.
+As general advice, more frequent prioritisation is desirable. It allows the input queue to be smaller, and, as a result, there is less waste in the system. WIP is lower and therefore a lead time is shorter.
+
+### Transaction costs of prioritisation
+
+Activities such as estimation, business plan preparation, and candidate selection from the backlog, are preparatory work for prioritisation. These are the transaction costs of prioritisation. It is desirable to keep these costs low.
+
+### Improve efficiency to increase prioritisation cadence
+
+Because of the coordination-cost effect, Agile planning methods are efficient only for small teams focused on single systems and product lines.
+
+By choosing to eliminate estimation, transaction costs and coordination costs of prioritisation are reduced. This reduction facilitates frequent prioritisation or on-demand prioritisation.
+
+### On-demand prioritisation
+
+Each week product managers would refill the empty slots in the input queue.
+
+Choose on-demand prioritisation when you have a relatively high level of organisation maturity, low transaction costs, and low coordination costs. Otherwise, use a regularly scheduled prioritisation meeting.
+
+## Setting work-in-progress limits
+
+WIP limits should be agreed upon by consensus with up- and downstream stakeholders and senior management.
+
+### Limits for work tasks
+
+One task at a time should be ideal. As items could be blocked and task switching should be allowed, some research suggest that two items in progress per knowledge worker is optimal.
+
+You may encounter resistance to the notion that one item per person, pair or small team is the correct choice.
+
+#### Limits for queues
+
+When work is completed and waiting to be pulled by the next stage it is said to be "queuing".
+
+#### Buffer bottlenecks
+
+The bottleneck in your workflow may require a buffer in front of it. Buffers and queues smooth flow and improve predictability of lead time.
+
+Buffers also ensure that people are kept working and provide for a greater utilisation. **Do not sacrifice predictability in order to achieve agility of quality.**
+
+#### Input queue size
+
+It can be directly determined from the prioritisation cadence and the throughput, or production rate in the system.
+
+Queue and buffer sizes should be adjusted empirically as required.
+
+#### Unlimited sections of workflow
+
+With Drum-Buffer-Rope, all work stations downstream from the bottleneck have unlimited WIP.
+
+             BOTTLENECK
+             ↓
+    ☺··☺··☺··☹·☺·☺
+    └────────┘           DRUM-BUFFER-ROPE
+
+    ☺·☺····☺·☹·☺···☺
+    └──────────────┘     CONWIP
+
+    ☺··☺··☺··☹·☺···☺     
+    └────────┴─────┘     DBR + CONWIP
+
+    ☺··☺··☺··☹··☺··☺
+    └──┴──┴──┴──┴──┘     KANBAN
+
+
+With a Kanban system, most or all the stations in the workflow have WIP limits. The local WIP limit with the Kanban system will stop the line quickly keeping the system from becoming overloaded.
+
+#### Don't stress your organisation
+
+In more mature organisation that suffer few unexpected issues you can be more aggressive with your WIP-limit policies. For more chaotic organisations, you will want to introduce looser limits initially with greater WIP and an intention to reduce it later.
+
+#### It's a mistake not to set a WIP limit
+
+The tension created by imposing a WIP limit is positive tension. It forces discussion about the organisation's issues and dysfunctions. Without WIP limits, progress and process improvement is slow.
+
+#### Capacity allocation
+
+                ┌───────┬────────────────┬────────────────┬─·
+    ALLOCATION  │ INPUT │   ANALYSIS     │ DEV & TEST DEV │
+    TOTAL = 20  │ QUEUE ├─────────┬──────┼─────────┬──────┼─·
+                │       │ IN PROG │ DONE │ IN PROG │ DONE │
+                ├───────┼─────────┼──────┼─────────┼──────┼─·
+    CHANGE REQ  │       │         │      │         │      │
+    12          │       │         │      │         │      │
+                ├───────┼─────────┼──────┼─────────┼──────┼·
+    MAINTENANCE │       │         │      │         │      │
+    2           │       │         │      │         │      │
+                ├───────┼─────────┼──────┼─────────┼──────┼·
+    PROD DEFECT │       │         │      │         │      │
+    6           │       │         │      │         │      │
+                ·       ·         ·      ·         ·      ·
+
+Capacity allocation allows us to guarantee service for each type of work received by the Kanban system. It is important to complete some demand analysis to facilitate reasonable allocation of WIP limits on swim lanes for each type of work.
