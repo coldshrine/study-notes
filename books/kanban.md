@@ -574,3 +574,20 @@ Organisation-wide ops review fosters institutionalisation of changes, improvemen
 ## Starting a Kanban change initiative
 
 **The main reason for adopting Kanban is change management. Everything else is secondary.**
+
+### Cultural change rather than a managed-change initiative
+
+It is a significant shift away from how a typical Agile transition is planned and managed. There is no planned initiative, no assessments. Ideally, there is no end. Leadership drives a continuous process, encouraging incremental changes. There is a gradual transformation toward a kaizen culture.
+
+### Goals for our Kanban system
+
+**Change with minimal resistance must be our first goal.**
+
+* **Goal 1: Optimise existing processes**. Existing processes will be optimised through introduction of visualisation and limiting work-in-progress to catalyse changes.
+* **Goal 2: Deliver with high quality**. Limiting WIP and allowing us to define policies around what is acceptable before a work item can be pulled to the next step in the process.
+* **Goal 3: Improve lead time predictability**. The amount of WIP is directly related to lead time, so keep WIP small.
+* **Goal 4: Improve employee satisfaction**. There is a huge impact on performance that comes with a well motivated and experienced workforce.
+* **Goal 5: Provide slack to enable improvement**. Without slack (space between work items), team members cannot take time to reflect upon how they do their work and how they might do it better.
+* **Goal 6: Simplify prioritisation**. Maximise business value and minimise risk and cost. In order to respond to change in the market and evolving events, it is necessary to reprioritise. What is needed is a prioritisation scheme that delays commitments as long as possible and that asks a simple question that is easy to answer. Kanban provides this by asking the business owners to refill empty slots in the queue while providing them with a reliable lead-time and due-date performance metric.
+* **Goal 7: Provide transparency on the system design and operation**. Transparency into the performance of the team, provide customers with confidence. Transparency into the process, let everyone involved see the effects of their actions or inactions. People will be more reasonable.
+* **Goal 8: Design a process to enable emergence of "high-maturity" organisation**. Seek predictability above all else, coupled with business agility and good governance. Success at the senior-executive level depends a lot on trust, and trust requires reliability.
