@@ -644,3 +644,17 @@ A bottleneck in a process flow is anywhere that a backlog of work builds up wait
 #### Elevation actions
 
 A natural reaction is to hire another person to help, adding capacity so that bottleneck is removed. However, **elevating a capacity-constrained resource ought to be the last resort**. Hiring more people slows a project down.
+
+#### Exploitation/protection actions
+
+Rather than jump immediately to elevation, is better to first find ways to fully exploit the capacity of the bottleneck resource. On a highway analogy, speed does not really affect throughput. It's the gap between vehicles that is most important. Variability in the system has a huge impact on throughput.
+
+Fortunately, in our office, our capacity-constrained resources are affected by variability that we _can_ do something about. We can seek to keep the individual busy working on value-added work by minimising the non-value-added (wasteful) activities required of that person.
+
+If you find yourself saying "invest", you are generally talking about an elevation action. Adding resources is not the only way to elevate capacity. **Automation is a good an natural strategy for elevation.** It does also reduce the variability: repeatable tasks and activities are repeated with digital accuracy.
+
+A strong organisational capability at issue identification, escalation, and resolution is essential for effective exploitation of capacity-constrained bottlenecks.
+
+If there are several issues blocking current work, they should get the highest priority. Kanban will help to raise awareness.
+
+One more technique is to ensure that the resource is never idle. **The most common way to avoid such idle time is to protect the bottleneck resource with a buffer** of work intended to absorb the variability in the arrival rate of new work queuing. You will get more work done despite the slightly longer lead time and the slightly greater total WIP.
