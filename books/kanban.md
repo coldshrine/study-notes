@@ -495,3 +495,20 @@ Now that we have allocated capacity to different classes of service, the input q
 
 If the costs associated are high, we may choose to leave the slot empty. It may make sense to effectively reserve capacity for a fixed delivery date item. If risks are low, we may choose to fill the slot with a standard class item.
 
+## Metrics and management
+
+We are less interested in reporting on whether a project is "on-time" or a specific plan is being followed. **What's important is to show that the system is predictable and is operating as designed.**
+
+We want to show how well we perform against the class-of-service promises. What's the due-date performance? We want to track the trend over time.
+
+### Tracking WIP
+
+The bands on the chart should be smooth and their height should be stable.
+
+### Lead time
+
+How predictably our organisation delivers against the promises in the class-of-service definitions. How quickly did we get it from the order into production?
+
+### Due-date performance
+
+The item was delivered on time.
