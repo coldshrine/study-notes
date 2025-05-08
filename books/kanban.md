@@ -550,3 +550,18 @@ Items we process because of earlier poor quality.
   - Value-added efficiency
   - Maybe some extra metrics to review some aspect of the process
 
+
+
+### Keystone of lean transition
+
+Ops Review is the keystone of Lean transition and Kanban method implementation. It provides the feedback loop that enables growth of organisation maturity and organisation-level continuous improvement.
+
+### Appropriate cadence
+
+Operations review have to be monthly. Quarterly is too seldom to really drive an improvement program, review tends to be superficial.
+
+The loss of a feedback loop reduces the opportunities for reflection and adaptation that could lead to improvements.
+
+### Demonstrating the value of managers
+
+Operations review trains the workforce to think like managers, to understand when to make interventions and when to stand back and leave the team to self-organise.
