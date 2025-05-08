@@ -591,3 +591,31 @@ It is a significant shift away from how a typical Agile transition is planned an
 * **Goal 6: Simplify prioritisation**. Maximise business value and minimise risk and cost. In order to respond to change in the market and evolving events, it is necessary to reprioritise. What is needed is a prioritisation scheme that delays commitments as long as possible and that asks a simple question that is easy to answer. Kanban provides this by asking the business owners to refill empty slots in the queue while providing them with a reliable lead-time and due-date performance metric.
 * **Goal 7: Provide transparency on the system design and operation**. Transparency into the performance of the team, provide customers with confidence. Transparency into the process, let everyone involved see the effects of their actions or inactions. People will be more reasonable.
 * **Goal 8: Design a process to enable emergence of "high-maturity" organisation**. Seek predictability above all else, coupled with business agility and good governance. Success at the senior-executive level depends a lot on trust, and trust requires reliability.
+
+
+### Steps to get started
+
+1. Map the value stream
+2. Define some point where you want to control input. Define what is the upstream of that point and the upstream stakeholders.
+2. Define some exit point beyond which you do not intend to control. Define what is downstream of that and who the downstream stakeholders are.
+3. Define a set of work item types based on the types of work requests that come from the upstream stakeholders.
+4. Analyse the demand for each work item type. Observe the arrival rate and variation.
+5. Meet with the upstream and downstream stakeholders.
+6. Discuss policies around capacity and get agreement on WIP limit.
+7. Discuss and agree on an input-coordination mechanism, such as a regular prioritisation meeting, with the upstream partners.
+8. Discuss and agree on a release/delivery-coordination mechanism, such as a regular software release, with downstream partners.
+9. You might need to introduce the concept of different classes of service.
+10. Agree on a lead-time target for each class of service of work items (SLA).
+11. Create a board/card wall to track the value stream.
+12. Optionally, create an electronic system to track and report the same.
+12. Agree with the team to have a standup meeting every day in front of the board; invite up- and downstream stakeholders but don't mandate their involvement.
+13. Agree to have a regular operations review meeting for retrospective analysis of the process; invite up- and downstream stakeholders but don't mandate their involvement.
+14. Educate the team on the new board, WIP limits, and the pull system.
+
+### Kanban strikes a different type of bargain
+
+Kanban does not seek to make a promise and commit based on something that is uncertain. The typical implementation involves agreement that there will be regular delivery of high-quality working software, with complete transparency, daily visibility of progress and offering frequent opportunities to select the most important new items for development.
+
+A commitment around scope, schedule, and budget is indicative of a one-off transaction. It implies that there is no ongoing relationship; it implies a low level of trust.
+
+Kanban is based on the notion that the team will stay together and engage in a supplier relationship over a long period of time.
