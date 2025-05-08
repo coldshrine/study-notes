@@ -423,3 +423,41 @@ The tension created by imposing a WIP limit is positive tension. It forces discu
                 ·       ·         ·      ·         ·      ·
 
 Capacity allocation allows us to guarantee service for each type of work received by the Kanban system. It is important to complete some demand analysis to facilitate reasonable allocation of WIP limits on swim lanes for each type of work.
+
+## Establishing service level agreements
+
+Some requests are needed more quickly than others, while some are more valuable than others. **By quickly identifying the class of service for an item, we are spared the need to make a detailed estimate or analysis.** Policies associated with a class of service affect how items are pulled through the system. Class of service determines priority.
+
+### Typical class-of-service definitions
+
+Based on business impact, each class of service comes with its own set of policies. You might want to offer up to a maximum of six such classes. Common ones are:
+* **Expedite** (white): Offers a vendor the ability to say "Yes!" in difficult circumstances to meet a customer need. The business makes a choice to realise value on a specific sale at a cost of both delaying other orders and incurring additional carrying costs of higher inventory levels.
+* **Fixed delivery date** (purple): Requests of this nature carry a significant cost delay whether direct or indirect. There would be a date when a penalty will happen.
+* **Standard class** (yellow): One common Kanban system design scheme separates work types by size, such a small, medium, and large. A different service level agreement for standard class items of each size can be offered. Peg: small items to be processed in 4 days, medium size items 1 month, and large items 3 months.
+* **Intangible class** (green): There is no cost of delay within the timeframe that it might take to deliver the item, such as platform replacement. Platform replacement, although it has a low immediate cost of delay, gets displaced by other work with greater and more immediate cost of delay.
+
+### Policies for class of service
+
+Different colours of tickets or different swim lanes on the card wall are the most common. Any staff member can use simple prioritisation policies without management intervention.
+
+Policies:
+* **Expedite policies**
+  - Only one expedite request is permitted at any given time.
+  - Other work will be put on hold.
+  - WIP limit may be exceeded in order to accommodate the expedite.
+* **Fixed delivery date policies**
+  - Receive some analysis an estimate of size, it may be broken up into smaller items.
+  - They are pulled in preference over other, less risky items.
+  - Must adhere to the WIP limit.
+  - If a fixed delivery date item gets behind, it might be promoted to an expedite request.
+* **Standard class policies**
+  - Prioritised based on an agreed-upon mechanism, such as democratic voting, and typically selected based on their cost of delay or business value.
+  - First in, first out (FIFO) queuing as they are pulled through the system.
+  - No estimation is performed.
+  - May be analysed for order of magnitude in size.
+  - Large items my be broken down into smaller items. Each item may be queued and flowed separately.
+* **Intangible class**
+  - Prioritised based on an agreed-upon mechanism, such as democratic voting, and typically selected based on their cost of delay or business value.
+  - Members may choose to pull an intangible class item regardless of its entry date.
+  - No estimation is performed.
+  - May be analysed for size.
