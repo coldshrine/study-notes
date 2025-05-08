@@ -512,3 +512,41 @@ How predictably our organisation delivers against the promises in the class-of-s
 ### Due-date performance
 
 The item was delivered on time.
+
+### Throughput
+
+Number of items that were delivered in a given time period, such as one month. It should be reported as a trend over time. The goal is to continually increase it. You may be able to report the relative size.
+
+You may be able to report the value of the work delivered as a dollar amount.
+
+Throughput is used as an indicator of how well the system is performing an to demonstrate continuous improvement.
+
+### Issues and blocked work items
+
+A cumulative-flow diagram of reported impediments overlaid with a graph of the number of WIP items that have become blocked. This chart can be used on a day-to-day basis alert of impediments and their impact.
+
+### Flow efficiency
+
+Track assigned time (to an individual) against time spent blocked and queuing. Show how much potential there is for improvement.
+
+### Initial quality
+
+It makes sense to report the number of escaped defects as a percentage against the total WIP and throughput.
+
+### Failure load
+
+Items we process because of earlier poor quality.
+
+## Operations review
+
+### Main agenda
+
+* Each manager gets 8 minutes for a presentation on their department's performance.
+* Project specific updates from program-management office.
+* Team managers get 5 minutes to quickly present their metrics plus a few minutes for questions, comments and suggestions on the metrics presented.
+  - Defect rates
+  - Lead times
+  - Throughput
+  - Value-added efficiency
+  - Maybe some extra metrics to review some aspect of the process
+
