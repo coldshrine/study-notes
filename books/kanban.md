@@ -565,3 +565,12 @@ The loss of a feedback loop reduces the opportunities for reflection and adaptat
 ### Demonstrating the value of managers
 
 Operations review trains the workforce to think like managers, to understand when to make interventions and when to stand back and leave the team to self-organise.
+
+
+### Organisational focus fosters kaizen
+
+Organisation-wide ops review fosters institutionalisation of changes, improvements and processes. Teams want to demonstrate how they can help the organisation with better predictability, more thought, shorter lead times, lower costs, and higher quality.
+
+## Starting a Kanban change initiative
+
+**The main reason for adopting Kanban is change management. Everything else is secondary.**
