@@ -461,3 +461,37 @@ Policies:
   - Members may choose to pull an intangible class item regardless of its entry date.
   - No estimation is performed.
   - May be analysed for size.
+
+  ### Determining a service delivery target
+
+Service-level agreements that offer target lead time with due-date performance metric allows us to avoid costly activities such as estimation.
+
+To determine the target lead time (from first selection to delivery), it helps to have some historical data. If you don't have any make reasonable guess.
+
+> 30% of all requests were late compared to the target lead time. Due date performance = 70%
+
+### Assigning a class of service
+
+The class should be assigned when the item is selected into the input queue.
+
+                    5   +        4       +   3   +        4       +   2   +   2  = 20 TOTAL
+                ├───────┼────────────────┼───────┼────────────────┼───────┼──────┼─────────┼·
+    EXPEDITE    │ INPUT │   ANALYSIS     │  DEV  │   DEVELOPMENT  │ BUILD │ TEST │ RELEASE │
+    █ +1 = 5%   │ QUEUE ├─────────┬──────┤ READY ├─────────┬──────┤ READY │      │  READY  │
+                │       │ IN PROG │ DONE │       │ IN PROG │ DONE │       │      │         │
+    FIXED       ├───────┼─────────┼──────┼───────┼─────────┼──────┼───────┼──────┼─────────┼·
+    ▒  4 = 20%  │   ░   │    ░    │      │   ▓   │    ░    │      │   ░   │  ▓*  │    ░    │
+                │       │         │   ░  │       │         │      │       │      │         │
+    STANDARD    │   □   │    ░    │      │   ▒*  │    ░    │      │   ▓   │  ▒   │    ▒    │
+    ░ 10 = 50%  │       │         │      │       │         │      │       │      │         │
+                │   □   │    ░    │      │   ▓   │    █    │      │       │      │    ░    │
+    INTANGIBLE  │       │         │      │       │         │   ▒  │       │      │         │
+    ▓  6 = 30%  │   □   │         │      │   ░   │         │      │       │      │         │
+                │       │         │      │       │         │      │       │      │         │
+    □ SLOT      │   □   │         │      │       │         │      │       │      │         │
+    * BLOCKED   ·       ·         ·      ·       ·         ·      ·       ·      ·         ·
+
+Now that we have allocated capacity to different classes of service, the input queue replenishment activity is complicated.
+
+If the costs associated are high, we may choose to leave the slot empty. It may make sense to effectively reserve capacity for a fixed delivery date item. If risks are low, we may choose to fill the slot with a standard class item.
+
