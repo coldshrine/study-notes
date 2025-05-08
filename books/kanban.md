@@ -619,3 +619,28 @@ Kanban does not seek to make a promise and commit based on something that is unc
 A commitment around scope, schedule, and budget is indicative of a one-off transaction. It implies that there is no ongoing relationship; it implies a low level of trust.
 
 Kanban is based on the notion that the team will stay together and engage in a supplier relationship over a long period of time.
+
+
+### WIP limits
+
+Getting our partners to agree on a WIP limits is a vital element. There will be a day when our partners ask us to take some additional work and we will be able to respond that we have an agreed-upon WIP limit. We would be able to ask "which one of the current items in progress would you prefer that we drop in order to start your new item?"
+
+### Prioritisation
+
+An agreement to have a regular replenishment meeting and mechanism for how new work will be selected.
+
+### Lead time and classes of service
+
+It helps to have some historical data on past performance.
+
+The lead-time target you are agreeing to for each class of service should be presented as a target rather than a commitment. If you do need to agree that lead time in the SLA represent a commitment, you should add a margin for safety. A lower level of trust results in a direct economic cost.
+
+## Bottlenecks and non-instant availability
+
+A bottleneck in a process flow is anywhere that a backlog of work builds up waiting to be processed.
+
+### Capacity-constrained resources
+
+#### Elevation actions
+
+A natural reaction is to hire another person to help, adding capacity so that bottleneck is removed. However, **elevating a capacity-constrained resource ought to be the last resort**. Hiring more people slows a project down.
