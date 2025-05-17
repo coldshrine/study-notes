@@ -36,3 +36,35 @@ Object-oriented programming tightly couples state with related behaviour, and fu
 In the ["No Silver Bullet" paper](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf) Brooks identified four properties of software which make software hard: Complexity, Conformity, Changeability and Invisibility.
 
 Complexity is _the_ root of the vast majority of problems with software today, like the ones about unreliability, late delivery or lack of security.
+
+
+### Simplicity is hard
+
+The type of complexity we are discussing in this paper is the one which makes large systems _hard to understand_. The one that causes huge resources in _creating and maintaining_ such systems. This type complexity has nothing to do with the complexity related with a _machine executing a program_.
+
+## Approaches to understanding
+
+* **Testing**: Attempting to understand the system from the outside with observations about how it behaves. Performed either by a human or by a machine.
+* **Informal reasoning**: Understand the system by examining it from the inside.
+
+Reasoning is the most important by far, mainly because there are limits to what can be achieved by testing, and because informal reasoning is _always_ used.
+
+The key problem with testing is that tells you _nothing at all_ when it is given a different set of inputs.
+
+> Testing can be used very effectively to show the presence of bugs but never to show their absence – Dijkstra
+
+_Informal reasoning_ is limited in scope, imprecise and hence prone to error, as well as _formal reasoning, which is dependant upon the accuracy of specification. It may often be prudent to employ testing _and_ reasoning together.
+
+Is because of the limitations of these approaches that _simplicity_ is vital.
+
+## Causes of complexity
+
+### Complexity caused by state
+
+#### Impact of state in testing
+
+State affects all types of testing. The common approach to testing a stateful system is to start up such that it is in some kind of "clean" or "initial" state, perform the desired tests upon the assumption that the system would perform in the same way every time the test is run. Sweeping the problem of state under the carpet.
+
+It's not _always_ possible to "get away with it", some sequence of events can cause the system to "get into a bad _state_", then thing can go wrong.
+
+Even though the number of _inputs_ may be very large, the number of possible _states_ the system can be is often even larger.
