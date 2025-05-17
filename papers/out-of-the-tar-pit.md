@@ -68,3 +68,21 @@ State affects all types of testing. The common approach to testing a stateful sy
 It's not _always_ possible to "get away with it", some sequence of events can cause the system to "get into a bad _state_", then thing can go wrong.
 
 Even though the number of _inputs_ may be very large, the number of possible _states_ the system can be is often even larger.
+
+#### Impact of state in informal reasoning
+
+The mental processes which are used to do this informal reasoning often revolve around a case-by-case mental simulation of behaviour. As the number of states grows, the effectiveness of this mental approach buckles quickly.
+
+Another issue for informal reasoning is _contamination_.
+
+Consider a system made up of procedures, some of which are stateful and others which aren't. If the procedure makes use of any procedure which _is_ stateful, _even indirectly_, the procedure becomes _contaminated_.
+
+The more we can do to _limit_ and _manage_ state, the better.
+
+### Complexity caused by control
+
+Control is about _order_ in which things happen. We do not want to have to concerned about this.
+
+When control is an implicit part of the language, every single piece of program must be understood in that context. When a programmer is forced to specify the control, he or she is being forced to specify an aspect of _how_ the system should work rather than simply _what_ is desired. They are being forced to _over-specify_ the problem.
+
+A control-related problem is concurrency, which affects _testing_ as well.
