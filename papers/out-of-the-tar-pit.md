@@ -86,3 +86,23 @@ Control is about _order_ in which things happen. We do not want to have to conce
 When control is an implicit part of the language, every single piece of program must be understood in that context. When a programmer is forced to specify the control, he or she is being forced to specify an aspect of _how_ the system should work rather than simply _what_ is desired. They are being forced to _over-specify_ the problem.
 
 A control-related problem is concurrency, which affects _testing_ as well.
+
+Concurrency is normally specified _explicitly_ in most languages. The most common model is "shared-state concurrency" in which explicit synchronisation is provided. The difficulty for informal reasoning comes from adding further the _number of scenarios_ that must mentally be considered as the program is read.
+
+Running a test in the presence of concurrency tells you _nothing at all_ about what will happen the next time you run that very same test.
+
+### Complexity caused by code volume
+
+This is a secondary effect. Much code is simply concerned with managing _state_ or specifying _control_. It is the easiest form of complexity to _measure_, and it interacts badly with the other causes of complexity.
+
+Complexity definitively _does_ exhibit nonlinear increase with size (of the code) so it's vital to reduce the amount of code to an absolute minimum.
+
+### Other causes of complexity
+
+There are other causes like: duplicated code, dead code, unnecessary abstraction, missed abstraction, poor modularity, poor documentation...
+
+All these come down to the following principles
+
+* **Complexity breeds complexity**. Complexity introduced as a _result of_ not being able to clearly understand a system, like _Duplication_. This is particularly common in the presence of time pressures.
+* **Simplicity is hard**. Simplicity can only be attained if it is recognised, sought and priced.
+* **Power corrupts**. In the absence of language-enforced guarantees mistakes (and abuses) _will_ happen. We need to be very wary of any language that even _permits_ state, regardless of how much it discourages its use, the more _powerful_ a language, the harder it is to _understand_ systems constructed in it.
