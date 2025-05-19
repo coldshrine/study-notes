@@ -106,3 +106,27 @@ All these come down to the following principles
 * **Complexity breeds complexity**. Complexity introduced as a _result of_ not being able to clearly understand a system, like _Duplication_. This is particularly common in the presence of time pressures.
 * **Simplicity is hard**. Simplicity can only be attained if it is recognised, sought and priced.
 * **Power corrupts**. In the absence of language-enforced guarantees mistakes (and abuses) _will_ happen. We need to be very wary of any language that even _permits_ state, regardless of how much it discourages its use, the more _powerful_ a language, the harder it is to _understand_ systems constructed in it.
+
+## Classical approaches to managing complexity
+
+### Object-orientation
+
+Imperative approach to programming.
+
+#### State
+
+An object is seen as consisting of some state together with a set of procedures for accessing and manipulating that state.
+
+_Encapsulation_ allows the enforcement of integrity constraints over an object's state by regulating access to that state through access procedures ("methods").
+
+One problem is that if several of the access procedures access or manipulate the same bit of state, then there may be several places where a given constraint must be enforced. Another major problem is that encapsulation-based integrity constraint enforcement is strongly biased toward single-object constraints, and it's awkward to enforce more complicated constraints involving multiple objects.
+
+##### Identity and state
+
+Each object is seen as being uniquely identifiable entity regardless of its attributes. This is known as _intentional_ identity (in contrast with _extensional_ identity in which things are considered the same if their attributes are the same).
+
+Object identity _does_ make sense when objects are used to provide a (mutable) stateful abstraction.
+
+However, where mutability is _not_ required, the OOP approach is the creation of "Value Objects". It is common to start using custom access procedures to determine whether two objects are equivalent. There is no guarantee that such domain-specific equivalence concepts conform to the standard idea of an equivalence relation (peg: no guarantee of transitivity).
+
+The concept of _object identity_ adds complexity to the task of reasoning about systems developed in OOP.
