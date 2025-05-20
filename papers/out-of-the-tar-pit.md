@@ -196,3 +196,18 @@ Logic programming makes no use of mutable state, and for this reason profits fro
 #### Control
 
 Operational commitment ot _process_ the program is the same order as it read textually (depth first). Particular ways of writing down can lead to non-termination, which leads inevitably to the standard difficulty for informal reasoning caused by control flow.
+
+#### Summary
+
+Despite the limitations it offers the ability to escape from the complexity caused by control.
+
+## Accidents and essence
+
+Brooks defined difficulties of "essence" as those inherent in the nature of software and classified the rest as "accidents".
+
+* **Essential complexity** is inherent in the _users problem_.
+* **Accidental complexity** is complexity with which the development team would not have to deal in the ideal world.
+
+Any real development _will_ need to contend with _some_ accidental complexity.
+
+Complexity itself is not inherent (or essential) property of software. Much complexity that we do see in existing software is not essential (to the problem). The goal of software engineering must be both to eliminate as much of accidental complexity as possible and to assist with the essential complexity part of it.
