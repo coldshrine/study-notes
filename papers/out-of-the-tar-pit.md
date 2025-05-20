@@ -180,3 +180,19 @@ In a functional program _you can always tell exactly what will control the outco
 The trade-off is between _complexity_ and _simplicity_.
 
 The main weakness of functional programming is that problem arise when the system to be built must maintain state of some kind.
+
+#### Summary
+
+Functional programming goes along way towards voiding the problems of state-derived complexity.
+
+### Logic programming
+
+Together with functional programming _declarative_ style of programming places emphasis on _what_ needs to be done rather than exactly _how_ to do it.
+
+#### State
+
+Logic programming makes no use of mutable state, and for this reason profits from the same advantages as functional programming.
+
+#### Control
+
+Operational commitment ot _process_ the program is the same order as it read textually (depth first). Particular ways of writing down can lead to non-termination, which leads inevitably to the standard difficulty for informal reasoning caused by control flow.
