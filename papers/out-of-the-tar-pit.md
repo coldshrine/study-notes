@@ -159,3 +159,24 @@ By avoiding state, informal reasoning becomes much more effective.
 #### Control
 
 Functional languages do derive one slight benefit when it comes to control because they encourage a more abstract use of control functionals (such as `fold` / `map`) rather than explicit looping. There are also concurrent versions.
+
+
+#### Kinds of state
+
+By "state" what is really meant is _mutable state_.
+
+Language which do not support or discourage mutable state it is common to achieve somewhat similar effects by means of passing extra parameters to procedures (functions).
+
+There is no reason why the functional style of programming cannot be adopted in stateful languages. Whatever the language being used, there are large benefits to be had from avoiding, implicit, mutable state.
+
+#### State and modularity
+
+State permits a particular kind of modularity, within a stateful framework it is possible to add state to any component without adjusting the components which invoke it. Within a functional framework the same effect can only be achieved by adjusting every single component that invokes it to carry the additional information around.
+
+In a functional approach you are forced to make changes to every part of the program that could be affected, in the stateful you are not.
+
+In a functional program _you can always tell exactly what will control the outcome of a procedure_ simply by looking at the arguments supplied where it is invoked. In a stateful program you can never tell what will control the outcome, and _potentially_ have a look at every single piece of code in the _entire system_ to determine this information.
+
+The trade-off is between _complexity_ and _simplicity_.
+
+The main weakness of functional programming is that problem arise when the system to be built must maintain state of some kind.
