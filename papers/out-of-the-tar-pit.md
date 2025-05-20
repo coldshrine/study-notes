@@ -211,3 +211,25 @@ Brooks defined difficulties of "essence" as those inherent in the nature of soft
 Any real development _will_ need to contend with _some_ accidental complexity.
 
 Complexity itself is not inherent (or essential) property of software. Much complexity that we do see in existing software is not essential (to the problem). The goal of software engineering must be both to eliminate as much of accidental complexity as possible and to assist with the essential complexity part of it.
+
+## Recommended general approach
+
+Complexity could not be _possibly_ avoided even in the ideal world.
+
+### Ideal world
+
+In the ideal world we would not be concerned about performance. Even in the ideal world, we would need to start with a set of _informal requirements_ from the prospective users. We would ultimately need something to _happen_, and we are going to need some _formality_.We are going to need to derive formal requirements from the informal ones.
+
+The next step is simply to _execute_ these formal requirements directly.
+
+Effectively what we have just described is in fact the very _essence_ of _declarative programming_, specify _what_ you require, not _how_ it must be achieved.
+
+#### State in the ideal world
+
+The aim for state is to get rid of it hoping that most will be _accidental state_.
+
+All data will be provided (_input_) or _derived_.
+
+**Input data** Included in the informal requirements and as such is deemed _essential_.
+* If the system may be required to refer to the data in the future then it is _essential state_.
+* If there is no such possibility and the data is designed to have some side-effect, the data need not to be maintained at all.
