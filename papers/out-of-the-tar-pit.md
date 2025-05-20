@@ -130,3 +130,32 @@ Object identity _does_ make sense when objects are used to provide a (mutable) s
 However, where mutability is _not_ required, the OOP approach is the creation of "Value Objects". It is common to start using custom access procedures to determine whether two objects are equivalent. There is no guarantee that such domain-specific equivalence concepts conform to the standard idea of an equivalence relation (peg: no guarantee of transitivity).
 
 The concept of _object identity_ adds complexity to the task of reasoning about systems developed in OOP.
+
+
+##### State in OOP
+
+All forms of OOP rely on state, and general behaviour is affected by this state. OOP does not provide an adequate foundation for avoiding complexity.
+
+#### Control
+
+Standard sequentual control flow and explicit classical "shared-state concurrency" cause standard complexity errors. A slight variation of "message-passing" Actor model canis not lead to easier informal reasoning but is not widespread.
+
+#### Summary
+
+Conventional imperative and object-oriented programs suffer greatly from both state-derived and control-derived complexity.
+
+### Functional programming
+
+It has its roots in the completely stateless lambda calculus of Church.
+
+#### State
+
+Functional programming languages are often classified as "pure" which shun state and side-effects completely, and "impure", whilst advocating the avoidance of state and side-effects in general, do permit their use.
+
+By avoiding state (and side-effects) the entire system gains the property of _referential transparency_, a function will _always_ return exactly the same result. Because of this, testing does become far more effective.
+
+By avoiding state, informal reasoning becomes much more effective.
+
+#### Control
+
+Functional languages do derive one slight benefit when it comes to control because they encourage a more abstract use of control functionals (such as `fold` / `map`) rather than explicit looping. There are also concurrent versions.
