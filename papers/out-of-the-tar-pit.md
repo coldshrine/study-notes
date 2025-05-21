@@ -233,3 +233,23 @@ All data will be provided (_input_) or _derived_.
 **Input data** Included in the informal requirements and as such is deemed _essential_.
 * If the system may be required to refer to the data in the future then it is _essential state_.
 * If there is no such possibility and the data is designed to have some side-effect, the data need not to be maintained at all.
+
+**Essential derived data (immutable)** Data can always be re-derived, we do _not_ need to store it in the ideal world (accidental state).
+
+**Essential derived data (mutable)** This can be excluded and hence corresponds to _accidental state_.
+
+**Accidental derived data** State that is _derived_ but _not_ in the users' requirements is _accidental state_.
+
+As a summary, mutable state can be avoided, even in the ideal world we _are_ going to have _some_ essential state.
+
+_Accidental state_ can be excluded from the ideal world (by re-deriving the data as required). The vast majority of state isn't needed. One effect of this is that _all_ the state int he system is _visible_ to the user.
+
+#### Control in the ideal world
+
+Control generally can be completely omitted, so is considered _accidental_.
+
+We should not have to worry about the control flow. _Results_ should be independent of the actual control mechanism. This is what logic programming taught us.
+
+#### Summary
+
+It is clear that a lot of complexity is _accidental_.
