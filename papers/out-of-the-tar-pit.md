@@ -253,3 +253,23 @@ We should not have to worry about the control flow. _Results_ should be independ
 #### Summary
 
 It is clear that a lot of complexity is _accidental_.
+
+### Theoretical and practical limitations
+
+#### Formal specification languages
+
+_Executable specifications_ would be ideal. Declarative programming paradigm proposed approaches have been proposed as approaches for executable specifications.
+
+In the ideal world, specifications derived _directly_ from the users' informal requirement is critical.
+
+Formal specification has been categorised in two main camps:
+* **Property-based** approaches focus on _what_ is required rather than _how_ the requirements should be achieved (_algebraic_ approaches such as Larch and OBJ).
+* **Model-based (or state-based)** approaches construct a model and specify how that model must behave. These approaches specify how a stateful, imperative language solution must behave to satisfy the requirements.
+
+There have been arguments against the concept of executable specifications. The main objection is that requiring a specification language to be executable can directly restrict its expresiveness.
+
+In response, a requirement for this kind of expressivity does not seem to be common in many problem domains. Secondly where such specifications _do_ occur they should be maintained in their natural form but supplemented with a _separate_ operational component.
+
+_Property-based_ approaches have the greatest similarity to _executable specifications_ in the ideal world.
+
+A second problem is that even when specifications _are_ directly executable, this can be impractical for efficiency reasons. It may require some accidental components.
