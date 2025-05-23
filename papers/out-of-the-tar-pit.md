@@ -273,3 +273,25 @@ In response, a requirement for this kind of expressivity does not seem to be com
 _Property-based_ approaches have the greatest similarity to _executable specifications_ in the ideal world.
 
 A second problem is that even when specifications _are_ directly executable, this can be impractical for efficiency reasons. It may require some accidental components.
+
+##### Ease of expression
+
+Immutable, derived data would correspond to _accidental state_ and could be omitted (you could derive data on-demand).
+
+There are occasionally situations where (using on-demand derivation) does not give rise to the most natural modelling of the problem.
+
+An example of this is the derived data representing the position state of an opponent in an interactive game. It is at all times _derivable_ by a function of both all prior movements and the initial starting positions, but this is not the way it is most naturally expressed.
+
+##### Required accidental complexity
+
+* **Performance** making use of accidental state and control can be required for efficiency.
+* **Ease of expression** making use of accidental state can be the most natural way to express logic in some cases.
+
+#### Recommendations
+
+_Avoid_ state and control where they are not absolutely and truly essential. When needed, such complexity must be _separated_ out from the rest of the system.
+
+##### Required accidental complexity
+
+* **Performance** _avoid_ explicit management of the accidental state, restrict ourselves to simply _declaring_ what accidental state should be used, and leave it to a completely separate infrastructure to maintain. We can effectively forget that the _accidental state_ even exists.
+* **Ease of expression** this problem arises when derived (_accidental_) state offers the most natural way to express part of the logic of the system.
