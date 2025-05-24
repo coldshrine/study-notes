@@ -376,3 +376,7 @@ Simply by specifying in a purely declarative way a set of constraints must hold.
 The most common types of constraint are _primary_ keys and _foreign_ keys.
 
 DBMSs provide _imperative_ mechanisms such as triggers for maintaining integrity.
+
+### Data independence
+
+Is the principle of separating the logical model from the physical storage representation.
