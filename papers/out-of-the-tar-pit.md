@@ -332,3 +332,15 @@ Recommended architecture (arrows show static references)
 This has nothing _intrinsically_ to do with databases. Relational features as _structuring_ and _manipulating_ data, and maintaining _integrity_ and consistency of state, are applicable to state and data in any context.
 
 Not only that, it does also allow clear separation between the logical and physical layers of the system (_data independence_).
+
+### Structure
+
+#### Relations
+
+A relation is a homogeneous _set of records_, each one of them composed by a set of _attributes_.
+
+Relations can be:
+* **Base relations** stored directly
+* **Derived relations** also known as _Views_, defined in terms of other relations.
+
+A relation can be considered a _value_, and consider mutable state not as a "mutable relation" but rather a _variable_ which at any time can contain a particular relation _value_ (_relation variables_ or _relvars_).
