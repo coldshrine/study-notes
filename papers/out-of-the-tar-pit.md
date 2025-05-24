@@ -366,3 +366,13 @@ Relational algebra consists of the following operations:
 * **Difference** binary operation, all records in the first but no the second argument relation.
 * **Join** binary operation, all possible records that result from matching identical attributes.
 * **Divide** ternary operation, all records of the first argument which occur in the second argument associated with _each_ record of the third argument.
+
+One significant benefit of this manipulation language is that it has the property of _closure_, all operations can be nested in arbitrary ways.
+
+### Integrity
+
+Simply by specifying in a purely declarative way a set of constraints must hold.
+
+The most common types of constraint are _primary_ keys and _foreign_ keys.
+
+DBMSs provide _imperative_ mechanisms such as triggers for maintaining integrity.
