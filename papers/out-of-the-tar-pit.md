@@ -344,3 +344,11 @@ Relations can be:
 * **Derived relations** also known as _Views_, defined in terms of other relations.
 
 A relation can be considered a _value_, and consider mutable state not as a "mutable relation" but rather a _variable_ which at any time can contain a particular relation _value_ (_relation variables_ or _relvars_).
+
+#### Structuring benefits of relations, access path independence
+
+Structuring data using relations is appealing because there is no need for up-front decisions need to be made about the _access paths_ to be queried later.
+
+The ability of the relational model to _avoid_ access paths completely was one of the primary reasons for its success.
+
+There are disturbing similarities between the data structuring approaches of OOP and XML.
