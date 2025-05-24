@@ -361,7 +361,8 @@ Relational algebra consists of the following operations:
 * **Restrict** unary operation, select of a subset.
 * **Project** unary operation, creates a new relation corresponding to the old relation.
 * **Product** binary operation, cartesian product.
-
 * **Union** binary operation, all records in either argument relation.
 * **Intersection** binary operation, all records in both argument relations.
 * **Difference** binary operation, all records in the first but no the second argument relation.
+* **Join** binary operation, all possible records that result from matching identical attributes.
+* **Divide** ternary operation, all records of the first argument which occur in the second argument associated with _each_ record of the third argument.
