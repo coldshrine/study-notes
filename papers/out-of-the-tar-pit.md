@@ -295,3 +295,30 @@ _Avoid_ state and control where they are not absolutely and truly essential. Whe
 
 * **Performance** _avoid_ explicit management of the accidental state, restrict ourselves to simply _declaring_ what accidental state should be used, and leave it to a completely separate infrastructure to maintain. We can effectively forget that the _accidental state_ even exists.
 * **Ease of expression** this problem arises when derived (_accidental_) state offers the most natural way to express part of the logic of the system.
+
+
+##### Separation and the relationship between components
+
+First separate _all_ complexity of any kind from the pure logic (_logic_ / _state_ split).
+
+Second, divide complexity between _accidental_ and _essential_. The essential bits correspond to the requirements.
+
+"Separate" is basically advocating clean distinction between all three of these components. Additionally, it advocates for a split between the state and control components of the "Useful" Accidental Complexity, but this is less important.
+
+It may be ideal to use _different languages_ for each. The weaker the language, the more simple it is to reason about.
+
+Separation is important because it "restricts the power" of each of the components independently. It facilitates reasoning about them as a whole.
+
+Recommended architecture (arrows show static references)
+
+       ┌───────────────┬────────────────────┐
+    ┌──│               │                    │
+    │  │              ─┼─► Essential Logic  │
+    │  │   Accidental  │                    │
+    │  │   State and   │──────────┼─────────┤
+    │  │    Control    │          ▼         │
+    │  │              ─┼─► Essential State  │
+    │  │               │                    │
+    │  └───────────────┴──────────────────┬─┘
+    │       Language and Infrastructure   │
+    └─────────────────────────────────────┘
