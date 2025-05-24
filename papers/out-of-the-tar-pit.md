@@ -380,3 +380,35 @@ DBMSs provide _imperative_ mechanisms such as triggers for maintaining integrity
 ### Data independence
 
 Is the principle of separating the logical model from the physical storage representation.
+
+### Extensions
+
+Relational algebra is a restrictive language in computational terms, and is normally augmented.
+
+Common extensions include:
+* **General computation capabilities** for example simple arithmetical operations.
+* **Aggregate operators** `MAX`, `MIN`, `COUNT`, `SUM`, etc.
+* **Grouping and summarisation capabilities**
+* **Renaming capabilities**
+
+## Functional relational programming
+
+FRP is purely hypothetical, it has not in any way been proven in practice.
+
+In FRP all _essential state_ takes the form of relations, and the _essential logic_ is expressed using relational algebra extended with (pure) user-defined functions.
+
+The goal behind the FRP is the _elimination of complexity_.
+
+The components of an FRP system.
+
+    ┌───────────────┬────────────────────┬─────────┐
+    │               │▒▒▒▒▒▒▒▒▒░░░░░░░░░░░│         │
+    │               │▒ Essential Logic  ─┼─►       │
+    │   Accidental  │▒▒▒▒▒▒▒▒▒░░░░░░░░░░░│         │
+    │   State and   │────────────────────┤  Other  │
+    │    Control    │░░░░░░░░░░░░░░░░░░░░│         │
+    │               │░ Essential State ◄─┼─        │
+    │               │░░░░░░░░░░░░░░░░░░░░│         │
+    └───────────────┴────────────────────┴─────────┘
+
+              ▒ Functional  ░ Relational
