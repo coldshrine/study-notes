@@ -326,3 +326,9 @@ Recommended architecture (arrows show static references)
 * **Essential state** This is the foundation of the system. It can _make no reference_ to _either_ of the other parts. Changes in either of the other specifications may never require changes to the specification of essential state.
 * **Essential logic** This is referred as "business" logic, it's expressed, in terms of the state, what must be true. It does _not_ say anything about how. Changes to the essential state specification may require changes to the logic specification, and changes to the logic specification may require changes to the specification for accidental state and control. It should _make no reference_ to _any_ part of the accidental specification.
 * **Accidental state and control** The least important of the system. Changes to it can _never_ affect the other specifications.
+
+## The relational model
+
+This has nothing _intrinsically_ to do with databases. Relational features as _structuring_ and _manipulating_ data, and maintaining _integrity_ and consistency of state, are applicable to state and data in any context.
+
+Not only that, it does also allow clear separation between the logical and physical layers of the system (_data independence_).
