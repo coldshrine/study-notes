@@ -352,3 +352,12 @@ Structuring data using relations is appealing because there is no need for up-fr
 The ability of the relational model to _avoid_ access paths completely was one of the primary reasons for its success.
 
 There are disturbing similarities between the data structuring approaches of OOP and XML.
+
+### Manipulation
+
+There are two different mechanisms for expressing the manipulation aspects of the relational model, the relational calculus and the relational algebra.
+
+Relational algebra consists of the following operations:
+* **Restrict** unary operation, select of a subset.
+* **Project** unary operation, creates a new relation corresponding to the old relation.
+* **Product** binary operation, cartesian product.
