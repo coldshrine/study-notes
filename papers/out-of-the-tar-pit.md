@@ -412,3 +412,13 @@ The components of an FRP system.
     └───────────────┴────────────────────┴─────────┘
 
               ▒ Functional  ░ Relational
+
+### Architecture
+
+_Separate_ specifications for each of the following components:
+* **Essential state** A relational definition of the stateful components of the system.
+* **Essential logic** Derived-relation definitions, integrity constraints and (pure) functions.
+* **Accidental state and control** A declarative specification of a set of performance optimisations for the system.
+* **Other** Interfaces o the outside world.
+
+In contrast with the object-oriented approach, FRP emphasises a clear _separation_ of state and behaviour.
