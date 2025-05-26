@@ -453,3 +453,24 @@ These components will be of a _minimal_ nature, performing only the necessary tr
 
 * **Feeders** convert input into relational assignments (causes changes to the _essential state_). _Feeders_ will need to specify them in some form of _state manipulation language_ provided by the infrastructure.
 * **Observers** generate output in response to changes which they observe in the values of the (derived) relvars. At the minimum, they only need to specify the _name_ of the relvar which they wish to observe. Infrastructure will ensure that the observer is invoked. _Observers_ act both as _live-queries_ and also _triggers_.
+
+#### Infrastructure
+
+The FRP _system_ is the specification. _Infrastructure_ is what is needed to execute this specification. The requirements are:
+
+**Infrastructure for essential state**
+1. Store and retrieve data in the form of relations to named relvars.
+2. A state manipulation language which allows the stored relvars to be updated.
+3. Optionally secondary storage in addition to the primary one.
+4. A base set of generally useful types.
+
+**Infrastructure for essential logic**
+1. Evaluates relational expressions.
+2. Provides a base set of useful functions.
+3. Language to allow specification of the user-defined functions in the FRP system.
+4. Optionally a means of type inference.
+5. Means to express and enforce integrity constraints.
+
+**Infrastructure for accidental state and control**
+1. Specify which _derived_ relvars should actually be stored. Along with the ability to store such relvars _and ensure_ they are _up-to-date at all times_.
+2. _Flexible_ physical storage mechanisms to be used by a relvar.
