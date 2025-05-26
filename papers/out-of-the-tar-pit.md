@@ -430,3 +430,13 @@ Essential state for the system in terms of base relvars (in FRP state store sole
 FRP strongly encourages data to be treated as essential state _only_ when it has been _input directly by a user_.
 
 #### Essential logic ("behaviour")
+
+Compromises both functional and algebraic relational parts.
+
+The definitions can make use of an arbitrary set of pure user-defined functions.
+
+Logic specifies a set of _integrity constraints_, boolean expressions which must hold at all times.
+
+#### Accidental state and control ("performance")
+
+Consists of a series of isolated performance "hints". They should be declarative in nature and intended to provide guidance to the infrastructure. It provides a means to specify _what state_ (accidental) should exist. amd it provides means to specify _what physical storage mechanisms_ should be used.
