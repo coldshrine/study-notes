@@ -422,3 +422,11 @@ _Separate_ specifications for each of the following components:
 * **Other** Interfaces o the outside world.
 
 In contrast with the object-oriented approach, FRP emphasises a clear _separation_ of state and behaviour.
+
+#### Essential state ("state")
+
+Essential state for the system in terms of base relvars (in FRP state store solely in terms of relations).
+
+FRP strongly encourages data to be treated as essential state _only_ when it has been _input directly by a user_.
+
+#### Essential logic ("behaviour")
