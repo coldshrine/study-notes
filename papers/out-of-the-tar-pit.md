@@ -450,3 +450,6 @@ All input must be converted into relational assignments (replace the old relvar 
 There will probably be a requirement for a series of _feeder_ (or _input_) and _observer_ (or _output_) components.
 
 These components will be of a _minimal_ nature, performing only the necessary translations to and from relations
+
+* **Feeders** convert input into relational assignments (causes changes to the _essential state_). _Feeders_ will need to specify them in some form of _state manipulation language_ provided by the infrastructure.
+* **Observers** generate output in response to changes which they observe in the values of the (derived) relvars. At the minimum, they only need to specify the _name_ of the relvar which they wish to observe. Infrastructure will ensure that the observer is invoked. _Observers_ act both as _live-queries_ and also _triggers_.
