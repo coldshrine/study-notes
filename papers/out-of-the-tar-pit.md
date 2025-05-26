@@ -440,3 +440,13 @@ Logic specifies a set of _integrity constraints_, boolean expressions which must
 #### Accidental state and control ("performance")
 
 Consists of a series of isolated performance "hints". They should be declarative in nature and intended to provide guidance to the infrastructure. It provides a means to specify _what state_ (accidental) should exist. amd it provides means to specify _what physical storage mechanisms_ should be used.
+
+#### Other (interfacing)
+
+Basically _interfacing with the outside world_.
+
+All input must be converted into relational assignments (replace the old relvar values in the _essential state_ with new ones), and all output (and side-effects) must be driven from changes to the values of relvars.
+
+There will probably be a requirement for a series of _feeder_ (or _input_) and _observer_ (or _output_) components.
+
+These components will be of a _minimal_ nature, performing only the necessary translations to and from relations
