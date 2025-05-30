@@ -500,3 +500,11 @@ The _functional_ component (of the logic) has _no access_ to any state at all, i
 There are major advantages from adopting relational representation of data such no concern with data access paths.
 
 Finally, integrity of constraints provide big benefits for maintaining consistency of state in a _declarative_ manner.
+
+#### Benefits of control
+
+Control is _avoided_ completely. In FRP the logic consist simply of a set of equations with no intrinsic ordering or control flow at all.
+
+An _infrastructure_ which supports FRP may well make use of _implicit_ parallelism to improve its performance.
+
+It is also much easier to create distributed implementations.
