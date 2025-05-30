@@ -522,3 +522,13 @@ Un-needed data abstraction actually represents another common cause of complexit
 * **Data hiding** Erodes the benefits of referential transparency. Data which _does_ get used is _hidden_ at the function call site. This leads to problems for testing as well as informal reasoning in ways very similar to state.
 
 One of the primary strengths of the relational model involves only minimal commitment to any subjective groupings.
+
+#### Other benefits
+
+Potential benefits include performance and development teams themselves could be organised around different components.
+
+### Types
+
+FRP provides a limited ability to define new user types for use in the _essential state_ and _essential logic_ components.
+
+It _does not_ permit the creation of new product types, this is in order to _avoid_ any unnecessary data abstraction.
