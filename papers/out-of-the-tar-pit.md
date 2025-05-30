@@ -486,3 +486,17 @@ The ability to access arbitrary _historical_ relvar values would obviously be a 
 ---
 
 It is possible to develop an FRP infrastructure in _any_ general purpose language, object-oriented, functional or logic.
+
+### Benefits of this approach
+
+#### Benefits for state
+
+It _avoids_ useless accidental state, and to avoid ever getting into a "bad state".
+
+From the point of view of the logic, the _essential state_ is seen as a _constant_.
+
+The _functional_ component (of the logic) has _no access_ to any state at all, it is referentially transparent.
+
+There are major advantages from adopting relational representation of data such no concern with data access paths.
+
+Finally, integrity of constraints provide big benefits for maintaining consistency of state in a _declarative_ manner.
