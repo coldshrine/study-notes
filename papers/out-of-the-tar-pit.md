@@ -474,3 +474,15 @@ The FRP _system_ is the specification. _Infrastructure_ is what is needed to exe
 **Infrastructure for accidental state and control**
 1. Specify which _derived_ relvars should actually be stored. Along with the ability to store such relvars _and ensure_ they are _up-to-date at all times_.
 2. _Flexible_ physical storage mechanisms to be used by a relvar.
+
+**Infrastructure for feeders and observers**
+
+For _feeders_ to be able to process relational assignment commands. It is useful to include the ability to accept commands which specify new relvar values in terms of their previous values (`INSERT`, `UPDATE`, `DELETE`) .
+
+For _observers_ to be able to supply new value of a relvar whenever it changes. Extensions that could be useful are the ability to provide deltas, throttling and coalescing capabilities.
+
+The ability to access arbitrary _historical_ relvar values would obviously be a useful extension in some scenarios too.
+
+---
+
+It is possible to develop an FRP infrastructure in _any_ general purpose language, object-oriented, functional or logic.
