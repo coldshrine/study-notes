@@ -508,3 +508,17 @@ Control is _avoided_ completely. In FRP the logic consist simply of a set of equ
 An _infrastructure_ which supports FRP may well make use of _implicit_ parallelism to improve its performance.
 
 It is also much easier to create distributed implementations.
+
+#### Benefits of code volume
+
+It _avoids_ useless accidental complexity and that leads to less code.
+
+It reduces the harm that large volumes of code through its use of _separation_.
+
+#### Benefits of data abstraction
+
+Un-needed data abstraction actually represents another common cause of complexity via:
+* **Subjectivity** Pre-existing data abstractions are too easily lead to _inappropriate_ reuse.
+* **Data hiding** Erodes the benefits of referential transparency. Data which _does_ get used is _hidden_ at the function call site. This leads to problems for testing as well as informal reasoning in ways very similar to state.
+
+One of the primary strengths of the relational model involves only minimal commitment to any subjective groupings.
