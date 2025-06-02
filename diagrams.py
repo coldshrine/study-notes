@@ -18,7 +18,7 @@ fran = [34, 29, 26, 6, 10, 9, 6, 11]
 angl = [20, 31, 17, 5, 11, 7, 5, 4]
 bel = [37, 23, 34, 21, 11, 7, 9, 2]
 
-# Создание датафрейма
+# Создание DataFrame
 df = pd.DataFrame({
     "Категория": categories,
     "ФРАН": fran,
@@ -26,24 +26,24 @@ df = pd.DataFrame({
     "БЕЛ": bel
 })
 
-# Считаем сумму по каждой категории
+# Добавим сумму и отобразим её в названии категории
 df["Сумма"] = df[["ФРАН", "АНГЛ", "БЕЛ"]].sum(axis=1)
-
-# Создаем колонку с названием категории и суммой
 df["Категория с суммой"] = df.apply(
     lambda row: f"{row['Категория']} ({row['Сумма']})", axis=1
 )
 
-# Сортируем по убыванию суммы
+# Сортировка
 df = df.sort_values("Сумма", ascending=False)
 
+# Цвета
 palette = {
     "ФРАН": "#c69ff5",
     "АНГЛ": "#b185d8",
     "БЕЛ": "#986fc2"
 }
 
-fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(18, 8), sharey=True)
+# Построение графика
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(20, 8), sharey=True)
 languages = ["ФРАН", "АНГЛ", "БЕЛ"]
 
 for i, lang in enumerate(languages):
@@ -52,24 +52,27 @@ for i, lang in enumerate(languages):
         y="Категория с суммой",
         data=df,
         ax=axes[i],
-        color=palette[lang]
+        color=palette[lang],
+        width=0.5  # сделаем бары тоньше
     )
-    axes[i].set_title(lang, fontsize=14, fontweight='bold')
-    axes[i].set_xlabel("Значение", fontsize=10)
-    axes[i].bar_label(axes[i].containers[0], fmt='%d', padding=3, fontsize=9)
+    
+    # Заголовки и подписи
+    axes[i].set_title(lang, fontsize=16, fontweight='bold')
+    axes[i].set_xlabel("Количество", fontsize=12)
+    axes[i].bar_label(axes[i].containers[0], fmt='%d', padding=3, fontsize=12)
 
-    # Убираем рамки
+    # Убираем рамки (сплайны)
     for spine in axes[i].spines.values():
         spine.set_visible(False)
 
-# Показываем категории только на первом графике:
-axes[0].set_ylabel("Категории", fontsize=10)
-axes[0].tick_params(labelsize=9)
+    if i == 0:
+        axes[i].set_ylabel("Категории", fontsize=12)
+        axes[i].tick_params(labelsize=11)
+    else:
+        axes[i].set_ylabel("")
+        axes[i].tick_params(left=False, labelleft=False)
 
-# Скрываем метки оси Y у правых графиков, чтобы не дублировать
-for ax in axes[1:]:
-    ax.tick_params(left=False, labelleft=False)
-
+# Общий заголовок и отступы
+fig.suptitle("Распределение категорий по языкам", fontsize=18, fontweight='bold')
 plt.tight_layout(rect=[0, 0, 1, 0.95])
-fig.suptitle("Распределение категорий по языкам", fontsize=16, fontweight='bold')
 plt.show()
