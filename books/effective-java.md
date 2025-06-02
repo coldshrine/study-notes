@@ -77,3 +77,62 @@ public class NutritionFacts {
     }
 }
 ```
+
+The telescoping constructor pattern works, but it is hard to write client code when there are many parameters, and harder still to read it.
+
+Avoid using JavaBeans pattern as it might leave the object in an inconsistent state partway through its construction. It does also precludes the possibility of making the class immutable.
+
+```java
+public class NutritionFacts {
+    private final int servingSize;
+    private final int servings;
+    private final int calories;
+    private final int fat;
+    private final int sodium;
+    private final int carbohydrate;
+
+    public static class Builder {
+        private final int servingSize;
+        private final int servings;
+
+        private int calories      = 0;
+        private int fat           = 0;
+        private int sodium        = 0;
+        private int carbohydrate  = 0;
+
+        public Builder(int servingSize, int servings) {
+            this.servingSize = servingSize;
+            this.servings    = servings;
+        }
+
+        public Builder calories(int val)
+            { calories = val;      return this; }
+        public Builder fat(int val)
+            { fat = val;           return this; }
+        public Builder sodium(int val)
+            { sodium = val;        return this; }
+        public Builder carbohydrate(int val)
+            { carbohydrate = val;  return this; }
+
+        public NutritionFacts build() {
+            return new NutritionFacts(this);
+        }
+    }
+
+    private NutritionFacts(Builder builder) {
+        servingSize  = builder.servingSize;
+        servings     = builder.servings;
+        calories     = builder.calories;
+        fat          = builder.fat;
+        sodium       = builder.sodium;
+        carbohydrate = builder.carbohydrate;
+    }
+}
+```
+
+```java
+NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8)
+    .calories(100).sodium(35).carbohydrate(27).build();
+```
+
+The Builder pattern simulates named optional parameters and it is well suited to class hierarchies. **It is good choice when designing classes whose constructors or static factories would have more than a handful of parameters.**
