@@ -173,3 +173,36 @@ public enum Elvis {
     public void leaveTheBuilding() { ... }
 }
 ```
+
+### Enforce noninstantiability with a private constructor
+
+Ocassionally you'll want to write a class that is a grouping of static methods. People abuse them in order to avoid thinking in terms of objects, but they have valud use cases.
+
+Such _utility clases_ are not designed to be instantiated.
+
+Attempting to enforce noninstantiability by making the class abstract does not work. **A class can be made noninstantiable by including a private constructor.**
+
+```java
+public class UtilityClass {
+    // Suppress default constructor for noninstantiability
+    private UtilityClass() {
+        throw new AssertionError();
+    }
+    // Remainder omitted
+}
+```
+
+### Prefer dependency injection to hardwiring resources
+
+Innapropiate use of static utility, inflexible and untestable.
+
+```java
+public class SpellChecker {
+    private static final Lexicon dictionary = ...;
+
+    private SpellChecker() {} // Noninstantiable
+
+    public static boolean isValid(String word) { ... }
+    public static List<String> suggestions(String typo) { ... }
+}
+```
