@@ -1,76 +1,62 @@
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import textwrap
 
-plt.rcParams['font.family'] = 'Arial'
-sns.set_style("whitegrid", {'grid.linestyle': ':', 'grid.alpha': 0.4})
-cool_palette = sns.color_palette("cool_r")
+# Данные
+categories = [
+    "Человеческие чувства и состояния",
+    "Качественная характеристика человека",
+    "Действия и поступки человека",
+    "Качественная характеристика предметов и явлений действительности",
+    "Характеристика умственных и интеллектуальных способностей человека",
+    "Манера речевого общения",
+    "Отношение человека к окружающей среде и другим людям",
+    "Манера осуществления зрительного восприятия"
+]
 
-data = {
-    "Человеческие чувства и состояния": 91,
-    "Качественная характеристика человека": 83,
-    "Действия и поступки человека": 77,
-    "Качественная характеристика предметов и явлений действительности": 33,
-    "Характеристика умственных и интеллектуальных способностей человека": 32,
-    "Манера речевого общения": 22,
-    "Отношение человека к окружающей среде и другим людям": 20,
-    "Манера осуществления зрительного восприятия": 17,
-    "Отношения власти, зависимости, подчинения": 15,
-    "Указание на мастерство, умение": 13,
-    "Черты характера человека": 12
+fran = [34, 29, 26, 6, 10, 9, 6, 11]
+angl = [20, 31, 17, 5, 11, 7, 5, 4]
+bel = [37, 23, 34, 21, 11, 7, 9, 2]
+
+# Создание датафрейма
+df = pd.DataFrame({
+    "Категория": categories,
+    "ФРАН": fran,
+    "АНГЛ": angl,
+    "БЕЛ": bel
+})
+
+# Сортировка по убыванию общей суммы
+df["Сумма"] = df[["ФРАН", "АНГЛ", "БЕЛ"]].sum(axis=1)
+df = df.sort_values("Сумма", ascending=False).drop(columns="Сумма")
+
+# Цвета для каждого языка
+palette = {
+    "ФРАН": "#c69ff5",
+    "АНГЛ": "#b185d8",
+    "БЕЛ": "#986fc2"
 }
 
-max_line_length = 28
-sorted_data = sorted(data.items(), key=lambda x: -x[1])
-categories = [textwrap.fill(name, max_line_length) for name, _ in sorted_data]
-values = [value for _, value in sorted_data]
+# Настройка графика
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(16, 7), sharey=True)
+languages = ["ФРАН", "АНГЛ", "БЕЛ"]
 
-fig, ax = plt.subplots(figsize=(10, 7))
-fig.patch.set_facecolor('white')
-
-bars = ax.barh(
-    categories,
-    values,
-    color=cool_palette,
-    height=0.6,
-    edgecolor='white',
-    linewidth=0.7
-)
-
-ax.set_xticks([])
-ax.invert_yaxis()
-
-plt.yticks(
-    ticks=range(len(categories)),
-    labels=categories,
-    ha='left',
-    position=(-0.05, 0),
-    fontsize=11,
-    linespacing=1.4
-)
-
-for i, (bar, value) in enumerate(zip(bars, values)):
-    ax.text(
-        bar.get_width() + 1,
-        i,
-        str(value),
-        va='center',
-        ha='left',
-        fontsize=10,
-        fontweight='bold',
-        color='#333333'
+for i, lang in enumerate(languages):
+    sns.barplot(
+        x=lang,
+        y="Категория",
+        data=df,
+        ax=axes[i],
+        color=palette[lang]
     )
+    axes[i].set_title(lang, fontsize=14, fontweight='bold')
+    axes[i].set_xlabel("Значение", fontsize=10)
+    axes[i].bar_label(axes[i].containers[0], fmt='%d', padding=3, fontsize=9)
+    
+    # Отображаем названия категорий у всех графиков
+    axes[i].set_ylabel("Категория", fontsize=10)
+    axes[i].tick_params(labelsize=9)
 
-plt.margins(y=0.03)
-ax.set_xlim(right=max(values)*1.15)
-plt.subplots_adjust(left=0.35, right=0.85)
-
-ax.xaxis.grid(True, linestyle=':', alpha=0.3)
-ax.yaxis.grid(False)
-sns.despine(left=True, bottom=True, right=True, top=True)
-
-plt.title('Распределение категорий качественных наречий', 
-          pad=20, fontsize=14, fontweight='bold', loc='left')
-
-plt.tight_layout()
+fig.suptitle("Распределение категорий по языкам", fontsize=16, fontweight='bold')
+plt.tight_layout(rect=[0, 0, 1, 0.95])
 plt.show()
