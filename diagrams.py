@@ -2,12 +2,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import textwrap
 
-# Настройка стиля
 plt.rcParams['font.family'] = 'Arial'
 sns.set_style("whitegrid", {'grid.linestyle': ':', 'grid.alpha': 0.4})
 cool_palette = sns.color_palette("cool_r")
 
-# Данные
 data = {
     "Человеческие чувства и состояния": 91,
     "Качественная характеристика человека": 83,
@@ -22,17 +20,14 @@ data = {
     "Черты характера человека": 12
 }
 
-# Подготовка данных с переносами строк
 max_line_length = 28
 sorted_data = sorted(data.items(), key=lambda x: -x[1])
 categories = [textwrap.fill(name, max_line_length) for name, _ in sorted_data]
 values = [value for _, value in sorted_data]
 
-# Создание графика
 fig, ax = plt.subplots(figsize=(10, 7))
 fig.patch.set_facecolor('white')
 
-# Рисуем бары
 bars = ax.barh(
     categories,
     values,
@@ -42,21 +37,18 @@ bars = ax.barh(
     linewidth=0.7
 )
 
-# Настройка осей
 ax.set_xticks([])
 ax.invert_yaxis()
 
-# Выравнивание текста категорий по левому краю
 plt.yticks(
     ticks=range(len(categories)),
     labels=categories,
     ha='left',
-    position=(-0.05, 0),  # Сдвигаем текст левее
+    position=(-0.05, 0),
     fontsize=11,
     linespacing=1.4
 )
 
-# Добавляем значения справа от баров
 for i, (bar, value) in enumerate(zip(bars, values)):
     ax.text(
         bar.get_width() + 1,
@@ -69,17 +61,14 @@ for i, (bar, value) in enumerate(zip(bars, values)):
         color='#333333'
     )
 
-# Настройка отступов и границ
 plt.margins(y=0.03)
 ax.set_xlim(right=max(values)*1.15)
-plt.subplots_adjust(left=0.35, right=0.85)  # Увеличиваем левый отступ
+plt.subplots_adjust(left=0.35, right=0.85)
 
-# Сетка и оформление
 ax.xaxis.grid(True, linestyle=':', alpha=0.3)
 ax.yaxis.grid(False)
 sns.despine(left=True, bottom=True, right=True, top=True)
 
-# Заголовок
 plt.title('Распределение категорий качественных наречий', 
           pad=20, fontsize=14, fontweight='bold', loc='left')
 
