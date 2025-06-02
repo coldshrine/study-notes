@@ -26,25 +26,30 @@ df = pd.DataFrame({
     "БЕЛ": bel
 })
 
-# Сортировка по убыванию общей суммы
+# Считаем сумму по каждой категории
 df["Сумма"] = df[["ФРАН", "АНГЛ", "БЕЛ"]].sum(axis=1)
-df = df.sort_values("Сумма", ascending=False).drop(columns="Сумма")
 
-# Цвета для каждого языка
+# Создаем колонку с названием категории и суммой
+df["Категория с суммой"] = df.apply(
+    lambda row: f"{row['Категория']} ({row['Сумма']})", axis=1
+)
+
+# Сортируем по убыванию суммы
+df = df.sort_values("Сумма", ascending=False)
+
 palette = {
     "ФРАН": "#c69ff5",
     "АНГЛ": "#b185d8",
     "БЕЛ": "#986fc2"
 }
 
-# Настройка графика
-fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(16, 7), sharey=True)
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(18, 8), sharey=True)
 languages = ["ФРАН", "АНГЛ", "БЕЛ"]
 
 for i, lang in enumerate(languages):
     sns.barplot(
         x=lang,
-        y="Категория",
+        y="Категория с суммой",
         data=df,
         ax=axes[i],
         color=palette[lang]
@@ -52,11 +57,19 @@ for i, lang in enumerate(languages):
     axes[i].set_title(lang, fontsize=14, fontweight='bold')
     axes[i].set_xlabel("Значение", fontsize=10)
     axes[i].bar_label(axes[i].containers[0], fmt='%d', padding=3, fontsize=9)
-    
-    # Отображаем названия категорий у всех графиков
-    axes[i].set_ylabel("Категория", fontsize=10)
-    axes[i].tick_params(labelsize=9)
 
-fig.suptitle("Распределение категорий по языкам", fontsize=16, fontweight='bold')
+    # Убираем рамки
+    for spine in axes[i].spines.values():
+        spine.set_visible(False)
+
+# Показываем категории только на первом графике:
+axes[0].set_ylabel("Категории", fontsize=10)
+axes[0].tick_params(labelsize=9)
+
+# Скрываем метки оси Y у правых графиков, чтобы не дублировать
+for ax in axes[1:]:
+    ax.tick_params(left=False, labelleft=False)
+
 plt.tight_layout(rect=[0, 0, 1, 0.95])
+fig.suptitle("Распределение категорий по языкам", fontsize=16, fontweight='bold')
 plt.show()
