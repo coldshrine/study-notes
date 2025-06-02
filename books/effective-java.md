@@ -136,3 +136,40 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8)
 ```
 
 The Builder pattern simulates named optional parameters and it is well suited to class hierarchies. **It is good choice when designing classes whose constructors or static factories would have more than a handful of parameters.**
+
+### Enforce the singleton property with a private constructor or an enum type
+
+Beware that making a class a singleton can make it difficult to test its clients because it's impossible to substitute a mock implementation /
+
+**Singleton with public final field**, this approach is simpler and it makes it clear that the class is a singleton.
+
+```java
+public class Elvis {
+    public static final Elvis INSTANCE = new Elvis();
+    private Elvis() { ... }
+
+    public void leaveTheBuilding() { ... }
+}
+```
+
+**Singleton with static factory**
+
+```java
+public class Elvis {
+    private static final Elvis INSTANCE = new Elvis();
+    private Elvis() { ... }
+    public static Elvis getInstance() { return INSTANCE; }
+
+    public void leaveTheBuilding() { ... }
+}
+```
+
+**Enum singleton**, similar to public field approach but more concise. It provides serialisation machinery for free and provides guarantee against multiple instantiation even on serialisation and reflection attacks. **This is the best way of implementing a singleton.**
+
+```java
+public enum Elvis {
+    INSTANCE;
+
+    public void leaveTheBuilding() { ... }
+}
+```
