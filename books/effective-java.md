@@ -206,3 +206,24 @@ public class SpellChecker {
     public static List<String> suggestions(String typo) { ... }
 }
 ```
+
+Dependency injection provides flexibility and testability
+
+```java
+public class SpellChecker {
+    private final Lexicon dictionary;
+
+    public SpellChecker(Lexicon dictionary) {
+        this.dictionary = Objects.requireNonNull(dictionary);
+    }
+
+    public boolean isValid(String word) { ... }
+    public List<String> suggestions(String typo) { ... }
+}
+```
+
+A useful variant of the pattern is to pass a resource _factory_ to the constructor so the object can be called repeatedly to create instance of a type.
+
+```java
+Mosaic create(Supplier<? extends Tile> tileFactory) { ... }
+```
