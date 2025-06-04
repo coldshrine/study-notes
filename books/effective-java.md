@@ -255,3 +255,15 @@ public class RomanNumerals {
     }
 }
 ```
+
+Be careful with autoboxing, as it blurs the distinction betwen primitive and boxed primitive types. The following code is hideously slow, can you spot object creation?
+
+```java
+private static long sum() {
+    Long sum = 0L;
+    for (long i = 0; i <= Integer.MAX_VALUE; i++)
+        sum += i;
+
+    return sum;
+}
+```
