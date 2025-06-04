@@ -267,3 +267,9 @@ private static long sum() {
     return sum;
 }
 ```
+
+Prefer primitives to boxed primitives, and watch out for unintentional autoboxing.
+
+### Eliminate obsolete object references
+
+Can you find the _memory leak_?
