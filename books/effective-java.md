@@ -319,3 +319,5 @@ public Object pop() {
 
 }
 ```
+
+Be mindful about this, **nulling out object references should be the exception rather than the norm.** The best way to eliminate an obsolete reference is to let the variable that contained the reference fall out of scope.
