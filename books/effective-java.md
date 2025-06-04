@@ -227,3 +227,9 @@ A useful variant of the pattern is to pass a resource _factory_ to the construct
 ```java
 Mosaic create(Supplier<? extends Tile> tileFactory) { ... }
 ```
+
+### Avoid creating unnecessary objects
+
+```java
+String s = new String("bikini");
+```
