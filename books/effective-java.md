@@ -273,3 +273,8 @@ Prefer primitives to boxed primitives, and watch out for unintentional autoboxin
 ### Eliminate obsolete object references
 
 Can you find the _memory leak_?
+
+```java
+public class Stack {
+    private Object[] elements;
+    private int size = 0;
