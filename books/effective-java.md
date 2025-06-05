@@ -339,3 +339,4 @@ There is a sever performance penalty for using finalisers and cleaners.
 Finalisers have a serious security problem: they open your class up to finaliser attacks. Throwing an exception from a constructor should be sufficient to prevent an object form coming into existence; in the presence of finalisers, it is not. To protect nonfinal classes from finaliser attacks, write a final `finalize` method that does nothing.
 
 Instead of writing a finaliser or cleaner, just have your class implement `AutoCloseable`.
+
