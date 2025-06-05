@@ -325,3 +325,17 @@ Be mindful about this, **nulling out object references should be the exception r
 Whenever a class manages its own memory, the programmer should be alert for memory leaks.
 
 Common sources of memory leaks are caches, listeners and callbacks.
+
+### Avoid finalisers and cleaners
+
+Finalisers are unpredictable, often dangerous, and generally unnecessary. Cleaners are less dangerous than finalisers, but still unpredictable, slow, and generally unnecessary.
+
+Never do anything time-critical in a finalisers or cleaners. There is no guarantee they'll be executed promptly.
+
+Never depend on a finaliser or cleaner to update persistent state. The language specification provides no guarantee that finalisers or cleaners will run at all.
+
+There is a sever performance penalty for using finalisers and cleaners.
+
+Finalisers have a serious security problem: they open your class up to finaliser attacks. Throwing an exception from a constructor should be sufficient to prevent an object form coming into existence; in the presence of finalisers, it is not. To protect nonfinal classes from finaliser attacks, write a final `finalize` method that does nothing.
+
+Instead of writing a finaliser or cleaner, just have your class implement `AutoCloseable`.
