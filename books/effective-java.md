@@ -340,3 +340,17 @@ Finalisers have a serious security problem: they open your class up to finaliser
 
 Instead of writing a finaliser or cleaner, just have your class implement `AutoCloseable`.
 
+### Prefer `try`-with-resources to `try-finally`
+
+`try-finally` is no longer the best way to close resources.
+
+```java
+static String firstLineOfFile(String path) throws IOException {
+    BufferedReader br = new BufferedReader(new FileReader(path));
+    try {
+        return br.readLine();
+    } finally {
+        br.close();
+    }
+}
+```
