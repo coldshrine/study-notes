@@ -423,3 +423,4 @@ Do not write an `equals` method that depends on unreliable resources.
 All objects objects must be unequal to `null`.
 A few more caveats:
 * Always override `hashCode` when you override `equals`.
+* Don't try to be too clever
