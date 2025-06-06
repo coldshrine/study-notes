@@ -437,3 +437,5 @@ Don't provide a detailed specification for the value returned by `hashCode`, so 
 ### Always override `toString`
 
 Providing a good `toString` implementation makes your class much more pleasant to use and makes systems using the class easier to debug.
+
+When practical, the `toString` method should return all the interesting information in the object.
