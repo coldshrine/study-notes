@@ -429,3 +429,5 @@ A few more caveats:
 ### Always override `hashCode` when you override equals
 
 Equal objects must have equal hash codes.
+
+Do not be tempted to exclude significant fields from the hash code computation to improve performance.
