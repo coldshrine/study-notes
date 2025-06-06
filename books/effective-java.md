@@ -421,3 +421,4 @@ static void copy(String src, String dst) throws IOException {
 Do not write an `equals` method that depends on unreliable resources.
 
 All objects objects must be unequal to `null`.
+A few more caveats:
