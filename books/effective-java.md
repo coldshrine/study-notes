@@ -433,3 +433,5 @@ Equal objects must have equal hash codes.
 Do not be tempted to exclude significant fields from the hash code computation to improve performance.
 
 Don't provide a detailed specification for the value returned by `hashCode`, so clients can't reasonably depend on it; this gives you the flexibility to change it.
+
+### Always override `toString`
