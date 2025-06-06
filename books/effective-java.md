@@ -400,3 +400,22 @@ static void copy(String src, String dst) throws IOException {
     }
 }
 ```
+
+
+## Methods common to all objects
+
+### Obey the general contract when overriding `equals`
+
+* Each instance of the class is inherently unique
+* there is no need for the class to provide a "logical equality" test
+* A superclass has overriden `equals`, and the superclass behaviour is appropiate for this class
+* The class is private or package-private, and you are certain that its `equals` method will never be invoked.
+
+`equals` method implements _equivalence relation_ for any non-null reference values:
+* **Reflexive**: `x.equals(x)` must return `true`
+* **Symmetric**:  `x.equals(y)` returns `true` if `y.equals(x)` returns `true`
+* **Transitive**:  `x.equals(y)` returns `true` and `y.equals(z)` returns `true`, then `x.equals(z)` must return `true`
+* **Consistent**:  `x.equals(y)` should consistently return `true` or consistently return `false`
+* `x.equals(null)` must return `false`
+
+Do not write an `equals` method that depends on unreliable resources.
