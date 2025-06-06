@@ -435,3 +435,5 @@ Do not be tempted to exclude significant fields from the hash code computation t
 Don't provide a detailed specification for the value returned by `hashCode`, so clients can't reasonably depend on it; this gives you the flexibility to change it.
 
 ### Always override `toString`
+
+Providing a good `toString` implementation makes your class much more pleasant to use and makes systems using the class easier to debug.
