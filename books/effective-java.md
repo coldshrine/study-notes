@@ -424,3 +424,4 @@ All objects objects must be unequal to `null`.
 A few more caveats:
 * Always override `hashCode` when you override `equals`.
 * Don't try to be too clever
+* Don't substitute another type for `Object` in the `equals` declaration.
