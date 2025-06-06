@@ -427,3 +427,5 @@ A few more caveats:
 * Don't substitute another type for `Object` in the `equals` declaration.
 
 ### Always override `hashCode` when you override equals
+
+Equal objects must have equal hash codes.
