@@ -455,3 +455,11 @@ The `Cloneable` architecture is incompatible with normal use of final fields ref
 Public `clone` methods should omit the `throws` clause, as methods that don't throw checked exceptions are easier to use.
 
 A better approach to object copying is to provide a copy constructor or copy factory.
+
+```java
+public Yum(Yum yum) { ... }
+```
+
+```java
+public static Yum newInstance(Yum yum) { ... };
+```
