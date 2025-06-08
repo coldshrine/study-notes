@@ -463,3 +463,8 @@ public Yum(Yum yum) { ... }
 ```java
 public static Yum newInstance(Yum yum) { ... };
 ```
+
+Advantages of using copy constructor or copy factory:
+* They don't rely on a risk-prone extralinguistic object creation mechanism.
+* They don't demand unenforceable adherence to thinly documented conventions.
+* They don't conflict with the proper use of final fields.
