@@ -468,3 +468,7 @@ Advantages of using copy constructor or copy factory:
 * They don't rely on a risk-prone extralinguistic object creation mechanism.
 * They don't demand unenforceable adherence to thinly documented conventions.
 * They don't conflict with the proper use of final fields.
+* They don't throw unnecessary checked exceptions.
+* They don't require casts.
+* They can take an argument whose type is an interface implemented by the class.
+* Interface-based copy constructors and factories (_conversion_ constructors and _conversion_ factories) allow the client to accept the implementation type of the original.
