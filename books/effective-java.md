@@ -472,3 +472,39 @@ Advantages of using copy constructor or copy factory:
 * They don't require casts.
 * They can take an argument whose type is an interface implemented by the class.
 * Interface-based copy constructors and factories (_conversion_ constructors and _conversion_ factories) allow the client to accept the implementation type of the original.
+
+### Consider implementing `Comparable`
+
+The notation `sgn`(expression) designates the mathematical _signum_ function, which is defined to return -1, 0, or 1
+
+* The implementor must ensure that `sgn(x.compareTo(y)) == -sgn(y. compareTo(x))` for all `x` and `y`. Implies that `x.compareTo(y)` must throw an exception if and only if `y.compareTo(x)` throws an exception.
+* Transitive: ``(x. compareTo(y) > 0 && y.compareTo(z) > 0)`` implies `x.compareTo(z) > 0`.
+* `x.compareTo(y) == 0` implies that `sgn(x.compareTo(z)) == sgn(y.compareTo(z))`, for all `z`.
+* It is strongly recommended, but not required, that `(x.compareTo(y) == 0) == (x.equals(y))`.
+
+Use of the relational operators `<` and `>` in compareTo methods is verbose and error-prone and no longer recommended.
+
+If a class has multiple significant fields, the order in which you compare them is critical. Start with the most significant field and work your way down.
+
+The `Comparator` interface is outfitted with a set of comparator construction methods, which enable fluent construction of comparators. Many programmers prefer the conciseness of this approach, though it does come at a modest performance cost.
+
+```java
+private static final Comparator<PhoneNumber> COMPARATOR =
+    comparingInt((PhoneNumber pn) -> pn.areaCode)
+        .thenComparingInt(pn -> pn.prefix)
+        .thenComparingInt(pn -> pn.lineNum);
+
+public int compareTo(PhoneNumber pn) {
+    return COMPARATOR.compare(this, pn);
+}
+```
+
+**Avoid comparators based on differences, they violate transitivity**
+
+```java
+static Comparator<Object> hashCodeOrder = new Comparator<>() {
+    public int compare(Object o1, Object o2) {
+        return o1.hashCode() - o2.hashCode();
+    }
+};
+```
