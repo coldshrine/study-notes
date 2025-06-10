@@ -508,3 +508,18 @@ static Comparator<Object> hashCodeOrder = new Comparator<>() {
     }
 };
 ```
+## Classes and interfaces
+
+### Minimise the accessibility of classes and members
+
+A well-designed component hides all its implementation details, cleanly separating their API from its implementation.
+
+Information hiding or _encapsulation_ is important because:
+* _Decouples_ the component that comprise the system, allowing them to be developed, tested, optimised, used, understood and modified in isolation.
+* Speeds up development because components can be developed in parallel.
+* Eases the burden of maintenance because components can be understood more quickly and debugged or replaced with little fear or harming other components.
+* Components can be optimised without affecting correctness of others.
+* Increases software reuse because components that aren't tightly coupled often prove useful in other contexts.
+* Decreases the risk in building large systems because individual components may prove successful even if the system does not.
+
+Make each class or member as inaccessible as possible.
