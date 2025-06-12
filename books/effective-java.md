@@ -557,3 +557,7 @@ Because the data fields of such classes are accessed directly, these classes do 
 If a class is accessed outside its package, provide accessor methods.
 
 If a class is package-private or is a private nested class, there is nothing inherently wrong with exposing its data fields.
+
+### Minimise mutability
+
+An immutable class is simply a class whose instances cannot be modified. **Immutable classes are easier to design, implement, and use than mutable classes. They are less prone to error and are more secure.**
