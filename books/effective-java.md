@@ -523,3 +523,31 @@ Information hiding or _encapsulation_ is important because:
 * Decreases the risk in building large systems because individual components may prove successful even if the system does not.
 
 Make each class or member as inaccessible as possible.
+
+Instance fields of public classes should rarely be public. Classes with public mutable fields are generally thread-safe.
+
+Nonzero-length array is always mutable, so it is wrong for a class to have a public static final array field, or accessor that returns such a field. It is a potential security hole.
+
+```java
+public static final Thing[] VALUES = { ... };
+```
+
+Alternatively, return a copy of a private array
+
+```java
+private static final Thing[] PRIVATE_VALUES = { ... };
+
+public static final List<Thing> VALUES =
+   Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+```
+
+### In public classes, use accessor methods, not public fields
+
+Degenerate classes like this should not be public
+
+```java
+class Point {
+   public double x;
+   public double y;
+}
+```
