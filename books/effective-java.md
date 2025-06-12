@@ -563,3 +563,4 @@ If a class is package-private or is a private nested class, there is nothing inh
 An immutable class is simply a class whose instances cannot be modified. **Immutable classes are easier to design, implement, and use than mutable classes. They are less prone to error and are more secure.**
 
 1. Don't provide methods that modify the object's state (mutators).
+2. Ensure that the class can't be extended.
