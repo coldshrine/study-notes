@@ -552,3 +552,8 @@ class Point {
 }
 ```
 
+Because the data fields of such classes are accessed directly, these classes do not offer the benefits of _encapsulation_. You can't change the representation without changing the API, you can't enforce invariants, and you can't take auxiliary action when a field is accessed.
+
+If a class is accessed outside its package, provide accessor methods.
+
+If a class is package-private or is a private nested class, there is nothing inherently wrong with exposing its data fields.
