@@ -566,3 +566,4 @@ An immutable class is simply a class whose instances cannot be modified. **Immut
 2. Ensure that the class can't be extended.
 3. Make all fields final.
 4. Make all fields private.
+5. Ensure exclusive access to any mutable components.
