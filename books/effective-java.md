@@ -583,3 +583,5 @@ The main disadvantage immutable objects have is that they require a separate obj
 Classes should be immutable unless there's a very good reason to make them mutable.
 
 If a class cannot be made immutable, limit its mutability as much as possible. Declare every field `private final` unless there's a good reason to do otherwise.
+
+Constructors should create fully initialised objects with all of their invariants established.
