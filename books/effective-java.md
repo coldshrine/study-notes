@@ -581,3 +581,5 @@ Advantages of immutable objects:
 The main disadvantage immutable objects have is that they require a separate object for each distinct value.
 
 Classes should be immutable unless there's a very good reason to make them mutable.
+
+If a class cannot be made immutable, limit its mutability as much as possible. Declare every field `private final` unless there's a good reason to do otherwise.
