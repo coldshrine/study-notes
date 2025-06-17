@@ -579,3 +579,5 @@ Advantages of immutable objects:
 * Provide failure atomicity for free. There is no possibility of temporary inconsistency.
 
 The main disadvantage immutable objects have is that they require a separate object for each distinct value.
+
+Classes should be immutable unless there's a very good reason to make them mutable.
