@@ -569,3 +569,7 @@ An immutable class is simply a class whose instances cannot be modified. **Immut
 5. Ensure exclusive access to any mutable components.
 
 Returning new objects on operations is known as _functional approach_ because methods return the result of applying a function to their operand, without modifying it. Contrast it to the _procedural_ or _imperative_ approach in which methods apply a procedure to their operand, causing its state to change. **Method names in immutable objects are prepositions (such as `plus`) rather than names (such as `add`).**
+
+Advantages of immutable objects:
+* Simple.
+* Inherently thread-safe; they require no synchronisation.
