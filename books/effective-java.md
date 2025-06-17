@@ -576,3 +576,4 @@ Advantages of immutable objects:
 * Can be shared freely.
 * Not only you can share immutable objects, but they can share their internals.
 * Make great building blocks for other objects.
+* Provide failure atomicity for free. There is no possibility of temporary inconsistency.
