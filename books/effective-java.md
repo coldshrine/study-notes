@@ -573,3 +573,6 @@ Returning new objects on operations is known as _functional approach_ because me
 Advantages of immutable objects:
 * Simple.
 * Inherently thread-safe; they require no synchronisation.
+* Can be shared freely.
+* Not only you can share immutable objects, but they can share their internals.
+* Make great building blocks for other objects.
