@@ -587,3 +587,5 @@ If a class cannot be made immutable, limit its mutability as much as possible. D
 Constructors should create fully initialised objects with all of their invariants established.
 
 ### Favour composition over inheritance
+
+Using inheritance inappropriately lead to fragile software. It is safe to use inheritance within a package where programmers have classes and subclasses under control. It is safe to use inheritance when extending classes specifically designed and documented for extension.
