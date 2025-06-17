@@ -591,3 +591,5 @@ Constructors should create fully initialised objects with all of their invariant
 Using inheritance inappropriately lead to fragile software. It is safe to use inheritance within a package where programmers have classes and subclasses under control. It is safe to use inheritance when extending classes specifically designed and documented for extension.
 
 Unlike method invocation, implementation inheritance violates encapsulation. Subclasses depend on the implementation details of its superclass for its proper function.
+
+To avoid fragility use composition and forwarding instead of inheritance, especially if an appropriate interface to implement a wrapper exists. Wrapper classes are not only more robust than subclasses, they are also more powerful.
