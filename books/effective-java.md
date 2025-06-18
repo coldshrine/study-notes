@@ -646,3 +646,5 @@ The best solution to this problem is to prohibit subclassing in classes that are
 ### Prefer interfaces to abstract classes
 
 Existing classes can easily be retrofitted to implement a new interface.
+
+Interfaces are ideal for defining _mixings_, a type that a class can implement in addition to its "primary type". For example Comparable is a mixing that allows a class can be ordered.
