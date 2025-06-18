@@ -593,3 +593,9 @@ Using inheritance inappropriately lead to fragile software. It is safe to use in
 Unlike method invocation, implementation inheritance violates encapsulation. Subclasses depend on the implementation details of its superclass for its proper function.
 
 To avoid fragility use composition and forwarding instead of inheritance, especially if an appropriate interface to implement a wrapper exists. Wrapper classes are not only more robust than subclasses, they are also more powerful.
+
+### Design and document for inheritance or else prohibit it
+
+The class must document its self-use of overridable methods.
+
+A class may have to provide hooks into its internal workings in the form of judiciously chosen protected methods.
