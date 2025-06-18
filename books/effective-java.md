@@ -599,3 +599,9 @@ To avoid fragility use composition and forwarding instead of inheritance, especi
 The class must document its self-use of overridable methods.
 
 A class may have to provide hooks into its internal workings in the form of judiciously chosen protected methods.
+
+**The only way to test a class designed for inheritance is to write subclasses.**
+
+You must test your class by writing subclasses before you release it.
+
+Constructors must not invoke overridable methods. Superclass constructor runs before the subclass constructor. If the overriding method depends on any initialisation performed by the subclass constructor, the method will not behave as expected.
