@@ -605,3 +605,14 @@ A class may have to provide hooks into its internal workings in the form of judi
 You must test your class by writing subclasses before you release it.
 
 Constructors must not invoke overridable methods. Superclass constructor runs before the subclass constructor. If the overriding method depends on any initialisation performed by the subclass constructor, the method will not behave as expected.
+
+```java
+public class Super {
+    // Broken - constructor invokes an overridable method
+    public Super() {
+        overrideMe();
+    }
+
+    public void overrideMe() {
+    }
+}
