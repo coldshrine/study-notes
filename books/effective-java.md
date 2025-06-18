@@ -640,3 +640,5 @@ public final class Sub extends Super {
 Same restriction applies to `clone` and `readObject`, they should not invoke overridable methods, directly or indirectly.
 
 Designing a class for inheritance requires great effort and places substantial limitations on the class.
+
+The best solution to this problem is to prohibit subclassing in classes that are not designed and documented to be safely subclassed. There are two ways of doing this. Declare the class final or make all constructors private or package-private and to add public static factories instead of constructors.
