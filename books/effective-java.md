@@ -644,3 +644,5 @@ Designing a class for inheritance requires great effort and places substantial l
 The best solution to this problem is to prohibit subclassing in classes that are not designed and documented to be safely subclassed. There are two ways of doing this. Declare the class final or make all constructors private or package-private and to add public static factories instead of constructors.
 
 ### Prefer interfaces to abstract classes
+
+Existing classes can easily be retrofitted to implement a new interface.
