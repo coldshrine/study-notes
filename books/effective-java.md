@@ -616,3 +616,11 @@ public class Super {
     public void overrideMe() {
     }
 }
+
+public final class Sub extends Super {
+    // Blank final, set by constructor
+    private final Instant instant;
+
+    Sub() {
+        instant = Instant.now();
+    }
