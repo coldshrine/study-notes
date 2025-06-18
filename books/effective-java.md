@@ -624,3 +624,15 @@ public final class Sub extends Super {
     Sub() {
         instant = Instant.now();
     }
+
+    // Overriding method invoked by superclass constructor
+    @Override public void overrideMe() {
+        System.out.println(instant);
+    }
+
+    public static void main(String[] args) {
+        Sub sub = new Sub();//null
+        sub.overrideMe();//instant
+    }
+}
+```
