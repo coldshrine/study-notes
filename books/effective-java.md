@@ -636,3 +636,7 @@ public final class Sub extends Super {
     }
 }
 ```
+
+Same restriction applies to `clone` and `readObject`, they should not invoke overridable methods, directly or indirectly.
+
+Designing a class for inheritance requires great effort and places substantial limitations on the class.
