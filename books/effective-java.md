@@ -650,3 +650,5 @@ Existing classes can easily be retrofitted to implement a new interface.
 Interfaces are ideal for defining _mixings_, a type that a class can implement in addition to its "primary type". For example Comparable is a mixing that allows a class can be ordered.
 
 Interfaces allow for the construction of nonhierarchical type frameworks.
+
+Interfaces enable safe, powerful functionality enhancements via the wrapper class idiom. If you use abstract classes, you leave the programmer who wants to add functionality with no alternative than to use inheritance.
