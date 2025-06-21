@@ -652,3 +652,7 @@ Interfaces are ideal for defining _mixings_, a type that a class can implement i
 Interfaces allow for the construction of nonhierarchical type frameworks.
 
 Interfaces enable safe, powerful functionality enhancements via the wrapper class idiom. If you use abstract classes, you leave the programmer who wants to add functionality with no alternative than to use inheritance.
+
+You can combine the advantages of interfaces and abstract classes by providing an abstract _skeletal implementation class_ to go with an interface. The interface defines the type, while the skeletal implementation class implements the primitive interface methods (_Template Method_ pattern).
+
+Concrete implementation built on top of an skeletal implementation.
