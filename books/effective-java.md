@@ -704,3 +704,5 @@ public interface PhysicalConstants {
     static final double ELECTRON_MASS      = 9.109_383_56e-31;
 }
 ```
+
+If the constants are strongly tied to a class or interface, you should add them there. If not, a utility class are a good choice
