@@ -684,3 +684,11 @@ static List<Integer> intArrayAsList(int[] a) {
 Skeletal implementation classes provide implementation assistance of abstract classes without imposing constraints as type definitions.
 
 Good documentation is essential in a skeletal implementation.
+
+### Design interfaces for posterity
+
+It is not always possible to write a default method that maintains all the invariants of every conceivable implementation.
+
+In the presence of default methods, existing implementations of an interface may compile without error or warning but fail at runtime.
+
+Is still of the utmost importance to design interfaces with great care. While it may be possible to correct some interface flaws after an interface is released, you cannot count on it.
