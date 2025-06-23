@@ -680,3 +680,7 @@ static List<Integer> intArrayAsList(int[] a) {
     };
 }
 ```
+
+Skeletal implementation classes provide implementation assistance of abstract classes without imposing constraints as type definitions.
+
+Good documentation is essential in a skeletal implementation.
