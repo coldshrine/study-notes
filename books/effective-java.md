@@ -716,3 +716,7 @@ public class PhysicalConstants {
   public static final double ELECTRON_MASS    = 9.109_383_56e-31;
 }
 ```
+
+### Prefer class hierarchies to tagged classes
+
+Tagged class, vastly inferior to a class hierarchy.
