@@ -656,3 +656,27 @@ Interfaces enable safe, powerful functionality enhancements via the wrapper clas
 You can combine the advantages of interfaces and abstract classes by providing an abstract _skeletal implementation class_ to go with an interface. The interface defines the type, while the skeletal implementation class implements the primitive interface methods (_Template Method_ pattern).
 
 Concrete implementation built on top of an skeletal implementation.
+
+```java
+static List<Integer> intArrayAsList(int[] a) {
+    Objects.requireNonNull(a);
+
+    // The diamond operator is only legal here in Java 9 and later
+    // If you're using an earlier release, specify <Integer>
+    return new AbstractList<>() {
+        @Override public Integer get(int i) {
+            return a[i];  // Autoboxing (Item 6)
+        }
+
+        @Override public Integer set(int i, Integer val) {
+            int oldVal = a[i];
+            a[i] = val;     // Auto-unboxing
+            return oldVal;  // Autoboxing
+        }
+
+        @Override public int size() {
+            return a.length;
+        }
+    };
+}
+```
