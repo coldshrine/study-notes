@@ -692,3 +692,15 @@ It is not always possible to write a default method that maintains all the invar
 In the presence of default methods, existing implementations of an interface may compile without error or warning but fail at runtime.
 
 Is still of the utmost importance to design interfaces with great care. While it may be possible to correct some interface flaws after an interface is released, you cannot count on it.
+
+### Use interfaces only to define types
+
+Constant interface anti-pattern (only constants) are a poor use of interfaces. Implementing a constant interface causes this implementation detail to leak into the class's exported API.
+
+```java
+public interface PhysicalConstants {
+    static final double AVOGADROS_NUMBER   = 6.022_140_857e23;
+    static final double BOLTZMANN_CONSTANT = 1.380_648_52e-23;
+    static final double ELECTRON_MASS      = 9.109_383_56e-31;
+}
+```
