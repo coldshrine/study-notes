@@ -778,3 +778,26 @@ public class MySet<E> extends AbstractSet<E> {
 
 }
 ```
+
+
+If you declare a member class that does not require access to an enclosing instance, always put the `static` modifier in its declaration. If you omit this modifier, each instance will have a hidden extraneous reference to its enclosing instance and it will take time and space.
+
+### Limit source files to a single top-level class
+
+Use static member classes instead of multiple top-level classes. If you do otherwise, your program might not be able to compile or run properly.
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(Utensil.NAME + Dessert.NAME);
+    }
+
+    private static class Utensil {
+        static final String NAME = "pan";
+    }
+
+    private static class Dessert {
+        static final String NAME = "cake";
+    }
+}
+```
