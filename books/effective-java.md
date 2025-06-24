@@ -760,3 +760,21 @@ class Figure {
     }
 }
 ```
+### Favour static member classes over nonstatic
+
+Typical use of a nonstatic member class
+
+```java
+public class MySet<E> extends AbstractSet<E> {
+    ... // Bulk of the class omitted
+
+    @Override public Iterator<E> iterator() {
+        return new MyIterator();
+    }
+
+    private class MyIterator implements Iterator<E> {
+        ...
+    }
+
+}
+```
