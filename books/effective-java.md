@@ -820,3 +820,32 @@ private final Collection<Stamp> stamps = ... ;
 You lose type safety if you use a raw type such as `List`, but not if you use a parameterised type such as `List<Object>`.
 
 This method works but it uses raw types, which is dangerous.
+
+
+```java
+static int numElementsInCommon(Set s1, Set s2) {
+    int result = 0;
+    for (Object o1 : s1)
+        if (s2.contains(o1))
+            result++;
+    return result;
+}
+```
+
+Better to use wildcard type.
+
+```java
+static int numElementsInCommon(Set<?> s1, Set<?> s2) { ... }
+```
+
+You can put _any_ element into a collection with a raw type, easily corrupting the collection type invariant. **You can't put any element (other than null) into a `Collection<?>`**
+
+There are a couple of exceptions to the use of raw types
+* You must use raw types in class literals, as `List.class` is legal, but `List<String>.class` is not.
+* Raw types is the preferred way to use the `instanceof` operator with generic types
+    ```java
+    if (o instanceof Set) {       // Raw type
+        Set<?> s = (Set<?>) o;    // Wildcard type
+        ...
+    }
+    ```
