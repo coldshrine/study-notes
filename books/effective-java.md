@@ -801,3 +801,22 @@ public class Test {
     }
 }
 ```
+Never put multiple top-level classes or interfaces in a single source file.
+
+## Generics
+
+### Don't use raw types
+
+```java
+private final Collection stamps = ... ;
+```
+
+If you use raw types, you lose all the safety and expressiveness benefits of generics.
+
+```java
+private final Collection<Stamp> stamps = ... ;
+```
+
+You lose type safety if you use a raw type such as `List`, but not if you use a parameterised type such as `List<Object>`.
+
+This method works but it uses raw types, which is dangerous.
