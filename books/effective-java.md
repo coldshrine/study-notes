@@ -859,3 +859,14 @@ If you can't eliminate a warning, but you can prove that the code that provoked 
 Always use the `SuppressWarnings` annotation on the smallest scope possible.
 
 Every time you use a `@SuppressWarnings("unchecked")` annotation, add a comment saying why it is safe to do so.
+
+### Prefer lists to arrays
+
+Arrays are _covariant_, which means that if a `Sub` is a subtype of `Super`, then array type `Sub[]` is a subtype of the array type `Super[]`. Generics, by contrast, are _invariant_, for any two distinct types `Type1` and `Type2`, `List<Type1>` is neither a subtype or a supertype of `List<Type2>`.
+
+Arrays are deficient, this code fragment is legal and it fails at runtime
+
+```java
+Object[] objectArray = new Long[1];
+objectArray[0] = "I don't fit in"; // Throws ArrayStoreException
+```
