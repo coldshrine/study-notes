@@ -849,3 +849,13 @@ There are a couple of exceptions to the use of raw types
         ...
     }
     ```
+
+### Eliminate unchecked warnings
+
+Eliminate every unchecked warning that you can. That will ensure your code is typesafe.
+
+If you can't eliminate a warning, but you can prove that the code that provoked the warning is typesafe, then (and only then) suppress the warning with an `@SupressWarnings("unchecked")` annotation.
+
+Always use the `SuppressWarnings` annotation on the smallest scope possible.
+
+Every time you use a `@SuppressWarnings("unchecked")` annotation, add a comment saying why it is safe to do so.
