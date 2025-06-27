@@ -870,3 +870,19 @@ Arrays are deficient, this code fragment is legal and it fails at runtime
 Object[] objectArray = new Long[1];
 objectArray[0] = "I don't fit in"; // Throws ArrayStoreException
 ```
+
+
+This one won't compile
+
+```java
+List<Object> ol = new ArrayList<Long>(); // Incompatible types
+ol.add("I don't fit in");
+```
+
+### Favour generic types
+
+Generic types are safer and easier to use than types that require casts in client code.When you design new types, make sure that they can be used without such casts.
+
+### Favour generic methods
+
+Generic methods, like generic types, are safer and easier to use than methods requiring their clients to put explicit casts on input parameters and return types.
