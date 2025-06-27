@@ -909,3 +909,10 @@ public void popAll(Collection<? super E> dst) {
         dst.add(pop());
 }
 ```
+
+So we can do
+
+```java
+Collection<Object> objects = ...;
+numberStack.popAll(objects);
+```
