@@ -886,3 +886,26 @@ Generic types are safer and easier to use than types that require casts in clien
 ### Favour generic methods
 
 Generic methods, like generic types, are safer and easier to use than methods requiring their clients to put explicit casts on input parameters and return types.
+
+
+### Use bounded wildcards to increase API flexibility
+
+Wildcard type for a parameter that serves as an E producer
+
+```java
+public void pushAll(Iterable<? extends E> src) {
+    for (E e : src)
+        push(e);
+}
+```
+
+This would make `Stack<Number>` work also on `stack.pushAll(intVal)`, as `Integer` is a subtype of `Number`.
+
+Sometimes we would want to do the opposite, have a wildcard type for parameter that serves as an `E` consumer.
+
+```java
+public void popAll(Collection<? super E> dst) {
+    while (!isEmpty())
+        dst.add(pop());
+}
+```
