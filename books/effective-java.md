@@ -1024,3 +1024,17 @@ public static void main(String[] args) {
 A `Favorites` instance is _typesafe_: it will never return an `Integer` when you ask it for a `String`. It is also _heterogeneous_: unlike an ordinary map, all the keys are of different types. Therefore, we call `Favorites` a _typesafe heterogeneous container_.
 
 Typesafe heterogeneous container pattern - implementation
+
+```java
+public class Favorites {
+    private Map<Class<?>, Object> favorites = new HashMap<>();
+
+    public <T> void putFavorite(Class<T> type, T instance) {
+        favorites.put(Objects.requireNonNull(type), instance);
+    }
+
+    public <T> T getFavorite(Class<T> type) {
+        return type.cast(favorites.get(type));
+    }
+}
+```
