@@ -916,3 +916,18 @@ So we can do
 Collection<Object> objects = ...;
 numberStack.popAll(objects);
 ```
+
+
+For maximum flexibility, use wildcard types on input parameters that represent producers or consumers.
+
+_PECS_ stands for producer-`extends` and consumer-`super`.
+
+Do not use bounded wildcard types as return types. It would force wildcard types on client code.
+
+**If the user of a class has to think about wildcard types, there is probably something wrong with its API.**
+
+If a type parameter appears only once in a method declaration, replace it  with a wildcard.
+
+### Combine generics and varargs judiciously
+
+Mixing generics and varargs can violate type safety.
