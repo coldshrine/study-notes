@@ -1038,3 +1038,11 @@ public class Favorites {
     }
 }
 ```
+
+Achieving runtime type safety with a dynamic cast
+
+```java
+public <T> void putFavorite(Class<T> type, T instance) {
+    favorites.put(type, type.cast(instance));
+}
+```
