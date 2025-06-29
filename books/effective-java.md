@@ -1021,3 +1021,6 @@ public static void main(String[] args) {
 
 }
 ```
+A `Favorites` instance is _typesafe_: it will never return an `Integer` when you ask it for a `String`. It is also _heterogeneous_: unlike an ordinary map, all the keys are of different types. Therefore, we call `Favorites` a _typesafe heterogeneous container_.
+
+Typesafe heterogeneous container pattern - implementation
