@@ -968,3 +968,30 @@ static <T> List<T> flatten(List<? extends T>... lists) {
 ```
 
 Use `@SafeVarargs` on every method with a varargs parameter of a generic or parameterised type.
+
+
+A generic varargs method is safe if:
+1. Does not store anything in the varargs parameter array
+2. Does not make the array (or a clone) visible to untrusted code.
+
+Use `List` as a typesafe alternative to a generic varargs parameter
+
+```java
+static <T> List<T> flatten(List<List<? extends T>> lists) {
+    List<T> result = new ArrayList<>();
+    for (List<? extends T> list : lists)
+        result.addAll(list);
+    return result;
+}
+```
+
+### Consider typesafe heterogeneous containers
+
+Typesafe heterogeneous container pattern API
+
+```java
+public class Favorites {
+    public <T> void putFavorite(Class<T> type, T instance);
+    public <T> T getFavorite(Class<T> type);
+}
+```
