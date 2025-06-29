@@ -931,3 +931,25 @@ If a type parameter appears only once in a method declaration, replace it  with 
 ### Combine generics and varargs judiciously
 
 Mixing generics and varargs can violate type safety.
+
+
+```java
+static void dangerous(List<String>... stringLists) {
+    List<Integer> intList = List.of(42);
+    Object[] objects = stringLists;
+    objects[0] = intList;             // Heap pollution
+    String s = stringLists[0].get(0); // ClassCastException
+}
+```
+
+It is unsafe to store a value in a generic varargs array parameter.
+
+The `SafeVarargs` annotation constitutes a promise by the author of a method that it is typesafe.
+
+This is unsafe, it exposes a reference to its generic parameter array. The compiler might not have enough information to make an accurate determination of the type of the argument and it can propagate heap pollution up the stack.
+
+```java
+static <T> T[] toArray(T... args) {
+    return args;
+}
+```
