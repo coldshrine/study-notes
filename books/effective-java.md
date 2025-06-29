@@ -953,3 +953,18 @@ static <T> T[] toArray(T... args) {
     return args;
 }
 ```
+
+It is unsafe to give another method access to a generic varargs parameter array.
+
+Safe method with a generic varargs parameter
+```java
+@SafeVarargs
+static <T> List<T> flatten(List<? extends T>... lists) {
+    List<T> result = new ArrayList<>();
+    for (List<? extends T> list : lists)
+        result.addAll(list);
+    return result;
+}
+```
+
+Use `@SafeVarargs` on every method with a varargs parameter of a generic or parameterised type.
