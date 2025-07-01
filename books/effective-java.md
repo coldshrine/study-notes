@@ -1077,3 +1077,21 @@ Enum types let you add arbitrary methods, provide high-quality implementations o
 To associate data with enum constants, declare instance fields and write constructor that takes the data and stores it in the fields.
 
 Enum type that switches on its own value, questionable.
+
+
+```java
+public enum Operation {
+    PLUS, MINUS, TIMES, DIVIDE;
+
+    // Do the arithmetic operation represented by this constant
+    public double apply(double x, double y) {
+        switch(this) {
+            case PLUS:   return x + y;
+            case MINUS:  return x - y;
+            case TIMES:  return x * y;
+            case DIVIDE: return x / y;
+        }
+        throw new AssertionError("Unknown op: " + this);
+    }
+}
+```
