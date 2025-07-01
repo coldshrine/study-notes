@@ -1046,3 +1046,34 @@ public <T> void putFavorite(Class<T> type, T instance) {
     favorites.put(type, type.cast(instance));
 }
 ```
+
+
+## Enums and annotations
+
+### Use enums instead of int constants
+
+The _`int` enum pattern_ provides nothing in the way of type safety and little in the way of expressive power.
+
+```java
+public static final int APPLE_FUJI         = 0;
+public static final int APPLE_PIPPIN       = 1;
+public static final int APPLE_GRANNY_SMITH = 2;
+public static final int ORANGE_NAVEL  = 0;
+public static final int ORANGE_TEMPLE = 1;
+public static final int ORANGE_BLOOD  = 2;
+```
+
+```java
+public enum Apple  { FUJI, PIPPIN, GRANNY_SMITH }
+public enum Orange { NAVEL, TEMPLE, BLOOD }
+```
+
+Java's enum types are classes that export one instance for each enumeration constant via a public static field num. Enum are effectively final because they have no accessible constructors.
+
+They are type safe, if you declare a parameter to be of type `Apple`, you are guaranteed that any non-null object reference passed to the parameter is one of the three valid `Apple` values.
+
+Enum types let you add arbitrary methods, provide high-quality implementations of all the `Object` methods, they implement `Comparable` and `Serializable`.
+
+To associate data with enum constants, declare instance fields and write constructor that takes the data and stores it in the fields.
+
+Enum type that switches on its own value, questionable.
