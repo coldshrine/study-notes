@@ -1183,3 +1183,5 @@ public class Text {
     public void applyStyles(int styles) { ... }
 }
 ```
+
+This representation lets you use the bitwise `OR` operation to combine several constants into a set, known as a _bit field_
