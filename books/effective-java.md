@@ -1226,3 +1226,21 @@ class Plant {
     }
 }
 ```
+Using `ordinal()` to index into an array, **don't do this**.
+
+```java
+Set<Plant>[] plantsByLifeCycle =
+    (Set<Plant>[]) new Set[Plant.LifeCycle.values().length];
+
+for (int i = 0; i < plantsByLifeCycle.length; i++)
+    plantsByLifeCycle[i] = new HashSet<>();
+
+for (Plant p : garden)
+    plantsByLifeCycle[p.lifeCycle.ordinal()].add(p);
+
+// Print the results
+for (int i = 0; i < plantsByLifeCycle.length; i++) {
+    System.out.printf("%s: %s%n",
+        Plant.LifeCycle.values()[i], plantsByLifeCycle[i]);
+}
+```
