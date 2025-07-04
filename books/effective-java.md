@@ -1191,3 +1191,12 @@ text.applyStyles(STYLE_BOLD | STYLE_ITALIC);
 ```
 
 _Bit fields_ have all the disadvantages than `int` enum pattern. A better alternative is to use `EnumSet`
+
+```java
+public class Text {
+    public enum Style { BOLD, ITALIC, UNDERLINE, STRIKETHROUGH }
+
+    // Any Set could be passed in, but EnumSet is clearly best
+    public void applyStyles(Set<Style> styles) { ... }
+}
+```
