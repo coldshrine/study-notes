@@ -1200,3 +1200,8 @@ public class Text {
     public void applyStyles(Set<Style> styles) { ... }
 }
 ```
+So you could use it like
+
+```java
+text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
+```
