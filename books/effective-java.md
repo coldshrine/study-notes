@@ -1136,3 +1136,20 @@ public enum Operation {
     public abstract double apply(double x, double y);
 }
 ```
+
+**Use enums any time you need a set of constants whose members are known at compile time.** It is not necessary that the set of constants in an enum type stay fixed for all time, the enum was specifically designed to allow evolution of enum types.
+
+### Use instance fields instead of ordinals
+
+Abuse of ordinal to derive an associated value, **don't do this**.
+
+```java
+public enum Ensemble {
+    SOLO,   DUET,   TRIO, QUARTET, QUINTET,
+    SEXTET, SEPTET, OCTET, NONET,  DECTET;
+
+    public int numberOfMusicians() { return ordinal() + 1; }
+}
+```
+
+Never derive a value associated with an enum from its ordinal; store it in an instance field instead.
