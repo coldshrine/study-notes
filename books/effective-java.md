@@ -1185,3 +1185,9 @@ public class Text {
 ```
 
 This representation lets you use the bitwise `OR` operation to combine several constants into a set, known as a _bit field_
+
+```java
+text.applyStyles(STYLE_BOLD | STYLE_ITALIC);
+```
+
+_Bit fields_ have all the disadvantages than `int` enum pattern. A better alternative is to use `EnumSet`
