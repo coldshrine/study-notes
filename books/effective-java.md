@@ -1339,3 +1339,10 @@ public enum ExtendedOperation implements Operation {
     }
 }
 ```
+
+
+Now you can use your new operations anywhere you could use the basic operations, provided that API's are written to take the interface type `Operation`, not the implementation `BasicOperation`.
+
+```java
+private void test(Collection<? extends Operation> opSet);
+```
