@@ -1263,3 +1263,25 @@ Or even a shorter version, a bit naive as it doesn't produce an `EnumMap`
 System.out.println(Arrays.stream(garden)
     .collect(groupingBy(p -> p.lifeCycle)));
 ```
+
+
+Fixed version
+
+```java
+System.out.println(Arrays.stream(garden)
+    .collect(groupingBy(p -> p.lifeCycle,
+        () -> new EnumMap<>(LifeCycle.class), toSet())));
+```
+
+**It is rarely appropriate to use ordinals to index into arrays: use EnumMap instead**.
+
+### Emulate extensible enums with interfaces
+
+In the case for _opcodes_, _operation codes_ that represent operations in some machine, is desirable to let the user of an API provide their own operations, effectively extending the set of operations provided by the API.
+
+You can do this by implementing interfaces.
+
+```java
+public interface Operation {
+    double apply(double x, double y);
+}
