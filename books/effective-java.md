@@ -1360,3 +1360,16 @@ It's been common to use _naming patterns_ to indicate that some program elements
 Annotations solve all these problems nicely, and JUnit adopted them starting with release 4.
 
 Marker annotation type declaration
+
+```java
+import java.lang.annotation.*;
+
+/**
+ * Indicates that the annotated method is a test method.
+ * Use only on parameterless static methods.
+ */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Test {
+}
+```
