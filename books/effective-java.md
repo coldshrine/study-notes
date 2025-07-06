@@ -1346,3 +1346,17 @@ Now you can use your new operations anywhere you could use the basic operations,
 ```java
 private void test(Collection<? extends Operation> opSet);
 ```
+
+
+While you cannot write an extensible enum type, you can emulate it by writing an interface to accompany a basic enum type that implements the interface.
+
+### Prefer annotations to naming patterns
+
+It's been common to use _naming patterns_ to indicate that some program elements demanded special treatment by a tool or framework. Like prefixing your tests with `test` word, so JUnit 3 would pick it up. These have many disadvantages:
+1. Typographical errors result in silent failures. Imagine you accidentally named a test method `tsetSomething` instead of `testSomething`. JUnit 3 wouldn't complain, but it wouldn't run the test either.
+2. There is no way to ensure that they are used only on appropriate program elements. Imagine creating a class `TestSafetyMechanism` in the hopes that JUnit 3 would automatically test its methods.
+3. They provide no good way to associate parameter values with program elements. Suppose you want to support a category of test that succeeds only if it throws a particular exception, the exception type is the parameter of the test. You could encode the exception type in the test name but the compiler would have no way of knowing to check the string that was supposed to name the exception.
+
+Annotations solve all these problems nicely, and JUnit adopted them starting with release 4.
+
+Marker annotation type declaration
