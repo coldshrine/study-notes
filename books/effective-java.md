@@ -1244,3 +1244,22 @@ for (int i = 0; i < plantsByLifeCycle.length; i++) {
         Plant.LifeCycle.values()[i], plantsByLifeCycle[i]);
 }
 ```
+
+Using an `EnumMap` to associate data with an enum
+
+```
+Map<Plant.LifeCycle, Set<Plant>>  plantsByLifeCycle =
+    new EnumMap<>(Plant.LifeCycle.class);
+for (Plant.LifeCycle lc : Plant.LifeCycle.values())
+    plantsByLifeCycle.put(lc, new HashSet<>());
+for (Plant p : garden)
+    plantsByLifeCycle.get(p.lifeCycle).add(p);
+System.out.println(plantsByLifeCycle);
+```
+
+Or even a shorter version, a bit naive as it doesn't produce an `EnumMap`
+
+```java
+System.out.println(Arrays.stream(garden)
+    .collect(groupingBy(p -> p.lifeCycle)));
+```
