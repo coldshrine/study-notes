@@ -1404,3 +1404,20 @@ public class RunTests {
     }
 }
 ```
+
+
+There is no reason to use naming patterns when you can use annotations instead.
+
+With the exception of toolshmiths, most programmers will have no need to define annotation types. All programmers should use the predefined annotations types that Java provides.
+
+### Consistently use the override annotation
+
+Buggy code, spot the error.
+
+```java
+public boolean equals(Bigram b) {
+    return b.first == first && b.second == second;
+}
+```
+
+With an `Override`, the program won't compile
