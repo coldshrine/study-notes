@@ -1441,3 +1441,9 @@ Override will check overriding method at compile time. `equals` requires the par
 
 }
 ```
+
+Use the `Override` annotation on every method declaration that you believe to override a superclass declaration.
+
+### Use marker interfaces to define types
+
+A _marker interface_ is an interface that contains no method declarations but merely designates (or "marks") a class that implements the interface as having some property. An example of this is the `Serializable` interface.
