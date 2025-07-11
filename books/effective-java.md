@@ -1458,3 +1458,17 @@ The chief advantage of a marker annotation over marker interfaces is that they a
 If you find yourself writing a marker annotation type whose target is `ElementType.TYPE`, take the time to figure out whether it is really should be an annotation type or whether a marker interface would be more appropriate.
 
 ## Lambdas and streams
+
+### Prefer lambdas to anonymous classes
+
+Obsolete
+
+```java
+Collections.sort(words, new Comparator<String>() {
+    public int compare(String s1, String s2) {
+        return Integer.compare(s1.length(), s2.length());
+    }
+});
+```
+
+Lambda expression as function object
