@@ -1421,3 +1421,23 @@ public boolean equals(Bigram b) {
 ```
 
 With an `Override`, the program won't compile
+
+
+```java
+@Override public boolean equals(Bigram b) {
+    return b.first == first && b.second == second;
+}
+```
+
+Override will check overriding method at compile time. `equals` requires the parameter to be type `Object`. The fixed version
+
+```java
+@Override public boolean equals(Object o) {
+    if (!(o instanceof Bigram))
+        return false;
+
+    Bigram b = (Bigram) o;
+    return b.first == first && b.second == second;
+
+}
+```
