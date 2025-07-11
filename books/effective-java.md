@@ -1454,3 +1454,7 @@ Marker interfaces define a type that is implemented by instances of the marked c
 Another advantage of marker interfaces over marker annotations is that they can be targeted more precisely. If an annotation is declared with target `ElementType.TYPE`, it can be applied to _any_ class or interface.
 
 The chief advantage of a marker annotation over marker interfaces is that they are part of the larger annotation facility. Marker annotations allow for consistency in annotation-based frameworks.
+
+If you find yourself writing a marker annotation type whose target is `ElementType.TYPE`, take the time to figure out whether it is really should be an annotation type or whether a marker interface would be more appropriate.
+
+## Lambdas and streams
