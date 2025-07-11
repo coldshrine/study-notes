@@ -1447,3 +1447,10 @@ Use the `Override` annotation on every method declaration that you believe to ov
 ### Use marker interfaces to define types
 
 A _marker interface_ is an interface that contains no method declarations but merely designates (or "marks") a class that implements the interface as having some property. An example of this is the `Serializable` interface.
+
+
+Marker interfaces define a type that is implemented by instances of the marked class; marker annotations do not. **The existence of a marker interface type allows you to catch errors at compile time that you couldn't catch until runtime if you used a marker annotation.**
+
+Another advantage of marker interfaces over marker annotations is that they can be targeted more precisely. If an annotation is declared with target `ElementType.TYPE`, it can be applied to _any_ class or interface.
+
+The chief advantage of a marker annotation over marker interfaces is that they are part of the larger annotation facility. Marker annotations allow for consistency in annotation-based frameworks.
