@@ -1576,3 +1576,9 @@ words.collect(groupingBy(word -> alphabetize(word)))
 Stream pipelines are evaluated `lazily`, evaluation doesn't start until the terminal operation is invoked.
 
 Overusing streams makes programs hard to read and maintain.
+
+In the absence of explicit types, careful naming of lambda parameters is essential to the readability of stream pipelines.
+
+Using helper methods is even more important for readability in stream pipelines than in iterative code because pipelines lack explicit type information.
+
+If you are not sure whether a task is better served by streams or iteration, try both and see which works better.
