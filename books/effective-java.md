@@ -1525,3 +1525,13 @@ to
 ```java
 map.merge(key, 1, Integer::sum);
 ```
+
+All kinds of method references are summarised below
+
+Method Ref Type   | Example                  | Lambda equivalent
+------------------|--------------------------|------------------------------------------------------
+Static            | `Integer::parseInt`      | `str -> Integer.parseInt(str)`
+Bound             | `Instant.now()::isAfter` | `Instant then = Instant.now(); t -> then.isAfter(t)`
+Unbound           | `String::toLowerCase`    | `str -> str.toLowerCase()`
+Class Constructor | `TreeMap<K,V>::new`      | `() -> new TreeMap<K,V>`
+Array Constructor | `int[]::new`             | `len -> new int[len]`
