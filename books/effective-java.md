@@ -1472,3 +1472,35 @@ Collections.sort(words, new Comparator<String>() {
 ```
 
 Lambda expression as function object
+
+```java
+Collections.sort(words,
+        (s1, s2) -> Integer.compare(s1.length(), s2.length()));
+```
+
+Omit the types of all lambda parameters unless their presence makes your program clearer.
+
+Enum with function object fields and constant-specific behaviour
+
+```java
+public enum Operation {
+    PLUS  ("+", (x, y) -> x + y),
+    MINUS ("-", (x, y) -> x - y),
+    TIMES ("*", (x, y) -> x * y),
+    DIVIDE("/", (x, y) -> x / y);
+
+    private final String symbol;
+    private final DoubleBinaryOperator op;
+
+    Operation(String symbol, DoubleBinaryOperator op) {
+        this.symbol = symbol;
+        this.op = op;
+    }
+
+    @Override public String toString() { return symbol; }
+
+    public double apply(double x, double y) {
+        return op.applyAsDouble(x, y);
+    }
+}
+```
