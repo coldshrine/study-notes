@@ -1616,3 +1616,9 @@ List<String> topTen = freq.keySet().stream()
     .limit(10)
     .collect(toList());
 ```
+
+**It is customary and wise to statically import all members of `Collectors` because it makes stream pipelines more readable.**
+
+### Prefer `Collection` to `Stream` as a return type
+
+Streams do not make iteration obsolete, writing good code requires combining streams and iteration judiciously.
