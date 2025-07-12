@@ -1504,3 +1504,24 @@ public enum Operation {
     }
 }
 ```
+
+Lambdas lack names and documentation; if a computation isn't self-explanatory, or exceeds a few lines (more than three), don't put it in a lambda.
+
+
+You should rarely, if eve, serialise a lambda.
+
+Don't use anonymous classes for function objects unless you have to create instances of types that aren't functional interfaces.
+
+### Prefer method references to lambdas
+
+Where method references are shorter and clearer, use them; where they aren't, stick with lambdas.
+
+```java
+map.merge(key, 1, (count, incr) -> count + incr);
+```
+
+to
+
+```java
+map.merge(key, 1, Integer::sum);
+```
