@@ -1560,3 +1560,15 @@ Interface           | Function Signature    | Example
 `Consumer<T>`       | `void accept(T t)`    | `System.out.println`
 
 Don't be tempted to use basic functional interfaces with boxed primitives instead of primitive functional interfaces (prefer primitive types to boxed primitives, performance will suffer otherwise).
+
+
+**Always annotate your functional interfaces with the `@FunctionalInterface` annotation.** Its behaviour is similar to `@Override`, it tells the readers that the class was designed to enable lambdas; it won't compile unless it has exactly one abstract method; it prevents maintainers from accidentally adding abstract methods to the interface as it evolves.
+
+### Use streams judiciously
+
+```java
+words.collect(groupingBy(word -> alphabetize(word)))
+      .values().stream()
+      .filter(group -> group.size() >= minGroupSize)
+      .forEach(g -> System.out.println(g.size() + ": " + g));
+```
