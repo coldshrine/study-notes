@@ -1535,3 +1535,17 @@ Bound             | `Instant.now()::isAfter` | `Instant then = Instant.now(); t 
 Unbound           | `String::toLowerCase`    | `str -> str.toLowerCase()`
 Class Constructor | `TreeMap<K,V>::new`      | `() -> new TreeMap<K,V>`
 Array Constructor | `int[]::new`             | `len -> new int[len]`
+
+### Favour the use of standard functional interfaces
+
+Unnecessary functional interface; use a standard one instead.
+
+```java
+@FunctionalInterface interface EldestEntryRemovalFunction<K,V>{
+    boolean remove(Map<K,V> map, Map.Entry<K,V> eldest);
+}
+```
+
+If one of the standard functional interfaces does the job, you should generally use it in preference to a purpose-built functional interface.
+
+The six basic functional interfaces are summarised below
