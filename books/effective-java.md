@@ -1595,3 +1595,24 @@ try (Stream<String> words = new Scanner(file).tokens()) {
     });
 }
 ```
+
+Proper use of streams
+
+```
+Map<String, Long> freq;
+try (Stream<String> words = new Scanner(file).tokens()) {
+    freq = words
+        .collect(groupingBy(String::toLowerCase, counting()));
+}
+```
+
+**The `forEach` operation should be used only to report the result of a stream computation, not to perform the computation.**
+
+Pipeline to get a top-ten list of words from a frequency table
+
+```java
+List<String> topTen = freq.keySet().stream()
+    .sorted(comparing(freq::get).reversed())
+    .limit(10)
+    .collect(toList());
+```
