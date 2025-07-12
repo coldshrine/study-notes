@@ -1572,3 +1572,7 @@ words.collect(groupingBy(word -> alphabetize(word)))
       .filter(group -> group.size() >= minGroupSize)
       .forEach(g -> System.out.println(g.size() + ": " + g));
 ```
+
+Stream pipelines are evaluated `lazily`, evaluation doesn't start until the terminal operation is invoked.
+
+Overusing streams makes programs hard to read and maintain.
