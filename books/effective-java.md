@@ -1582,3 +1582,16 @@ In the absence of explicit types, careful naming of lambda parameters is essenti
 Using helper methods is even more important for readability in stream pipelines than in iterative code because pipelines lack explicit type information.
 
 If you are not sure whether a task is better served by streams or iteration, try both and see which works better.
+
+### Prefer side-effect-free functions in streams
+
+The following code uses the streams API but not the paradigm, don't do this.
+
+```
+Map<String, Long> freq = new HashMap<>();
+try (Stream<String> words = new Scanner(file).tokens()) {
+    words.forEach(word -> {
+        freq.merge(word.toLowerCase(), 1L, Long::sum);
+    });
+}
+```
