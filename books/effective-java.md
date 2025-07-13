@@ -1684,3 +1684,14 @@ public final class Period {
     }
 }
 ```
+
+Attack the internals of `Period` instance
+
+```java
+Date start = new Date();
+Date end = new Date();
+Period p = new Period(start, end);
+end.setYear(78);  // Modifies internals of p!
+```
+
+It is essential to make a defensive copy of each mutable parameter to the constructor.
