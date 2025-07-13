@@ -1648,3 +1648,14 @@ If an invalid parameter value is passed to a method and the method checks its pa
 The `Objets.requireNonNull` method, added in Java 7, is flexible and convenient, so there's no reason to perform null checks manually anymore.
 
 For an unexported method, you control the circumstances under which the method is called, so you can and should ensure that only valid parameter values are passed in. Nonpublic methods can check their parameters using _assertions_.
+
+### Make defensive copies when needed
+
+You must program defensively, with the assumption that clients of your class will do their best to destroy its invariants.
+
+Broken "immutable" time period class
+
+```java
+public final class Period {
+    private final Date start;
+    private final Date end;
