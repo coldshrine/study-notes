@@ -1736,3 +1736,9 @@ public Date end() {
     return new Date(end.getTime());
 }
 ```
+
+You should, where possible, use immutable objects as components of your objects so that you don't have to worry about defensive copying.
+
+### Design method signature carefully
+
+* Choose method names carefully.
