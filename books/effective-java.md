@@ -1622,3 +1622,19 @@ List<String> topTen = freq.keySet().stream()
 ### Prefer `Collection` to `Stream` as a return type
 
 Streams do not make iteration obsolete, writing good code requires combining streams and iteration judiciously.
+
+The `Collection` interface is a subtype of `Iterable` and has a `stream` method, so it provides both iteration and stream access. **`Collection` or an appropriate subtype is generally the best return type for a public, sequence-returning method.** But do not store large sequence in memory just to return it as a collection. If the sequence you're returning is large but can be represented concisely, consider implementing a special-purpose collection.
+
+### Use caution when making streams parallel
+
+Parallelising a pipeline is unlikely to increase its performance if the source is from `Stream.iterate`, or the intermediate operation `limit` is used.
+
+Do not parallelise stream pipelines indiscriminately.
+
+As a rule, performance gains from parallelism are best on streams over `ArrayList`, `HashMap`, `HashSet`, and `ConcurrentHashMap` instances; arrays; `int` ranges; and `long` ranges. What all these data structures have in common is that they can be cheaply split into subranges of any desired sizes, which makes them easy to divide work among parallel threads.
+
+**Not only can parallelising a stream lead to poor performance, including liveness failures; it can lead to incorrect results and unpredictable behaviour.**
+
+Under the right circumstances, it is possible to achieve near-linear speedup in the number of processor cores simply by adding a `parallel` call to a stream pipeline.
+
+## Methods
