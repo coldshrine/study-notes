@@ -1715,3 +1715,10 @@ Defensive copies are made before checking the validity of the parameters, and th
 Do not use the `clone` method to make a defensive copy of a parameter whose type is subclassable by untrusted parties.
 
 Second attack on the internals of a `Period` instance
+
+```java
+Date start = new Date();
+Date end = new Date();
+Period p = new Period(start, end);
+p.end().setYear(78);  // Modifies internals of p!
+```
