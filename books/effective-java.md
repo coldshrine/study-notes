@@ -1709,3 +1709,9 @@ public Period(Date start, Date end) {
           this.start + " after " + this.end);
 }
 ```
+
+Defensive copies are made before checking the validity of the parameters, and the validity check is performed on the copies rather than the originals.
+
+Do not use the `clone` method to make a defensive copy of a parameter whose type is subclassable by untrusted parties.
+
+Second attack on the internals of a `Period` instance
