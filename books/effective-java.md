@@ -1638,3 +1638,13 @@ As a rule, performance gains from parallelism are best on streams over `ArrayLis
 Under the right circumstances, it is possible to achieve near-linear speedup in the number of processor cores simply by adding a `parallel` call to a stream pipeline.
 
 ## Methods
+
+### Check parameters for validity
+
+Each time you write a method or constructor, you should think about what restrictions exist on its parameters. You should document these restrictions and enforce them with explicit checks at the beginning of the method body.
+
+If an invalid parameter value is passed to a method and the method checks its parameters before execution, it will fail quickly and cleanly with an appropriate exception.
+
+The `Objets.requireNonNull` method, added in Java 7, is flexible and convenient, so there's no reason to perform null checks manually anymore.
+
+For an unexported method, you control the circumstances under which the method is called, so you can and should ensure that only valid parameter values are passed in. Nonpublic methods can check their parameters using _assertions_.
