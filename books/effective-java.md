@@ -1695,3 +1695,17 @@ end.setYear(78);  // Modifies internals of p!
 ```
 
 It is essential to make a defensive copy of each mutable parameter to the constructor.
+
+
+Repaired constructor, makes defensive copies of parameters.
+
+```java
+public Period(Date start, Date end) {
+    this.start = new Date(start.getTime());
+    this.end   = new Date(end.getTime());
+
+    if (this.start.compareTo(this.end) > 0)
+      throw new IllegalArgumentException(
+          this.start + " after " + this.end);
+}
+```
