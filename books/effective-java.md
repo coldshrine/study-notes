@@ -1722,3 +1722,17 @@ Date end = new Date();
 Period p = new Period(start, end);
 p.end().setYear(78);  // Modifies internals of p!
 ```
+
+Return defensive copies of mutable internal fields.
+
+Repaired accessors, make defensive copies of internal fields
+
+```java
+public Date start() {
+    return new Date(start.getTime());
+}
+
+public Date end() {
+    return new Date(end.getTime());
+}
+```
