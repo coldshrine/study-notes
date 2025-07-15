@@ -1843,3 +1843,15 @@ static int min(int... args) {
     return min;
 }
 ```
+
+The right way to use varargs to pass one or more arguments
+
+```java
+static int min(int firstArg, int... remainingArgs) {
+    int min = firstArg;
+    for (int arg : remainingArgs)
+        if (arg < min)
+            min = arg;
+    return min;
+}
+```
