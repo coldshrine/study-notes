@@ -1781,3 +1781,7 @@ public class CollectionClassifier {
     }
 }
 ```
+
+This program prints `Unknown Collection` three times, because **the choice of which overloading to invoke is made at compile time**.
+
+The selection among overloaded methods is static, while selection among overriden methods is dynamic.
