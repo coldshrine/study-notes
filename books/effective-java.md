@@ -1749,3 +1749,18 @@ You should, where possible, use immutable objects as components of your objects 
     ```java
     public enum TemperatureScale { FAHRENHEIT, CELSIUS }
     ```
+
+
+### Use overloading judiciously
+
+What does this program print?
+
+```java
+public class CollectionClassifier {
+    public static String classify(Set<?> s) {
+        return "Set";
+    }
+
+    public static String classify(List<?> lst) {
+        return "List";
+    }
