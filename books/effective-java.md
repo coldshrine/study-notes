@@ -1820,3 +1820,12 @@ Do not overload methods to take different functional interfaces in the same argu
 ### Use _varargs_ judiciously
 
 Simple use of varargs
+
+```java
+static int sum(int... args) {
+    int sum = 0;
+    for (int arg : args)
+        sum += arg;
+    return sum;
+}
+```
