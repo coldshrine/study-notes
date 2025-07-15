@@ -1812,3 +1812,5 @@ public class Overriding {
 ```
 
 Avoid confusing choices of overloading.
+
+A safe, conservative policy is never to export two overloading with the same number of parameters. You can always give methods different names instead of overloading them.
