@@ -1831,3 +1831,15 @@ static int sum(int... args) {
 ```
 
 The **wrong** way to use varargs to pass one or more arguments. This program will fail at runtime instead of failing at compile time.
+
+```java
+static int min(int... args) {
+    if (args.length == 0)
+        throw new IllegalArgumentException("Too few arguments");
+    int min = args[0];
+    for (int i = 1; i < args.length; i++)
+        if (args[i] < min)
+            min = args[i];
+    return min;
+}
+```
