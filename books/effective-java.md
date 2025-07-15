@@ -1746,3 +1746,6 @@ You should, where possible, use immutable objects as components of your objects 
 * Avoid long parameter lists. Aim for four parameters or fewer. Long sequences of identically typed parameters are especially harmful.
 *  For parameter types, favour interfaces over classes.
 * Prefer two-element enum types to `boolean` parameters.
+    ```java
+    public enum TemperatureScale { FAHRENHEIT, CELSIUS }
+    ```
