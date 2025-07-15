@@ -1829,3 +1829,5 @@ static int sum(int... args) {
     return sum;
 }
 ```
+
+The **wrong** way to use varargs to pass one or more arguments. This program will fail at runtime instead of failing at compile time.
