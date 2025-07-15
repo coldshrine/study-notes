@@ -1775,3 +1775,9 @@ public class CollectionClassifier {
             new ArrayList<BigInteger>(),
             new HashMap<String, String>().values()
         };
+
+        for (Collection<?> c : collections)
+            System.out.println(classify(c));
+    }
+}
+```
