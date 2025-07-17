@@ -1884,3 +1884,5 @@ private final List<Cheese> cheesesInStock = ...;
         : new ArrayList<>(cheesesInStock);
 }
 ```
+
+There is no reason to special-case the situation where the no cheeses are available for purchase. Doing so requires extra code in the client to handle the possibly null return value
