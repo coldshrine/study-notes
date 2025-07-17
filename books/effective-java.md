@@ -1873,3 +1873,8 @@ Returns null to indicate an empty collection. **Don't do this**.
 
 ```java
 private final List<Cheese> cheesesInStock = ...;
+
+/**
+ * @return a list containing all of the cheeses in the shop,
+ *     or null if no cheeses are available for purchase.
+ */
