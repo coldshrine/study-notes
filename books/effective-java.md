@@ -1870,3 +1870,6 @@ public void foo(int a1, int a2, int a3, int... rest) { }
 ### Return empty collections or arrays, not nulls
 
 Returns null to indicate an empty collection. **Don't do this**.
+
+```java
+private final List<Cheese> cheesesInStock = ...;
