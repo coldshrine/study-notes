@@ -1886,3 +1886,18 @@ private final List<Cheese> cheesesInStock = ...;
 ```
 
 There is no reason to special-case the situation where the no cheeses are available for purchase. Doing so requires extra code in the client to handle the possibly null return value
+
+
+```java
+List<Cheese> cheeses = shop.getCheeses();
+if (cheeses != null && cheeses.contains(Cheese.STILTON))
+    System.out.println("Jolly good, just the thing.");
+```
+
+The right way to return a possibly empty collection
+
+```java
+public List<Cheese> getCheeses() {
+    return new ArrayList<>(cheesesInStock);
+}
+```
