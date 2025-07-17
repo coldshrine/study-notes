@@ -1856,3 +1856,5 @@ static int min(int firstArg, int... remainingArgs) {
 }
 ```
 Exercise care when using varargs in performance-critical situations. Every invocation of a varargs method causes an array allocation and initialisation.
+
+For these situations you can determine that 95% of the calls to a method have three or fewer parameters
