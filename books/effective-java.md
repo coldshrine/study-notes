@@ -1855,3 +1855,4 @@ static int min(int firstArg, int... remainingArgs) {
     return min;
 }
 ```
+Exercise care when using varargs in performance-critical situations. Every invocation of a varargs method causes an array allocation and initialisation.
