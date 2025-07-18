@@ -1911,3 +1911,12 @@ public List<Cheese> getCheeses() {
         : new ArrayList<>(cheesesInStock);
 }
 ```
+
+
+The right way to return a possibly empty array
+
+```java
+public Cheese[] getCheeses() {
+    return cheesesInStock.toArray(new Cheese[0]);
+}
+```
