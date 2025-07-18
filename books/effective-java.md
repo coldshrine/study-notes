@@ -1901,3 +1901,13 @@ public List<Cheese> getCheeses() {
     return new ArrayList<>(cheesesInStock);
 }
 ```
+
+
+Optimisation, avoid allocating empty collections
+
+```java
+public List<Cheese> getCheeses() {
+    return cheesesInStock.isEmpty() ? Collections.emptyList()
+        : new ArrayList<>(cheesesInStock);
+}
+```
