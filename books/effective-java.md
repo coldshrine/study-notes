@@ -1937,3 +1937,7 @@ public Cheese[] getCheeses() {
 Optionals are similar in spirit to checked exceptions. You should declare a method to return `Optional<T>` if it might not be able to return a result and clients will have to perform special processing if no result is returned.
 
 Container types, including collections, maps, streams, arrays and optionals should not be wrapped in optionals. Rather than returning an empty `Optional<List<T>>`, you should simply return an empty `List<T>`.
+
+Returning an optional that contains a boxed primitive is prohibitively expensive as it has two levels of boxing instead of zero. Library designers saw fit to provide analogues of Optional<T> for primitive types `int`, `long` and `double` (`OptionalInt`, `OptionalLong` and `OptionalDouble`). **You should never return an optional of a boxed primitive type.**
+
+It is almost never appropriate to use an optional as a key, value, or element in a collection array.
