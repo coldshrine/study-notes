@@ -1920,3 +1920,13 @@ public Cheese[] getCheeses() {
     return cheesesInStock.toArray(new Cheese[0]);
 }
 ```
+
+Optimisation, avoids allocating empty arrays
+
+```java
+private static final Cheese[] EMPTY_CHEESE_ARRAY = new Cheese[0];
+
+public Cheese[] getCheeses() {
+    return cheesesInStock.toArray(EMPTY_CHEESE_ARRAY);
+}
+```
