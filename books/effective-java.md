@@ -1930,3 +1930,10 @@ public Cheese[] getCheeses() {
     return cheesesInStock.toArray(EMPTY_CHEESE_ARRAY);
 }
 ```
+**Never return `null` in place for an empty array or collection.**
+
+### Return optionals judiciously
+
+Optionals are similar in spirit to checked exceptions. You should declare a method to return `Optional<T>` if it might not be able to return a result and clients will have to perform special processing if no result is returned.
+
+Container types, including collections, maps, streams, arrays and optionals should not be wrapped in optionals. Rather than returning an empty `Optional<List<T>>`, you should simply return an empty `List<T>`.
