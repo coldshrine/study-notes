@@ -1941,3 +1941,11 @@ Container types, including collections, maps, streams, arrays and optionals shou
 Returning an optional that contains a boxed primitive is prohibitively expensive as it has two levels of boxing instead of zero. Library designers saw fit to provide analogues of Optional<T> for primitive types `int`, `long` and `double` (`OptionalInt`, `OptionalLong` and `OptionalDouble`). **You should never return an optional of a boxed primitive type.**
 
 It is almost never appropriate to use an optional as a key, value, or element in a collection array.
+
+Often storing an optional in an instance field is a "bad smell", but sometimes may be justified.
+
+### Write doc comments for all exposed API elements
+
+To document your API properly, you must precede every exported class, interface, constructor, method, and field declaration with a doc comments.
+
+The doc comment for a method should describe succinctly the contract between the method and its client.
