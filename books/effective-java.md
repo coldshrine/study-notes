@@ -1951,3 +1951,5 @@ To document your API properly, you must precede every exported class, interface,
 The doc comment for a method should describe succinctly the contract between the method and its client.
 
 Doc comments should be readable both in the source code and in the generated documentation.
+
+No two members or constructors in a class or interface should have the same summary description.
