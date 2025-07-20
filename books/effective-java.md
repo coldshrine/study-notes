@@ -1968,3 +1968,5 @@ When documenting a generic type or method, be sure to document all type paramete
  */
 public interface Map<K, V> { ... }
 ```
+
+When documenting an enum type, be sure to document the constants.
