@@ -1953,3 +1953,5 @@ The doc comment for a method should describe succinctly the contract between the
 Doc comments should be readable both in the source code and in the generated documentation.
 
 No two members or constructors in a class or interface should have the same summary description.
+
+When documenting a generic type or method, be sure to document all type parameters.
