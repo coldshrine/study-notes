@@ -2007,3 +2007,5 @@ public @interface ExceptionTest {
     Class<? extends Throwable> value();
 }
 ```
+
+Whether or not a class or static method is thread-safe, you should document its thread-safely level.
