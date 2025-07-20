@@ -1989,3 +1989,4 @@ public enum OrchestraSection {
     STRING;
 }
 ```
+When documenting an annotation type, be sure to document any members as the type itself.
