@@ -1949,3 +1949,5 @@ Often storing an optional in an instance field is a "bad smell", but sometimes m
 To document your API properly, you must precede every exported class, interface, constructor, method, and field declaration with a doc comments.
 
 The doc comment for a method should describe succinctly the contract between the method and its client.
+
+Doc comments should be readable both in the source code and in the generated documentation.
