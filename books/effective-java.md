@@ -1970,3 +1970,22 @@ public interface Map<K, V> { ... }
 ```
 
 When documenting an enum type, be sure to document the constants.
+
+```java
+/**
+ * An instrument section of a symphony orchestra.
+ */
+public enum OrchestraSection {
+    /** Woodwinds, such as flute, clarinet, and oboe. */
+    WOODWIND,
+
+    /** Brass instruments, such as french horn and trumpet. */
+    BRASS,
+
+    /** Percussion instruments, such as timpani and cymbals. */
+    PERCUSSION,
+
+    /** Stringed instruments, such as violin and cello. */
+    STRING;
+}
+```
