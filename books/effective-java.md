@@ -2019,3 +2019,5 @@ The generated documentation should provide a clear description of your API. The 
 By minimising the scope of local variables, you increase the readability and maintainability of your code and reduce the likelihood for error.
 
 **The most powerful technique for minimising the scope of a local variable is to declare it where it is first used.**
+
+Nearly every local variable declaration should contain an initialiser.
