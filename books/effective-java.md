@@ -2025,3 +2025,10 @@ Nearly every local variable declaration should contain an initialiser.
 Prefer `for` loops to `while` loops, as `for` loops limit the scope of the variables defined in their bodies.
 
 Idiom for iterating when you need the iterator
+
+```java
+for (Iterator<Element> i = c.iterator(); i.hasNext(); ) {
+    Element e = i.next();
+    ... // Do something with e and i
+}
+```
