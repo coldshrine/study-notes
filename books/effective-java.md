@@ -2023,3 +2023,5 @@ By minimising the scope of local variables, you increase the readability and mai
 Nearly every local variable declaration should contain an initialiser.
 
 Prefer `for` loops to `while` loops, as `for` loops limit the scope of the variables defined in their bodies.
+
+Idiom for iterating when you need the iterator
