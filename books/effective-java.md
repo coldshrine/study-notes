@@ -2021,3 +2021,5 @@ By minimising the scope of local variables, you increase the readability and mai
 **The most powerful technique for minimising the scope of a local variable is to declare it where it is first used.**
 
 Nearly every local variable declaration should contain an initialiser.
+
+Prefer `for` loops to `while` loops, as `for` loops limit the scope of the variables defined in their bodies.
