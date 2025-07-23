@@ -2036,3 +2036,5 @@ for (Iterator<Element> i = c.iterator(); i.hasNext(); ) {
 A final technique to minimise the scope of local variables is to keep methods small and focused.
 
 ### Prefer `for-each` loops to traditional `for` loops
+
+Not the best way to iterate over a collection
