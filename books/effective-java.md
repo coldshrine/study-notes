@@ -2054,3 +2054,11 @@ for (int i = 0; i < a.length; i++) {
 ```
 
 The iterator and the index variables are just clutter, all you need are the elements. They also represent opportunities for error. Also the two loops are quite different.
+
+The preferred idiom for iterating over collections and arrays
+
+```java
+for (Element e : elements) {
+    ... // Do something with e
+}
+```
