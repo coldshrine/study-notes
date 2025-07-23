@@ -2083,3 +2083,7 @@ Numerous features are added to the libraries in every major release, and it pays
 Every programer should be familiar with the basic of `java.lang`, `java.util` and `java.io` and their subpackages.
 
 ### Avoid `float` and `double` if exact answers are required
+
+The `float` and `double` types are particularly ill-suited for monetary calculations because it is impossible to represent 0.1 as a `float` or `double` exactly.
+
+Use `BigDecimal`, `int` or `long` for monetary calculations.
