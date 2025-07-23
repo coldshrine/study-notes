@@ -2032,3 +2032,5 @@ for (Iterator<Element> i = c.iterator(); i.hasNext(); ) {
     ... // Do something with e and i
 }
 ```
+
+A final technique to minimise the scope of local variables is to keep methods small and focused.
