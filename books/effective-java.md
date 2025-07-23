@@ -2052,3 +2052,5 @@ for (int i = 0; i < a.length; i++) {
     ... // Do something with a[i]
 }
 ```
+
+The iterator and the index variables are just clutter, all you need are the elements. They also represent opportunities for error. Also the two loops are quite different.
