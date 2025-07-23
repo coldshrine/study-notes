@@ -2038,3 +2038,10 @@ A final technique to minimise the scope of local variables is to keep methods sm
 ### Prefer `for-each` loops to traditional `for` loops
 
 Not the best way to iterate over a collection
+
+```java
+for (Iterator<Element> i = c.iterator(); i.hasNext(); ) {
+    Element e = i.next();
+    ... // Do something with e
+}
+```
