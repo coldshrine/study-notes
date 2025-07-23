@@ -2075,3 +2075,7 @@ In these cases you'll have to use an ordinary `for` loop and be wary of the prob
 Don't reinvent the wheel. If you need to do something that seems like it should be reasonably common, there may be already a facility in the libraries that does what you want.
 
 By using a standard library, you take advantage of the knowledge of the experts who wrote it and the experience of those who used it before you.
+
+The random number generator of choice is `ThreadLocalRandom`, it produces higher quality random numbers, and it's very fast.
+
+Numerous features are added to the libraries in every major release, and it pays to keep abreast of these additions.
