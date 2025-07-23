@@ -2062,3 +2062,5 @@ for (Element e : elements) {
     ... // Do something with e
 }
 ```
+
+Unfortunately, there are three common situations where you _can't_ use for-each:
