@@ -2064,3 +2064,4 @@ for (Element e : elements) {
 ```
 
 Unfortunately, there are three common situations where you _can't_ use for-each:
+* Destructive filtering
