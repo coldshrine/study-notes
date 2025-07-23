@@ -2045,3 +2045,10 @@ for (Iterator<Element> i = c.iterator(); i.hasNext(); ) {
     ... // Do something with e
 }
 ```
+Not the best way to iterate over an array
+
+```java
+for (int i = 0; i < a.length; i++) {
+    ... // Do something with a[i]
+}
+```
