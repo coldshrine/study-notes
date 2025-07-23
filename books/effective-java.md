@@ -2067,3 +2067,11 @@ Unfortunately, there are three common situations where you _can't_ use for-each:
 * Destructive filtering
 * Transforming
 * Parallel iteration
+
+In these cases you'll have to use an ordinary `for` loop and be wary of the problems they can generate.
+
+### Know and use the libraries
+
+Don't reinvent the wheel. If you need to do something that seems like it should be reasonably common, there may be already a facility in the libraries that does what you want.
+
+By using a standard library, you take advantage of the knowledge of the experts who wrote it and the experience of those who used it before you.
