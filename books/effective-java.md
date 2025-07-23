@@ -2087,3 +2087,7 @@ Every programer should be familiar with the basic of `java.lang`, `java.util` an
 The `float` and `double` types are particularly ill-suited for monetary calculations because it is impossible to represent 0.1 as a `float` or `double` exactly.
 
 Use `BigDecimal`, `int` or `long` for monetary calculations.
+
+### Prefer primitive types to boxed primitives
+
+Applying the `==` operator to boxed primitives is almost always wrong.
