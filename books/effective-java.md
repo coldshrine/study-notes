@@ -2079,3 +2079,7 @@ By using a standard library, you take advantage of the knowledge of the experts 
 The random number generator of choice is `ThreadLocalRandom`, it produces higher quality random numbers, and it's very fast.
 
 Numerous features are added to the libraries in every major release, and it pays to keep abreast of these additions.
+
+Every programer should be familiar with the basic of `java.lang`, `java.util` and `java.io` and their subpackages.
+
+### Avoid `float` and `double` if exact answers are required
