@@ -2095,3 +2095,10 @@ Applying the `==` operator to boxed primitives is almost always wrong.
 When you mix primitives and boxed primitives in an operation, the boxed primitive is auto-unboxed.
 
 Autoboxing reduces the verbosity, but not the danger, of using boxed primitives. When your program does unboxing, it can throw a `NullPointerException`.
+
+### Avoid strings where other types are more appropriate
+
+* Strings are poor substitutes for other value types.
+* Strings are poor substitutes for enum types.
+* Strings are poor for aggregate types. `String compoundKey = className + "#" + i.next()`. If the character used to separate fields occurs in one the fields, chaos may result. To access individual fields you'll need to provide parsers. You can't provide `equals`, `toString` or `compareTo`. A better approach is to write a class.
+* String are poor substitutes for capabilities. If a string represent a shared global namespace for a resource, two clients may independently and unintentionally use the same string causing both of them to fail. A better approach is to define an unforgeable key (or capability) to access to resources.
