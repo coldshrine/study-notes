@@ -2108,3 +2108,12 @@ Autoboxing reduces the verbosity, but not the danger, of using boxed primitives.
 Using the string concatenation repeatedly to concatenate _n_ strings requires time quadratic in _n_.
 
 Performs poorly
+
+```java
+public String statement() {
+    String result = "";
+    for (int i = 0; i < numItems(); i++)
+        result += lineForItem(i);  // String concatenation
+    return result;
+}
+```
