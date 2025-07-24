@@ -2106,3 +2106,5 @@ Autoboxing reduces the verbosity, but not the danger, of using boxed primitives.
 ### Beware the performance of string concatenation
 
 Using the string concatenation repeatedly to concatenate _n_ strings requires time quadratic in _n_.
+
+Performs poorly
