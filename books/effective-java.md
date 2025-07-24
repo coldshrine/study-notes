@@ -2104,3 +2104,5 @@ Autoboxing reduces the verbosity, but not the danger, of using boxed primitives.
 * String are poor substitutes for capabilities. If a string represent a shared global namespace for a resource, two clients may independently and unintentionally use the same string causing both of them to fail. A better approach is to define an unforgeable key (or capability) to access to resources.
 
 ### Beware the performance of string concatenation
+
+Using the string concatenation repeatedly to concatenate _n_ strings requires time quadratic in _n_.
