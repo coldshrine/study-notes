@@ -2148,3 +2148,4 @@ Reflection allows one class to use another, even if the latter class did not exi
 
 * You lose all the benefits of compile-type type checking.
 * The code required to perform reflective access is clumsy and verbose.
+* Performance suffers.
