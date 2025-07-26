@@ -2147,3 +2147,4 @@ When there is no appropriate interface, just use the least specific class int he
 Reflection allows one class to use another, even if the latter class did not exist when the former was compiled. This comes at a price:
 
 * You lose all the benefits of compile-type type checking.
+* The code required to perform reflective access is clumsy and verbose.
