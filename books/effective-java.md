@@ -2135,3 +2135,9 @@ Bad, it uses class as type
 ```java
 LinkedHashSet<Son> sonSet = new LinkedHashSet<>();
 ```
+
+**If you get into the habit of using interfaces as types, your program will be much more flexible.** If you decide to switch implementations, all you have to do is change the class name in the constructor.
+
+It is entirely appropriate to refer to an object by a class rather than an interface if no appropriate interface exists.
+
+When there is no appropriate interface, just use the least specific class int he class hierarchy that provides the required functionality.
