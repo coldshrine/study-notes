@@ -2117,3 +2117,7 @@ public String statement() {
     return result;
 }
 ```
+
+**Don't use the string concatenation operator to combine more than a few strings.**
+
+### Refer to objects by their interfaces
