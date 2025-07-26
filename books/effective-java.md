@@ -2121,3 +2121,17 @@ public String statement() {
 **Don't use the string concatenation operator to combine more than a few strings.**
 
 ### Refer to objects by their interfaces
+
+If appropriate interface exists, then parameters, return values, variables, and field should all be declared using interface types.
+
+Good, it uses interface as type
+
+```java
+Set<Son> sonSet = new LinkedHashSet<>();
+```
+
+Bad, it uses class as type
+
+```java
+LinkedHashSet<Son> sonSet = new LinkedHashSet<>();
+```
