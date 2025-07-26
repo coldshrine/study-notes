@@ -2143,3 +2143,5 @@ It is entirely appropriate to refer to an object by a class rather than an inter
 When there is no appropriate interface, just use the least specific class int he class hierarchy that provides the required functionality.
 
 ### Prefer interfaces to reflection
+
+Reflection allows one class to use another, even if the latter class did not exist when the former was compiled. This comes at a price:
