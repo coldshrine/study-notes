@@ -2141,3 +2141,5 @@ LinkedHashSet<Son> sonSet = new LinkedHashSet<>();
 It is entirely appropriate to refer to an object by a class rather than an interface if no appropriate interface exists.
 
 When there is no appropriate interface, just use the least specific class int he class hierarchy that provides the required functionality.
+
+### Prefer interfaces to reflection
