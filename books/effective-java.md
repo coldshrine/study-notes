@@ -2153,3 +2153,8 @@ Reflection allows one class to use another, even if the latter class did not exi
 You can obtain many of the benefits of reflection while incurring few of its costs by using it in a very limited form. Create instances reflectively and access them normally via their interface or superclass.
 
 Reflective instantiation with interface access.
+
+```java
+public static void main(String[] args) {
+    // Translate the class name into a Class object
+    Class<? extends Set<String>> cl = null;
