@@ -2151,3 +2151,5 @@ Reflection allows one class to use another, even if the latter class did not exi
 * Performance suffers.
 
 You can obtain many of the benefits of reflection while incurring few of its costs by using it in a very limited form. Create instances reflectively and access them normally via their interface or superclass.
+
+Reflective instantiation with interface access.
