@@ -2158,3 +2158,9 @@ Reflective instantiation with interface access.
 public static void main(String[] args) {
     // Translate the class name into a Class object
     Class<? extends Set<String>> cl = null;
+        try {
+        cl = (Class<? extends Set<String>>)  // Unchecked cast!
+                Class.forName(args[0]);
+    } catch (ClassNotFoundException e) {
+        fatalError("Class not found.");
+    }
