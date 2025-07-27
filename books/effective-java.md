@@ -2171,3 +2171,25 @@ public static void main(String[] args) {
     } catch (NoSuchMethodException e) {
         fatalError("No parameterless constructor");
     }
+    // Instantiate the set
+    Set<String> s = null;
+    try {
+        s = cons.newInstance();
+    } catch (IllegalAccessException e) {
+        fatalError("Constructor not accessible");
+    } catch (InstantiationException e) {
+        fatalError("Class not instantiable.");
+    } catch (InvocationTargetException e) {
+        fatalError("Constructor threw " + e.getCause());
+    } catch (ClassCastException e) {
+        fatalError("Class doesn't implement Set");
+    }
+    // Exercise the set
+    s.addAll(Arrays.asList(args).subList(1, args.length));
+    System.out.println(s);
+}
+private static void fatalError(String msg) {
+    System.err.println(msg);
+    System.exit(1);
+}
+```
