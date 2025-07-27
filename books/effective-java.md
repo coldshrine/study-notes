@@ -2164,3 +2164,10 @@ public static void main(String[] args) {
     } catch (ClassNotFoundException e) {
         fatalError("Class not found.");
     }
+    // Get the constructor
+    Constructor<? extends Set<String>> cons = null;
+    try {
+        cons = cl.getDeclaredConstructor();
+    } catch (NoSuchMethodException e) {
+        fatalError("No parameterless constructor");
+    }
