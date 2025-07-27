@@ -2193,3 +2193,5 @@ private static void fatalError(String msg) {
     System.exit(1);
 }
 ```
+
+### Use native methods judiciously
