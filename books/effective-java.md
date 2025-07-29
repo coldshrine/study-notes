@@ -2207,3 +2207,13 @@ Strive to write good programs rather than fast ones.
 Strive to avoid design decisions that limit performance.
 
 Consider the performance consequences of your API design decisions.
+
+It is a very bad idea to warp an API to achieve good performance. The performance issue that caused you to warp the API may go away in a future.
+
+Measure performance before and after each attempted optimisation.
+
+### Adhere to generally accepted naming conventions
+
+Package and module names should be hierarchical, with components separated by periods. Alphabetic characters, rarely digits.
+
+Components should be short, meaningful abbreviations or acronyms.
