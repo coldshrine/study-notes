@@ -2195,3 +2195,15 @@ private static void fatalError(String msg) {
 ```
 
 ### Use native methods judiciously
+
+The Java Native Interface (JNI) allows Java programs to call _native methods_ written in _native programming languages_ such as C or C++.
+
+It is rarely advisable to use native methods for improved performance.
+
+### Optimise judiciously
+
+Strive to write good programs rather than fast ones.
+
+Strive to avoid design decisions that limit performance.
+
+Consider the performance consequences of your API design decisions.
