@@ -2217,3 +2217,13 @@ Measure performance before and after each attempted optimisation.
 Package and module names should be hierarchical, with components separated by periods. Alphabetic characters, rarely digits.
 
 Components should be short, meaningful abbreviations or acronyms.
+
+Class and interface names, including enum and annotation type names, should consist of one or more words, with the first letter of each word capitalised. Abbreviations should be avoided. If you use acronyms, capitalise just the first letter. Better to have `HttpUrl` than `HTTPURL`.
+
+Method and field names follow the same conventions as before, except that first letter should be lowercase.
+
+Constant fields should consist of one or more upper case words separated by the underscore character.
+
+Local variable names have similar conventions to member names, except that abbreviations are permitted.
+
+Type parameters consist of a single letter. `T` for arbitrary type `E` for element type, `K` and `V` for key and value types of a map, and `X` for exception. Return type is usually `R`. A sequence of arbitrary types can be `T`, `U`, `V` or `T1`, `T2`, `T3`.
