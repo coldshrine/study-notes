@@ -2245,3 +2245,12 @@ Fields of type `boolean` are often named like `boolean` accessor methods with th
 ### Use exceptions for exceptional conditions
 
 Horrible abuse of exceptions
+
+```java
+try {
+    int i = 0;
+    while(true)
+        range[i++].climb();
+} catch (ArrayIndexOutOfBoundsException e) {
+}
+```
