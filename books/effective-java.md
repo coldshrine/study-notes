@@ -2243,3 +2243,5 @@ Fields of type `boolean` are often named like `boolean` accessor methods with th
 ## Exceptions
 
 ### Use exceptions for exceptional conditions
+
+Horrible abuse of exceptions
