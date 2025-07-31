@@ -2227,3 +2227,15 @@ Constant fields should consist of one or more upper case words separated by the 
 Local variable names have similar conventions to member names, except that abbreviations are permitted.
 
 Type parameters consist of a single letter. `T` for arbitrary type `E` for element type, `K` and `V` for key and value types of a map, and `X` for exception. Return type is usually `R`. A sequence of arbitrary types can be `T`, `U`, `V` or `T1`, `T2`, `T3`.
+
+Instantiable classes, including enum types are generally named with a singular noun or noun phrase.
+
+Non instantiable utility classes are often named with a plural noun or with an adjective ending in `able` or `ible`. In case of annotations, nouns, verbs, prepositions and adjectives are all common.
+
+Methods that perform some action are generally named with a verb or verb phrase. Methods that return a `boolean` value usually have names that begin with the word `is` or `has` followed by a noun, noun phrase that functions as an adjective.
+
+Method that return non-`boolean` attribute of the object are usually named with a noun, a noun phrase or a verb phrase beginning with the verb `get`, although nowadays might not be necessary.
+
+Instance methods that convert the type of a n object, are often called `to`_`Type`_. Methods that return a view whose type differs from that of receiving object are often called as `as`_Type_. Methods that return a primitive with the same value as the object on which they're invoked are often called _type_`Value`.
+
+Fields of type `boolean` are often named like `boolean` accessor methods with the initial `is` omitted. Fields of other types are usually named with nouns or noun phrases.
