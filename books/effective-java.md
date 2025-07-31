@@ -2241,3 +2241,5 @@ Instance methods that convert the type of a n object, are often called `to`_`Typ
 Fields of type `boolean` are often named like `boolean` accessor methods with the initial `is` omitted. Fields of other types are usually named with nouns or noun phrases.
 
 ## Exceptions
+
+### Use exceptions for exceptional conditions
