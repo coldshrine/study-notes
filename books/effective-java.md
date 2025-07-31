@@ -2239,3 +2239,5 @@ Method that return non-`boolean` attribute of the object are usually named with 
 Instance methods that convert the type of a n object, are often called `to`_`Type`_. Methods that return a view whose type differs from that of receiving object are often called as `as`_Type_. Methods that return a primitive with the same value as the object on which they're invoked are often called _type_`Value`.
 
 Fields of type `boolean` are often named like `boolean` accessor methods with the initial `is` omitted. Fields of other types are usually named with nouns or noun phrases.
+
+## Exceptions
