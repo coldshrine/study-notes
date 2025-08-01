@@ -2275,3 +2275,9 @@ Exceptions are full-fledged objects, define methods to provide additional inform
 ### Avoid unnecessary use of checked exceptions
 
 Checked exceptions _force_ programmers to deal with problems. Overuse of checked exceptions can make them far less pleasant to use.
+
+### Favour the use of standard exceptions
+
+Do not reuse `Exception`, `RuntimeException`, `Throwable` or `Error` directly.
+
+Most commonly reused exceptions
