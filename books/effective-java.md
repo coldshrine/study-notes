@@ -2271,3 +2271,5 @@ Use runtime exceptions to indicate programming errors. _Precondition violations_
 `Error` exceptions are usually intended for the JVM  to indicate conditions that make it impossible to continue execution. Therefore **all of the unchecked throwables you implement should subclass `RuntimeException`.** You shouldn't throw `Error` exceptions either.
 
 Exceptions are full-fledged objects, define methods to provide additional information concerning the condition that caused the exception. This is crucial for checked exceptions.
+
+### Avoid unnecessary use of checked exceptions
