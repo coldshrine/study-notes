@@ -2261,3 +2261,5 @@ try {
 Exceptions should never be used for ordinary control flow.
 
 A well-designed API must not force its clients to use exceptions for ordinary control flow.
+
+### Use checked exceptions for recoverable conditions and runtime exceptions for programming errors
