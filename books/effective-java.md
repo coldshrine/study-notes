@@ -2265,3 +2265,5 @@ A well-designed API must not force its clients to use exceptions for ordinary co
 ### Use checked exceptions for recoverable conditions and runtime exceptions for programming errors
 
 Use checked exceptions for conditions from which the caller can reasonably be expected to recover.
+
+Use runtime exceptions to indicate programming errors. _Precondition violations_ or the failure by the client of an API to adhere to the contract established by the API specification.
