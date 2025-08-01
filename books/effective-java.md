@@ -2254,3 +2254,5 @@ try {
 } catch (ArrayIndexOutOfBoundsException e) {
 }
 ```
+
+* Exception processing is slow
