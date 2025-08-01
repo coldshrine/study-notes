@@ -2273,3 +2273,5 @@ Use runtime exceptions to indicate programming errors. _Precondition violations_
 Exceptions are full-fledged objects, define methods to provide additional information concerning the condition that caused the exception. This is crucial for checked exceptions.
 
 ### Avoid unnecessary use of checked exceptions
+
+Checked exceptions _force_ programmers to deal with problems. Overuse of checked exceptions can make them far less pleasant to use.
