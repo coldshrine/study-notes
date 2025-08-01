@@ -2267,3 +2267,5 @@ A well-designed API must not force its clients to use exceptions for ordinary co
 Use checked exceptions for conditions from which the caller can reasonably be expected to recover.
 
 Use runtime exceptions to indicate programming errors. _Precondition violations_ or the failure by the client of an API to adhere to the contract established by the API specification.
+
+`Error` exceptions are usually intended for the JVM  to indicate conditions that make it impossible to continue execution. Therefore **all of the unchecked throwables you implement should subclass `RuntimeException`.** You shouldn't throw `Error` exceptions either.
