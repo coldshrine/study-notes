@@ -2283,3 +2283,4 @@ Do not reuse `Exception`, `RuntimeException`, `Throwable` or `Error` directly.
 Most commonly reused exceptions
 
 Exception                         | Occasion for use
+----------------------------------|-----------------
