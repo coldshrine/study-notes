@@ -2281,3 +2281,5 @@ Checked exceptions _force_ programmers to deal with problems. Overuse of checked
 Do not reuse `Exception`, `RuntimeException`, `Throwable` or `Error` directly.
 
 Most commonly reused exceptions
+
+Exception                         | Occasion for use
