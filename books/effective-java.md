@@ -2256,3 +2256,4 @@ try {
 ```
 
 * Exception processing is slow
+* Placing code into a `try-catch` block inhibits some optimisations the JVM perform
