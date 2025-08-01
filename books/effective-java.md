@@ -2284,3 +2284,4 @@ Most commonly reused exceptions
 
 Exception                         | Occasion for use
 ----------------------------------|-----------------
+`IllegalArgumentException`        | Non-null parameter value is inappropriate
