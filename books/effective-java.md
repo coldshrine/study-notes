@@ -2257,3 +2257,5 @@ try {
 
 * Exception processing is slow
 * Placing code into a `try-catch` block inhibits some optimisations the JVM perform
+
+Exceptions should never be used for ordinary control flow.
