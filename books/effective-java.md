@@ -2292,3 +2292,5 @@ Exception                         | Occasion for use
 `UnsupportedOperationException`   | Object does not support method
 
 Throw `IllegalStateException` if no argument values would have worked, otherwise throw `IllegalArgumentException`.
+
+### Throw exceptions appropriate to the abstraction
