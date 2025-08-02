@@ -2294,3 +2294,5 @@ Exception                         | Occasion for use
 Throw `IllegalStateException` if no argument values would have worked, otherwise throw `IllegalArgumentException`.
 
 ### Throw exceptions appropriate to the abstraction
+
+Higher layers should catch lower-level exceptions and, in their place, throw exceptions that can be explained in terms of the higher-level abstraction.
