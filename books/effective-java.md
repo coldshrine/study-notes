@@ -2290,3 +2290,5 @@ Exception                         | Occasion for use
 `IndexOutOfBoundsException`       | Index parameter value is out of range
 `ConcurrentModificationException` | Concurrent modification of an object has been detected where it is prohibited
 `UnsupportedOperationException`   | Object does not support method
+
+Throw `IllegalStateException` if no argument values would have worked, otherwise throw `IllegalArgumentException`.
