@@ -2318,3 +2318,5 @@ try {
     throw new HigherLevelException(cause);
 }
 ```
+
+While exception translation is superior to mindless propagation of exceptions from lower layers, it should not be overused.
