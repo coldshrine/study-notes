@@ -2306,3 +2306,15 @@ try {
    throw new HigherLevelException(...);
 }
 ```
+
+Sometimes the low-level exception might be helpful to someone debugging the higher-level.
+
+_Exception chaining_
+
+```java
+try {
+    ... // Use lower-level abstraction to do our bidding
+} catch (LowerLevelException cause) {
+    throw new HigherLevelException(cause);
+}
+```
