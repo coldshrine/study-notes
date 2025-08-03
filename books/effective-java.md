@@ -2322,3 +2322,5 @@ try {
 While exception translation is superior to mindless propagation of exceptions from lower layers, it should not be overused.The best way to deal with exceptions from lower layers is to avoid them, by ensuring that lower-level methods succeed.Sometimes you can do this by checking the validity of parameters to be passed to lower level abstractions.
 
 ### Document all exceptions thrown by each method
+
+Always declare checked exceptions individually, and document precisely the conditions under which each one is thrown.
