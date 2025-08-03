@@ -2330,3 +2330,5 @@ Use the Javadoc `@throws` tag to document each exception that a method can throw
 If an exception is thrown by many methods in a class for the same reason, you can document the exception in the class's documentation comment.
 
 ### Include failure-capture information in detail messages
+
+**To capture a failure, the detail message of an exception should contain the values of all parameters and fields that contributed to the exception.** For example `IndexOutOfBoundsException` should contain the lower bound, the upper bound, and the index value that failed.
