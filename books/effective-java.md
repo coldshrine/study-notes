@@ -2319,4 +2319,4 @@ try {
 }
 ```
 
-While exception translation is superior to mindless propagation of exceptions from lower layers, it should not be overused.
+While exception translation is superior to mindless propagation of exceptions from lower layers, it should not be overused.The best way to deal with exceptions from lower layers is to avoid them, by ensuring that lower-level methods succeed.
