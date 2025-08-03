@@ -2324,3 +2324,5 @@ While exception translation is superior to mindless propagation of exceptions fr
 ### Document all exceptions thrown by each method
 
 Always declare checked exceptions individually, and document precisely the conditions under which each one is thrown.
+
+Use the Javadoc `@throws` tag to document each exception that a method can throw, but do not use the `throws` keyword on unchecked exceptions.
