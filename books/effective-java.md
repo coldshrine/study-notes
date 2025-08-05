@@ -2425,3 +2425,5 @@ public class StopThread {
     }
 }
 ```
+
+Synchronisation is not guaranteed to work unless both read and write operations are synchronised.
