@@ -2357,3 +2357,13 @@ try {
 ```
 
 If you choose to ignore an exception, the `catch` block should contain a comment explaining why it is appropriate to do so and the variable should be named `ignored`.
+
+```java
+Future<Integer> f = exec.submit(planarMap::chromaticNumber);
+int numColors = 4; // Default; guaranteed sufficient for any map
+try {
+    numColors = f.get(1L, TimeUnit.SECONDS);
+} catch (TimeoutException | ExecutionException ignored) {
+    // Use default: minimal coloring is desirable, not required
+}
+```
