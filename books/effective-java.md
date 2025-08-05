@@ -2348,3 +2348,10 @@ For methods that operate on mutable objects, the most common way to achieve fail
 ### Don't ignore exceptions
 
 An empty `catch` block defeats the purpose of exceptions.
+
+```java
+try {
+    ...
+} catch (SomeException e) {
+}
+```
