@@ -2338,3 +2338,5 @@ Do not include passwords, encryption keys, and the like in detail messages as st
 One way to ensure that exceptions contain adequate failure-capture information in their detail messages is to require this information in their constructors.
 
 ### Strive for failure atomicity
+
+Generally speaking, a failed method invocation should leave the object in the state that it was in prior the invocation.
