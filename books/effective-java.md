@@ -2342,3 +2342,5 @@ One way to ensure that exceptions contain adequate failure-capture information i
 Generally speaking, a failed method invocation should leave the object in the state that it was in prior the invocation.
 
 The simplest way is to design immutable objects, where failure atomicity is free.
+
+For methods that operate on mutable objects, the most common way to achieve failure atomicity is to check parameters for validity before performing the operation.
