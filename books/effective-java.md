@@ -2355,3 +2355,5 @@ try {
 } catch (SomeException e) {
 }
 ```
+
+If you choose to ignore an exception, the `catch` block should contain a comment explaining why it is appropriate to do so and the variable should be named `ignored`.
