@@ -2336,3 +2336,5 @@ If an exception is thrown by many methods in a class for the same reason, you ca
 Do not include passwords, encryption keys, and the like in detail messages as stack traces may be seen by many people diagnosing and fixing software issues.
 
 One way to ensure that exceptions contain adequate failure-capture information in their detail messages is to require this information in their constructors.
+
+### Strive for failure atomicity
