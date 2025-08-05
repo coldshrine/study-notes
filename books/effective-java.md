@@ -2334,3 +2334,5 @@ If an exception is thrown by many methods in a class for the same reason, you ca
 **To capture a failure, the detail message of an exception should contain the values of all parameters and fields that contributed to the exception.** For example `IndexOutOfBoundsException` should contain the lower bound, the upper bound, and the index value that failed.
 
 Do not include passwords, encryption keys, and the like in detail messages as stack traces may be seen by many people diagnosing and fixing software issues.
+
+One way to ensure that exceptions contain adequate failure-capture information in their detail messages is to require this information in their constructors.
