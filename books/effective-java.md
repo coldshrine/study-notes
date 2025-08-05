@@ -2396,3 +2396,5 @@ public class StopThread {
     }
 }
 ```
+
+Properly synchronised cooperative thread termination
