@@ -2373,3 +2373,5 @@ try {
 ### Synchronise access to shared mutable data
 
 Synchronisation is required for reliable communication between threads as well as for mutual exclusion.
+
+Do not use `Thread.stop` as it is inherently _unsafe_, its use can result in data corruption.
