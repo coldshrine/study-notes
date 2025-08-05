@@ -2371,3 +2371,5 @@ try {
 ## Concurrency
 
 ### Synchronise access to shared mutable data
+
+Synchronisation is required for reliable communication between threads as well as for mutual exclusion.
