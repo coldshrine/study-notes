@@ -2377,3 +2377,22 @@ Synchronisation is required for reliable communication between threads as well a
 Do not use `Thread.stop` as it is inherently _unsafe_, its use can result in data corruption.
 
 Broken
+
+```java
+public class StopThread {
+    private static boolean stopRequested;
+
+    public static void main(String[] args)
+            throws InterruptedException {
+        Thread backgroundThread = new Thread(() -> {
+            int i = 0;
+            while (!stopRequested)
+                i++;
+        });
+        backgroundThread.start();
+
+        TimeUnit.SECONDS.sleep(1);
+        stopRequested = true;
+    }
+}
+```
