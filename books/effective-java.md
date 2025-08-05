@@ -2346,3 +2346,5 @@ The simplest way is to design immutable objects, where failure atomicity is free
 For methods that operate on mutable objects, the most common way to achieve failure atomicity is to check parameters for validity before performing the operation.
 
 ### Don't ignore exceptions
+
+An empty `catch` block defeats the purpose of exceptions.
