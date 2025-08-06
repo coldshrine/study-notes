@@ -2433,3 +2433,5 @@ Either share immutable data, or don't share at all. Confine mutable data into a 
 When multiple threads share mutable data, each thread that reads or writes the data must perform synchronisation.
 
 ### Avoid excessive synchronisation
+
+To avoid liveness and safety failures, never cede control to the client within a synchronised method or block. Inside a synchronised region, do not invoke a method that is designed to be overridden, or one provided by a client in the form a function object.
