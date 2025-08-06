@@ -2429,3 +2429,5 @@ public class StopThread {
 Synchronisation is not guaranteed to work unless both read and write operations are synchronised.
 
 Either share immutable data, or don't share at all. Confine mutable data into a single thread.
+
+When multiple threads share mutable data, each thread that reads or writes the data must perform synchronisation.
