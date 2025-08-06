@@ -2439,3 +2439,15 @@ To avoid liveness and safety failures, never cede control to the client within a
 As a rule, you should do as little work as possible inside synchronised regions.
 
 ### Prefer executors, tasks, and streams to threads
+
+```java
+ExecutorService exec = Executors.newSingleThreadExecutor();
+```
+
+```java
+exec.execute(runnable);
+```
+
+```java
+exec.shutdown();
+```
