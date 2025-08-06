@@ -2453,3 +2453,5 @@ exec.shutdown();
 ```
 
 You should refrain from working directly with threads, a `Thread` serves as both a unit of work and the mechanism for executing it. In the executor framework, the unit of work and the execution are separate.
+
+### Prefer concurrency utilities to `wait` and `notify`
