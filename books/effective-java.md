@@ -2437,3 +2437,5 @@ When multiple threads share mutable data, each thread that reads or writes the d
 To avoid liveness and safety failures, never cede control to the client within a synchronised method or block. Inside a synchronised region, do not invoke a method that is designed to be overridden, or one provided by a client in the form a function object.
 
 As a rule, you should do as little work as possible inside synchronised regions.
+
+### Prefer executors, tasks, and streams to threads
