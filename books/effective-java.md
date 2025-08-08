@@ -2461,3 +2461,5 @@ Given the difficulty of using `wait` and `notify` correctly, you should use the 
 It is impossible to exclude concurrent activity from a concurrent collection; locking it will only slow the program.
 
 Use `ConcurrentHashMap` in preference to `Collections.synchronizedMap`. Doing so can dramatically increase the performance of concurrent applications.
+
+For interval timing, always use `System.nanoTime` rather than `System.currentTimeMillis`. `System.nanoTime` is more accurate and is unaffected by adjustments to the system's real-time clock.
