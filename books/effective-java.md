@@ -2465,3 +2465,11 @@ Use `ConcurrentHashMap` in preference to `Collections.synchronizedMap`. Doing so
 For interval timing, always use `System.nanoTime` rather than `System.currentTimeMillis`. `System.nanoTime` is more accurate and is unaffected by adjustments to the system's real-time clock.
 
 The standard idiom for using `wait` method
+
+```java
+synchronized (obj) {
+    while (<condition does not hold>)
+        obj.wait(); // (Releases lock, and reacquires on wakeup)
+    ... // Perform action appropriate to condition
+}
+```
