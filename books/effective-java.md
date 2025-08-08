@@ -2477,3 +2477,5 @@ synchronized (obj) {
 Always use the wait loop idiom to invoke the `wait` method; never invoke it outside of a loop. The loop serves to test the condition before and after waiting.
 
 There is seldom, if ever, a reason to use `wait` and `notify` in new code.
+
+### Document thread safety
