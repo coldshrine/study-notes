@@ -2473,3 +2473,5 @@ synchronized (obj) {
     ... // Perform action appropriate to condition
 }
 ```
+
+Always use the wait loop idiom to invoke the `wait` method; never invoke it outside of a loop. The loop serves to test the condition before and after waiting.
