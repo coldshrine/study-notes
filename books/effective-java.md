@@ -2479,3 +2479,5 @@ Always use the wait loop idiom to invoke the `wait` method; never invoke it outs
 There is seldom, if ever, a reason to use `wait` and `notify` in new code.
 
 ### Document thread safety
+
+The presence of `synchronized` modifier in a method declaration is an implementation detail, not a part of its API.
