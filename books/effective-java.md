@@ -2483,3 +2483,5 @@ There is seldom, if ever, a reason to use `wait` and `notify` in new code.
 The presence of `synchronized` modifier in a method declaration is an implementation detail, not a part of its API.
 
 To enable safe concurrent use, a class must clearly document what level of thread safety it supports:
+
+* **Immutable.** No extra synchronisation is necessary.
