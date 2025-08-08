@@ -2457,3 +2457,5 @@ You should refrain from working directly with threads, a `Thread` serves as both
 ### Prefer concurrency utilities to `wait` and `notify`
 
 Given the difficulty of using `wait` and `notify` correctly, you should use the higher-level concurrency utilities instead.
+
+It is impossible to exclude concurrent activity from a concurrent collection; locking it will only slow the program.
