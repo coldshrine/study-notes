@@ -2463,3 +2463,5 @@ It is impossible to exclude concurrent activity from a concurrent collection; lo
 Use `ConcurrentHashMap` in preference to `Collections.synchronizedMap`. Doing so can dramatically increase the performance of concurrent applications.
 
 For interval timing, always use `System.nanoTime` rather than `System.currentTimeMillis`. `System.nanoTime` is more accurate and is unaffected by adjustments to the system's real-time clock.
+
+The standard idiom for using `wait` method
