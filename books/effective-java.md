@@ -2485,3 +2485,4 @@ The presence of `synchronized` modifier in a method declaration is an implementa
 To enable safe concurrent use, a class must clearly document what level of thread safety it supports:
 
 * **Immutable.** No extra synchronisation is necessary.
+* **Unconditionally thread-safe.** Instances are mutable, but clients don't need to worry about synchronisation.
