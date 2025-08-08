@@ -2486,3 +2486,4 @@ To enable safe concurrent use, a class must clearly document what level of threa
 
 * **Immutable.** No extra synchronisation is necessary.
 * **Unconditionally thread-safe.** Instances are mutable, but clients don't need to worry about synchronisation.
+* **Conditionally thread-safe.** Instances are mutable. Some methods require external synchronisation for safe concurrent use.
