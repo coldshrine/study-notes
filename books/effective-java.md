@@ -2495,3 +2495,11 @@ Lock fields should always be declared `final`.
 ### Use lazy evaluation judiciously
 
 Under most circumstances, normal initialisation is preferable to lazy initialisation.
+
+Normal initialisation of an instance field
+
+```java
+private final FieldType field = computeFieldValue();
+```
+
+If you use lazy initialisation to break an initialisation circularity, use a synchronised accessor.
