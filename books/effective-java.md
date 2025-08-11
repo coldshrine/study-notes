@@ -2493,3 +2493,5 @@ To enable safe concurrent use, a class must clearly document what level of threa
 Lock fields should always be declared `final`.
 
 ### Use lazy evaluation judiciously
+
+Under most circumstances, normal initialisation is preferable to lazy initialisation.
