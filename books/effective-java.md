@@ -2489,3 +2489,5 @@ To enable safe concurrent use, a class must clearly document what level of threa
 * **Conditionally thread-safe.** Instances are mutable. Some methods require external synchronisation for safe concurrent use.
 * **Not thread-safe.** Instances are mutable, clients must surround each method invocation with external synchronisation.
 * **Thread-hostile.** The class is unsafe for concurrent use even if every method invocation is surrounded by external synchronisation.
+
+Lock fields should always be declared `final`.
