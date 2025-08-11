@@ -2503,3 +2503,13 @@ private final FieldType field = computeFieldValue();
 ```
 
 If you use lazy initialisation to break an initialisation circularity, use a synchronised accessor.
+
+```java
+private FieldType field;
+
+private synchronized FieldType getField() {
+    if (field == null)
+        field = computeFieldValue();
+    return field;
+}
+```
