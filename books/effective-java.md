@@ -2491,3 +2491,5 @@ To enable safe concurrent use, a class must clearly document what level of threa
 * **Thread-hostile.** The class is unsafe for concurrent use even if every method invocation is surrounded by external synchronisation.
 
 Lock fields should always be declared `final`.
+
+### Use lazy evaluation judiciously
