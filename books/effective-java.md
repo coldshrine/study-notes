@@ -2515,3 +2515,11 @@ private synchronized FieldType getField() {
 ```
 
 If you need to use lazy initialisation for performance on a static field, use the lazy initialisation holder class idiom.
+
+```java
+private static class FieldHolder {
+    static final FieldType field = computeFieldValue();
+}
+
+private static FieldType getField() { return FieldHolder.field; }
+```
