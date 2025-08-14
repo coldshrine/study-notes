@@ -2513,3 +2513,5 @@ private synchronized FieldType getField() {
     return field;
 }
 ```
+
+If you need to use lazy initialisation for performance on a static field, use the lazy initialisation holder class idiom.
