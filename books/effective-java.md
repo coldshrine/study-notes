@@ -2523,3 +2523,5 @@ private static class FieldHolder {
 
 private static FieldType getField() { return FieldHolder.field; }
 ```
+
+If you need to use lazy initialisation for performance on an instance field, use the double-check idiom.
