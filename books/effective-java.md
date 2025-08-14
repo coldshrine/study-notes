@@ -2541,3 +2541,5 @@ private FieldType getField() {
 }
 ```
 ### Don't depend on thread scheduler
+
+Any program that relies on the thread scheduler for correctness or performance is likely to be nonportable.
