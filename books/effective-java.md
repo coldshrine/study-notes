@@ -2525,3 +2525,18 @@ private static FieldType getField() { return FieldHolder.field; }
 ```
 
 If you need to use lazy initialisation for performance on an instance field, use the double-check idiom.
+
+```java
+private volatile FieldType field;
+
+private FieldType getField() {
+    FieldType result = field;
+    if (result == null) {  // First check (no locking)
+        synchronized(this) {
+            if (field == null)  // Second check (with locking)
+                field = result = computeFieldValue();
+        }
+    }
+    return result;
+}
+```
