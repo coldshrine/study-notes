@@ -2576,4 +2576,5 @@ public class SlowCountDownLatch {
 
 Resist the temptation to "fix" the program by putting calls to `Thread.yield`, it depends a lot on the JVM and it has no testable semantics.
 
+Thread semantics are among the least portable features of Java.
 
