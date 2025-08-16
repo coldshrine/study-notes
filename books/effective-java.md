@@ -2581,3 +2581,5 @@ Thread semantics are among the least portable features of Java.
 ## Serialisation
 
 ### Prefer alternatives to Java serialisation
+
+The best way to avoid serialisation exploits is never to deserialise anything. There is no reason to use Java serialisation in any new system you write.
