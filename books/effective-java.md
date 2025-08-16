@@ -2578,3 +2578,4 @@ Resist the temptation to "fix" the program by putting calls to `Thread.yield`, i
 
 Thread semantics are among the least portable features of Java.
 
+## Serialisation
