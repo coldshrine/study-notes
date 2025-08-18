@@ -2601,3 +2601,5 @@ Implementing `Serializable` is not a decision to be undertake lightly.
 Classes designed for inheritance should rarely implement `Serializable`, and interfaces should rarely extend it. Doing so would place substantial burden on anyone who extends the class or implements the interface.
 
 Classes designed for inheritance should rarely implement `Serializable`, and interfaces should rarely extend it. Doing so would place substantial burden on anyone who extends the class or implements the interface.
+
+### Consider using a custom serialised form
