@@ -2591,3 +2591,5 @@ You can use the objet deserialisation filter added in Java 9 `java.io.ObjectInpu
 ### Implement `Serializable` with great caution
 
 A major cost of implementing `Serializable` is that it decreases the flexibility to change a class's implementation once it has been released, it's byte-stream encoding becomes part of its exported API.
+
+A second cost of implementing `Serializable` is that it increases the likelihood for bugs and security holes.
