@@ -2597,3 +2597,5 @@ A second cost of implementing `Serializable` is that it increases the likelihood
 A third cost of implementing `Serializable` is that it increases the testing burden associated with releasing a new version of a class. It is important to check that it is possible to serialise an instance in the new release and deserialise it in old releases, and vice versa.
 
 Implementing `Serializable` is not a decision to be undertake lightly.
+
+Classes designed for inheritance should rarely implement `Serializable`, and interfaces should rarely extend it. Doing so would place substantial burden on anyone who extends the class or implements the interface.
