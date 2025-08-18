@@ -2605,3 +2605,5 @@ Classes designed for inheritance should rarely implement `Serializable`, and int
 ### Consider using a custom serialised form
 
 Do not accept the default serialised form without first considering whether it is appropriate, you'll never escape completely from the implementation.
+
+The default serialised form is likely to be appropriate if an object's physical representation is identical to its logical content.
