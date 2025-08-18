@@ -2589,3 +2589,5 @@ If you can't avoid serialisation, your next best alternative is to never deseria
 You can use the objet deserialisation filter added in Java 9 `java.io.ObjectInputFilter`. Accepting classes by default and rejecting a list of potentially dangerous ones is know as _blacklisting_; rejecting classes by default and accepting a list of those that are presumed safe is know as _whitelisting_. **Prefer whitelisting to blacklisting**.
 
 ### Implement `Serializable` with great caution
+
+A major cost of implementing `Serializable` is that it decreases the flexibility to change a class's implementation once it has been released, it's byte-stream encoding becomes part of its exported API.
