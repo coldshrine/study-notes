@@ -2603,3 +2603,5 @@ Classes designed for inheritance should rarely implement `Serializable`, and int
 Classes designed for inheritance should rarely implement `Serializable`, and interfaces should rarely extend it. Doing so would place substantial burden on anyone who extends the class or implements the interface.
 
 ### Consider using a custom serialised form
+
+Do not accept the default serialised form without first considering whether it is appropriate, you'll never escape completely from the implementation.
