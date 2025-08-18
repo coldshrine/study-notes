@@ -2609,3 +2609,26 @@ Do not accept the default serialised form without first considering whether it i
 The default serialised form is likely to be appropriate if an object's physical representation is identical to its logical content.
 
 A good candidate for default serialised form
+
+```java
+public class Name implements Serializable {
+    /**
+     * Last name. Must be non-null.
+     * @serial
+     */
+    private final String lastName;
+
+    /**
+     * First name. Must be non-null.
+     * @serial
+     */
+    private final String firstName;
+    /**
+     * Middle name, or null if there is none.
+     * @serial
+     */
+    private final String middleName;
+
+    ... // Remainder omitted
+}
+```
