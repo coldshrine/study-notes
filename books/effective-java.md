@@ -2632,3 +2632,5 @@ public class Name implements Serializable {
     ... // Remainder omitted
 }
 ```
+
+Even if you decide that the default serialised form is appropriate, you often must provide a `readObject` method to ensure invariants and security.
