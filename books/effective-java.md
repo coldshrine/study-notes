@@ -2656,3 +2656,4 @@ Using a default serialised form when an object's physical representation differs
 
 * It permanently ties the exported API to the current internal representation.
 * It can consume excessive space.
+* It can consume excessive time.
