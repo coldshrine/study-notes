@@ -2655,3 +2655,4 @@ public final class StringList implements Serializable {
 Using a default serialised form when an object's physical representation differs substantially from its logical data content has four advantages.
 
 * It permanently ties the exported API to the current internal representation.
+* It can consume excessive space.
