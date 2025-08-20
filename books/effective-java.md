@@ -2651,3 +2651,5 @@ public final class StringList implements Serializable {
     ... // Remainder omitted
 }
 ```
+
+Using a default serialised form when an object's physical representation differs substantially from its logical data content has four advantages.
