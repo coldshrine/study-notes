@@ -2636,3 +2636,18 @@ public class Name implements Serializable {
 Even if you decide that the default serialised form is appropriate, you often must provide a `readObject` method to ensure invariants and security.
 
 An awful candidate for default serialised form.
+
+```java
+public final class StringList implements Serializable {
+    private int size = 0;
+    private Entry head = null;
+
+    private static class Entry implements Serializable {
+        String data;
+        Entry  next;
+        Entry  previous;
+    }
+
+    ... // Remainder omitted
+}
+```
