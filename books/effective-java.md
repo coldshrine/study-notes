@@ -2660,3 +2660,92 @@ Using a default serialised form when an object's physical representation differs
 * It can cause stack overflows.
 
 `StringList` with a reasonable custom serialised form.
+
+```java
+public final class StringList implements Serializable {
+    private transient int size   = 0;
+    private transient Entry head = null;
+
+    // No longer Serializable!
+    private static class Entry {
+        String data;
+        Entry  next;
+        Entry  previous;
+    }
+
+    // Appends the specified string to the list
+    public final void add(String s) { ... }
+
+    /**
+     * Serialize this {@code StringList} instance.
+     *
+     * @serialData The size of the list (the number of strings
+     * it contains) is emitted ({@code int}), followed by all of
+     * its elements (each a {@code String}), in the proper
+     * sequence.
+     */
+    private void writeObject(ObjectOutputStream s)
+            throws IOException {
+        s.defaultWriteObject();
+        s.writeInt(size);
+
+        // Write out all elements in the proper order.
+        for (Entry e = head; e != null; e = e.next)
+            s.writeObject(e.data);
+    }
+
+    private void readObject(ObjectInputStream s)
+            throws IOException, ClassNotFoundException {
+        s.defaultReadObject();
+        int numElements = s.readInt();
+
+        // Read in all elements and insert them in list
+        for (int i = 0; i < numElements; i++)
+            add((String) s.readObject());
+    }
+
+    ... // Remainder omitted
+}
+```
+
+Every instance field that isn't labeled `transient` will be serialised within the `defaultWriteObject` method is invoked. Every instance field that can be declared transient, should be. Before deciding to make a field nontransient, convince yourself that its value is part of the logical state of the object.
+
+You must impose any synchronisation on object serialisation that you would impose on any other method that reads the entire state of the object.
+
+```java
+private synchronized void writeObject(ObjectOutputStream s)
+        throws IOException {
+    s.defaultWriteObject();
+}
+```
+
+Regardless of what serialised form you choose, declare an explicit serial version UID in every serialisable class you write. This eliminates the serial version UID in every serialisable class you write, plus it has some performance benefits.
+
+```java
+private static final long serialVersionUID = randomLongValue;
+```
+
+It doesn't matter what value you choose.
+
+If you ever want to make a new version of a class that is _incompatible_ with existing versions, merely change the value in the serial version UID declaration. Do not change the serial version UID unless you want to break compatibility with all existing serialised instances of a class.
+
+### Write `readObject` methods defensively
+
+When an object is deserialised, it is critical to defensively copy any field containing an object reference that a client must not possess.
+
+`readObject` method with defensive copying and validity checking.
+
+```java
+private void readObject(ObjectInputStream s)
+        throws IOException, ClassNotFoundException {
+    s.defaultReadObject();
+
+    // Defensively copy our mutable components
+    start = new Date(start.getTime());
+    end   = new Date(end.getTime());
+
+    // Check that our invariants are satisfied
+    if (start.compareTo(end) > 0)
+        throw new InvalidObjectException(start +" after "+ end);
+}
+```
