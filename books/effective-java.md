@@ -2658,3 +2658,5 @@ Using a default serialised form when an object's physical representation differs
 * It can consume excessive space.
 * It can consume excessive time.
 * It can cause stack overflows.
+
+`StringList` with a reasonable custom serialised form.
