@@ -2749,3 +2749,114 @@ private void readObject(ObjectInputStream s)
         throw new InvalidObjectException(start +" after "+ end);
 }
 ```
+
+* For classes with object reference fields that must remain private, defensively copy each object in such a field. Mutable components of immutable classes fall into this category.
+* Check any invariants and throw an `InvalidObjectException` if a check fails. The checks should follow any defensive copying.
+* If an entire object graph must be validated after it is deserialised, use the `ObjectInputValidation` interface.
+* Do not invoke any overridable methods in the class, directly or indirectly.
+
+### For instance control, prefer enum types to `readResolve`
+
+```java
+public class Elvis {
+    public static final Elvis INSTANCE = new Elvis();
+
+    private Elvis() {  ... }
+
+    public void leaveTheBuilding() { ... }
+}
+```
+
+`readResolve` for instance control, you can do better!
+
+```java
+private Object readResolve() {
+    // Return the one true Elvis and let the garbage collector
+    // take care of the Elvis impersonator.
+    return INSTANCE;
+}
+```
+
+If you depend on `readResolve` for instance control, all instance field with object reference types myst be declared `transient`. An attacker might secure a reference to the deserialised object before its `readResolve` method is run.
+
+Broken singleton, has nontransient object reference field.
+
+```java
+public class Elvis implements Serializable {
+    public static final Elvis INSTANCE = new Elvis();
+    private Elvis() { }
+
+    private String[] favoriteSongs =
+        { "Hound Dog", "Heartbreak Hotel" };
+    public void printFavorites() {
+        System.out.println(Arrays.toString(favoriteSongs));
+    }
+
+    private Object readResolve() {
+        return INSTANCE;
+    }
+}
+```
+
+Enum singleton, the preferred approach.
+
+```java
+public enum Elvis {
+    INSTANCE;
+    private String[] favoriteSongs =
+        { "Hound Dog", "Heartbreak Hotel" };
+    public void printFavorites() {
+        System.out.println(Arrays.toString(favoriteSongs));
+    }
+}
+```
+
+The accessibility of `readResolve` is significant. On final classes, it should be private. On nonfinal class, you must carefully consider its accessibility.
+
+### Consider serialisation proxies instead of serialised instances
+
+Making classes implement `Serializable` increases the likelihood of bugs and security problems as it allows instances to be created using extralinguistic mechanism in place of ordinary constructors. There is a technique that greatly reduces the risks called _serialisation proxy pattern_.
+
+Serialisation proxy for `Period` class
+
+```java
+private static class SerializationProxy implements Serializable {
+    private final Date start;
+    private final Date end;
+
+    SerializationProxy(Period p) {
+        this.start = p.start;
+        this.end = p.end;
+    }
+
+    private static final long serialVersionUID =
+        234098243823485285L; // Any number will do (Item  87)
+}
+```
+
+`writeReplace` method for the serialisation proxy pattern
+
+```java
+private Object writeReplace() {
+    return new SerializationProxy(this);
+}
+```
+
+`readObject` method for the serialisation proxy pattern
+
+```java
+private void readObject(ObjectInputStream stream)
+        throws InvalidObjectException {
+    throw new InvalidObjectException("Proxy required");
+}
+```
+
+`readResolve` method for `Period.SerializationProxy`
+
+```java
+private Object readResolve() {
+    return new Period(start, end);    // Uses public constructor
+}
+```
+
+Consider the serialisation proxy pattern whenever you find yourself having to write a `readObject` or `writeObject` method on a class not extendable by its clients. This pattern is perhaps the easiest way to robustly serialise object with nontrivial invariants.
