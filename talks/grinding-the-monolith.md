@@ -5,3 +5,9 @@
 Pros:
 * Easier to deploy
 * Easier to place and find stuff in
+
+## Microservices
+
+Cons:
+* Operational complexity
+* Partial failure
