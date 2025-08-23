@@ -11,3 +11,8 @@ Pros:
 Cons:
 * Operational complexity
 * Partial failure
+
+Pros:
+* Independence of development
+* Independence of scalability
+* Building in smaller and simpler pieces
