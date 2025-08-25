@@ -34,3 +34,9 @@ Maybe the Layers architecture referred more to protocol stacks than to web appli
 ## Microservices
 
 The key issue is around **safety** for different teams to operate independently. Issues from other teams should affect yours. Without this, you'll start adding checks, reviews, etc. "The Fear Cycle".
+
+Safety failure in Monoliths
+
+* Bad code has an unlimited span of effect (SQL leak will affect all code)
+* Modifying shared code will affect other teams
+* Semantic coupling, different concepts mixed under the same name. What works for one context, may not work for the other
