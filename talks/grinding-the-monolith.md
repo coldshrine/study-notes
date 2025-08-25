@@ -30,3 +30,7 @@ Maybe a better model would be Mycelium, a fungus where fractal roots communicate
 We can try to make a clear horizontal layered separation: UI, Application, Domain, Persistence. Try to repeat the pattern in vertical separations, but soon enough they will start coupling each other. We can make the thing even worse with operational monitoring, logging, etc.
 
 Maybe the Layers architecture referred more to protocol stacks than to web applications, precisely because of the standarisation of interfaces between layers does not generally apply.
+
+## Microservices
+
+The key issue is around **safety** for different teams to operate independently. Issues from other teams should affect yours. Without this, you'll start adding checks, reviews, etc. "The Fear Cycle".
