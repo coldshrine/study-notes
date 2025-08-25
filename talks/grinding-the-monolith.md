@@ -16,3 +16,9 @@ Pros:
 * Independence of development
 * Independence of scalability
 * Building in smaller and simpler pieces
+
+### We have heard the story before
+
+Java Beans, COMM, COBRA
+* Independent components, you can just buy and connectcomponents
+* Decoupled and simple pieces
