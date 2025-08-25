@@ -22,3 +22,7 @@ Pros:
 Java Beans, COMM, COBRA
 * Independent components, you can just buy and connectcomponents
 * Decoupled and simple pieces
+
+We can have software that works like Lego. But this hypothesis does not work in reality as there are many more dimensions (connections between components). Components may have hundreds or thousands of collaborators, we would need to have to have nth dimensional Lego bricks!
+
+Maybe a better model would be Mycelium, a fungus where fractal roots communicate to each other in a way more complex way.
