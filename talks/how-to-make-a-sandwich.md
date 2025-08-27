@@ -2,3 +2,5 @@
 
 ## What is feedback
 
+* Tech lead role
+* Conways law
