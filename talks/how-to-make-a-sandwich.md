@@ -4,3 +4,7 @@
 
 * Tech lead role
 * Conways law
+
+### Systems theory
+
+`input -> simple design -> output`
