@@ -18,3 +18,4 @@ Adaptive system changes its behaviour when feeded with feedback
     [negative] financial aid, you make adiction
     [negative] meds
 * **Diminishing loop**: suppreses behaviour
+* **Balancing loop**: fedback tends to towards table goal
