@@ -12,3 +12,5 @@
 Feedback new inputs into the system with a delay
 
 Adaptive system changes its behaviour when feeded with feedback
+
+* **Accelerating loop**: amplifies behaviour
