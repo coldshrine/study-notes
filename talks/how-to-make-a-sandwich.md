@@ -17,3 +17,4 @@ Adaptive system changes its behaviour when feeded with feedback
     [positive] amplifier for a guitar
     [negative] financial aid, you make adiction
     [negative] meds
+* **Diminishing loop**: suppreses behaviour
