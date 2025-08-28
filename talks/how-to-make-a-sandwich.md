@@ -23,3 +23,5 @@ Adaptive system changes its behaviour when feeded with feedback
       - The outlet of the factory has to be upstream (so factories won't contaminate their own water)
 * **Oscilating/trashing loop**: feedbackflips between states
   - Like a shower, too hot, too cold, bad experience. If you introduce a delay you can control it a bit.
+
+Timing in feedback is everything. **Small and frequent** is better than **large and infrequent** to people. Anual reviews, I'm gonna tell you something bad that you did 11 months ago any delay on receiving feedback means that you are basically going blind
