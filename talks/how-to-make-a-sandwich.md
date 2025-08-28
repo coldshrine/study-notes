@@ -20,3 +20,4 @@ Adaptive system changes its behaviour when feeded with feedback
 * **Diminishing loop**: suppreses behaviour
 * **Balancing loop**: fedback tends to towards table goal
       - You help me I help you
+      - The outlet of the factory has to be upstream (so factories won't contaminate their own water)
