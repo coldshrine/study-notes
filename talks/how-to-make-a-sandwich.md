@@ -27,3 +27,4 @@ Adaptive system changes its behaviour when feeded with feedback
 Timing in feedback is everything. **Small and frequent** is better than **large and infrequent** to people. Anual reviews, I'm gonna tell you something bad that you did 11 months ago any delay on receiving feedback means that you are basically going blind
 
 - Reduces responsiveness
+- Limits the options (to react to that)
