@@ -25,3 +25,5 @@ Adaptive system changes its behaviour when feeded with feedback
   - Like a shower, too hot, too cold, bad experience. If you introduce a delay you can control it a bit.
 
 Timing in feedback is everything. **Small and frequent** is better than **large and infrequent** to people. Anual reviews, I'm gonna tell you something bad that you did 11 months ago any delay on receiving feedback means that you are basically going blind
+
+- Reduces responsiveness
