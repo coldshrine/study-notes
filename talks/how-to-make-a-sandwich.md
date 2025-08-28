@@ -21,3 +21,5 @@ Adaptive system changes its behaviour when feeded with feedback
 * **Balancing loop**: fedback tends to towards table goal
       - You help me I help you
       - The outlet of the factory has to be upstream (so factories won't contaminate their own water)
+* **Oscilating/trashing loop**: feedbackflips between states
+  - Like a shower, too hot, too cold, bad experience. If you introduce a delay you can control it a bit.
