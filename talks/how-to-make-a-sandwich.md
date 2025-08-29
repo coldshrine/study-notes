@@ -33,3 +33,4 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 ### Why do we ask for feedback?
 
 * To **improve** or modify our behaviour
+* For **help**, validation when we are stuck
