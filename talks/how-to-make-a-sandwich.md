@@ -39,3 +39,4 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 ### Why do we offer feedback?
 
 * To **improve** the system of work (improving the team)
+* To **model a culture** of encouring feedback
