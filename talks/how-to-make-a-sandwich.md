@@ -35,3 +35,5 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 * To **improve** or modify our behaviour
 * For **help**, validation when we are stuck
 * _For **recognition**, when we think we are doing okay_
+
+### Why do we offer feedback?
