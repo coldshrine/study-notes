@@ -40,3 +40,4 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 
 * To **improve** the system of work (improving the team)
 * To **model a culture** of encouring feedback
+* _To **control** others_
