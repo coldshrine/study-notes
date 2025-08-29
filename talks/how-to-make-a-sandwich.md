@@ -29,3 +29,5 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 - Reduces responsiveness
 - Limits the options (to react to that)
 - Increases processing effort for the feedback (compared to TDD, continuous integrations, small frequent batches, much more controls)
+
+### Why do we ask for feedback?
