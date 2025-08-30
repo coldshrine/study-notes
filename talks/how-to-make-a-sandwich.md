@@ -52,3 +52,5 @@ You have to question your motives, on why are you really offering feedback.
 3. Needs to be actioned. Go to 1.
 
 All those 3 things need to happen, if not feedback is broken.
+
+## Delivering feedback
