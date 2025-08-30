@@ -54,3 +54,5 @@ You have to question your motives, on why are you really offering feedback.
 All those 3 things need to happen, if not feedback is broken.
 
 ## Delivering feedback
+
+Feedback is about behaviour and is usually understood as a personal level.
