@@ -46,3 +46,5 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 You have to question your motives, on why are you really offering feedback.
 
 ### Feedback as a system
+
+1. You offer feedback or you get some feedback
