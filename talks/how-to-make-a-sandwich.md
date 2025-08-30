@@ -42,3 +42,5 @@ Timing in feedback is everything. **Small and frequent** is better than **large 
 * To **model a culture** of encouring feedback
 * _To **control** others_
 * _To demonstrate our **superior knowledge**_
+
+You have to question your motives, on why are you really offering feedback.
