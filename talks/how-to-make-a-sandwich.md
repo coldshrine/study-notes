@@ -56,3 +56,5 @@ All those 3 things need to happen, if not feedback is broken.
 ## Delivering feedback
 
 Feedback is about behaviour and is usually understood as a personal level.
+
+"Your work is sloppy" heard as "you are a sloppy worker"
