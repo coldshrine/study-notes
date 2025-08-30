@@ -50,3 +50,5 @@ You have to question your motives, on why are you really offering feedback.
 1. You offer feedback or you get some feedback
 2. Feedback has to be heard
 3. Needs to be actioned. Go to 1.
+
+All those 3 things need to happen, if not feedback is broken.
