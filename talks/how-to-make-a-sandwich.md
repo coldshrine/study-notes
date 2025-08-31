@@ -68,3 +68,13 @@ Awesome, give ownership on that feedback relationship: If you did these things i
 * **Situation**, specific: an example of **when**
 * **Behaviour**, what you did, observable, concrete. Avoid judging
 * **Impact**, is me, how I felt
+
+```
+                   ↑ I take **actions** based on my beliefs
+                 ┌─↑ I adopt **beliefs** about the world
+REFLEXIVE LOOP   │ ↑ I draw **conclusions**
+our beliefs      │ ↑ I make **assumptions** based on the meanings I added
+affect what data │ ↑ I add **meanings** (cultural and personal)
+we select next   └→↑ I select **"data"** from what I observe
+time               ↑ Observable **"data" and experiences** (as a videotype recorder might capture it)
+```
