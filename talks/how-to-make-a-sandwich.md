@@ -63,3 +63,5 @@ Better: Your work has been sloppy recently
 Much better: **On this specific occasion** your work was substandard
 Great, actionable: If you did these things your work quality **would improve**
 Awesome, give ownership on that feedback relationship: If you did these things it would **make me happier**
+
+### SBI model
