@@ -81,3 +81,5 @@ time               ↑ Observable **"data" and experiences** (as a videotype rec
 _Author Chris Argyris "Ladder of Inference", extracted from the book [The Fifth Discipline](https://www.goodreads.com/book/show/255127.The_Fifth_Discipline)
 
 We always we have different layers of filters to talk to each other subconciously.
+
+## Structuring feedback
