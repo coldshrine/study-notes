@@ -66,3 +66,4 @@ Awesome, give ownership on that feedback relationship: If you did these things i
 
 ### SBI model
 * **Situation**, specific: an example of **when**
+* **Behaviour**, what you did, observable, concrete. Avoid judging
