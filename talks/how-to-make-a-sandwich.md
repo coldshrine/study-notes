@@ -65,3 +65,4 @@ Great, actionable: If you did these things your work quality **would improve**
 Awesome, give ownership on that feedback relationship: If you did these things it would **make me happier**
 
 ### SBI model
+* **Situation**, specific: an example of **when**
