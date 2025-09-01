@@ -85,3 +85,6 @@ We always we have different layers of filters to talk to each other subconciousl
 ## Structuring feedback
 
 It depends on the level of trust, or level of safety, or level of vulnerability.
+
+### Purpoise feedback
+Trained based on rewards. When you give feedback with just goodness. People are really kind to please you beyond what you asked for.
