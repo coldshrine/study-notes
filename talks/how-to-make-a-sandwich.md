@@ -83,3 +83,5 @@ _Author Chris Argyris "Ladder of Inference", extracted from the book [The Fifth 
 We always we have different layers of filters to talk to each other subconciously.
 
 ## Structuring feedback
+
+It depends on the level of trust, or level of safety, or level of vulnerability.
