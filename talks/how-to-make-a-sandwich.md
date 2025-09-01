@@ -88,3 +88,5 @@ It depends on the level of trust, or level of safety, or level of vulnerability.
 
 ### Purpoise feedback
 Trained based on rewards. When you give feedback with just goodness. People are really kind to please you beyond what you asked for.
+
+This is really useful when you are starting out and probably everything else is being done wrong, is important to start with something.
