@@ -92,3 +92,4 @@ Trained based on rewards. When you give feedback with just goodness. People are 
 This is really useful when you are starting out and probably everything else is being done wrong, is important to start with something.
 
 - Offer specific positive reward
+- Assume everything else will self-correct
