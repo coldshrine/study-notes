@@ -54,3 +54,19 @@ Language evolve and compete by adding features.
 The languages grow in complexity while becoming more similar.
 
 Bloat without distinction.
+
+## Features in Go
+
+Go is different.
+
+Go does not try to be like the other languages.
+
+Go does not compete on features.
+
+As of Go 1, the language is fixed.
+
+Many newcomers to Go ask for features from other languages they know. But those features do not belong in Go, and the language is fixed.
+
+Adding features to Go would not make it better, just bigger.
+
+That would make Go less interesting by being less different.
