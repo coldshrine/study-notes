@@ -42,3 +42,15 @@ Like disciplines in mathematics. Like, you don't solve Calculus with Algebra eve
 If the languages all converge, we will all think the same.
 
 But different ways of thinking are good.
+
+Need different languages for different problems.
+
+We don't want just one tool, we want a set of tools, each best at one task.
+
+## Convergence and features
+
+Language evolve and compete by adding features.
+
+The languages grow in complexity while becoming more similar.
+
+Bloat without distinction.
