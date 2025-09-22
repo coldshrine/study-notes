@@ -36,3 +36,9 @@ Close to a fact for computer languages. Consider:
 * Concurrent programming
 
 Like disciplines in mathematics. Like, you don't solve Calculus with Algebra even though they share semantics.
+
+## Convergence and relativity
+
+If the languages all converge, we will all think the same.
+
+But different ways of thinking are good.
