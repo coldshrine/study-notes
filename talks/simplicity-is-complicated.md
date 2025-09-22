@@ -70,3 +70,11 @@ Many newcomers to Go ask for features from other languages they know. But those 
 Adding features to Go would not make it better, just bigger.
 
 That would make Go less interesting by being less different.
+
+## But you need features!
+
+Of course, there must be _some_ features.
+
+But which ones? The right ones!
+
+Design by consensus.
