@@ -78,3 +78,19 @@ Of course, there must be _some_ features.
 But which ones? The right ones!
 
 Design by consensus.
+
+## Readability
+
+If a language has too many features, you waste time choosing which one to use. Then implement, refine, possibly rethink and redo.
+
+Later, "Why does the code work this way?"
+
+_The code is harder to understand simply because it is using a more complex language._
+
+Preferable to have just one way, or at least fewer, simpler ways.
+
+Features add complexity. We want simplicity.
+
+Features hurt readability. We want readability.
+
+Readability is paramount.
