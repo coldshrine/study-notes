@@ -94,3 +94,13 @@ Features add complexity. We want simplicity.
 Features hurt readability. We want readability.
 
 Readability is paramount.
+
+## Readable means reliable
+
+Readable code is reliable code.
+
+It's easier to understand.
+
+It's easier to work on.
+
+If it breaks, it's easier to fix.
