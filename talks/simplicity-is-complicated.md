@@ -174,3 +174,17 @@ Simplicity is the art of hiding complexity.
 * Packages
 
 Each hides complexity behind a simple facade.
+
+## Garbage collection
+
+Perhaps the best example of simplicity hiding complexity.
+
+Very difficult to implement well, but worth it.
+Yet so simple the language specification mentions it only in the introduction.
+Nonetheless, parts of the language strongly influenced by it.
+
+Code is simpler because GC is there.
+Design does not need to include "ownership".
+
+Go: There is no `free`. There is only garbage collection.
+As simple as it can be. (But complex behind the facade.)
