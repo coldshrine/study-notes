@@ -104,3 +104,23 @@ It's easier to understand.
 It's easier to work on.
 
 If it breaks, it's easier to fix.
+
+If the language is complicated:
+* You must understand more things to read and work on the code.
+* You must understand more things to debug and fix it.
+
+A key tradeoff: More fun to write, or less work to maintain? Go has been thought to make programs more maintainable in the long term.
+
+## Expressiveness
+
+Features are often suggested to aid "expressiveness".
+
+Conciseness can be expressive but not always readable (imagine mathematical symbols).
+
+Can also be expensive, implementing simple ideas with too-powerful primitives. Performance can also be unpredictable.
+
+On the other hand, verbosity can inhibit readability by obscuring intent.
+
+Build on, but do not be limited by, familiar ideas.
+
+Be concise while remaining expressive.
