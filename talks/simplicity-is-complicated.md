@@ -124,3 +124,17 @@ On the other hand, verbosity can inhibit readability by obscuring intent.
 Build on, but do not be limited by, familiar ideas.
 
 Be concise while remaining expressive.
+
+## The right set of features
+
+Not features for features' sake.
+
+Features that "cover the space", like vector basis covering solution space.
+
+Orthogonal features that interact predictably.
+
+Simple features that interact in simple ways.
+
+Simplicity comes from orthogonality and predictability.
+
+Keep the language's goals in mind.
