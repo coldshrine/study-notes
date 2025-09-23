@@ -233,3 +233,35 @@ Simple idea took about a year to work out. Difficulties:
   ```
 
 Still not totally satisfied, but the effect is that constants feel like numbers, contribute to ease of using Go. But complicated behind the scenes.
+
+
+## Interfaces
+
+Just a set of methods. No data. Simple idea, but more complex than expected
+
+```go
+type Reader interface {
+    Read([]byte) (int, error)
+}
+```
+
+Also need variables of that type (`var reader io.Reader`).
+These variables add dynamic typing to a statically typed language.
+
+```go
+var r Reader = os.Stdin // statically checked.
+var x interface{} = os.Stdin // statically checked.
+r = x.(Reader) // dynamically checked. Must be explicit here, design decision.
+```
+
+Requires careful design. Interface assignment must be implemented at run time (not a v-table). What if it fails? Led to type assertions and the "comma, ok" idiom.
+
+More complecity crept in. Type assertions and type switches were not in the original plan.
+
+Go's most distintive and powerful feature.
+
+Profound effect on library design.
+
+Enables true component architectures. Prime examples are `io.Reader` and `io.Writer`, generalisations of the Unix pipe idea.
+
+Feel simple, worth the complexity.
