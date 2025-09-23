@@ -188,3 +188,10 @@ Design does not need to include "ownership".
 
 Go: There is no `free`. There is only garbage collection.
 As simple as it can be. (But complex behind the facade.)
+
+## Concurrency
+
+Concurrency is the ability to write your program as independently executing pieces. In Go, concurrency has three elements:
+* goroutines (execution)
+* channels (communication)
+* `select` (coordination)
