@@ -154,3 +154,23 @@ Composable distinct elements, including:
 Plus: Good tools, fast builds.
 
 All the pieces feel simple in practice.
+
+## Simplicity
+
+Go is actually complex, but it _feels_ simple.
+
+Interacting elements must mesh seamlessly, without surprises.
+
+Requires a lot of design, implementation work, refinement.
+
+Simplicity is the art of hiding complexity.
+
+## A few simple things in Go
+
+* Garbage collection
+* Goroutines
+* Constants
+* Interfaces
+* Packages
+
+Each hides complexity behind a simple facade.
