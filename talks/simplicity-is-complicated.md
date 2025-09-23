@@ -138,3 +138,19 @@ Simple features that interact in simple ways.
 Simplicity comes from orthogonality and predictability.
 
 Keep the language's goals in mind.
+
+
+## Go's goals
+
+Clean procedural language designed for scalable cloud software (infrastructure/ server infrastructure).
+
+Composable distinct elements, including:
+* Concrete data types
+* Functions and methods
+* Interfaces
+* Packages
+* Concurrency
+
+Plus: Good tools, fast builds.
+
+All the pieces feel simple in practice.
