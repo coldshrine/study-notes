@@ -195,3 +195,22 @@ Concurrency is the ability to write your program as independently executing piec
 * goroutines (execution)
 * channels (communication)
 * `select` (coordination)
+
+## Goroutines
+
+
+Start a goroutine with the `go` keyword:
+
+```go
+go function(args)
+```
+
+Like garbage collection, eliminate considerations form the programmer's concern:
+* no stack size
+* no return or completion status
+* no mechanism for management
+* no "ID"
+
+These are things other systems would provide. Go instead has a minimalist design.
+
+Implementation complex, dependent on garbage collection for stack management.
