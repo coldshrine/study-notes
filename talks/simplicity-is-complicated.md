@@ -214,3 +214,22 @@ Like garbage collection, eliminate considerations form the programmer's concern:
 These are things other systems would provide. Go instead has a minimalist design.
 
 Implementation complex, dependent on garbage collection for stack management.
+
+## Constants
+
+In Go, constants are just numbers, even though (because) it is strongly typed.
+
+```go
+var nanosecond = time.Second/ie9
+```
+
+Simple idea took about a year to work out. Difficulties:
+* "infinite" precision integers
+* "ifinite" precision floating point (tried and failed with rationals)
+* promotion rules (`i := 2; f := 2.0; g := 1/2; h := 1/2.0`)
+* corner cases like shift
+  ```go
+  fmt.Printf("%T %T", 2.0, 2.0<<0)
+  ```
+
+Still not totally satisfied, but the effect is that constants feel like numbers, contribute to ease of using Go. But complicated behind the scenes.
