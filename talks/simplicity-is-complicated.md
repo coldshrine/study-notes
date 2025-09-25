@@ -285,3 +285,20 @@ Separation of package path (`"math/big"`) from package name (`big`). Enabled the
 Intrincate to implement yet natural to use.
 
 After garbage collection, perhaps the highest ratio of true complexity to apparent simplicity, and therefore of the power of simplicity to hide complexity.
+
+
+## Summary
+
+Simplicity is complicated but the clarity is worth the fight.
+
+## Conclusion
+
+Simplicity is hard – to design.
+
+Simplicity is complicated – to build.
+
+But if you get it right...
+
+Simplicity is easy – to use.
+
+The success of Go proves it.
