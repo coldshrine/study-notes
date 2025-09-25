@@ -265,3 +265,23 @@ Profound effect on library design.
 Enables true component architectures. Prime examples are `io.Reader` and `io.Writer`, generalisations of the Unix pipe idea.
 
 Feel simple, worth the complexity.
+
+## Packages
+
+A design for structuring programs and libraries.
+
+```go
+package big
+...
+import "math/big"
+```
+
+Took a long time to design. Enable componentisation, scalability, sharing, data hiding and isolation, ...
+
+Affect program design, syntax, naming, building, linking, testing, ...
+
+Separation of package path (`"math/big"`) from package name (`big`). Enabled the `go get` mechanism.
+
+Intrincate to implement yet natural to use.
+
+After garbage collection, perhaps the highest ratio of true complexity to apparent simplicity, and therefore of the power of simplicity to hide complexity.
