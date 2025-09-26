@@ -15,3 +15,5 @@ The definition of refactor is to either change my test or my code. Refactor chan
 There is no way of having a 12 months project to refactor the `ls` program. The Unix way of doing things is the same as microservices, the same as the Erlang way. When we have small programs, we are not afraid anymore of deleting and rewriting them from scratch. We should optimise for their delete ability. Imagine how wonderful to know you could delete code without side-effects.
 
 The best way to optimise for deletability is to run away from monoliths, from decoupling. You should run coupling analysis in your software, there are great tools for it like Sonar.
+
+Microservices shouldn't be big or small, shouldn't be bigger than a week worth of rewrite. My personal risk if I had to do a rewrite is a week. If I later I get a better understanding of the model, it's just a week.
