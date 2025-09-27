@@ -32,3 +32,7 @@ Get things small, manageable and understandable.
 The same for services is the same for objects or actors.
 
 Divide bigger systems into 1 week projects. Refactoring becomes just _deleting_ code.
+
+Alan Kay said that the biggest mistake he made naming the thing Object-Orientation was to call it Object-Orientation instead of Message-Orientation. Bigger programs contain smaller programs that communicate to each other. People nowadays think about the objects and not the messages that go between them. In Erlang, each Object is basically a process. These programs should be 1 week to rewrite.
+
+The secret for consulting is to never build big programs!
