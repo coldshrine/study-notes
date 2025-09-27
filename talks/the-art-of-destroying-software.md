@@ -17,3 +17,10 @@ There is no way of having a 12 months project to refactor the `ls` program. The 
 The best way to optimise for deletability is to run away from monoliths, from decoupling. You should run coupling analysis in your software, there are great tools for it like Sonar.
 
 Microservices shouldn't be big or small, shouldn't be bigger than a week worth of rewrite. My personal risk if I had to do a rewrite is a week. If I later I get a better understanding of the model, it's just a week.
+
+
+Business people won't understand 3 months of tackling "technical debt" without providing value to customers.
+
+When you find that your models are wrong, just delete the code.
+
+Debt is not bad, debt allows you to buy your house! Same is true for technical debt. Sometimes you can ship crap code, would you care that much about crap if you were able to delete it easily? If technical debt start accumulating, delete it.
