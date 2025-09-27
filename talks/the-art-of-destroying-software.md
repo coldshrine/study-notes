@@ -44,3 +44,14 @@ You cannot keep 100.000 lines of code in your head, 3000 unit tests won't help.
 Refuse also to deploy more than a thousand lines of code to production. Smaller chunks are easier to deploy, test, rollback and debug.
 
 Teams want to build programs that are inherently too big and too complex.
+
+
+Developers usually have the habit of solving problems nobody has.
+
+> I could do it in a simple way, but if I did it won't be up to my level of intellect, so I am going to make it more complicated so it is worthy of me.
+
+You won't be able to predict the use case of the future, make your system easier to delete than to change.
+
+Don't plan for future changes, focus on the ability to rewrite from scratch when changes happen. Make decisions in the last responsible moment.
+
+The identifying trait of good code is small isolated programs that can be deleted on the fly.
