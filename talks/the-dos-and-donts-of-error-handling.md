@@ -18,3 +18,13 @@
     * Engineering
     * **Message passing is inevitable** – the basis of Object-Oriented Programming
 * Programming languages should make this ~easy~ doable
+
+We are never going to eliminate failure, systems will be inconsistent. We have to deal with it.
+
+* How individual computers work is the smaller problem. How the system works as a whole is important.
+* How the computers are interconnected and the protocols used between computers is the significant problem.
+* We want the same way to program large and small scale systems.
+
+Why do we have to program differently for local programs to communicate (memory) versus distributed systems (message bus)?
+
+In Object-Oriented Programming, Alan Kay said that the big idea behind Object-Oriented Programming was "messaging"
