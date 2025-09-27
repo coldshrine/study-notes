@@ -35,3 +35,9 @@ In Object-Oriented Programming, Alan Kay said that the big idea behind Object-Or
 * Unifies ideas on concurrent and functional programming
 * Follows laws of physics (asynchronous messaging)
 * Designed for programming fault-tolerant systems
+
+Invented Erlang to solve a problem, not the language to find a problem to be solved with it.
+
+Building fault-tolerant software boils down to detecting errors and doing something when errors are detected.
+
+> We can't fix our own errors in the same way if I'm having a heart attack, I'll need someone to help me out
