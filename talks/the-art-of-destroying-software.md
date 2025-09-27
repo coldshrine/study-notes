@@ -24,3 +24,11 @@ Business people won't understand 3 months of tackling "technical debt" without p
 When you find that your models are wrong, just delete the code.
 
 Debt is not bad, debt allows you to buy your house! Same is true for technical debt. Sometimes you can ship crap code, would you care that much about crap if you were able to delete it easily? If technical debt start accumulating, delete it.
+
+Working in month-length projects is waste, try to work in 1 week projects. It is also more manageable in your head. Imagine onboarding and understanding the system as a whole.
+
+Get things small, manageable and understandable.
+
+The same for services is the same for objects or actors.
+
+Divide bigger systems into 1 week projects. Refactoring becomes just _deleting_ code.
