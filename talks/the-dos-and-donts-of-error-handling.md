@@ -6,3 +6,15 @@
 
 * Hardware can fail (relatively uncommon)
 * Software can fail (common)
+
+## Overview
+
+* Fault-tolerance cannot be achieved using a single computer – it may fail
+* We have to use several computers
+    * Concurrency
+    * Parallel programming
+    * Distributed programming
+    * Physics – time to propagate messages
+    * Engineering
+    * **Message passing is inevitable** – the basis of Object-Oriented Programming
+* Programming languages should make this ~easy~ doable
