@@ -58,3 +58,8 @@ Building fault-tolerant software boils down to detecting errors and doing someth
 ## Evidence for software failure is all around us
 
 Proving the self-consistency of small programs will not help. Testing a system will tell us that is self-consistent, not that it is correct.
+
+## Conclusion
+
+* Some small things can be proven to be self-consistent.
+* Large assemblies of small things are possible to prove correct.
