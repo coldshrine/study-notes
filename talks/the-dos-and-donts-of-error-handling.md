@@ -49,3 +49,8 @@ Building fault-tolerant software boils down to detecting errors and doing someth
 * Errors that can be inferred
 * Reproducible errors
 * Non-reproducible errors
+
+## Philosophy
+
+* Find methods to prove Software correct at compile-time
+* Assume software is incorrect and will fail at run-time then do something about it at run-time
