@@ -63,3 +63,11 @@ Proving the self-consistency of small programs will not help. Testing a system w
 
 * Some small things can be proven to be self-consistent.
 * Large assemblies of small things are possible to prove correct.
+
+---
+
+1980 - Erlang model of computation rejected. Shared memory systems ruled the world.
+1985 - Ericsson started working on "a replacement of PLEX", started thinking about errors. "errors must be corrected somewhere else", "shared memory is evil", "pure message passing"
+1986 - Erlang, unification of OO with FP
+1998 - Several products in Erlang, Erlang gets banned and moved to Open Source
+2004 - Erlang model of computation widely adopted in many different languages.
