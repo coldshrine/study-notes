@@ -79,3 +79,7 @@ Proving the self-consistency of small programs will not help. Testing a system w
 * Reliable (annoys people if they fail), banks, telephone
 * Dodgy (cross if they fail), Internet, HBO, Netflix
 * Crap (very cross if they fail), free apps
+
+Different technologies are used to build and validate the systems.
+
+How can we make software that works reasonably well even if there are errors in the software? "Making reliable distributed systems in the presence of software errors" book by Joe Armstrong
