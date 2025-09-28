@@ -54,3 +54,7 @@ Building fault-tolerant software boils down to detecting errors and doing someth
 
 * Find methods to prove Software correct at compile-time
 * Assume software is incorrect and will fail at run-time then do something about it at run-time
+
+## Evidence for software failure is all around us
+
+Proving the self-consistency of small programs will not help. Testing a system will tell us that is self-consistent, not that it is correct.
