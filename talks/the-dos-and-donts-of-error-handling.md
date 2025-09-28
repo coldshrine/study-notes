@@ -83,3 +83,12 @@ Proving the self-consistency of small programs will not help. Testing a system w
 Different technologies are used to build and validate the systems.
 
 How can we make software that works reasonably well even if there are errors in the software? "Making reliable distributed systems in the presence of software errors" book by Joe Armstrong
+
+## Requirements
+
+* Concurrency
+* Error encapsulation
+* Fault detection
+* Fault identification
+* Code upgrade
+* Stable storage
