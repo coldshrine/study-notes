@@ -71,3 +71,11 @@ Proving the self-consistency of small programs will not help. Testing a system w
 1986 - Erlang, unification of OO with FP
 1998 - Several products in Erlang, Erlang gets banned and moved to Open Source
 2004 - Erlang model of computation widely adopted in many different languages.
+
+## Types of system
+
+* Highly reliable (nuclear power plant control, air-traffic), satellite (very expensive if they fail)
+* Reliable (driverless cars) (moderately expensive if they fail. Kills people if they fail)
+* Reliable (annoys people if they fail), banks, telephone
+* Dodgy (cross if they fail), Internet, HBO, Netflix
+* Crap (very cross if they fail), free apps
