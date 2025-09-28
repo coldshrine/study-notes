@@ -99,3 +99,18 @@ How can we make software that works reasonably well even if there are errors in 
 * If you can't do what you want to do try to do something simpler (relax requirements)
 * Handle errors "remotely" (detect errors and ensure that the system is put into a safe state defined by an invariant)
 * Identify the "Error Kernel" (the part that must be correct)
+
+## Supervision trees
+
+The node can be on different machine. Akka is "Erlang supervision for Java and Scala"
+
+## It works
+
+* Ericsson smart phone data setup
+* WhatsApp
+* CouchDB (CERN)
+* Cisco (netconf)
+* Spine2 (NHS - uk - riak (basho) replaces Oracle)
+* RabbitMQ
+
+---
