@@ -92,3 +92,10 @@ How can we make software that works reasonably well even if there are errors in 
 * Fault identification
 * Code upgrade
 * Stable storage
+
+## The "method"
+
+* Detect all errors
+* If you can't do what you want to do try to do something simpler (relax requirements)
+* Handle errors "remotely" (detect errors and ensure that the system is put into a safe state defined by an invariant)
+* Identify the "Error Kernel" (the part that must be correct)
