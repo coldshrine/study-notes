@@ -41,3 +41,11 @@ Invented Erlang to solve a problem, not the language to find a problem to be sol
 Building fault-tolerant software boils down to detecting errors and doing something when errors are detected.
 
 > We can't fix our own errors in the same way if I'm having a heart attack, I'll need someone to help me out
+
+## Types of errors
+
+* Errors that can be detected at compile time
+* Errors that can be detected at run-time
+* Errors that can be inferred
+* Reproducible errors
+* Non-reproducible errors
