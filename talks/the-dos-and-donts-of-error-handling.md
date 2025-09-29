@@ -181,3 +181,13 @@ When in a parallel program something crashes, the rest should keep working. Ther
 * Sequencing errors
 * Concurrency errors
 * Breaking laws of maths or physics
+
+---
+
+The programmer does not know what to do: CRASH
+
+> I call this "let it crash"
+> Somebody else will fix the error
+> Needs concurrency and links
+
+What do you do when you receive an error?
