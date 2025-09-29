@@ -205,3 +205,9 @@ What's a message?
 * Two systems are the same if they obey observational equivalence
 
 We shouldn't care about what happen inside these boxes, we just take care about the boundaries.
+
+* Interaction between components involves message passing
+* There are very few ways to describe messages (JSON, XML)
+* There are very very few formal ways to describe the valid sequences of messages (= protocols) between components
+    * We need a way to describe protocols. Protocols are contracts. Contracts assign blame. We need an architecture that describes what we see on the wire: the contract checker
+        * How do we describe contracts?
