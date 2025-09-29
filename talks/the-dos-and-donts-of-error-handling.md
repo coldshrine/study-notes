@@ -145,3 +145,9 @@ The node can be on different machine. Akka is "Erlang supervision for Java and S
     * In sequential languages with single threads, crashing is not widely 
 * The programmer finds the error
 * The compiler finds the error
+
+## What's the big deal about concurrency?
+
+A sequential program when crashes it turns everything down (single thread).
+
+When in a parallel program something crashes, the rest should keep working. There are linked process, if a process dies, these other processes are going to tell the process has died; these processes are going to get error messages.
