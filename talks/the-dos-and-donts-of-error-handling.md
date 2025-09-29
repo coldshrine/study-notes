@@ -191,3 +191,6 @@ The programmer does not know what to do: CRASH
 > Needs concurrency and links
 
 What do you do when you receive an error?
+
+* Maintain an invariant
+* Try to do something simpler
