@@ -159,3 +159,25 @@ When in a parallel program something crashes, the rest should keep working. Ther
 * Security is very difficult with one computer (if the system gets compromised, everything gets compromised)
 * I want one way to program not two ways. One for local systems, the other for distributed systems (rules out shared memory)
 * The world is concurrent
+
+## Detecting errors
+
+### Where do errors come from
+
+* Arithmetic errors
+    * Silent **and deadly** errors, errors where the program does not crash but delivers an incorrect result
+    * Noisy errors, errors which cause the program to crash
+    * Very difficult to get right
+        * The same answer in a single and double precision does not mean the answer is right
+        * If it matters, you must prove every line containing arithmetic is correct
+        * Real arithmetic is not associative
+* Unexpected inputs
+* Wrong values
+    * Programs does not crash, but the values computed are incorrect or inaccurate
+    * How do we know if a program/value is incorrect if we do not have a specification
+    * Many programs have no specifications or specs that are so imprecise to be useless
+    * The specification might be incorrect _and the tests and the program_
+* Wrong assumptions about the environment
+* Sequencing errors
+* Concurrency errors
+* Breaking laws of maths or physics
