@@ -200,3 +200,8 @@ What do you do when you receive an error?
 What's a message?
 * A program is a black box
 * There are thousands of programming languages
+* What language used is irrelevant
+* The only important thing is what happens at the interface, their behaviour
+* Two systems are the same if they obey observational equivalence
+
+We shouldn't care about what happen inside these boxes, we just take care about the boundaries.
