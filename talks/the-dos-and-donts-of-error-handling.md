@@ -151,3 +151,11 @@ The node can be on different machine. Akka is "Erlang supervision for Java and S
 A sequential program when crashes it turns everything down (single thread).
 
 When in a parallel program something crashes, the rest should keep working. There are linked process, if a process dies, these other processes are going to tell the process has died; these processes are going to get error messages.
+
+## Why concurrency?
+
+* Fault-tolerance is impossible with one computer
+* Scalable is impossible with one computer (yes, you can scale things vertically up to a limit; up to the capacity of the computer)
+* Security is very difficult with one computer (if the system gets compromised, everything gets compromised)
+* I want one way to program not two ways. One for local systems, the other for distributed systems (rules out shared memory)
+* The world is concurrent
