@@ -121,3 +121,27 @@ The node can be on different machine. Akka is "Erlang supervision for Java and S
 * Something that crashes a program
 * A deviation between desired and observed behaviour
 
+## Who finds the error?
+
+* The program (run-time) finds the error
+    * Errors
+        * Arithmetic errors: divide by zero, overflow, underflow, ...
+        * Array bounds violated
+        * System routine called with nonsense arguments
+        * Null pointer
+        * Switch option not provisioned
+        * An incorrect value is observed
+    * What can we do
+        * Ignore it (no)
+        * Try to fix it (no)
+        * Crash immediately (yes)
+            * Don't make matters worse
+            * Assume somebody else will fix the problem (someone up in the supervision tree, this is like rebooting the system)
+    * What should the programmer do when they don't know what to do?
+        * Ignore it (no)
+        * Log it (yes)
+        * Try to fix it (possibly, but don't make maters worse)
+        * Crash immediately (yes)
+    * In sequential languages with single threads, crashing is not widely 
+* The programmer finds the error
+* The compiler finds the error
