@@ -194,3 +194,9 @@ What do you do when you receive an error?
 
 * Maintain an invariant
 * Try to do something simpler
+
+## Is that all?
+
+What's a message?
+* A program is a black box
+* There are thousands of programming languages
