@@ -19,3 +19,5 @@ A more grandiose approach precedes two levels of requirement analysis, separated
                         Testing
                             ↘
                             Operations
+
+The iterative relationship between phases can be reflected in the following scheme. Each step progresses and the design is further detailed.
