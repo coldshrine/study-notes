@@ -57,3 +57,17 @@ The problem is that design iterations are never confined to successive steps:
 ## Step 1: Program design come first
 
 A first step towards fixing the previous problem is to introduce a preliminary program design step between the software requirements and analysis phase. Critics can argue about the program designer being forced to design in a vacuum of software requirements without any analysis, and that the preliminary design may result in substantial error; and that would be correct, but it would miss the point. This is intended to assure the software won't fail because of storage, timing or data flux reasons. As analysis proceeds, collaboration must happen between the program designer and the analyst, so proper allocation of execution time and storage resources happens.
+
+    ┌─────┐        ┌─► Document System Overview
+    └─────┘        ├─► Design Database and Processors
+        ↘          ├─► Allocate Subrutine Storage
+        ┌─────┐    ├─► Allocate Subrutine Execution Times
+        └─────┘    ├─► Describe Operating Procedures
+            ↘      │
+            Preliminary Program Design
+                ↘
+                ┌─────┐
+                └─────┘
+                    ↘
+                    ┌─────┐
+                    └─────┘
