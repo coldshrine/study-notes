@@ -53,3 +53,5 @@ The problem is that design iterations are never confined to successive steps:
                         Testing ◄┘
                             ↘
                             Operations
+                            
+## Step 1: Program design come first
