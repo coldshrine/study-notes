@@ -39,3 +39,17 @@ Hopefully the interaction is confined in successive steps:
                             Operations
 
 The problem is that design iterations are never confined to successive steps:
+
+    System Requirements
+        ↘
+     ┌► Software Requirements
+     │      ↘
+     │      Analysis
+     │          ↘
+     └───────── Program Design ──┐
+                    ↘            │
+                    Coding       │
+                        ↘        │
+                        Testing ◄┘
+                            ↘
+                            Operations
