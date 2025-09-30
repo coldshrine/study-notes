@@ -1,0 +1,3 @@
+# [Managing The Development of Large Software Systems](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf)
+
+The context for this paper was related with the development of software packages for spacecraft mission planning, commanding and post-flight analysis.
