@@ -21,3 +21,19 @@ A more grandiose approach precedes two levels of requirement analysis, separated
                             Operations
 
 The iterative relationship between phases can be reflected in the following scheme. Each step progresses and the design is further detailed.
+
+Hopefully the interaction is confined in successive steps:
+
+    System Requirements
+        ↖  ↘
+        Software Requirements
+            ↖  ↘
+            Analysis
+                ↖  ↘
+                Program Design
+                    ↖  ↘
+                    Coding
+                        ↖  ↘
+                        Testing
+                            ↖  ↘
+                            Operations
