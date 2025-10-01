@@ -80,3 +80,20 @@ The procedure is made from these steps:
 ## Step 2: Document the design
 
 The first rule of managing software development is ruthless enforcement of documentation requirements. Management of software is simply impossible without a very high degree of documentation.
+
+
+    System Requirements
+        ↘
+        Software Requirements ─► Doc 1: Software Requirements
+            ↘
+            Preliminary Software Design ─► Doc 2: Preliminary Design (Spec)
+                ↘
+                Analysis            ┌─► Doc 3: Interface Design (Spec)
+                    ↘               ├─► Doc 4: Final Design (Spec)
+                    Program Design ─┴─► Doc 5: Test Plan (Spec)
+                        ↘
+                        Coding ─► Doc 4: Final Design (As Built)
+                            ↘
+                            Testing ─► Doc 5: Test Plan (Spec), Test Results
+                                ↘
+                                Operations ─► Doc 6: Operating Instructions
