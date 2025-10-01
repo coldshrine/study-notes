@@ -75,3 +75,4 @@ A first step towards fixing the previous problem is to introduce a preliminary p
 The procedure is made from these steps:
 1. Begin the design with program designers, not analysts or programmers.
 2. Design, define and allocate the data processing modes even at risk of being wrong.
+3. Write an overview document that is understandable, informative and current.
