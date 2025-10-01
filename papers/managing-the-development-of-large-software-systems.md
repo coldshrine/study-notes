@@ -97,3 +97,5 @@ The first rule of managing software development is ruthless enforcement of docum
                             Testing ─► Doc 5: Test Plan (Spec), Test Results
                                 ↘
                                 Operations ─► Doc 6: Operating Instructions
+
+Why so much documentation?
