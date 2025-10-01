@@ -99,3 +99,4 @@ The first rule of managing software development is ruthless enforcement of docum
                                 Operations ─► Doc 6: Operating Instructions
 
 Why so much documentation?
+1. Each designer must communicate with interfacing designers, so prevents the designer from hiding behind the "I'm 90 percent finished"
