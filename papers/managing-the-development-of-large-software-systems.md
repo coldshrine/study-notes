@@ -71,3 +71,5 @@ A first step towards fixing the previous problem is to introduce a preliminary p
                     ↘
                     ┌─────┐
                     └─────┘
+
+The procedure is made from these steps:
