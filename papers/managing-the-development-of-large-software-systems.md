@@ -78,3 +78,5 @@ The procedure is made from these steps:
 3. Write an overview document that is understandable, informative and current.
 
 ## Step 2: Document the design
+
+The first rule of managing software development is ruthless enforcement of documentation requirements. Management of software is simply impossible without a very high degree of documentation.
