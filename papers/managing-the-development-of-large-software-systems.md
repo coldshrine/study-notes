@@ -100,3 +100,4 @@ The first rule of managing software development is ruthless enforcement of docum
 
 Why so much documentation?
 1. Each designer must communicate with interfacing designers, so prevents the designer from hiding behind the "I'm 90 percent finished"
+2. During the early phase of software development the documentation **is** the specification and **is** the design.
