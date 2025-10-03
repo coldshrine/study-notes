@@ -109,3 +109,23 @@ Why so much documentation?
 ## Step 3: Do it twice
 
 After documentation, the second most important criterion for success revolves around whether the product is totally original. The final version delivered to the customer for operational deployment should be actually the second version. The point for this is that questions fo timing, storage, etc. which are otherwise matters of judgement, can now be studied with precision. Without this simulation, the project manager is at the mercy of human judgement.
+
+
+                  ┌─► Preliminary Design ┐
+    ┌─────┐       ├─► Analysis           │
+    └─────┘       ├─► Program Design     │
+        ↘         ├─► Coding             ├────┐
+        ┌─────┐   ├─► Testing            │    │
+        └─────┘   ├─► Usage              ┘    │
+            ↘     │                           │
+            Preliminary Program Design        │
+                ↘                             │
+                Analysis ◄────────────────────┤
+                    ↘                         │
+                    Program Design ◄──────────┤
+                        ↘                     │
+                        Coding ◄──────────────┤
+                            ↘                 │
+                            Testing ◄─────────┤
+                                ↘             │
+                                Operations ◄──┘
