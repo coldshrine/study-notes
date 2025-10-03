@@ -103,3 +103,5 @@ Why so much documentation?
 2. During the early phase of software development the documentation **is** the specification and **is** the design.
 3. The real monetary value of good documentation begins downstream
     1. **During the testing phase**, the manager can concentrate on personnel on the mistakes in the program.
+    2. **During the operational phase**, the manager can use operational-oriented personnel to operate the program and to do a better job, cheaper. Without good documentation the software must be operated by those who built it. These people are relatively disinterested in operations and do not do as effective job as operations-oriented personnel.
+    3. **Following initial operations**, good documentation permits effective redesign, updating, and retrofitting in the field.
