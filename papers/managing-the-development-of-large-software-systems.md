@@ -105,3 +105,7 @@ Why so much documentation?
     1. **During the testing phase**, the manager can concentrate on personnel on the mistakes in the program.
     2. **During the operational phase**, the manager can use operational-oriented personnel to operate the program and to do a better job, cheaper. Without good documentation the software must be operated by those who built it. These people are relatively disinterested in operations and do not do as effective job as operations-oriented personnel.
     3. **Following initial operations**, good documentation permits effective redesign, updating, and retrofitting in the field.
+
+## Step 3: Do it twice
+
+After documentation, the second most important criterion for success revolves around whether the product is totally original. The final version delivered to the customer for operational deployment should be actually the second version. The point for this is that questions fo timing, storage, etc. which are otherwise matters of judgement, can now be studied with precision. Without this simulation, the project manager is at the mercy of human judgement.
