@@ -139,3 +139,4 @@ The previous recommendations, to design before analysis and coding, to document 
 Recommendations in order to plan for testing:
 1. Many parts of tests process are best handled by test specialists. With good documentation it is feasible to use specialists, which do a better job of testing than the designer.
 2. Most errors can be easily spotted by visual inspection, in the nature of proofreading the analysis and code. Do not use the computer to detect this kind of thing, it is too expensive.
+3. Test every logic path at least once with some kind of numerical check.
