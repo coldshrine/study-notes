@@ -137,3 +137,4 @@ The biggest user of project resources is the test phase. It is also the phase of
 The previous recommendations, to design before analysis and coding, to document and to build a pilot are about uncovering and solving problems before entering the testing phase.
 
 Recommendations in order to plan for testing:
+1. Many parts of tests process are best handled by test specialists. With good documentation it is feasible to use specialists, which do a better job of testing than the designer.
