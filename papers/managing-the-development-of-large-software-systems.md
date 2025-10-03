@@ -135,3 +135,5 @@ After documentation, the second most important criterion for success revolves ar
 The biggest user of project resources is the test phase. It is also the phase of greatest risk in terms of dollars and schedule.
 
 The previous recommendations, to design before analysis and coding, to document and to build a pilot are about uncovering and solving problems before entering the testing phase.
+
+Recommendations in order to plan for testing:
