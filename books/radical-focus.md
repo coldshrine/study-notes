@@ -28,3 +28,9 @@ Executives and other stakeholders all too often come up with the quarterly "road
 Ideas, like NDAs, aren't worth the paper they are printed on. **Ideas are easier to come up, what's hard, really hard is moving from an idea to reality.**
 
 It's not important to protect an idea. It's important to protect the time it takes to make it real. You need a system to keep you and your team aimed at your goal.
+
+**A startup enemy is time, and the enemy of timely execution is distraction.**
+
+## The framework for Radical Focus
+
+### Why we can't get things done
