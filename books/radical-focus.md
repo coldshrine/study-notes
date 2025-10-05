@@ -65,3 +65,10 @@ The mission has to be simple, memorable and act as a guide when you make a decis
 A mission and an Objective in the OKR model have a lot in common, they are aspirational and memorable, the key difference is time scale. An Objective takes you through a year or a quarter. A mission should last at least five years.
 
 A mission keeps you on the rails. The OKRs provide focus and milestones. Using OKRs without a mission is messy, undirected and potentially destructive. Once you have a mission, selecting each quarter's Objective is straightforward, you are ready to have conversations on how to move the mission forward.
+
+
+## OKR fundamentals
+
+OKR stands for **Objectives** and **Key Results**, they came from Andy Grove implementing Peter Drucker's Management by Objective system at Intel. John Doerr, former intel executive, began evangelising them to all the startups he invested. Some like Google and then Zynga embraced them fully.
+
+The Objective is qualitative, and the KRs (most often three) are quantitative. The objective establishes a goal for a set period of time, usually a quarter. The Key Results tell you if the Objective has been met by the end of the time.
