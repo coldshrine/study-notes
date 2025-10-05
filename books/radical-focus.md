@@ -14,3 +14,10 @@
 - [Improve weekly status emails with OKRs](#improve-weekly-status-emails-with-okrs)
 - [Common OKR mistakes](#common-okr-mistakes)
 - [Quick tips on OKRs use](#quick-tips-on-okrs-use)
+
+
+> Don't tell people how to do things, tell them what you need done and let them surprise you with their results – General George Patton
+
+You can release all the features you want, but if it doesn't solve the underlying business problem, you haven't really solved anything.
+
+Executives and other stakeholders all too often come up with the quarterly "roadmap" of features and projects and then pass them down to the product teams, essentially telling them how to solve the underlying business problems. Progress is measured by output and not by outcome.
