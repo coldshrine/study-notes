@@ -21,3 +21,10 @@
 You can release all the features you want, but if it doesn't solve the underlying business problem, you haven't really solved anything.
 
 Executives and other stakeholders all too often come up with the quarterly "roadmap" of features and projects and then pass them down to the product teams, essentially telling them how to solve the underlying business problems. Progress is measured by output and not by outcome.
+
+
+## Introduction
+
+Ideas, like NDAs, aren't worth the paper they are printed on. **Ideas are easier to come up, what's hard, really hard is moving from an idea to reality.**
+
+It's not important to protect an idea. It's important to protect the time it takes to make it real. You need a system to keep you and your team aimed at your goal.
