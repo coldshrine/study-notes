@@ -72,3 +72,8 @@ A mission keeps you on the rails. The OKRs provide focus and milestones. Using O
 OKR stands for **Objectives** and **Key Results**, they came from Andy Grove implementing Peter Drucker's Management by Objective system at Intel. John Doerr, former intel executive, began evangelising them to all the startups he invested. Some like Google and then Zynga embraced them fully.
 
 The Objective is qualitative, and the KRs (most often three) are quantitative. The objective establishes a goal for a set period of time, usually a quarter. The Key Results tell you if the Objective has been met by the end of the time.
+
+Your **Objective** is a single sentence that is:
+* **Qualitative and Inspirational**. Designed to get people jumping out of bed in the morning with excitement, it provides meaning and progress. Use the language of your team.
+* **Time bound**. For example, doable in a month or a quarter.
+* **Actionable by team independently**. Your Objective has to be truly yours, and you can't have the excuse of "Marketing didn't market it".
