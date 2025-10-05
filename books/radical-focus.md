@@ -77,3 +77,5 @@ Your **Objective** is a single sentence that is:
 * **Qualitative and Inspirational**. Designed to get people jumping out of bed in the morning with excitement, it provides meaning and progress. Use the language of your team.
 * **Time bound**. For example, doable in a month or a quarter.
 * **Actionable by team independently**. Your Objective has to be truly yours, and you can't have the excuse of "Marketing didn't market it".
+
+**Key Results** take all that inspirational language and quantify it. "How would we know if we met our Objective?". Typically you have three Key Results. They can be based on anything you can measure like Growth, Engagement, Revenue, Performance or Quality.
