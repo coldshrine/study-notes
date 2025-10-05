@@ -43,3 +43,7 @@ If you are CEO or a manager, you want things for your company. Even in the most 
     You could probably put stuff in order of importance, choose to work one thing at a time. Setting a single Objective with only three Key Results to measure keeps you focused.
 2. **We haven't communicated the goal obsessively and comprehensively**
     > When you are tired of saying it, people are starting to hear it.
+
+
+    Once you have the goal projects must be evaluated against it. By repeating the goal in commitment meetings, weekly status emails or Friday wins celebrations, we assure that the goal is in the front of everyone's mind and tied to all activities.
+3. **We don't have a plan to get things done**. Will power is a finite resource. you need a process that helps you make sense of the work you need to do, and keeps you on track even when you are tired.
