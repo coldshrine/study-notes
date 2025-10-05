@@ -51,3 +51,7 @@ If you are CEO or a manager, you want things for your company. Even in the most 
 4. **We haven't made time for what matters**. The Eisenhower Box (Important/Urgent matrix) is a time management tool. Urgent things get done because the pressure of time. Unless we bring that pressure to important but not urgent things, they won't get done. Block out time to do what matters. Nothing is as invigorating as a deadline. By committing to work towards the Objective, you assure you'll be held accountable to progress.
 
 5. **We give up instead of iterate**. You'll fail the first time you implement OKRs. Maybe a company will find they have sandbaggers where no one ever sets hard goals; a company that is afraid to fail. Or maybe you have a company where no one makes their Key Results, because people over-promise and under-deliver. The most common fail is no follow-through, people set OKRs just to ignore them afterward. Successful one try again in. The only hope for success is iteration; you track what works, and what does not.
+
+### A path to success
+
+We start our journey to our dreams by wanting, but we arrive by focusing, planning and learning.
