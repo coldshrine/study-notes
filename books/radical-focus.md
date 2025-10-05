@@ -38,3 +38,8 @@ It's not important to protect an idea. It's important to protect the time it tak
 If you are CEO or a manager, you want things for your company. Even in the most successful companies, the thing we have determined must happen, often doesn't. This is due:
 1. **We haven't prioritised our goals**
     > If everything is important, nothing really is.
+
+
+    You could probably put stuff in order of importance, choose to work one thing at a time. Setting a single Objective with only three Key Results to measure keeps you focused.
+2. **We haven't communicated the goal obsessively and comprehensively**
+    > When you are tired of saying it, people are starting to hear it.
