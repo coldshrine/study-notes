@@ -47,3 +47,5 @@ If you are CEO or a manager, you want things for your company. Even in the most 
 
     Once you have the goal projects must be evaluated against it. By repeating the goal in commitment meetings, weekly status emails or Friday wins celebrations, we assure that the goal is in the front of everyone's mind and tied to all activities.
 3. **We don't have a plan to get things done**. Will power is a finite resource. you need a process that helps you make sense of the work you need to do, and keeps you on track even when you are tired.
+
+4. **We haven't made time for what matters**. The Eisenhower Box (Important/Urgent matrix) is a time management tool. Urgent things get done because the pressure of time. Unless we bring that pressure to important but not urgent things, they won't get done. Block out time to do what matters. Nothing is as invigorating as a deadline. By committing to work towards the Objective, you assure you'll be held accountable to progress.
