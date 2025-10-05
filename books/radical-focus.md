@@ -59,3 +59,9 @@ We start our journey to our dreams by wanting, but we arrive by focusing, planni
 #### Before starting OKRs, check your mission
 
 If you  think that you create a startup to make money, you are misinformed. [90% of startups fail](https://www.allmandlaw.com/blog/2013/january/mapping-tech-startups.aspx). If you want to change the world you will need a mission.
+
+The mission has to be simple, memorable and act as a guide when you make a decision about how to spend your time. Great missions are inspirational, yet directed.
+
+A mission and an Objective in the OKR model have a lot in common, they are aspirational and memorable, the key difference is time scale. An Objective takes you through a year or a quarter. A mission should last at least five years.
+
+A mission keeps you on the rails. The OKRs provide focus and milestones. Using OKRs without a mission is messy, undirected and potentially destructive. Once you have a mission, selecting each quarter's Objective is straightforward, you are ready to have conversations on how to move the mission forward.
