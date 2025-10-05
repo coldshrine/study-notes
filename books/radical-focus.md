@@ -55,3 +55,7 @@ If you are CEO or a manager, you want things for your company. Even in the most 
 ### A path to success
 
 We start our journey to our dreams by wanting, but we arrive by focusing, planning and learning.
+
+#### Before starting OKRs, check your mission
+
+If you  think that you create a startup to make money, you are misinformed. [90% of startups fail](https://www.allmandlaw.com/blog/2013/january/mapping-tech-startups.aspx). If you want to change the world you will need a mission.
