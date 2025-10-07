@@ -141,3 +141,27 @@ Recommendations in order to plan for testing:
 2. Most errors can be easily spotted by visual inspection, in the nature of proofreading the analysis and code. Do not use the computer to detect this kind of thing, it is too expensive.
 3. Test every logic path at least once with some kind of numerical check.
 4. Turn over the software to the test area for checkout purposes.
+
+## Step 5: Involve the customer
+
+It is important to involve the customer at earlier points before the final delivery. Leaving the contractor free between requirement definition and operation means trouble. Following requirements definition where the insight, judgement, and commitment of the customer can bolster the development effort.
+
+    System Requirements (Update) ◄─ System Requirements Generation
+        ↘
+        Software Requirements 
+            ↘
+            Preliminary Software Design ─► PSR: Preliminary Software Review ──┐
+                                                                              │
+                Analysis ◄────────────────────────────────────────────────────┘
+                    ↘               ┌─► CSR 1: Critical Software Review 1 ┐
+                    Program Design ─┼─► CSR 2: Critical Software Review 2 ├───┐
+                                    └─► CSR N: Critical Software Review N ┘   │
+                        Coding ◄──────────────────────────────────────────────┘
+                            ↘
+                            Testing ─► FSAR: Final Software Acceptance Review ┐
+                                                                              │
+                                Operations ◄──────────────────────────────────┘
+
+---
+
+Worth noting that each item cost some additional sum of money.
