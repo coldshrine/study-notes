@@ -87,3 +87,5 @@ OKRs are always stretch goals, **KRs should be difficult, not impossible**. A gr
 Pushing yourself and your team to bigger things yet not making it impossible. The sweet spot is when you have 50/50 chance of failing.
 
 The company should set an OKR, and then each department should determine how _their_ OKR leads to the company's successful OKR. A team can focus their OKR ona  single Key Result or try to support the entire set.
+
+Much of the value in OKRs comes form the conversations on what matters.
