@@ -91,3 +91,5 @@ The company should set an OKR, and then each department should determine how _th
 Much of the value in OKRs comes form the conversations on what matters.
 
 When setting OKRs for individuals, each one should set OKRs that reflect both personal growth and support the company's goal. Individual OKRs are about becoming better at your job as well as helping your product get better. When working with individual OKRs, you can set goals to correct problems _before_ they blossom into full disciplinary actions.
+
+OKRs are part of your regular rhythm. Bake them into your weekly team meetings and your weekly status emails. Adjust your confidence levels every single week. Have discussions about why they are going up and down.
