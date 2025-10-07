@@ -85,3 +85,5 @@ If you select your KRs wisely, you can balance forces like growth and performanc
 OKRs are always stretch goals, **KRs should be difficult, not impossible**. A great way to do this is to set a confidence level of five of ten on an OKR. If you want to achieve great things, you have to find a way to make it safe to reach further than anyone has before.
 
 Pushing yourself and your team to bigger things yet not making it impossible. The sweet spot is when you have 50/50 chance of failing.
+
+The company should set an OKR, and then each department should determine how _their_ OKR leads to the company's successful OKR. A team can focus their OKR ona  single Key Result or try to support the entire set.
