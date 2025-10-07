@@ -89,3 +89,5 @@ Pushing yourself and your team to bigger things yet not making it impossible. Th
 The company should set an OKR, and then each department should determine how _their_ OKR leads to the company's successful OKR. A team can focus their OKR ona  single Key Result or try to support the entire set.
 
 Much of the value in OKRs comes form the conversations on what matters.
+
+When setting OKRs for individuals, each one should set OKRs that reflect both personal growth and support the company's goal. Individual OKRs are about becoming better at your job as well as helping your product get better. When working with individual OKRs, you can set goals to correct problems _before_ they blossom into full disciplinary actions.
