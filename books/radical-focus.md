@@ -83,3 +83,5 @@ Your **Objective** is a single sentence that is:
 If you select your KRs wisely, you can balance forces like growth and performance, or revenue and quality by making sure you have potentially opposing forces represented.
 
 OKRs are always stretch goals, **KRs should be difficult, not impossible**. A great way to do this is to set a confidence level of five of ten on an OKR. If you want to achieve great things, you have to find a way to make it safe to reach further than anyone has before.
+
+Pushing yourself and your team to bigger things yet not making it impossible. The sweet spot is when you have 50/50 chance of failing.
