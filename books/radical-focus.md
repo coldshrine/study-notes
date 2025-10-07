@@ -95,3 +95,5 @@ When setting OKRs for individuals, each one should set OKRs that reflect both pe
 OKRs are part of your regular rhythm. Bake them into your weekly team meetings and your weekly status emails. Adjust your confidence levels every single week. Have discussions about why they are going up and down.
 
 Do not change OKRs halfway through the quarter. Fail or nail then, and use that learning to set them better next time. Changing them halfway through teaches your team not to take OKRs seriously.
+
+**OKRs aren't about hitting targets, but about learning what you are really capable of. Failure is positive indicator of stretching.**
