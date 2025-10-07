@@ -81,3 +81,5 @@ Your **Objective** is a single sentence that is:
 **Key Results** take all that inspirational language and quantify it. "How would we know if we met our Objective?". Typically you have three Key Results. They can be based on anything you can measure like Growth, Engagement, Revenue, Performance or Quality.
 
 If you select your KRs wisely, you can balance forces like growth and performance, or revenue and quality by making sure you have potentially opposing forces represented.
+
+OKRs are always stretch goals, **KRs should be difficult, not impossible**. A great way to do this is to set a confidence level of five of ten on an OKR. If you want to achieve great things, you have to find a way to make it safe to reach further than anyone has before.
