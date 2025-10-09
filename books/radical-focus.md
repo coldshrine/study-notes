@@ -99,3 +99,5 @@ Do not change OKRs halfway through the quarter. Fail or nail then, and use that 
 **OKRs aren't about hitting targets, but about learning what you are really capable of. Failure is positive indicator of stretching.**
 
 ## Setting a rhythm of execution
+
+It's important to have a cadence of commitment and celebration. Each Monday, the team should meet to check in on progress against OKRs, and commit to the tasks that will help the company meet its Objective. A format of four key quadrants is recommended:
