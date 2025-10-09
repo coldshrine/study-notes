@@ -105,3 +105,26 @@ It's important to have a cadence of commitment and celebration. Each Monday, the
 * **Forecast for month**: What should our team know is coming up that they can help with or prepare for?
 * **Status toward OKRs**: If you set a confidence of five out of ten, has that move up or down? Have a discussion about why.
 * **Health metrics**: Pick two things you want to protect as you strive toward greatness. What can you not afford to eff-up? Key relationships with customers? Code stability? Team well-being? Now mark when things start to go sideways and discuss it.
+
+
+```
+┌─────────────────────────────────┬──────────────────────────────────────────┐
+│ PRIORITIES THIS WEEK            │ OKR CONFIDENCE                           │
+│                                 │                                          │
+│ - P1: Close deal with TLM foods │ Objective:                               │
+│ - P1: New order flow Spec'd     │     Establish clear value to             │
+│ - P1: 3 sales solid candidates  │     distributors as quality tea provider │
+│       for interview             │ KR: Reorders at 85%            5/10      │
+│                                 │ KR: 20% of reorders self-serve 5/10      │
+│                                 │ KR: Revenue of 250K            5/10      │
+├─────────────────────────────────┼──────────────────────────────────────────┤
+│ NEXT 4 WEEKS - PROJECTS         │ HEALTH                                   │
+│                                 │                                          │
+│ - Passive reorder notifications │ Team health:                     #yellow │
+│ - New self serve flow for       │     Team struggling with                 │
+│   distributors                  │     direction change                     │
+│ - Metrics for distributors on   │                                          │
+│   tea sales                     │ Distributor satisfaction health:  #green │
+│ - Hire customer service head    │                                          │
+└─────────────────────────────────┴──────────────────────────────────────────┘
+```
