@@ -101,3 +101,4 @@ Do not change OKRs halfway through the quarter. Fail or nail then, and use that 
 ## Setting a rhythm of execution
 
 It's important to have a cadence of commitment and celebration. Each Monday, the team should meet to check in on progress against OKRs, and commit to the tasks that will help the company meet its Objective. A format of four key quadrants is recommended:
+* **Intention for the week**: What are the 3-4 most important things you must get done this week toward the Objective? Discuss if these priorities will get you close to the OKRs.
