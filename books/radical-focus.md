@@ -134,3 +134,5 @@ This document is first and last a conversation tool. Set the tone of the meeting
 
 
 Missing your goals without also seeing how far you've come is often depressing. Friday wins session is critical. Teams demo whatever they can, every team should share something.
+
+### How to hold a meeting to set OKRs for the quarter
