@@ -128,3 +128,6 @@ It's important to have a cadence of commitment and celebration. Each Monday, the
 │ - Hire customer service head    │                                          │
 └─────────────────────────────────┴──────────────────────────────────────────┘
 ```
+
+
+This document is first and last a conversation tool. Set the tone of the meeting to be about team members helping each other to meet the shared goals they have committed to.
