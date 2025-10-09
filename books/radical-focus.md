@@ -104,3 +104,4 @@ It's important to have a cadence of commitment and celebration. Each Monday, the
 * **Intention for the week**: What are the 3-4 most important things you must get done this week toward the Objective? Discuss if these priorities will get you close to the OKRs.
 * **Forecast for month**: What should our team know is coming up that they can help with or prepare for?
 * **Status toward OKRs**: If you set a confidence of five out of ten, has that move up or down? Have a discussion about why.
+* **Health metrics**: Pick two things you want to protect as you strive toward greatness. What can you not afford to eff-up? Key relationships with customers? Code stability? Team well-being? Now mark when things start to go sideways and discuss it.
