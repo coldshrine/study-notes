@@ -12,3 +12,5 @@ Built around business capabilities.
 
 ## Microservice
 As well as the fact that services are independently deployable and scalable, each service also provides a firm module boundary.
+
+### Characteristics
