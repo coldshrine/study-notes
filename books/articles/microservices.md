@@ -7,3 +7,5 @@ Built around business capabilities.
 ## Monolith
 - A monolithic application built as a single unit. All your logic for handling a request runs in a single process.
 - A change made to a small part of the application, requires the entire monolith to be rebuilt and deployed.
+- It's often hard to keep a good modular structure.
+- Scaling requires scaling of the entire application rather than parts.
