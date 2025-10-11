@@ -9,3 +9,6 @@ Built around business capabilities.
 - A change made to a small part of the application, requires the entire monolith to be rebuilt and deployed.
 - It's often hard to keep a good modular structure.
 - Scaling requires scaling of the entire application rather than parts.
+
+## Microservice
+As well as the fact that services are independently deployable and scalable, each service also provides a firm module boundary.
