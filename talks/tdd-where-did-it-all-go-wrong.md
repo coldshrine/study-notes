@@ -45,3 +45,5 @@ Kent explicitly talks about behaviours, with examples. Testing the perimeter sur
 * For Kent Beck, it is a test that _runs in isolation_ from other tests.
   - Nothing more, nothing less.
   - It is NOT to be confused with the classical unit test definition of targeting a module.
+  - We don't touch file system, database, because these _shared fixture_ elements prevent us running in isolation from other tests (side-effects.)
+* Explicitly writing tests that target a method on a clas, is not a TDD unit tests
