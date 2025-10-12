@@ -26,3 +26,12 @@ ATDD suites:
 
 - Writing tests against operations instead of writing them against behaviour (BDD).
 - Coupling our tests to implementation details.
+
+### TDD rebooted
+
+#### The Zen of TDD
+
+* Avoid testing implementation details, test behaviours. Test intent has to be explicit about this, high-level details.
+  - Adding a new class is not the trigger for writing tests. The trigger is implementing a requirement.
+  - Test outside-in, writing tests to cover then the use cases, scenarios. You have to test the domain, if you test through forms (MVC), the moment you change your delivery mechanism you break all the tests. You should test the surface. Don't test the internals, you'd be coupling your test to internal details.
+  - Only writing test to cover the implementation details as a way to understand the refactoring of the simple implementation we start with.
