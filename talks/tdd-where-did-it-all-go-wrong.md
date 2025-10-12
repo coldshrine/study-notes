@@ -37,3 +37,5 @@ ATDD suites:
   - Only writing test to cover the implementation details as a way to understand the refactoring of the simple implementation we start with.
 
 BDD (Dan North), we should test behaviours, not tests. People misunderstand what TDD is all about.
+
+Kent explicitly talks about behaviours, with examples. Testing the perimeter surface, not the implementation details.
