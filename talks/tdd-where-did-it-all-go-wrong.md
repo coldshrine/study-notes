@@ -21,3 +21,8 @@ ATDD suites:
     - devs ignoring red results
     - we need tools to fix them
     - devs don't want to write them
+
+## Where did it all go wrong?
+
+- Writing tests against operations instead of writing them against behaviour (BDD).
+- Coupling our tests to implementation details.
