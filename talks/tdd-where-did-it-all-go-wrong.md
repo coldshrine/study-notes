@@ -41,3 +41,5 @@ BDD (Dan North), we should test behaviours, not tests. People misunderstand what
 Kent explicitly talks about behaviours, with examples. Testing the perimeter surface, not the implementation details.
 
 #### What is a unit test
+
+* For Kent Beck, it is a test that _runs in isolation_ from other tests.
