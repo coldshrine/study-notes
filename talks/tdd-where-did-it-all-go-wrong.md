@@ -47,3 +47,5 @@ Kent explicitly talks about behaviours, with examples. Testing the perimeter sur
   - It is NOT to be confused with the classical unit test definition of targeting a module.
   - We don't touch file system, database, because these _shared fixture_ elements prevent us running in isolation from other tests (side-effects.)
 * Explicitly writing tests that target a method on a clas, is not a TDD unit tests
+  - TDD unit tests focus on a story. Use-case, scenario...
+* Focusing on methods creates tests that are hard to maintain. We don't capture the behaviour we want to preserve.
