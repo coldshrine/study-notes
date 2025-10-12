@@ -51,3 +51,5 @@ Kent explicitly talks about behaviours, with examples. Testing the perimeter sur
 * Focusing on methods creates tests that are hard to maintain. We don't capture the behaviour we want to preserve.
 
 A lot of issues with TDD is people misunderstanding _isolation_ as _class isolation_, replacing collaborators with test doubles.
+
+### Red-green-refactor
