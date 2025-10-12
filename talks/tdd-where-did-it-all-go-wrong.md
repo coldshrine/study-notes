@@ -44,3 +44,4 @@ Kent explicitly talks about behaviours, with examples. Testing the perimeter sur
 
 * For Kent Beck, it is a test that _runs in isolation_ from other tests.
   - Nothing more, nothing less.
+  - It is NOT to be confused with the classical unit test definition of targeting a module.
