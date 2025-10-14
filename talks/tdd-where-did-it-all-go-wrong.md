@@ -72,3 +72,13 @@ This is difficult fir experienced engineers, we tend to think on how to engineer
 > We can commit any number of sins to get there, because speed trumps design, just for a brief moment. - Kent Beck
 
 > Good design at good times. Make it run, make it right. - Kent Beck
+
+#### Clean code now (refactor)
+
+* The refactoring step is when we produce clean code.
+  - It's when you apply patterns
+  - It's when you remove duplication
+  - It's when you sanitise the code smells
+* **You do not write new unit tests here**
+  - You are not introducing public classes
+  - It is likely if you feel you need, you need collaborators to fulfill a role
