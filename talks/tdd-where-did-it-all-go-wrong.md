@@ -57,3 +57,12 @@ A lot of issues with TDD is people misunderstanding _isolation_ as _class isolat
 1. **Red** Write a little test that doesn't work, and perhaps doesn't even compile at first.
 2. **Green** Make the test work quickly, commiting whatever sins necessary in the process.
 3. **Refactor** Eliminate all of the duplication, created in merely getting the test to work.
+
+#### The simplest thing (green)
+
+* Make it run. Quickly getting that bar to go green domintates everything else.
+* The shift in aesthetics is hard for some experienced software engineers.
+  - The only know how to follow the rules of good engineering.
+  - Quick green excuses all sins.
+  - This is not about accepting sin, its about being sinful.
+  - Write sinful code!
