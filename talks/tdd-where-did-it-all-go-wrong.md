@@ -53,3 +53,7 @@ Kent explicitly talks about behaviours, with examples. Testing the perimeter sur
 A lot of issues with TDD is people misunderstanding _isolation_ as _class isolation_, replacing collaborators with test doubles.
 
 ### Red-green-refactor
+
+1. **Red** Write a little test that doesn't work, and perhaps doesn't even compile at first.
+2. **Green** Make the test work quickly, commiting whatever sins necessary in the process.
+3. **Refactor** Eliminate all of the duplication, created in merely getting the test to work.
