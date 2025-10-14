@@ -82,3 +82,11 @@ This is difficult fir experienced engineers, we tend to think on how to engineer
 * **You do not write new unit tests here**
   - You are not introducing public classes
   - It is likely if you feel you need, you need collaborators to fulfill a role
+
+If you add more tests at this point, you'll be coupling your tests to implementation details, making your tests fragile. Your API is your contract, your tests should test the API, not the implementation details. Coupling is the first problem in software.
+
+* We need to eliminate dependency between our tests and our code
+  - Tests should not depend on details, because then changing implementation breaks tests. Tests should depend on contracts or public interfaces.
+  - This allows us to refactor implementations without changing tests.
+  - Don't bake implementation details into tests
+* Test behaviours not implementations
