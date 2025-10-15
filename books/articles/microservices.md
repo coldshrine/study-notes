@@ -14,3 +14,5 @@ Built around business capabilities.
 As well as the fact that services are independently deployable and scalable, each service also provides a firm module boundary.
 
 ### Characteristics
+
+* **Componentization via Services.** Component is a unit of software that is independently replaceable and upgradeable. Libraries in-memory function calls, while services are out-of-process communicate via RPC or web requests. services are independently deployable. More explicit components. Services map to runtime processes, but that is only a first approximation. Downsides: Remote calls are more expensive than in-process calls.
