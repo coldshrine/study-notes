@@ -16,3 +16,4 @@ As well as the fact that services are independently deployable and scalable, eac
 ### Characteristics
 
 * **Componentization via Services.** Component is a unit of software that is independently replaceable and upgradeable. Libraries in-memory function calls, while services are out-of-process communicate via RPC or web requests. services are independently deployable. More explicit components. Services map to runtime processes, but that is only a first approximation. Downsides: Remote calls are more expensive than in-process calls.
+* **Organized around Business Capabilities.** Broad-stack implementation of software for that business area, including user-interface. Siloed funcional teams creating layered architectures (silos) vs cross-functional team and softwar organised vs capabilities (Conways law). Micro-services are cross-functioal. The necessarily more explicit separation makes it easier to keep the team boundaries clear.
