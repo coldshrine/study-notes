@@ -26,3 +26,17 @@ As well as the fact that services are independently deployable and scalable, eac
 
 * **Design for failure.** Applications need to be designed so they can tolerate the failure of services. Clients have to react gracefully on service failure. Detect failures quickly and recover the service automatically if possible. Sophisticated monitoring and logging setups, up/down dashboards, relevant metrics. Details on circtuit breakers, throughput, latency…
 * **Evolutionary design.** Control changes in the application without slowing down change. Independent replacement and upgradeability. Evolve monoliths to miroservices, the core as the monolith and new services in microservices. Granular release planning. You only need to deploy services you modify, not all like in the monolith. Use versioning internally if necessary, but try to avoid it.
+
+---
+
+### Are microservices the future?
+
+Worth serious consideration for enterprise applications.
+
+The decay seen in monolith applications may be less likely with microservices architecture where boundaries are explicit and hard to patch around.
+In the other hand, getting boundaries right is difficult and refactoring them is important. Refactoring a distributed architecture is more difficult as interface changes need to be coordinated.
+
+Components may not compose cleanly, complexity from inside a component may move to the connections between components.
+There is also a factor of team skill.
+
+Probably you shouldn't start with a microservices architecture, instead begin with a monolith, keep it modular and split it into microservices once th emonolith becomes a problem.
