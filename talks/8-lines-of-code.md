@@ -30,3 +30,9 @@ public void Deactivate(Guid id, string reason) {
     var item = repository.GetById(id);
     item.Deactivate();
 }
+
+public void Reactivate(Guid id, DateTime effective, string reason) {
+    var item = repository.GetById(c.id);
+    item.Reactivate();
+}
+```
