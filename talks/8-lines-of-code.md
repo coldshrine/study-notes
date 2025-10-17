@@ -73,3 +73,5 @@ class LoggingHandler<T> : Handles<T> where T:Command {
     }
 }
 ```
+
+The less magic I have, the faster I get onboard.
