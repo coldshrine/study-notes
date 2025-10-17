@@ -56,3 +56,5 @@ public static void Handle(ReactivateCommand c) {
     item.Reactivate();
 }
 ```
+
+Now that we have a common interface, would have Loggers, Transactions, etc. in the same way we had annotations.
