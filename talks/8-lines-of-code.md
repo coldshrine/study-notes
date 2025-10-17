@@ -58,3 +58,11 @@ public static void Handle(ReactivateCommand c) {
 ```
 
 Now that we have a common interface, would have Loggers, Transactions, etc. in the same way we had annotations.
+
+```c#
+class LoggingHandler<T> : Handles<T> where T:Command {
+    private readonly Handles<T> next;
+
+    public void LoggingHandler(Handles<T> next) {
+        this.next = next;
+    }
