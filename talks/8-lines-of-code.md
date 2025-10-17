@@ -22,3 +22,11 @@ Love platforms, hate frameworks. Frameworks have a tendency to introduce magic i
 What's the core problem behind a problem (like wanting a _Dynamic Proxy_). **Can I change my problem so I no longer need those things?**
 
 We can avoid the proxy entirely if we unify the interface for all of our methods (refactor parameters to objects, Commands), changing our problem to simplify the solution. Now that we have a common interface, we can do basic composition instead of proxying stuff at runtime.
+
+From 
+
+```c#
+public void Deactivate(Guid id, string reason) {
+    var item = repository.GetById(id);
+    item.Deactivate();
+}
