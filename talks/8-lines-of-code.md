@@ -50,3 +50,9 @@ public static void Handle(DeactivatedCommand c) {
     var item = repository.GetById(c.id);
     item.Deactivate();
 }
+
+public static void Handle(ReactivateCommand c) {
+    var item = repository.GetById(c.id);
+    item.Reactivate();
+}
+```
