@@ -66,3 +66,10 @@ class LoggingHandler<T> : Handles<T> where T:Command {
     public void LoggingHandler(Handles<T> next) {
         this.next = next;
     }
+
+    public void Handle(T command) {
+        myLoggingFramework.Log(command);
+        next.Handle(command);
+    }
+}
+```
