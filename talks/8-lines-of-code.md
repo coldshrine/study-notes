@@ -36,3 +36,12 @@ public void Reactivate(Guid id, DateTime effective, string reason) {
     item.Reactivate();
 }
 ```
+
+To
+
+```c#
+interface Handles<T> where T:Command
+{
+    void Handle(T command);
+}
+```
