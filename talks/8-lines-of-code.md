@@ -45,3 +45,8 @@ interface Handles<T> where T:Command
     void Handle(T command);
 }
 ```
+```c#
+public static void Handle(DeactivatedCommand c) {
+    var item = repository.GetById(c.id);
+    item.Deactivate();
+}
