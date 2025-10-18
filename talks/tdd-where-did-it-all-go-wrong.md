@@ -92,3 +92,5 @@ If you add more tests at this point, you'll be coupling your tests to implementa
 * Test behaviours not implementations
 
 Counter argument: The setup of this may be too complex as we testing super high-level.
+
+* Don't test internals
