@@ -90,3 +90,5 @@ If you add more tests at this point, you'll be coupling your tests to implementa
   - This allows us to refactor implementations without changing tests.
   - Don't bake implementation details into tests
 * Test behaviours not implementations
+
+Counter argument: The setup of this may be too complex as we testing super high-level.
