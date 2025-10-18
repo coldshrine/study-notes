@@ -95,3 +95,4 @@ Counter argument: The setup of this may be too complex as we testing super high-
 
 * Don't test internals
 * Don't make everything public in order to test it
+* Preserve implementation hiding by keeping a thin public API
