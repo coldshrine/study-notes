@@ -99,3 +99,5 @@ Counter argument: The setup of this may be too complex as we testing super high-
 * Refactor implementation details out, so that they do not need their own tests
 * Continue to refactor implementation details over time, as you want
 * Have expressive tests that you can read in the future
+
+### Refactoring to patterns
