@@ -145,3 +145,5 @@ You should test the ports, not implementation details.
 You should be feel free to remove tests if necessary. The tests we need to keep are the tests that express the behaviour, the API of your system.
 
 ### Acceptance test-driven development
+
+Customers should be available to write scenarios for tests. Getting the customer chain together for this is problematic.
