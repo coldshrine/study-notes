@@ -147,3 +147,5 @@ You should be feel free to remove tests if necessary. The tests we need to keep 
 ### Acceptance test-driven development
 
 Customers should be available to write scenarios for tests. Getting the customer chain together for this is problematic.
+
+Unit tests evolve into "programmer tests". ATDD is more about high-level communication.
