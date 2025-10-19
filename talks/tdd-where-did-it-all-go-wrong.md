@@ -139,3 +139,5 @@ Fifth gear is "obvious implementation", we can go straight to green. You may wri
 
 
 Fourth gear is "we are writing code nicely", we start to think we don't know how to get to the solution so write some tests, some implementation details (drilling tests) to see how it may look. You need to think about behaviour. Maybe you want to remove those implementation tests once you finish with the behaviour.
+
+You should test the ports, not implementation details.
