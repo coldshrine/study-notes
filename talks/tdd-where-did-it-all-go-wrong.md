@@ -130,3 +130,9 @@ We don't test the implementation details (peg: the database).
 Integraiton tests: Don't test things you don't own. Just test that you are using them correctly.
 
 System tests: Tests that verify that everything works.
+
+### Gears
+
+We can be in the motorway driving in the fifth gear, that's may be the operational mode while developing, but sometimes we need to start changing down the gears.
+
+Fifth gear is "obvious implementation", we can go straight to green. You may write unnecessary code.
