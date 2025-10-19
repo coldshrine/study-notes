@@ -111,3 +111,12 @@ References: TDD by Example (Kent Beck), Refactoring to Patterns (Joshua)
 Testing ice-cream cone anti-pattern.
 
 Testing piramid.
+
+UI:
+We are not testing the domain logic, we are testing the widgets.
+
+Integration:
+Tests cannot run in isolation if we have shared state fixtures like databases, etc. Here we do test that kind of stuff.
+
+Unit:
+To test the business logic. The tests are more valuable and less costly are unit tests.
