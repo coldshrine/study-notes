@@ -153,3 +153,5 @@ Unit tests evolve into "programmer tests". ATDD is more about high-level communi
 **If customers do not participate, it does not make any sense**. Expensive to write, expensive to run (Fitness, Cucumber).
 
 Maybe we should involve customers while writting unit tests and focus on unit tests. The problem is programmers making programmer driven tests instead of behaviour driven tests, so let's solve that.
+
+### Behaviour-driven development
