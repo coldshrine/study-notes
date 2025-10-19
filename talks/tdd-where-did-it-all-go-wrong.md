@@ -120,3 +120,13 @@ Tests cannot run in isolation if we have shared state fixtures like databases, e
 
 Unit:
 To test the business logic. The tests are more valuable and less costly are unit tests.
+
+#### Hexagonal architecture
+
+We unit test the port, the use case. We test the behaviour, the contract to the world.
+
+We don't test the implementation details (peg: the database).
+
+Integraiton tests: Don't test things you don't own. Just test that you are using them correctly.
+
+System tests: Tests that verify that everything works.
