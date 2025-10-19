@@ -155,3 +155,5 @@ Unit tests evolve into "programmer tests". ATDD is more about high-level communi
 Maybe we should involve customers while writting unit tests and focus on unit tests. The problem is programmers making programmer driven tests instead of behaviour driven tests, so let's solve that.
 
 ### Behaviour-driven development
+
+BDD starts with a similiar inisght, that we misunderstood TDD.
