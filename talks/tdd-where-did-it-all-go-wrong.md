@@ -105,3 +105,9 @@ Counter argument: The setup of this may be too complex as we testing super high-
 Patterns emerge in refactoring step. You don't think on patterns first an implementations later.
 
 References: TDD by Example (Kent Beck), Refactoring to Patterns (Joshua)
+
+### Port and adapters
+
+Testing ice-cream cone anti-pattern.
+
+Testing piramid.
