@@ -172,3 +172,4 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
 
 * Mocks can improve readability by making contents of read rows explicit (evident data)
 * Mocks hinder the use of singletons
+  - Which may be a good thing
