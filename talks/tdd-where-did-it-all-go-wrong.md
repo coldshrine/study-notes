@@ -173,3 +173,6 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
 * Mocks can improve readability by making contents of read rows explicit (evident data)
 * Mocks hinder the use of singletons
   - Which may be a good thing
+* Mocks make us consider issues around coupling
+  - We learn to inject dependencies
+* Mocks risk that the real system will not perform in the correct way
