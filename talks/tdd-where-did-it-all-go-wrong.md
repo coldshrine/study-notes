@@ -168,3 +168,4 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
   - Long time to start
   - Difficult to keep "clean"
   - Tie tests to physical location on network
+  - Write tests against something that acts like a DB
