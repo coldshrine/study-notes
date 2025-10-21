@@ -169,3 +169,6 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
   - Difficult to keep "clean"
   - Tie tests to physical location on network
   - Write tests against something that acts like a DB
+
+* Mocks can improve readability by making contents of read rows explicit (evident data)
+* Mocks hinder the use of singletons
