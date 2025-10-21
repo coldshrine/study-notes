@@ -163,3 +163,6 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
 * It evolves into a methodology for facilitating the transmission of requirements from customer to developer through scenarios  that can be automated.
 
 ### Mocks
+
+* Classic example is database
+  - Long time to start
