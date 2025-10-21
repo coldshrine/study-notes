@@ -160,3 +160,4 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
 
 * It creates tools like RSpec and Jbehave
 * It realises that specifying scenarios is the key to driving test-driven development
+* It evolves into a methodology for facilitating the transmission of requirements from customer to developer through scenarios  that can be automated.
