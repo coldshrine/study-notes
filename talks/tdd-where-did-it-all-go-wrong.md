@@ -184,3 +184,5 @@ Two forces
 * We want to use Responsibility Driven Design and mock collaborators
   - Tell don't ask
   - But don't mock internals
+
+You do not mock the internals or implementation details, so couple to the implementation details with the mocks, mock other ports and other publics (APIs).
