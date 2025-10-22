@@ -176,3 +176,7 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
 * Mocks make us consider issues around coupling
   - We learn to inject dependencies
 * Mocks risk that the real system will not perform in the correct way
+
+Two forces
+* We want to remove "hard-to-test" dependencies
+  - Database, UI, network, file system, configuration files, etc.
