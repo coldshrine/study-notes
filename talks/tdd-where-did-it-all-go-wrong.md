@@ -185,4 +185,4 @@ Two forces
   - Tell don't ask
   - But don't mock internals
 
-You do not mock the internals or implementation details, so couple to the implementation details with the mocks, mock other ports and other publics (APIs).
+You do not mock the internals or implementation details, so couple to the implementation details with the mocks, mock other ports and other publics (APIs).Don't mock adapters either, do not mock things you don't own.
