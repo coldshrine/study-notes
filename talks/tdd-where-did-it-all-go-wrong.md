@@ -180,3 +180,7 @@ BDD starts with a similiar inisght, that we misunderstood TDD.
 Two forces
 * We want to remove "hard-to-test" dependencies
   - Database, UI, network, file system, configuration files, etc.
+  - Depending on these makes our tests fragile
+* We want to use Responsibility Driven Design and mock collaborators
+  - Tell don't ask
+  - But don't mock internals
