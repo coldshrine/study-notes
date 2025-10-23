@@ -192,3 +192,5 @@ You do not mock the internals or implementation details, so couple to the implem
 This is how you control complex setups for larger testing clusters (big setup).
 
 * An early solution was objet mother
+
+  - A class that contains static factory methods used to create obejcts for use in tests
