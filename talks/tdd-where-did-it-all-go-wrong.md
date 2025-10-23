@@ -190,3 +190,5 @@ You do not mock the internals or implementation details, so couple to the implem
 ### Object Mother and Test Data Builder
 
 This is how you control complex setups for larger testing clusters (big setup).
+
+* An early solution was objet mother
