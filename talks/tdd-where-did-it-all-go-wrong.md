@@ -201,3 +201,5 @@ Problems with Object Mother
 * Variations in testing mean we end up with many different factory methods. Object mother soon becomes bloated
 * The variables affecting the test are not evident, but hidden behind the creation mechanism. If you don't know the Object Mother test data, tests are obscure.
 * The factory methods become shared fixture, which means that changes to construction ripple out
+
+A solution is using **Test Data Builders**. For each class you want to use in a test, create a Builder for that class that
