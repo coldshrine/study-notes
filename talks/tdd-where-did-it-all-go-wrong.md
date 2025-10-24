@@ -200,3 +200,4 @@ This is how you control complex setups for larger testing clusters (big setup).
 Problems with Object Mother
 * Variations in testing mean we end up with many different factory methods. Object mother soon becomes bloated
 * The variables affecting the test are not evident, but hidden behind the creation mechanism. If you don't know the Object Mother test data, tests are obscure.
+* The factory methods become shared fixture, which means that changes to construction ripple out
