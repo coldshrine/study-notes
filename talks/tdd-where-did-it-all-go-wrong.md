@@ -196,3 +196,5 @@ This is how you control complex setups for larger testing clusters (big setup).
   - A class that contains static factory methods used to create obejcts for use in tests
   - The name of the method helps identify the sterotypical object being created
   - The concept was that devevelopers would become faimiliar with the objects and use them in scenarios
+
+Problems with Object Mother
