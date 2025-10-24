@@ -198,3 +198,4 @@ This is how you control complex setups for larger testing clusters (big setup).
   - The concept was that devevelopers would become faimiliar with the objects and use them in scenarios
 
 Problems with Object Mother
+* Variations in testing mean we end up with many different factory methods. Object mother soon becomes bloated
