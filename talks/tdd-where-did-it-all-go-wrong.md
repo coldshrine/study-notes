@@ -206,3 +206,4 @@ A solution is using **Test Data Builders**. For each class you want to use in a 
 * Has an instance variable for each constructor parameter
 * Initialises its instance variables to commonly used or safe values
 * Has a `build` method that creats a new object using the values in its instance variables. We can do a neat trick with conversion operators too
+* Has a "chainable" public methods for overriding the values in its instance variables
