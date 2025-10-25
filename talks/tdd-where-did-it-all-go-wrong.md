@@ -213,3 +213,6 @@ A solution is using **Test Data Builders**. For each class you want to use in a 
 * Write dirty code to get green, then refactor
 * No new tests for refactored itnernals and privates (methods, classes)
 * Both develop and accept against tests written on a port
+* Add integration tests for coverage of ports to adapters
+* Add system tests for end-to-end confidence
+* Don't mock internals, privates, or adapters
