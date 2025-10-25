@@ -204,3 +204,4 @@ Problems with Object Mother
 
 A solution is using **Test Data Builders**. For each class you want to use in a test, create a Builder for that class that
 * Has an instance variable for each constructor parameter
+* Initialises its instance variables to commonly used or safe values
