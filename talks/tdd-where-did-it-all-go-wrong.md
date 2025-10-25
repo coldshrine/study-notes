@@ -209,3 +209,4 @@ A solution is using **Test Data Builders**. For each class you want to use in a 
 * Has a "chainable" public methods for overriding the values in its instance variables
 
 ## Summary
+* The reason to test is a new behaviour, not a method on a class
