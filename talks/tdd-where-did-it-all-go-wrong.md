@@ -212,3 +212,4 @@ A solution is using **Test Data Builders**. For each class you want to use in a 
 * The reason to test is a new behaviour, not a method on a class
 * Write dirty code to get green, then refactor
 * No new tests for refactored itnernals and privates (methods, classes)
+* Both develop and accept against tests written on a port
