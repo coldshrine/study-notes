@@ -203,3 +203,4 @@ Problems with Object Mother
 * The factory methods become shared fixture, which means that changes to construction ripple out
 
 A solution is using **Test Data Builders**. For each class you want to use in a test, create a Builder for that class that
+* Has an instance variable for each constructor parameter
