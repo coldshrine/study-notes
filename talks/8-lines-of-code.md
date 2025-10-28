@@ -77,3 +77,5 @@ class LoggingHandler<T> : Handles<T> where T:Command {
 The less magic I have, the faster I get onboard.
 
 IoC container. Before having an injection container, we used to pass dependencies as parameters to constructors. Now we have all this boilerplate for injecting and passing parameters everywhere.
+
+You can pass dependencies to handlers so we avoid having constructors.
