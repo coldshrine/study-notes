@@ -96,3 +96,9 @@ public static int Add(int a, int b) {
     return a + b;
 }
 ```
+
+We can close one of the parameters with a lambda (partial application).
+
+```c#
+var add5 => c => Add(5, x);
+```
