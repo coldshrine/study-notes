@@ -86,3 +86,13 @@ public static void Deactivate(ItemRepository repository, DeactivatedCommand c) {
     item.Deactivate();
 }
 ```
+
+Now the problem we have is that we lost the common interface!
+
+How can we do the equivalent of dependency injection inside a functional dependency
+
+```c#
+public static int Add(int a, int b) {
+    return a + b;
+}
+```
