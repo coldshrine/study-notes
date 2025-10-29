@@ -115,3 +115,5 @@ public static void Deactivate(ItemRepository repository, DeactivatedCommand c) {
 ```c#
 var nodepends => x => Deactivate(new ItemRepository(), x);
 ```
+
+IoC containers solve a problem that maybe you don't have. If you had a UI program with lots of complex nested dependencies then maybe is the right tool. But for most cases IoC containers are too much.
