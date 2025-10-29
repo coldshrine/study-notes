@@ -111,3 +111,7 @@ public static void Deactivate(ItemRepository repository, DeactivatedCommand c) {
     item.Deactivate();
 }
 ```
+
+```c#
+var nodepends => x => Deactivate(new ItemRepository(), x);
+```
