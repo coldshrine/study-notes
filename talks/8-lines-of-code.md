@@ -117,3 +117,11 @@ var nodepends => x => Deactivate(new ItemRepository(), x);
 ```
 
 IoC containers solve a problem that maybe you don't have. If you had a UI program with lots of complex nested dependencies then maybe is the right tool. But for most cases IoC containers are too much.
+
+```c#
+void Bootstrap() {
+    handlers.Add(x => Deactivate(new ItemRepository(), x));
+    handlers.Add(x => Reactivate(new ItemRepository(), x));
+    handlers.Add(x => CheckIn(new ItemRepository(), new BarService(), x));
+}
+```
