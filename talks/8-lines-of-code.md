@@ -102,3 +102,5 @@ We can close one of the parameters with a lambda (partial application).
 ```c#
 var add5 => c => Add(5, x);
 ```
+
+Now we can recover our common interface for our commands
