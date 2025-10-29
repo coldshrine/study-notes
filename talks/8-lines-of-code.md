@@ -104,3 +104,10 @@ var add5 => c => Add(5, x);
 ```
 
 Now we can recover our common interface for our commands
+
+```c#
+public static void Deactivate(ItemRepository repository, DeactivatedCommand c) {
+    var item = repository.GetById(c.id);
+    item.Deactivate();
+}
+```
