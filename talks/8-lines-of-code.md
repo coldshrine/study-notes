@@ -132,3 +132,12 @@ How many use cases do you have? 15 lines of code could be completely fine. A jun
 Feel the pain of passing dependencies and setting up complex structures. A problem with IoC containers is that they make it very easy to do things that you shouldn't be doing.
 
 What about adding a fresh repository per request? (Dependencies life-cycle).
+
+
+```c#
+void Bootstrap() {
+    handlers.Add(x => Deactivate(() => new ItemRepository(), x));
+    handlers.Add(x => Reactivate(() => new ItemRepository(), x));
+    handlers.Add(x => CheckIn(() => new ItemRepository(), new BarService(), x));
+}
+```
