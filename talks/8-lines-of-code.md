@@ -141,3 +141,5 @@ void Bootstrap() {
     handlers.Add(x => CheckIn(() => new ItemRepository(), new BarService(), x));
 }
 ```
+
+Abstract Factory is too complex. You can write the same thing simply and without any tools.
