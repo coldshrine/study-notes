@@ -128,3 +128,5 @@ void Bootstrap() {
 
 
 How many use cases do you have? 15 lines of code could be completely fine. A junior person would totally understand.
+
+Feel the pain of passing dependencies and setting up complex structures. A problem with IoC containers is that they make it very easy to do things that you shouldn't be doing.
