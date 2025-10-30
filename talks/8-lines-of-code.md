@@ -143,3 +143,5 @@ void Bootstrap() {
 ```
 
 Abstract Factory is too complex. You can write the same thing simply and without any tools.
+
+Because a common interface I can do a lot of stuff, our previous Logger handler works the same, probably we don't need the class.
