@@ -125,3 +125,6 @@ void Bootstrap() {
     handlers.Add(x => CheckIn(new ItemRepository(), new BarService(), x));
 }
 ```
+
+
+How many use cases do you have? 15 lines of code could be completely fine. A junior person would totally understand.
