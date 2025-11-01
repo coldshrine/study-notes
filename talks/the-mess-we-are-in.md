@@ -11,3 +11,6 @@
 
 Now we don't know why programs stop working, we used to know.
 We are the job creators in the future.
+
+## Seven deadly sins
+1. Code even you cannot understand a week after you wrote it. **No comments**
