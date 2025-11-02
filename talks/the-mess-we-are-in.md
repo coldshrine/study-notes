@@ -19,3 +19,4 @@ We are the job creators in the future.
 3. Code that is shipped as soon as it runs and before it is beautiful
 4. Code with added features
 5. Code that is very very fast very very **very obscure** and incorrect
+6. Code that is **not beautiful**
