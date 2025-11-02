@@ -23,3 +23,4 @@ We are the job creators in the future.
 7. Code that you wrote withut understanding the problem
 
 ## Legacy code
+* Programmers who wrote the code are dead
