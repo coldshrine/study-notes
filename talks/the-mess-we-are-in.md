@@ -14,3 +14,4 @@ We are the job creators in the future.
 
 ## Seven deadly sins
 1. Code even you cannot understand a week after you wrote it. **No comments**
+  - We should write really big comments. A book!
