@@ -20,3 +20,4 @@ We are the job creators in the future.
 4. Code with added features
 5. Code that is very very fast very very **very obscure** and incorrect
 6. Code that is **not beautiful**
+7. Code that you wrote withut understanding the problem
