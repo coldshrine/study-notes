@@ -35,3 +35,4 @@ We are the job creators in the future.
 * Don't ask about Javascript.
 
 A computer is a state machine. `State x Event -> New state`.
+You need 2^7633587786 universes as the same number of atoms as states in my machine.
