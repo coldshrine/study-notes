@@ -27,3 +27,4 @@ We are the job creators in the future.
 * No specification
 * Written in archaic languages which nobody understands
 * "It works"
+* Management thinks modifying legacy code is cheaper than a total re-write
