@@ -28,3 +28,7 @@ We are the job creators in the future.
 * Written in archaic languages which nobody understands
 * "It works"
 * Management thinks modifying legacy code is cheaper than a total re-write
+
+---
+
+* A program with 6 32bit integers can have more states than the number of atoms on the earth.
