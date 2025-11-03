@@ -32,3 +32,4 @@ We are the job creators in the future.
 ---
 
 * A program with 6 32bit integers can have more states than the number of atoms on the earth.
+* Don't ask about Javascript.
