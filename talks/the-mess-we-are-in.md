@@ -25,3 +25,4 @@ We are the job creators in the future.
 ## Legacy code
 * Programmers who wrote the code are dead
 * No specification
+* Written in archaic languages which nobody understands
