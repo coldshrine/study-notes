@@ -145,3 +145,10 @@ void Bootstrap() {
 Abstract Factory is too complex. You can write the same thing simply and without any tools.
 
 Because a common interface I can do a lot of stuff, our previous Logger handler works the same, probably we don't need the class.
+
+```c#
+public static void Log<T>(T command, Action<T> next) where T:Command {
+    myLoggingFramework.Log(command);
+    next(command);
+}
+```
