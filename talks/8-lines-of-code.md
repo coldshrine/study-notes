@@ -161,3 +161,9 @@ We are not usign any of the tools, we can just pass this function around.
 Make your tools redundant. Can I change my problem to avoid having that?
 
 You should feel pain while passing tons of dependencies across many levels, tools hide problems. They mask problems.
+
+> If you need to add stuff to your IDE you are probably on the wrong path.
+
+A good system shouldn't need a tool.
+
+When we talk about simplicity, we are also talking about tools.
