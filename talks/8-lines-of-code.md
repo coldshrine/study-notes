@@ -173,3 +173,7 @@ When we talk about simplicity, we are also talking about tools.
 > Your boss doesn't care if the bug happened in someone else's library!
 
 Sometimes they bring magic to your software, and at some point in time it will break and you won't know how to fix it.
+
+Simplicity is about minimising dependencies, understanding the problems we solve.
+
+Try to minimise external dependencies!
