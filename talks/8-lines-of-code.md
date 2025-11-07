@@ -157,3 +157,7 @@ public static void Log<T>(T command, Action<T> next) where T:Command {
 We are not usign any of the tools, we can just pass this function around.
 
 **Understand the problem a tool or idea solves well.**
+
+Make your tools redundant. Can I change my problem to avoid having that?
+
+You should feel pain while passing tons of dependencies across many levels, tools hide problems. They mask problems.
