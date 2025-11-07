@@ -167,3 +167,9 @@ You should feel pain while passing tons of dependencies across many levels, tool
 A good system shouldn't need a tool.
 
 When we talk about simplicity, we are also talking about tools.
+
+> You own all code in your project.
+>
+> Your boss doesn't care if the bug happened in someone else's library!
+
+Sometimes they bring magic to your software, and at some point in time it will break and you won't know how to fix it.
