@@ -152,3 +152,8 @@ public static void Log<T>(T command, Action<T> next) where T:Command {
     next(command);
 }
 ```
+
+
+We are not usign any of the tools, we can just pass this function around.
+
+**Understand the problem a tool or idea solves well.**
