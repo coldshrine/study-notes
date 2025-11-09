@@ -21,3 +21,6 @@ For transaction-based analytics, **Delta Lake** can be used in conjunction with 
 ## Cluster Architecture
 
 An Amazon EMR cluster consists of different types of nodes, each serving specific purposes in data processing:
+
+1. **Master Node**:
+   - The master node manages the entire EMR cluster by running the necessary software to coordinate the distribution of tasks and data. It is responsible for task assignment, failure recovery, and managing cluster health. **It does not participate in data storage or computation.**
