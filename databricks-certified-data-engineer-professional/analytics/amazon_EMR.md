@@ -11,3 +11,5 @@ For transaction-based analytics, **Delta Lake** can be used in conjunction with 
 ## Key Features
 
 - **Managed Big Data Frameworks**: EMR makes it easy to run distributed computing frameworks like **Apache Hadoop, Apache Spark, Apache Hive, Apache HBase, and others**. These frameworks are essential for processing massive datasets across large clusters, and EMR manages the complexity of deploying and maintaining them.
+
+- **Scalable Infrastructure**: Amazon EMR allows you to resize clusters dynamically based on your workload. Whether you're processing a small dataset or performing complex analytics on petabytes of data, you can scale your clusters up or down to optimize both performance and cost.
