@@ -5,3 +5,5 @@ Amazon EMR (Elastic MapReduce) is a fully managed cloud service designed to simp
 One of the most common use cases for Amazon EMR is running **Apache Spark jobs** to process and analyze large datasets. EMR’s integration with **Apache Spark** enables efficient data processing for tasks such as **data transformation, ETL, and machine learning model training**.
 
 For transaction-based analytics, **Delta Lake** can be used in conjunction with Amazon EMR. Delta Lake provides ACID transaction support, scalable metadata handling, and time travel (bi-temporal querying), enabling powerful and reliable data lake architectures.
+
+For transaction-based analytics, **Delta Lake** can be used in conjunction with Amazon EMR. Delta Lake provides ACID transaction support, scalable metadata handling, and time travel (bi-temporal querying), enabling powerful and reliable data lake architectures.
