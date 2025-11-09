@@ -17,3 +17,7 @@ For transaction-based analytics, **Delta Lake** can be used in conjunction with 
 - **Cost Efficiency**: With EMR, you only pay for the resources you use while your jobs are running, making it cost-efficient for a wide range of use cases. Additionally, AWS Graviton-based instances offer a price-performance advantage, delivering up to 40% better performance for certain types of workloads compared to traditional x86 instances.
 
 - **Integrated with AWS Ecosystem**: Amazon EMR integrates seamlessly with other AWS services like Amazon S3 (for storage), Amazon RDS (for relational databases), AWS Glue (for data cataloging), and Amazon Redshift (for analytics). This allows for an end-to-end solution for big data processing and analytics in the cloud.
+
+## Cluster Architecture
+
+An Amazon EMR cluster consists of different types of nodes, each serving specific purposes in data processing:
