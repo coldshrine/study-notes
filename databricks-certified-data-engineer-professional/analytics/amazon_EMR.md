@@ -28,3 +28,6 @@ An Amazon EMR cluster consists of different types of nodes, each serving specifi
 
 2. **Core Nodes**:
    - Core nodes store data and perform the computational tasks needed for data processing. These nodes are vital for both **storage** and **computation**, and they ensure that the data is replicated and available during the cluster’s lifetime.
+
+3. **Task Nodes (Optional)**:
+   - Task nodes are optional nodes that serve to augment the cluster’s processing capacity. Unlike core nodes, task nodes **do not store data** but are dedicated to executing tasks assigned by the master node. Task nodes are ideal for **scaling computation** when workloads demand additional resources. They can also be provisioned as **spot instances**, offering further cost savings.
