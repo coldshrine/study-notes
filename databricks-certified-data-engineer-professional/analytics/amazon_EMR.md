@@ -24,3 +24,7 @@ An Amazon EMR cluster consists of different types of nodes, each serving specifi
 
 1. **Master Node**:
    - The master node manages the entire EMR cluster by running the necessary software to coordinate the distribution of tasks and data. It is responsible for task assignment, failure recovery, and managing cluster health. **It does not participate in data storage or computation.**
+
+
+2. **Core Nodes**:
+   - Core nodes store data and perform the computational tasks needed for data processing. These nodes are vital for both **storage** and **computation**, and they ensure that the data is replicated and available during the cluster’s lifetime.
