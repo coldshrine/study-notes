@@ -48,3 +48,8 @@ EMR supports several storage options to store input data, output data, and logs.
 ## External Metastores
 
 By default, Hive stores its metastore information in a **MySQL** database located on the primary node’s file system. However, when the cluster is terminated, the primary node and its data are lost, including the metastore. To ensure the persistence of your metastore, it is recommended to use an **external metastore** that survives the termination of the cluster.
+
+Options for an external metastore:
+
+1. **AWS Glue Data Catalog**:
+   - The AWS Glue Data Catalog is a fully managed, scalable metadata repository that allows you to store your Hive metastore outside the EMR cluster. It also integrates with various other AWS services like Amazon Athena and Amazon Redshift, making it an ideal solution for managing metadata in a cloud-native environment.
