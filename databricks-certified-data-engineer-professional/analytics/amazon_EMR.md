@@ -41,3 +41,6 @@ EMR supports several storage options to store input data, output data, and logs.
 
 2. **EMR File System (EMRFS)**:
    - EMRFS is an implementation of the Hadoop file system that allows Amazon EMR to read and write data directly to **Amazon S3**. This provides a highly durable, cost-effective storage solution, as **Amazon S3** offers **persistent storage**, and your data remains intact even if the EMR cluster is terminated. **EMRFS** enables you to store large amounts of data without worrying about data loss.
+
+3. **Local File System**:
+   - The local file system refers to the local disk attached to the EC2 instances used in the EMR cluster. This is **ephemeral storage**, meaning data is lost when the instance is terminated. It is often used for caching or storing temporary data during the processing phases of a job.
