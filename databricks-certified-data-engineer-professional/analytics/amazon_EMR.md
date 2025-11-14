@@ -36,3 +36,5 @@ An Amazon EMR cluster consists of different types of nodes, each serving specifi
 
 EMR supports several storage options to store input data, output data, and logs. Choosing the right file system depends on the specific needs of your application and the longevity of the data.
 
+1. **Hadoop Distributed File System (HDFS)**:
+   - HDFS is a distributed, scalable file system designed to store large data sets reliably. It splits data into blocks (typically 128MB) and replicates those blocks across different instances in the cluster, ensuring redundancy. However, one key disadvantage of HDFS is that it uses **ephemeral storage**; when the cluster terminates, the data is lost. This makes HDFS ideal for temporary or intermediate storage during data processing tasks.
