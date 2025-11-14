@@ -69,3 +69,6 @@ Amazon EMR clusters can be categorized into two types, based on their operationa
 
 1. **Transient Clusters**:
    - Transient clusters are temporary clusters launched for specific, short-term tasks such as periodic batch processing, ETL (Extract, Transform, Load) jobs, or any job that completes within a defined time frame. Once the job completes, the cluster is automatically terminated. **Cost efficiency** is a significant advantage, as you only pay for the resources used during the job’s execution.
+
+2. **Long-Running Clusters**:
+   - Long-running clusters are designed to stay active over extended periods. These clusters are typically used for **interactive data analysis**, applications that require continuous access to processed data, or services that must be available at all times. While these clusters offer **continuous access** to your data and analytics tools, they incur ongoing costs for as long as the cluster remains active.
