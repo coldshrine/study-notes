@@ -72,3 +72,7 @@ Amazon EMR clusters can be categorized into two types, based on their operationa
 
 2. **Long-Running Clusters**:
    - Long-running clusters are designed to stay active over extended periods. These clusters are typically used for **interactive data analysis**, applications that require continuous access to processed data, or services that must be available at all times. While these clusters offer **continuous access** to your data and analytics tools, they incur ongoing costs for as long as the cluster remains active.
+
+## Amazon EC2 Graviton
+
+The AWS Graviton2 processors are custom-designed Arm-based processors that provide significant price-performance advantages for workloads in Amazon EC2. When used with Amazon EMR, Graviton2 instances offer up to **40% better price-performance** compared to equivalent x86-based EC2 instances. These processors are especially effective for data-intensive and cloud-native workloads, such as those typically found in big data processing tasks with Apache Spark and Hadoop.
