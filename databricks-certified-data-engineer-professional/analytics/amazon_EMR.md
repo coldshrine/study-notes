@@ -38,3 +38,6 @@ EMR supports several storage options to store input data, output data, and logs.
 
 1. **Hadoop Distributed File System (HDFS)**:
    - HDFS is a distributed, scalable file system designed to store large data sets reliably. It splits data into blocks (typically 128MB) and replicates those blocks across different instances in the cluster, ensuring redundancy. However, one key disadvantage of HDFS is that it uses **ephemeral storage**; when the cluster terminates, the data is lost. This makes HDFS ideal for temporary or intermediate storage during data processing tasks.
+
+2. **EMR File System (EMRFS)**:
+   - EMRFS is an implementation of the Hadoop file system that allows Amazon EMR to read and write data directly to **Amazon S3**. This provides a highly durable, cost-effective storage solution, as **Amazon S3** offers **persistent storage**, and your data remains intact even if the EMR cluster is terminated. **EMRFS** enables you to store large amounts of data without worrying about data loss.
