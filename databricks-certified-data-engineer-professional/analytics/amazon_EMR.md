@@ -64,3 +64,5 @@ When adding data directly to the file system (like HDFS or S3) without updating 
 This is especially important for environments where new data is frequently added outside of Hive's normal partitioning system (e.g., batch processes that add files directly to HDFS or S3).
 
 ## Cluster Types: Transient vs Long-Running
+
+Amazon EMR clusters can be categorized into two types, based on their operational lifespan and use case:
