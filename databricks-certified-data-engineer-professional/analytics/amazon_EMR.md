@@ -56,3 +56,5 @@ Options for an external metastore:
 
 2. **Amazon RDS or Amazon Aurora**:
    - Alternatively, you can use Amazon RDS or Amazon Aurora to host your external Hive metastore. These managed database services offer high availability, durability, and scalability, which are crucial for storing large volumes of metadata.
+
+When adding data directly to the file system (like HDFS or S3) without updating the Hive metastore, Hive might not recognize new partitions. In such cases, you can run the `MSCK REPAIR TABLE` command to synchronize the metadata with the actual data layout in the file system.
