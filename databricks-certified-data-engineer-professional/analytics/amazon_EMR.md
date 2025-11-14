@@ -53,3 +53,6 @@ Options for an external metastore:
 
 1. **AWS Glue Data Catalog**:
    - The AWS Glue Data Catalog is a fully managed, scalable metadata repository that allows you to store your Hive metastore outside the EMR cluster. It also integrates with various other AWS services like Amazon Athena and Amazon Redshift, making it an ideal solution for managing metadata in a cloud-native environment.
+
+2. **Amazon RDS or Amazon Aurora**:
+   - Alternatively, you can use Amazon RDS or Amazon Aurora to host your external Hive metastore. These managed database services offer high availability, durability, and scalability, which are crucial for storing large volumes of metadata.
