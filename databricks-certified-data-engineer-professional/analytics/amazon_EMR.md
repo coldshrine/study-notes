@@ -44,3 +44,7 @@ EMR supports several storage options to store input data, output data, and logs.
 
 3. **Local File System**:
    - The local file system refers to the local disk attached to the EC2 instances used in the EMR cluster. This is **ephemeral storage**, meaning data is lost when the instance is terminated. It is often used for caching or storing temporary data during the processing phases of a job.
+
+## External Metastores
+
+By default, Hive stores its metastore information in a **MySQL** database located on the primary node’s file system. However, when the cluster is terminated, the primary node and its data are lost, including the metastore. To ensure the persistence of your metastore, it is recommended to use an **external metastore** that survives the termination of the cluster.
