@@ -7,3 +7,5 @@ Athena allows you to execute ad-hoc SQL queries on your S3 data using standard S
 A key feature of Athena is its integration with **AWS Glue**, which facilitates seamless data integration and metadata management. When data is cataloged by AWS Glue crawlers, metadata such as table definitions, schema, and location are stored in the AWS Glue Data Catalog. This enables Athena to understand the data's format (e.g., CSV, Parquet, ORC) and query it efficiently.
 
 ## Supported Data Formats
+
+One of the strengths of Amazon Athena is its support for a wide variety of data formats. This flexibility allows users to analyze data in many forms, whether it’s structured, semi-structured, or unstructured. Below are the most commonly used formats supported by Athena:
