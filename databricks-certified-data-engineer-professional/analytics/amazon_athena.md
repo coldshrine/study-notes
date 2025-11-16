@@ -5,3 +5,5 @@ Amazon Athena is a serverless interactive query service that simplifies data ana
 Athena allows you to execute ad-hoc SQL queries on your S3 data using standard SQL syntax. By simply pointing Athena at your S3 data and running queries, you can quickly analyze large datasets and obtain results in seconds. Athena automatically scales based on data volume and query complexity, and you only pay for the data scanned.
 
 A key feature of Athena is its integration with **AWS Glue**, which facilitates seamless data integration and metadata management. When data is cataloged by AWS Glue crawlers, metadata such as table definitions, schema, and location are stored in the AWS Glue Data Catalog. This enables Athena to understand the data's format (e.g., CSV, Parquet, ORC) and query it efficiently.
+
+## Supported Data Formats
