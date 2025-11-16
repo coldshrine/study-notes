@@ -88,3 +88,9 @@ When running Apache Spark jobs, whether on Amazon EMR or another environment, it
 It is crucial to account for this overhead when configuring Spark jobs to avoid out-of-memory errors and ensure sufficient memory for Spark's operations.
 
 ## Amazon EMR Serverless
+
+Amazon EMR Serverless offers a serverless option for running Spark and Hive applications, allowing you to focus purely on your workloads without the need to manage clusters. With EMR Serverless, you don’t need to provision, optimize, or scale clusters manually—AWS handles the infrastructure for you. This simplifies the operation of analytics applications using open-source frameworks like Apache Spark and Apache Hive.
+
+## Troubleshooting
+
+The **Spark UI** is an invaluable tool for troubleshooting and optimizing Spark jobs. It provides detailed information about the execution of each job, including metrics on task execution, memory usage, and executor performance. By analyzing this information, users can identify performance bottlenecks, pinpoint delays, and fine-tune job execution to improve overall efficiency.
