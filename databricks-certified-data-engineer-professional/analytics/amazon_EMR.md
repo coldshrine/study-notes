@@ -82,3 +82,5 @@ For organizations seeking to reduce costs while maintaining high performance in 
 ## Spark Memory Overhead
 
 When running Apache Spark jobs, whether on Amazon EMR or another environment, it's important to be aware that Spark adds an overhead for memory allocation to both drivers and executors. This overhead is typically around **10%** of the requested memory.
+
+- **Why the Overhead?** Spark needs additional memory for internal operations, such as handling shuffle operations, managing task execution, and other internal activities beyond just data processing tasks. This overhead ensures enough memory to support Spark's distributed processing framework effectively.
