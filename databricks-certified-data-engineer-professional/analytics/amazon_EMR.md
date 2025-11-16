@@ -78,3 +78,7 @@ Amazon EMR clusters can be categorized into two types, based on their operationa
 The AWS Graviton2 processors are custom-designed Arm-based processors that provide significant price-performance advantages for workloads in Amazon EC2. When used with Amazon EMR, Graviton2 instances offer up to **40% better price-performance** compared to equivalent x86-based EC2 instances. These processors are especially effective for data-intensive and cloud-native workloads, such as those typically found in big data processing tasks with Apache Spark and Hadoop.
 
 For organizations seeking to reduce costs while maintaining high performance in their EMR clusters, using Graviton-powered instances can be a compelling alternative to traditional x86-based instances.
+
+## Spark Memory Overhead
+
+When running Apache Spark jobs, whether on Amazon EMR or another environment, it's important to be aware that Spark adds an overhead for memory allocation to both drivers and executors. This overhead is typically around **10%** of the requested memory.
