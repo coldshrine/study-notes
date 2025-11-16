@@ -9,3 +9,5 @@ A key feature of Athena is its integration with **AWS Glue**, which facilitates 
 ## Supported Data Formats
 
 One of the strengths of Amazon Athena is its support for a wide variety of data formats. This flexibility allows users to analyze data in many forms, whether it’s structured, semi-structured, or unstructured. Below are the most commonly used formats supported by Athena:
+
+1. **CSV and TSV**: These are simple, text-based formats that are widely used and easy to understand. While CSV (Comma-Separated Values) and TSV (Tab-Separated Values) are not the most efficient for very large datasets due to their lack of indexing and compression, they are still a popular choice for smaller datasets and quick data exchanges. However, for larger datasets, these formats can lead to longer query times and higher storage costs.
