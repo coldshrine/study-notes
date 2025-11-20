@@ -17,3 +17,7 @@ One of the strengths of Amazon Athena is its support for a wide variety of data 
 3. **Parquet and ORC**: Both Parquet and ORC (Optimized Row Columnar) are columnar storage formats that significantly improve query performance by allowing Athena to scan only the relevant columns of data. This reduces the amount of data scanned and, by extension, lowers the associated query costs. These formats are highly splittable, meaning they can be processed in parallel, making them ideal for large-scale data analysis. The columnar nature of these formats makes them particularly well-suited for analytical workloads, such as aggregations, filtering, and scanning large datasets efficiently.
 
 4. **Avro**: Avro is another splittable format that is well-suited for use cases involving data streams or datasets that evolve over time. It supports schema evolution, meaning that you can modify the structure of your data as your application or use case changes without needing to rewrite historical data. Avro is often used in streaming data systems, such as log data or Kafka streams, due to its compactness and ability to handle large volumes of data while maintaining schema consistency across the data pipeline.
+
+## Use Cases
+
+Athena’s flexibility in handling different data formats, combined with its serverless architecture, makes it suitable for a wide range of data analysis scenarios. Below are some key use cases where Athena provides clear benefits:
