@@ -21,3 +21,5 @@ One of the strengths of Amazon Athena is its support for a wide variety of data 
 ## Use Cases
 
 Athena’s flexibility in handling different data formats, combined with its serverless architecture, makes it suitable for a wide range of data analysis scenarios. Below are some key use cases where Athena provides clear benefits:
+
+1. **Log Data and Cost Analysis**: Athena is commonly used to query and analyze log data, such as application logs, AWS CloudTrail logs, and VPC Flow Logs. It is particularly well-suited for troubleshooting, monitoring infrastructure, and understanding user behavior. Since logs are often stored in Amazon S3 in formats like JSON or CSV, Athena can be used to quickly run ad-hoc queries on this data without needing to move or pre-process it. This makes Athena ideal for operational use cases where you need quick insights into system behavior or performance issues.
