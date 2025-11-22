@@ -39,3 +39,5 @@ Athena charges are based on the data scanned by queries, at a rate of $5 per ter
 - **Partitioning Data**: Partition data in S3 based on commonly queried columns (e.g., date, region) to scan only relevant partitions, improving performance and reducing costs. Athena performs better with fewer large files than with many small files.
 
 - **CTAS (Create Table As Select)**: The CTAS operation allows you to create new tables from the results of a `SELECT` query, ideal for transforming data (e.g., converting CSV to Parquet or creating summary tables), reducing the need for future scans.
+
+- **Query Result Reuse**: Reuse previously executed query results by setting an expiration time, which helps avoid re-scanning data for identical queries, particularly useful for regular reports or dashboards.
