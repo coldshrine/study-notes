@@ -43,3 +43,7 @@ Athena charges are based on the data scanned by queries, at a rate of $5 per ter
 - **Query Result Reuse**: Reuse previously executed query results by setting an expiration time, which helps avoid re-scanning data for identical queries, particularly useful for regular reports or dashboards.
 
 - **JSON SerDe Library**: Use the JSON SerDe library to parse JSON data, enabling Athena to create a table for querying structured JSON data.
+
+## Enhancing Security and Access Control
+
+Athena integrates with **AWS Identity and Access Management (IAM)** for fine-grained access control, allowing you to define who can query data and access specific S3 data. Additional security measures include S3 bucket policies, SSL encryption for data in transit, and encryption for data at rest using options like SSE-S3, SSE-KMS, or client-side encryption.
