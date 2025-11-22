@@ -29,3 +29,9 @@ Athena’s flexibility in handling different data formats, combined with its ser
 3. **Business Intelligence (BI) and Reporting**: Athena also plays a critical role in business intelligence and reporting workflows. It allows organizations to directly query data stored in Amazon S3, eliminating the need to transfer data into a traditional data warehouse. Athena can seamlessly integrate with BI tools such as Amazon QuickSight, Tableau, or Power BI, enabling teams to generate insights, reports, and dashboards directly from their S3-stored datasets.
 
 4. **Data Lake Exploration**: Data lakes are often made up of large, unstructured, or semi-structured datasets, and Athena is an excellent tool for ad-hoc querying in such environments. It enables data scientists, analysts, and engineers to explore data lakes directly, without the need to load data into a more structured database or predefine a schema. This means that you can run flexible queries on diverse datasets—whether it’s raw data from IoT sensors, social media data, or customer behavior logs—without worrying about the upfront costs or effort of transforming and moving the data.
+
+## Optimizing Queries and Reducing Costs
+
+Athena charges are based on the data scanned by queries, at a rate of $5 per terabyte. To optimize costs, consider the following strategies:
+
+- **Data Compression**: Compress datasets to reduce the amount of data scanned. Formats like Parquet and ORC are efficient for Athena as they are compact and columnar, enabling Athena to scan only the necessary columns.
