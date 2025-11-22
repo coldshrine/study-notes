@@ -35,3 +35,5 @@ Athena’s flexibility in handling different data formats, combined with its ser
 Athena charges are based on the data scanned by queries, at a rate of $5 per terabyte. To optimize costs, consider the following strategies:
 
 - **Data Compression**: Compress datasets to reduce the amount of data scanned. Formats like Parquet and ORC are efficient for Athena as they are compact and columnar, enabling Athena to scan only the necessary columns.
+
+- **Partitioning Data**: Partition data in S3 based on commonly queried columns (e.g., date, region) to scan only relevant partitions, improving performance and reducing costs. Athena performs better with fewer large files than with many small files.
