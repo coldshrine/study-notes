@@ -41,3 +41,5 @@ Athena charges are based on the data scanned by queries, at a rate of $5 per ter
 - **CTAS (Create Table As Select)**: The CTAS operation allows you to create new tables from the results of a `SELECT` query, ideal for transforming data (e.g., converting CSV to Parquet or creating summary tables), reducing the need for future scans.
 
 - **Query Result Reuse**: Reuse previously executed query results by setting an expiration time, which helps avoid re-scanning data for identical queries, particularly useful for regular reports or dashboards.
+
+- **JSON SerDe Library**: Use the JSON SerDe library to parse JSON data, enabling Athena to create a table for querying structured JSON data.
