@@ -51,3 +51,7 @@ Athena integrates with **AWS Identity and Access Management (IAM)** for fine-gra
 ## User Defined Functions (UDFs)
 
 Athena supports **User Defined Functions (UDFs)**, which allow you to create custom functions within AWS Lambda and invoke them in SQL queries. UDFs enable encapsulation of complex logic (e.g., geospatial indexing), extending Athena’s functionality beyond standard SQL operations.
+
+## MSCK REPAIR TABLE
+
+When partitions in Amazon S3 are added or modified, Athena’s metadata must be updated. The `MSCK REPAIR TABLE` command synchronizes table metadata with S3 data by scanning directories for new partitions, ensuring that queries include the latest data.
