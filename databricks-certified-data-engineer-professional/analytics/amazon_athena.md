@@ -55,3 +55,9 @@ Athena supports **User Defined Functions (UDFs)**, which allow you to create cus
 ## MSCK REPAIR TABLE
 
 When partitions in Amazon S3 are added or modified, Athena’s metadata must be updated. The `MSCK REPAIR TABLE` command synchronizes table metadata with S3 data by scanning directories for new partitions, ensuring that queries include the latest data.
+
+## Athena Workgroups
+
+Athena **Workgroups** allow you to organize and manage query execution by segregating query history and user access into logical groups. Workgroups support data usage controls, query authorization, and cost management.
+
+One of the most powerful features of workgroups is the ability to enforce cost controls by setting limits on the amount of data that can be scanned in a workgroup. When the limit is reached, Athena automatically stops executing queries until the next cycle or until the limit is increased. This helps prevent unexpected costs, making it easier to manage query budgets across different departments.
