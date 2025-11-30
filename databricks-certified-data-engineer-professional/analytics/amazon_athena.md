@@ -65,3 +65,11 @@ One of the most powerful features of workgroups is the ability to enforce cost c
 ## Federated Queries for Real-Time Analytics
 
 Athena supports **federated queries**, allowing you to query data across multiple sources, including Amazon RDS, Redshift, DynamoDB, and S3. This enables real-time analysis without the need for complex ETL processes or moving data between systems. Federated queries in Athena use SQL and PartiQL to integrate with different data sources, making it ideal for applications that require up-to-the-minute analysis from multiple databases.
+
+## ACID Transactions
+
+Athena now supports ACID (Atomicity, Consistency, Isolation, Durability) transactions, which ensure data integrity during complex workflows involving inserts, updates, deletes, and merges. This feature is enabled by integration with the AWS Glue Data Catalog and supports modern table formats such as Apache Iceberg.
+
+Apache Iceberg is an open table format designed for large analytic datasets. It supports advanced data lake operations such as time travel queries, schema evolution, and record-level operations (insert, update, delete). With Athena’s support for Iceberg, you can view data as it existed at a specific point in time, modify schemas without interrupting ongoing queries, and even roll back to previous versions of your data.
+
+However, implementing ACID transactions with Athena requires careful performance optimization. Operations like data optimization (using the OPTIMIZE command) and consolidation of small files into larger ones can help maintain performance while ensuring data consistency across operations.
