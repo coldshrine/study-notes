@@ -73,3 +73,9 @@ Athena now supports ACID (Atomicity, Consistency, Isolation, Durability) transac
 Apache Iceberg is an open table format designed for large analytic datasets. It supports advanced data lake operations such as time travel queries, schema evolution, and record-level operations (insert, update, delete). With Athena’s support for Iceberg, you can view data as it existed at a specific point in time, modify schemas without interrupting ongoing queries, and even roll back to previous versions of your data.
 
 However, implementing ACID transactions with Athena requires careful performance optimization. Operations like data optimization (using the OPTIMIZE command) and consolidation of small files into larger ones can help maintain performance while ensuring data consistency across operations.
+
+## Amazon Athena Notebooks
+
+Amazon Athena Notebooks provides an interactive environment where you can write and execute Apache Spark code using Python. These notebooks combine SQL queries, calculations, and visualizations in one place, making it easier to perform advanced analytics on your data. You can chain SQL queries, create complex transformations, and visualize the results, all within the same notebook.
+
+For teams that need to perform iterative exploration or complex data manipulations, Athena Notebooks, coupled with Apache Spark, offers a powerful platform for data science workflows and analytics.
