@@ -61,3 +61,7 @@ When partitions in Amazon S3 are added or modified, Athena’s metadata must be 
 Athena **Workgroups** allow you to organize and manage query execution by segregating query history and user access into logical groups. Workgroups support data usage controls, query authorization, and cost management.
 
 One of the most powerful features of workgroups is the ability to enforce cost controls by setting limits on the amount of data that can be scanned in a workgroup. When the limit is reached, Athena automatically stops executing queries until the next cycle or until the limit is increased. This helps prevent unexpected costs, making it easier to manage query budgets across different departments.
+
+## Federated Queries for Real-Time Analytics
+
+Athena supports **federated queries**, allowing you to query data across multiple sources, including Amazon RDS, Redshift, DynamoDB, and S3. This enables real-time analysis without the need for complex ETL processes or moving data between systems. Federated queries in Athena use SQL and PartiQL to integrate with different data sources, making it ideal for applications that require up-to-the-minute analysis from multiple databases.
