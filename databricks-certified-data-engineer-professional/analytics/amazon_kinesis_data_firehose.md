@@ -17,3 +17,9 @@ Kinesis Data Firehose not only ingests data but also offers transformation capab
 Firehose enables users to configure buffer size (in MBs) and buffer interval (in seconds) to control how data is batched before delivery. The buffer size determines the volume of data that Firehose accumulates before sending, while the buffer interval specifies the waiting time before initiating delivery. This flexibility allows for tuning the delivery settings based on workload requirements and destination preferences.
 
 To optimize data delivery and efficiency, especially when delivering data to Amazon S3, consider configuring larger buffer sizes and intervals. This approach aggregates more data into larger files, which can significantly improve downstream processing efficiency, particularly in Apache Spark environments. Spark jobs can process fewer, larger files more effectively than numerous small files, leading to reduced overhead and improved processing times.
+
+## Considerations and Limitations
+
+### Single Destination for Data Delivery
+
+Unlike Amazon Kinesis Data Streams, which supports multiple consumers, Kinesis Data Firehose is designed to deliver data to a single destination. Applications and analytics tools cannot directly consume data from Firehose; instead, Firehose’s role is to manage delivery into a specific data repository, such as Amazon S3 or Redshift. For use cases requiring multiple consumers or further data processing, Amazon Kinesis Data Streams is the more appropriate choice.
