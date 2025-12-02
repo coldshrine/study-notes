@@ -15,3 +15,5 @@ Kinesis Data Firehose not only ingests data but also offers transformation capab
 ### Buffering
 
 Firehose enables users to configure buffer size (in MBs) and buffer interval (in seconds) to control how data is batched before delivery. The buffer size determines the volume of data that Firehose accumulates before sending, while the buffer interval specifies the waiting time before initiating delivery. This flexibility allows for tuning the delivery settings based on workload requirements and destination preferences.
+
+To optimize data delivery and efficiency, especially when delivering data to Amazon S3, consider configuring larger buffer sizes and intervals. This approach aggregates more data into larger files, which can significantly improve downstream processing efficiency, particularly in Apache Spark environments. Spark jobs can process fewer, larger files more effectively than numerous small files, leading to reduced overhead and improved processing times.
