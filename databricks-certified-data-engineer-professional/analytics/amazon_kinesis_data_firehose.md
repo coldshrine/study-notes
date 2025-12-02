@@ -13,3 +13,5 @@ Kinesis Data Firehose is a fully managed service that eliminates the need for ma
 Kinesis Data Firehose not only ingests data but also offers transformation capabilities, allowing for data manipulation before it reaches the destination. Additionally, Firehose can compress data, reducing the storage footprint, and apply encryption for secure data handling. These features are valuable for minimizing storage costs and meeting compliance and security standards for sensitive data.
 
 ### Buffering
+
+Firehose enables users to configure buffer size (in MBs) and buffer interval (in seconds) to control how data is batched before delivery. The buffer size determines the volume of data that Firehose accumulates before sending, while the buffer interval specifies the waiting time before initiating delivery. This flexibility allows for tuning the delivery settings based on workload requirements and destination preferences.
