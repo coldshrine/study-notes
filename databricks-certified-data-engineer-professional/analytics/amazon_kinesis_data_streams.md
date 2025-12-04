@@ -25,3 +25,11 @@ When integrating with Amazon Kinesis Data Streams, AWS provides several tools an
   The Kinesis Producer Library (KPL) is a high-level, easy-to-use library designed specifically for efficient batch insertion of large volumes of data records into a Kinesis Data Stream. Written in Java (with a native C++ core for performance), KPL is best suited for applications that require high-throughput data ingestion, where manually managing batching, buffering, and retry logic would be inefficient.
 
   The KPL simplifies the data-sending process to Kinesis Data Streams by offering built-in capabilities for efficient data batching, asynchronous operations for enhanced throughput, and automatic retry mechanisms to handle transmission failures. This makes it ideal for streaming clickstream data and server logs from Java applications, ensuring reliable, efficient data collection with minimal development effort.
+
+  - **Synchronous and Asynchronous Publishing**:
+    In KPL, data can be published either synchronously or asynchronously, with asynchronous publishing being the default and recommended mode. The **RecordMaxBufferedTime** parameter controls how long a record will be buffered (in milliseconds) before transmission to the Kinesis Data Stream. This buffering allows KPL to aggregate records into larger requests, optimizing network and throughput performance.
+
+    - For applications sensitive to latency, a lower buffered time may be preferred to ensure near real-time data processing.
+    - For applications prioritizing maximum throughput, increasing the buffered time can allow more records to aggregate per request, reducing API calls and potentially decreasing costs.
+
+- **Kinesis Agent**:
