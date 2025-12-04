@@ -34,3 +34,9 @@ When integrating with Amazon Kinesis Data Streams, AWS provides several tools an
 
 - **Kinesis Agent**:
 The Kinesis Agent is a pre-built, standalone Java application for Linux-based systems, providing a simple way to collect and send data to Kinesis Data Streams (and Kinesis Firehose) from files. The agent monitors files for changes, parses log entries, and automatically sends them to Kinesis Data Streams, handling tasks like file rotation, checkpointing, and retries. This setup simplifies the process of sending log data and metrics to Kinesis without requiring custom logging code.
+
+## Consumers
+
+Each data record in Kinesis Data Streams can be up to 1 MB in size. Each shard supports a read throughput of up to 2 MB per second, which is shared among all consumers accessing that shard. When multiple consumers access the same shard concurrently, they share this bandwidth, impacting data retrieval speed.
+
+When retrieving data using the `GetRecords` API, a consumer can retrieve up to 10 MB of data in a single request from a shard. If a shard is polled less frequently, data accumulates in the shard, allowing larger batch retrievals (up to the 10 MB limit) per call. The **GetRecords call limit** is 5 calls per second per shard. Exceeding this rate triggers throttling and returns a `ProvisionedThroughputExceededException`. To avoid this, consider implementing a **backoff strategy**, where consumers pause and retry requests, especially during high-throughput periods.
