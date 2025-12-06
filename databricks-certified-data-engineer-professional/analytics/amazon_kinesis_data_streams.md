@@ -40,3 +40,12 @@ The Kinesis Agent is a pre-built, standalone Java application for Linux-based sy
 Each data record in Kinesis Data Streams can be up to 1 MB in size. Each shard supports a read throughput of up to 2 MB per second, which is shared among all consumers accessing that shard. When multiple consumers access the same shard concurrently, they share this bandwidth, impacting data retrieval speed.
 
 When retrieving data using the `GetRecords` API, a consumer can retrieve up to 10 MB of data in a single request from a shard. If a shard is polled less frequently, data accumulates in the shard, allowing larger batch retrievals (up to the 10 MB limit) per call. The **GetRecords call limit** is 5 calls per second per shard. Exceeding this rate triggers throttling and returns a `ProvisionedThroughputExceededException`. To avoid this, consider implementing a **backoff strategy**, where consumers pause and retry requests, especially during high-throughput periods.
+
+### Kinesis Client Library (KCL)
+
+The **Kinesis Client Library (KCL)** is designed for distributed stream processing, simplifying data retrieval from multiple shards and enabling effective load balancing and failure recovery.
+
+- **Distributed Processing**: KCL automatically manages the coordination of data records across multiple shards. Each shard is processed in parallel by separate processors, referred to as “workers,” which run on consumer instances (e.g., EC2 instances or containers). KCL ensures that each shard is assigned to a single worker at any given time, maintaining efficient and balanced data processing.
+
+- **Checkpointing**: One of KCL’s key features is checkpointing, which allows applications to track progress in processing the stream. By setting successful processing points, or “checkpoints,” within a shard, applications can resume from the last checkpoint in the event of a failure or restart. KCL uses DynamoDB to store checkpoints.
+  - **Cost and Capacity Management**: Frequent checkpointing increases DynamoDB write operations, consuming more write capacity units (WCUs). Developers must balance the need for accurate checkpointing with the costs of DynamoDB usage to avoid exceeding provisioned throughput. Tuning the checkpoint frequency based on application needs helps control costs and maintain optimal performance.
