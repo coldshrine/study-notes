@@ -53,3 +53,8 @@ The **Kinesis Client Library (KCL)** is designed for distributed stream processi
   ### AWS Lambda Integration
 
 AWS Lambda offers a serverless solution for consuming streaming data from Kinesis Data Streams. In this integration, Lambda automatically polls the Kinesis stream and processes new data as it becomes available.
+
+- **Polling and Scaling**: Lambda continuously checks the stream and retrieves new records. It scales automatically based on the number of shards, with each Lambda invocation handling data from a single shard.
+- **Parallel Processing**: The **Parallelization Factor** in Lambda allows multiple concurrent processes per shard, enhancing throughput for high-volume applications.
+- **Event Source Mapping**: Lambda can be configured to trigger automatically when new records arrive in the Kinesis Data Stream using an event source mapping.
+- **Dead-Letter Queue (DLQ)**: Configuring a DLQ in Lambda helps manage unprocessed events by storing them for later review, providing a failsafe for error handling in data processing.
