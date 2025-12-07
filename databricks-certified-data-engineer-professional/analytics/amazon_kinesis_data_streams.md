@@ -49,3 +49,7 @@ The **Kinesis Client Library (KCL)** is designed for distributed stream processi
 
 - **Checkpointing**: One of KCL’s key features is checkpointing, which allows applications to track progress in processing the stream. By setting successful processing points, or “checkpoints,” within a shard, applications can resume from the last checkpoint in the event of a failure or restart. KCL uses DynamoDB to store checkpoints.
   - **Cost and Capacity Management**: Frequent checkpointing increases DynamoDB write operations, consuming more write capacity units (WCUs). Developers must balance the need for accurate checkpointing with the costs of DynamoDB usage to avoid exceeding provisioned throughput. Tuning the checkpoint frequency based on application needs helps control costs and maintain optimal performance.
+
+  ### AWS Lambda Integration
+
+AWS Lambda offers a serverless solution for consuming streaming data from Kinesis Data Streams. In this integration, Lambda automatically polls the Kinesis stream and processes new data as it becomes available.
