@@ -60,3 +60,8 @@ AWS Lambda offers a serverless solution for consuming streaming data from Kinesi
 - **Dead-Letter Queue (DLQ)**: Configuring a DLQ in Lambda helps manage unprocessed events by storing them for later review, providing a failsafe for error handling in data processing.
 
 These components and strategies allow consumers to retrieve and process data from Kinesis Data Streams efficiently, enabling applications to handle high-throughput and distributed workloads effectively.
+
+## Scaling
+
+- **Shard Splitting and Merging**
+  - Shards in Kinesis Data Streams can be split to increase capacity or merged to reduce costs. Splitting a shard doubles the capacity for handling write and read operations, while merging combines two adjacent shards to save on resources when data volume decreases. Managing shard scaling effectively requires applications to handle data ordering across split and merged shards by processing all data from parent shards before the children.
