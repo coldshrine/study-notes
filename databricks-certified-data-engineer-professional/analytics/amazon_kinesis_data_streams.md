@@ -70,3 +70,10 @@ These components and strategies allow consumers to retrieve and process data fro
 
   - **Enhanced Fan-Out**
   - By default, the 2MB/second/shard output is shared between all applications consuming data from the stream. **Enhanced Fan-Out** provides a dedicated 2 MB/sec read throughput per shard per registered consumer, avoiding throughput-sharing limits. This feature is critical for low-latency, high-throughput scenarios, enabling each consumer (e.g., Lambda) to process data independently.
+
+
+- **Resharding**
+  - When data throughput exceeds allocated shard capacity, Kinesis may return a **ProvisionedThroughputExceededException**. **Resharding** (adding more shards), **backoff strategies** (pausing and retrying requests), and an appropriate **partition key** help manage read rates during high-traffic periods. These tactics are essential for maintaining steady data flow and handling throughput bottlenecks.
+
+- **Manual and Automated Scaling**
+  - While Kinesis Data Streams does not automatically scale shard numbers based on traffic, AWS provides APIs and tools for monitoring and manually adjusting shard counts. Scaling operations can be time-consuming, sometimes taking up to several hours, so proactive monitoring and timely adjustments are necessary to avoid throttling and ensure smooth operations.
