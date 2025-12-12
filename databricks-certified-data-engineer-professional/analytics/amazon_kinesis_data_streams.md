@@ -81,3 +81,8 @@ These components and strategies allow consumers to retrieve and process data fro
   ## Data Duplication and Reliability
 
 Data duplicates in Amazon Kinesis Data Streams can arise on both the producer and consumer sides. On the **producer side**, duplicates often occur due to network issues or service errors where acknowledgments for submitted records are lost, causing producers to resend data that may have already been successfully received. On the **consumer side**, duplicates may result from processing retries following failures, especially if checkpointing (marking a record as processed) is not correctly managed.
+
+To mitigate these challenges, developers can employ several strategies:
+
+- **Idempotent Writes**: Ensuring idempotent writes, where submitting the same data multiple times does not result in duplicates, often involves assigning unique identifiers for each record.
+- **Unique Keys in Target Data Stores**: Ensuring idempotency in target data stores or databases can automatically resolve duplicates by using unique keys derived from the data itself.
