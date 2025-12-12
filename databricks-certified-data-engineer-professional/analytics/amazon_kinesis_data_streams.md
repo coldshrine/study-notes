@@ -86,3 +86,14 @@ To mitigate these challenges, developers can employ several strategies:
 
 - **Idempotent Writes**: Ensuring idempotent writes, where submitting the same data multiple times does not result in duplicates, often involves assigning unique identifiers for each record.
 - **Unique Keys in Target Data Stores**: Ensuring idempotency in target data stores or databases can automatically resolve duplicates by using unique keys derived from the data itself.
+
+## Best Practices for Optimizing Performance
+
+1. **Partition Key Design:**
+Choosing a partition key that distributes records evenly across shards is essential for optimal throughput. Poorly distributed partition keys can lead to hot shards, where one shard becomes a bottleneck while others are underutilized.
+
+2. **Enhanced Fan-Out for Multiple Consumers:**
+Enhanced Fan-Out is beneficial in scenarios where multiple applications need to consume data from the same shard. This feature provides dedicated throughput for each consumer, improving performance and reducing data retrieval latency.
+
+3. **Configuring Lambda for High-Volume Data:**
+Adjusting the Parallelization Factor in AWS Lambda improves concurrency and throughput, particularly in high-volume streaming applications. Combining this with Enhanced Fan-Out can ensure faster data processing and minimize the IteratorAge (time records wait in the stream before processing).
