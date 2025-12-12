@@ -18,3 +18,8 @@ Amazon Managed Service for Apache Flink provides and manages the infrastructure 
 - **Application Backup and State Management:** Offers checkpointing and snapshot capabilities, which are essential for maintaining the application state in case of failures. These checkpoints enable fault-tolerant data processing by storing intermediate states, allowing applications to resume seamlessly if they are interrupted.
 
 ### 2. Support for Apache Flink Features
+
+Amazon Managed Service for Apache Flink supports all core Apache Flink features, including operators, functions, sources, and sinks. Developers can use the familiar Flink programming constructs, enabling:
+
+- **Stateful Stream Processing:** Efficiently processes stateful streams of data, which is essential for complex analytics and real-time pattern detection.
+- **Windowing Operations:** Provides robust support for various types of windowing operations, allowing users to aggregate data over specific intervals.
