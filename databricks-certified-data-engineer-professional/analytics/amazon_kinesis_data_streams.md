@@ -77,3 +77,7 @@ These components and strategies allow consumers to retrieve and process data fro
 
 - **Manual and Automated Scaling**
   - While Kinesis Data Streams does not automatically scale shard numbers based on traffic, AWS provides APIs and tools for monitoring and manually adjusting shard counts. Scaling operations can be time-consuming, sometimes taking up to several hours, so proactive monitoring and timely adjustments are necessary to avoid throttling and ensure smooth operations.
+
+  ## Data Duplication and Reliability
+
+Data duplicates in Amazon Kinesis Data Streams can arise on both the producer and consumer sides. On the **producer side**, duplicates often occur due to network issues or service errors where acknowledgments for submitted records are lost, causing producers to resend data that may have already been successfully received. On the **consumer side**, duplicates may result from processing retries following failures, especially if checkpointing (marking a record as processed) is not correctly managed.
