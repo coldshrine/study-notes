@@ -23,3 +23,11 @@ Amazon Managed Service for Apache Flink supports all core Apache Flink features,
 
 - **Stateful Stream Processing:** Efficiently processes stateful streams of data, which is essential for complex analytics and real-time pattern detection.
 - **Windowing Operations:** Provides robust support for various types of windowing operations, allowing users to aggregate data over specific intervals.
+
+### 3. Windowing Aggregations
+
+Windowing is crucial for time-based aggregations in stream processing, and Amazon Managed Service for Apache Flink supports the following types of windows:
+
+- **Sliding Windows:** Allows for continuous, overlapping time intervals, making it ideal for real-time monitoring over short periods (e.g., the last hour). Sliding windows are suitable for applications that require up-to-the-minute analyses.
+
+- **Tumbling Windows:** Defines fixed, non-overlapping time intervals for data processing, where each data event is associated with a single window. This approach is beneficial for periodic analyses, such as counting the number of events in one-minute intervals, where each interval is processed independently.
