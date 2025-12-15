@@ -66,3 +66,8 @@ Through automatic checkpointing and support for multiple availability zones, Ama
 ### Flexibility and Scalability
 
 Amazon Managed Service for Apache Flink enables dynamic scaling, adjusting resources according to workload demands. This ensures that applications can handle fluctuations in data volumes efficiently, optimizing costs and maintaining performance.
+
+
+### Code-Driven Stream Processing
+
+Users can develop and deploy custom processing logic using Java, Scala, Python, or SQL, leveraging Flink’s advanced capabilities for low-latency data processing. The managed service also supports continuous SQL queries on streaming sources, enabling time-series analytics, real-time metrics generation, and live data dashboards with minimal code.
