@@ -1,0 +1,3 @@
+# Amazon OpenSearch Service
+
+Amazon OpenSearch Service (formerly known as Amazon Elasticsearch Service) is a fully managed service designed to help users search, analyze, and visualize data in real-time. Its robust architecture and extensive integrations with AWS services make it a powerful tool for both operational and analytical applications, supporting a wide range of use cases including log analytics, application monitoring, and security analytics. This chapter provides an overview of the key components, applications, security, and storage features available in Amazon OpenSearch Service.
