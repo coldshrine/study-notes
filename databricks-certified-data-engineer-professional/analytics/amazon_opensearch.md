@@ -11,3 +11,13 @@ Amazon OpenSearch Service enables powerful search and analytics capabilities, su
 - **Application Monitoring**: Tracks application performance and health metrics in real-time for proactive optimization.
 - **Security Analytics**: Analyzes security data to detect threats and vulnerabilities, supporting defensive strategies.
 - **Clickstream Analytics**: Examines web and application traffic data to understand user behavior and optimize user experiences.
+
+## Components of Amazon OpenSearch Service
+
+Amazon OpenSearch Service includes several core components that enable the creation and management of search and analytics workloads:
+
+- **Domains**: A domain represents a managed OpenSearch cluster, encapsulating the setup and configuration of an OpenSearch deployment.
+- **Documents**: The basic unit of information that can be indexed, structured as JSON objects. Each document contains fields as key-value pairs.
+- **Indices**: Collections of documents that serve a similar purpose. An index is a logical partition that organizes and provides fast access to data.
+- **Shards**: Partitions of an index, distributed across nodes for efficient storage and performance. Shards can be primary (original data) or replicas (copies for redundancy).
+- **Nodes**: Single instances within a cluster that store data and perform indexing and searching. A typical setup includes three master nodes to ensure resilience.
