@@ -21,3 +21,17 @@ Amazon OpenSearch Service includes several core components that enable the creat
 - **Indices**: Collections of documents that serve a similar purpose. An index is a logical partition that organizes and provides fast access to data.
 - **Shards**: Partitions of an index, distributed across nodes for efficient storage and performance. Shards can be primary (original data) or replicas (copies for redundancy).
 - **Nodes**: Single instances within a cluster that store data and perform indexing and searching. A typical setup includes three master nodes to ensure resilience.
+
+
+> **Tip**: If memory issues arise, consider reducing the number of shards by deleting old indices.
+
+## Security Features in Amazon OpenSearch Service
+
+Amazon OpenSearch Service incorporates several security features to protect data and control access effectively:
+
+- **Resource-based Policies**: Define and attach policies directly to OpenSearch domains to manage access at the resource level.
+- **Identity-based Policies**: Use AWS IAM to set permissions for AWS users and roles, controlling actions on OpenSearch resources.
+- **IP-based Policies**: Restrict domain access based on IP addresses, allowing only trusted networks to interact with your domains.
+- **Request Signing**: Use AWS Signature Version 4 to authenticate requests securely without exposing sensitive credentials.
+- **VPC Support**: Deploy OpenSearch domains within a VPC for network isolation and leverage security groups and ACLs for fine-grained control.
+- **Integration with Amazon Cognito**: Manage user access to **OpenSearch dashboards** through Amazon Cognito, enabling sign-in, sign-up, and access control.
