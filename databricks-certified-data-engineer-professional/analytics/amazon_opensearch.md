@@ -35,3 +35,13 @@ Amazon OpenSearch Service incorporates several security features to protect data
 - **Request Signing**: Use AWS Signature Version 4 to authenticate requests securely without exposing sensitive credentials.
 - **VPC Support**: Deploy OpenSearch domains within a VPC for network isolation and leverage security groups and ACLs for fine-grained control.
 - **Integration with Amazon Cognito**: Manage user access to **OpenSearch dashboards** through Amazon Cognito, enabling sign-in, sign-up, and access control.
+
+## Storage Options in Amazon OpenSearch Service
+
+Amazon OpenSearch Service provides various storage options to support a range of operational needs:
+
+- **Standard Data Nodes (Hot Storage)**: Use "hot" storage for high-throughput, performance-sensitive workloads. These nodes use EBS storage for fast access.
+- **UltraWarm Storage**: A cost-effective storage tier integrated with Amazon S3, ideal for storing less frequently accessed data, such as indices with few write operations.
+- **Cold Storage**: The most cost-effective option for rarely accessed data, suitable for use cases like forensic analysis or periodic research on older datasets, also stored in S3.
+
+Amazon OpenSearch Service is a powerful, flexible platform for real-time data analysis, search, and visualization, with extensive security and storage options to suit a wide range of application requirements.
