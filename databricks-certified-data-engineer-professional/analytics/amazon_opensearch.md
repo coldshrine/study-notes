@@ -45,3 +45,4 @@ Amazon OpenSearch Service provides various storage options to support a range of
 - **Cold Storage**: The most cost-effective option for rarely accessed data, suitable for use cases like forensic analysis or periodic research on older datasets, also stored in S3.
 
 Amazon OpenSearch Service is a powerful, flexible platform for real-time data analysis, search, and visualization, with extensive security and storage options to suit a wide range of application requirements.
+
