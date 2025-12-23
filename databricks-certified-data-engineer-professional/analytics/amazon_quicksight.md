@@ -21,3 +21,11 @@ Using the SPICE engine allows Amazon QuickSight to strike a balance between dash
 
 - **Scheduled Data Refreshes**: Data refreshes can be scheduled on an hourly basis, providing near real-time insights without the computational costs of frequent direct queries to sources like Amazon Redshift.
 - **Direct Queries for Real-Time Needs**: For scenarios requiring real-time updates, users can opt for direct query mode, though this may introduce some performance lag compared to the SPICE engine.
+
+### Machine Learning and Predictive Analytics
+
+Amazon QuickSight incorporates machine learning capabilities directly within the platform, bringing advanced analytics to business users without requiring specialized ML expertise:
+
+- **Auto-Narratives**: Uses natural language generation (NLG) to automatically generate insights and interpretations of data visualizations, making reports easier to understand.
+- **Anomaly Detection**: Leverages ML algorithms to identify unusual patterns in the data, which can be critical for early issue detection or trend identification.
+- **Forecasting**: Provides predictive analytics tools that generate forecasted trends based on historical data patterns, enabling proactive decision-making.
