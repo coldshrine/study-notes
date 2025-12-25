@@ -29,3 +29,22 @@ Amazon QuickSight incorporates machine learning capabilities directly within the
 - **Auto-Narratives**: Uses natural language generation (NLG) to automatically generate insights and interpretations of data visualizations, making reports easier to understand.
 - **Anomaly Detection**: Leverages ML algorithms to identify unusual patterns in the data, which can be critical for early issue detection or trend identification.
 - **Forecasting**: Provides predictive analytics tools that generate forecasted trends based on historical data patterns, enabling proactive decision-making.
+
+### Interactive Dashboards
+
+QuickSight’s dashboards support a range of interactive and customizable options to enhance user engagement:
+
+- **Ad Hoc Analysis**: Allows users to explore data freely, creating custom visualizations and insights as needed.
+- **Embedding and Sharing**: Dashboards can be embedded in applications, portals, or websites and shared securely with internal or external stakeholders.
+- **Customizable Visualizations**: Provides a broad selection of visualization options, such as bar charts, line charts, heatmaps, and geospatial maps, with customization to match specific business needs.
+- **Mobile Support**: Accessible on mobile devices, allowing users to monitor key metrics and insights on the go.
+
+## Row-Level Security (RLS)
+
+Row-Level Security (RLS) in Amazon QuickSight is a feature that controls user access to data at the row level within dashboards. RLS can be configured to:
+
+- **Limit Data Visibility**: Restrict certain rows of data to specific user groups or individual users based on permissions.
+- **Improve Security and Compliance**: Ensures sensitive data remains confidential and complies with data access policies.
+- **User and Group-Based Access**: By leveraging RLS, QuickSight provides tailored access to data, ensuring that users only see the information relevant to them.
+
+## Use Cases and Applications
