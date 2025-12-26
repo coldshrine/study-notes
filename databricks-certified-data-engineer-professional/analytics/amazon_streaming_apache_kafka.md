@@ -1,0 +1,3 @@
+# Amazon Managed Streaming for Apache Kafka (Amazon MSK)
+
+Amazon Managed Streaming for Apache Kafka (Amazon MSK) is a fully managed AWS service designed to simplify the process of building and running applications that leverage Apache Kafka for streaming data. Apache Kafka is a widely used open-source platform for constructing real-time data pipelines and streaming applications, capable of high-throughput, low-latency data processing. With Amazon MSK, users can utilize Kafka’s APIs to seamlessly integrate with data lakes, synchronize databases, and power machine learning and analytics applications—offering an alternative to AWS Kinesis for streaming data solutions.
