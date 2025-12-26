@@ -12,3 +12,7 @@ Amazon MSK is architected to ensure high availability and durability:
 
 - **Multi-AZ Data Replication:** Data is automatically replicated across multiple availability zones (AZs) within a region, ensuring resilience to hardware failures and supporting continuous operations.
 - **Scalability:** Amazon MSK supports both vertical and horizontal scaling, allowing for changes in cluster size without causing downtime, making it highly adaptable to varying data processing demands.
+
+### 2. Kafka Ecosystem Compatibility
+
+Amazon MSK provides full compatibility with the open-source Apache Kafka ecosystem. It enables control-plane operations (like creating, updating, and deleting clusters) and supports native Kafka data-plane operations (such as producing and consuming data). The use of open-source Kafka versions allows for seamless integration with existing Kafka tools, plugins, and applications without requiring changes to existing code.
