@@ -55,3 +55,11 @@ Amazon QuickSight can be deployed for a variety of analytical needs:
 - **Operational Dashboards**: Monitor operational metrics across departments, helping teams track performance, identify bottlenecks, and improve efficiency.
 - **Financial Reporting**: Facilitate financial reporting and forecasting, enabling finance teams to analyze budgets, expenses, and revenue trends.
 - **Product Analytics**: Understand product usage and adoption trends to inform product development and customer success strategies.
+
+## Security and Access Management
+
+QuickSight integrates with AWS Identity and Access Management (IAM) and supports multi-level access control:
+
+- **User Permissions**: Controls user access to dashboards, data sources, and features based on roles or specific permissions.
+- **Integration with AWS IAM and Active Directory**: Supports integration with AWS IAM and Amazon QuickSight's Enterprise Edition also allows integration with Active Directory for centralized user management.
+- **Encryption**: Offers encryption at rest and in transit to protect data, aligning with AWS’s security best practices.
