@@ -16,3 +16,7 @@ Amazon MSK is architected to ensure high availability and durability:
 ### 2. Kafka Ecosystem Compatibility
 
 Amazon MSK provides full compatibility with the open-source Apache Kafka ecosystem. It enables control-plane operations (like creating, updating, and deleting clusters) and supports native Kafka data-plane operations (such as producing and consuming data). The use of open-source Kafka versions allows for seamless integration with existing Kafka tools, plugins, and applications without requiring changes to existing code.
+
+### 3. Flexible Message Size Configuration
+
+By default, Amazon MSK sets a maximum message size of 1 MB, consistent with common Kafka configurations. However, users can adjust this limit if their applications require larger messages, making it suitable for use cases involving large data sets per message.
