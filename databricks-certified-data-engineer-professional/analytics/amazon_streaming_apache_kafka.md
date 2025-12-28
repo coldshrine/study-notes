@@ -20,3 +20,9 @@ Amazon MSK provides full compatibility with the open-source Apache Kafka ecosyst
 ### 3. Flexible Message Size Configuration
 
 By default, Amazon MSK sets a maximum message size of 1 MB, consistent with common Kafka configurations. However, users can adjust this limit if their applications require larger messages, making it suitable for use cases involving large data sets per message.
+
+## Access Control and Security
+
+Amazon MSK offers a granular permissions model using Apache Kafka’s Access Control Lists (ACLs). This system specifies which applications can read from or write to particular topics, providing a secure and precise mechanism for access control. Access control settings follow this format:
+
+- **Principal P is [Allowed/Denied] Operation O From Host H on any Resource R matching ResourcePattern RP**
