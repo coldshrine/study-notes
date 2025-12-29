@@ -26,3 +26,7 @@ By default, Amazon MSK sets a maximum message size of 1 MB, consistent with comm
 Amazon MSK offers a granular permissions model using Apache Kafka’s Access Control Lists (ACLs). This system specifies which applications can read from or write to particular topics, providing a secure and precise mechanism for access control. Access control settings follow this format:
 
 - **Principal P is [Allowed/Denied] Operation O From Host H on any Resource R matching ResourcePattern RP**
+
+By default, Amazon MSK sets `allow.everyone.if.no.acl.found` to `true`, meaning that if no ACLs are set on a resource, all principals have access to it. However, ACLs can be customized to restrict access, particularly useful in scenarios where security policies or microservice architectures demand strict isolation between services.
+
+For example, in cases where a microservice begins receiving unintended data from other services, ACLs can be configured to restrict access to each Amazon MSK topic, preventing unauthorized data access and ensuring a secure data flow for each microservice.
