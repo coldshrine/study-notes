@@ -37,3 +37,5 @@ Amazon MSK includes **MSK Connect**, an extension that simplifies moving data in
 
 - **Amazon S3 and OpenSearch Integration:** MSK Connect includes connectors for moving data to/from Amazon S3 and Amazon OpenSearch Service.
 - **Third-Party and Custom Connectors:** Supports connectors from partners, such as Debezium, which can capture database change logs for Kafka processing.
+
+MSK Connect automatically scales with the workload and offers a pay-as-you-go pricing model, minimizing operational costs by only charging for resources used.
