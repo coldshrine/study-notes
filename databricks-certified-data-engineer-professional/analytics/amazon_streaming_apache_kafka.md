@@ -34,3 +34,6 @@ For example, in cases where a microservice begins receiving unintended data from
 ## MSK Connect
 
 Amazon MSK includes **MSK Connect**, an extension that simplifies moving data in and out of Kafka clusters. Built on Kafka Connect (v2.7.1), MSK Connect allows users to deploy managed connectors that integrate Kafka with databases, file systems, and search indexes. Popular use cases include:
+
+- **Amazon S3 and OpenSearch Integration:** MSK Connect includes connectors for moving data to/from Amazon S3 and Amazon OpenSearch Service.
+- **Third-Party and Custom Connectors:** Supports connectors from partners, such as Debezium, which can capture database change logs for Kafka processing.
