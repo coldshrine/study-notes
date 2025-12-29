@@ -30,3 +30,7 @@ Amazon MSK offers a granular permissions model using Apache Kafka’s Access Con
 By default, Amazon MSK sets `allow.everyone.if.no.acl.found` to `true`, meaning that if no ACLs are set on a resource, all principals have access to it. However, ACLs can be customized to restrict access, particularly useful in scenarios where security policies or microservice architectures demand strict isolation between services.
 
 For example, in cases where a microservice begins receiving unintended data from other services, ACLs can be configured to restrict access to each Amazon MSK topic, preventing unauthorized data access and ensuring a secure data flow for each microservice.
+
+## MSK Connect
+
+Amazon MSK includes **MSK Connect**, an extension that simplifies moving data in and out of Kafka clusters. Built on Kafka Connect (v2.7.1), MSK Connect allows users to deploy managed connectors that integrate Kafka with databases, file systems, and search indexes. Popular use cases include:
