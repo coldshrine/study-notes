@@ -39,3 +39,7 @@ Amazon MSK includes **MSK Connect**, an extension that simplifies moving data in
 - **Third-Party and Custom Connectors:** Supports connectors from partners, such as Debezium, which can capture database change logs for Kafka processing.
 
 MSK Connect automatically scales with the workload and offers a pay-as-you-go pricing model, minimizing operational costs by only charging for resources used.
+
+### MSK Serverless
+
+Amazon MSK offers a **Serverless** option for users seeking Kafka streaming capabilities without managing and scaling cluster capacity. MSK Serverless automatically provisions and scales Kafka partitions and computes resources, and operates with a throughput-based pricing model. This cluster type is ideal for applications needing elastic capacity and cost efficiency, as it scales based on demand.
