@@ -43,3 +43,14 @@ MSK Connect automatically scales with the workload and offers a pay-as-you-go pr
 ### MSK Serverless
 
 Amazon MSK offers a **Serverless** option for users seeking Kafka streaming capabilities without managing and scaling cluster capacity. MSK Serverless automatically provisions and scales Kafka partitions and computes resources, and operates with a throughput-based pricing model. This cluster type is ideal for applications needing elastic capacity and cost efficiency, as it scales based on demand.
+
+## Comparing Amazon MSK and Kinesis Data Streams
+
+| Feature                     | Amazon MSK (Kafka)                                              | Kinesis Data Streams                                          |
+|-----------------------------|-----------------------------------------------------------------|---------------------------------------------------------------|
+| **Architecture & Management** | Open-source Kafka with partitioned topic model; requires some manual configuration (e.g., partition management). | AWS proprietary shard-based architecture; managed by AWS with minimal user intervention. |
+| **Message Size and Throughput** | Customizable message size for larger payloads. Flexible throughput scaling based on cluster resources. | Fixed message size limit with high throughput for smaller data packets. |
+| **Security & Authentication** | Offers expanded security options (e.g., mTLS, SASL/SCRAM, IAM integration). | Robust but less granular security; integrates with AWS IAM for access control. |
+| **Integration & Ecosystem** | Suitable for Kafka ecosystems; allows integration with external Kafka tools. | AWS-centric, ideal for infrastructure already deeply integrated with AWS. |
+
+## Security
