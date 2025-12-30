@@ -54,3 +54,10 @@ Amazon MSK offers a **Serverless** option for users seeking Kafka streaming capa
 | **Integration & Ecosystem** | Suitable for Kafka ecosystems; allows integration with external Kafka tools. | AWS-centric, ideal for infrastructure already deeply integrated with AWS. |
 
 ## Security
+
+Amazon MSK provides comprehensive security measures for data protection, network control, and identity management.
+
+### Data Encryption
+
+- **In-Transit Encryption:** Supports TLS for data moving between brokers and for client-broker communications, safeguarding data exchanges.
+- **Encryption at Rest:** Utilizes AWS Key Management Service (KMS) for encryption of data stored in Amazon EBS volumes, ensuring data remains protected at rest.
