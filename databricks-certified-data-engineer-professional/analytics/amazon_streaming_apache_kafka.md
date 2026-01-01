@@ -61,3 +61,10 @@ Amazon MSK provides comprehensive security measures for data protection, network
 
 - **In-Transit Encryption:** Supports TLS for data moving between brokers and for client-broker communications, safeguarding data exchanges.
 - **Encryption at Rest:** Utilizes AWS Key Management Service (KMS) for encryption of data stored in Amazon EBS volumes, ensuring data remains protected at rest.
+
+### Network Security
+
+- **VPC Integration:** MSK integrates with Amazon VPC, enabling administrators to control network boundaries.
+- **Security Group Authorization:** Allows users to specify security groups to control network access to MSK clusters.
+
+### Access Control and Authentication
