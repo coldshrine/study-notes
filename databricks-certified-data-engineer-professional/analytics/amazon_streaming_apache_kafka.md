@@ -77,3 +77,9 @@ Amazon MSK provides comprehensive security measures for data protection, network
 Monitoring is essential to maintain the performance, health, and reliability of MSK clusters. AWS provides several tools for observing and managing MSK clusters.
 
 ### CloudWatch Metrics
+
+Amazon MSK is integrated with Amazon CloudWatch, allowing users to access detailed metrics on cluster health and performance:
+
+- **Basic Monitoring:** Tracks essential metrics for cluster-level health and performance.
+- **Enhanced Monitoring:** Offers additional broker-level metrics for more granular insights.
+- **Topic-Level Monitoring:** Provides topic-specific metrics, enabling fine-grained monitoring of data flow.
