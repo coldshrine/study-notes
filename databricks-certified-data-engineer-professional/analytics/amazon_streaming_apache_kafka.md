@@ -83,3 +83,7 @@ Amazon MSK is integrated with Amazon CloudWatch, allowing users to access detail
 - **Basic Monitoring:** Tracks essential metrics for cluster-level health and performance.
 - **Enhanced Monitoring:** Offers additional broker-level metrics for more granular insights.
 - **Topic-Level Monitoring:** Provides topic-specific metrics, enabling fine-grained monitoring of data flow.
+
+### Prometheus Integration
+
+MSK supports Prometheus, an open-source monitoring tool, for granular metrics collection:
