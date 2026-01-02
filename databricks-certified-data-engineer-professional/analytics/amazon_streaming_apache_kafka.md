@@ -71,3 +71,9 @@ Amazon MSK provides comprehensive security measures for data protection, network
 - **Client-Broker Authentication:** MSK supports mTLS and SASL/SCRAM protocols, ensuring secure client verification.
 - **Authorization with ACLs:** Kafka ACLs offer granular permissions for controlling topic access.
 - **IAM Access Control:** Users can leverage AWS IAM policies for authentication and authorization within the AWS ecosystem.
+
+## Monitoring and Observability
+
+Monitoring is essential to maintain the performance, health, and reliability of MSK clusters. AWS provides several tools for observing and managing MSK clusters.
+
+### CloudWatch Metrics
