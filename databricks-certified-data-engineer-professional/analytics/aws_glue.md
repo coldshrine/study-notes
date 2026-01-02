@@ -1,0 +1,3 @@
+# AWS Glue
+
+AWS Glue is a fully managed ETL (Extract, Transform, and Load) service that simplifies data preparation for analytics. As organizations increasingly rely on large datasets for insights, efficient and scalable ETL processes are crucial. AWS Glue makes this process more accessible by automating key aspects, from writing ETL scripts to job scheduling and resource scaling, allowing users to focus more on the data itself rather than the underlying infrastructure. In this chapter, we will explore the core features of AWS Glue and its role in modern data processing workflows.
