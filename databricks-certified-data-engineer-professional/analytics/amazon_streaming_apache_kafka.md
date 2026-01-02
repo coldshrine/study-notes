@@ -87,3 +87,6 @@ Amazon MSK is integrated with Amazon CloudWatch, allowing users to access detail
 ### Prometheus Integration
 
 MSK supports Prometheus, an open-source monitoring tool, for granular metrics collection:
+
+- **JMX Exporter:** Exports Java Management Extensions (JMX) metrics, allowing detailed monitoring.
+- **Node Exporter:** Collects system-level metrics, including CPU and disk usage, for monitoring underlying infrastructure.
