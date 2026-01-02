@@ -90,3 +90,11 @@ MSK supports Prometheus, an open-source monitoring tool, for granular metrics co
 
 - **JMX Exporter:** Exports Java Management Extensions (JMX) metrics, allowing detailed monitoring.
 - **Node Exporter:** Collects system-level metrics, including CPU and disk usage, for monitoring underlying infrastructure.
+
+### Logging Options
+
+Amazon MSK supports logging to various AWS services for increased observability:
+
+- **CloudWatch Logs:** MSK broker logs can be sent to CloudWatch, enabling centralized log storage and analysis.
+- **Amazon S3:** Broker logs can be stored long-term in Amazon S3, suitable for audits and offline analysis.
+- **Kinesis Data Streams:** Supports streaming logs into Kinesis Data Streams for real-time processing and analysis.
