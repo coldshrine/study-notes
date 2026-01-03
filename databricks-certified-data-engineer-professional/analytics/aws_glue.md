@@ -22,3 +22,5 @@ These features allow AWS Glue to handle the complete ETL lifecycle—from data e
 In AWS Glue, the computational power required to execute ETL jobs is measured in Data Processing Units (DPUs). Each DPU offers a combination of CPU, memory, and network capacity to handle tasks such as data transformation, movement, and execution of custom scripts. One DPU equals 4 vCPUs and 16 GB of memory.
 
 When running ETL jobs, you are billed based on the number of DPUs consumed and the time it takes to process the data. AWS Glue automatically manages resource allocation and scaling, adjusting the number of DPUs needed to process your data efficiently. However, users can also manually specify the number of DPUs to use, providing control over job execution and resource consumption.
+
+You can use the **Job Run Monitoring** section in the AWS Glue console to determine the appropriate DPU capacity needed. The job monitoring section of the AWS Glue console uses the results of previous job runs to specify the proper DPU capacity.
