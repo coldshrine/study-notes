@@ -14,3 +14,5 @@ Key capabilities of AWS Glue include:
 - **Customizable ETL code**: Developers can write their own ETL scripts in Python (using PySpark) or Scala, giving them the flexibility to handle complex transformations or special use cases.
 - **Scalability**: AWS Glue provides an auto-scaling environment that adjusts resource allocation based on the size and complexity of the data being processed.
 - **Scheduling**: The service also includes a job scheduling feature, allowing ETL tasks to be automated and triggered either on a predefined schedule or in response to specific events, such as the arrival of new data.
+
+These features allow AWS Glue to handle the complete ETL lifecycle—from data extraction and transformation to loading it into data stores such as Amazon S3, Amazon Redshift, or Amazon RDS.
