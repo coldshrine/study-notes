@@ -16,3 +16,9 @@ Key capabilities of AWS Glue include:
 - **Scheduling**: The service also includes a job scheduling feature, allowing ETL tasks to be automated and triggered either on a predefined schedule or in response to specific events, such as the arrival of new data.
 
 These features allow AWS Glue to handle the complete ETL lifecycle—from data extraction and transformation to loading it into data stores such as Amazon S3, Amazon Redshift, or Amazon RDS.
+
+## Resources
+
+In AWS Glue, the computational power required to execute ETL jobs is measured in Data Processing Units (DPUs). Each DPU offers a combination of CPU, memory, and network capacity to handle tasks such as data transformation, movement, and execution of custom scripts. One DPU equals 4 vCPUs and 16 GB of memory.
+
+When running ETL jobs, you are billed based on the number of DPUs consumed and the time it takes to process the data. AWS Glue automatically manages resource allocation and scaling, adjusting the number of DPUs needed to process your data efficiently. However, users can also manually specify the number of DPUs to use, providing control over job execution and resource consumption.
