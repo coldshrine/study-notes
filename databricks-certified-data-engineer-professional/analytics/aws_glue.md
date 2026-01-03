@@ -24,3 +24,9 @@ In AWS Glue, the computational power required to execute ETL jobs is measured in
 When running ETL jobs, you are billed based on the number of DPUs consumed and the time it takes to process the data. AWS Glue automatically manages resource allocation and scaling, adjusting the number of DPUs needed to process your data efficiently. However, users can also manually specify the number of DPUs to use, providing control over job execution and resource consumption.
 
 You can use the **Job Run Monitoring** section in the AWS Glue console to determine the appropriate DPU capacity needed. The job monitoring section of the AWS Glue console uses the results of previous job runs to specify the proper DPU capacity.
+
+## DynamicFrames
+
+A key feature of AWS Glue is its support for DynamicFrames, which extend the capabilities of Spark's DataFrame API. Unlike traditional DataFrames that require a predefined schema, DynamicFrames are designed to handle complex and semi-structured data formats such as JSON, XML, and CSV—common in data lakes.
+
+DynamicFrames automatically manage schema changes, including nested structures and arrays, which are typically difficult to handle with standard DataFrames. This flexibility makes DynamicFrames ideal for ETL processes where the input data schema is not known in advance or changes frequently. They allow data engineers to focus on transforming data without needing to flatten complex structures or manually adjust schemas.
