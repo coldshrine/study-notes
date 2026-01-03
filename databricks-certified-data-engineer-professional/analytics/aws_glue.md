@@ -30,3 +30,7 @@ You can use the **Job Run Monitoring** section in the AWS Glue console to determ
 A key feature of AWS Glue is its support for DynamicFrames, which extend the capabilities of Spark's DataFrame API. Unlike traditional DataFrames that require a predefined schema, DynamicFrames are designed to handle complex and semi-structured data formats such as JSON, XML, and CSV—common in data lakes.
 
 DynamicFrames automatically manage schema changes, including nested structures and arrays, which are typically difficult to handle with standard DataFrames. This flexibility makes DynamicFrames ideal for ETL processes where the input data schema is not known in advance or changes frequently. They allow data engineers to focus on transforming data without needing to flatten complex structures or manually adjust schemas.
+
+## Job Bookmarks
+
+AWS Glue introduces a feature called Job Bookmarks, which tracks the state of ETL jobs between executions. This feature is particularly useful for managing incremental loads—ensuring that only new or changed data is processed, without reprocessing data that has already been handled. By keeping track of processed data, job bookmarks enable more efficient workflows and reduce computational costs, especially when dealing with large datasets.
