@@ -34,3 +34,9 @@ DynamicFrames automatically manage schema changes, including nested structures a
 ## Job Bookmarks
 
 AWS Glue introduces a feature called Job Bookmarks, which tracks the state of ETL jobs between executions. This feature is particularly useful for managing incremental loads—ensuring that only new or changed data is processed, without reprocessing data that has already been handled. By keeping track of processed data, job bookmarks enable more efficient workflows and reduce computational costs, especially when dealing with large datasets.
+
+## Data Quality
+
+AWS Glue Data Quality is a feature designed to ensure the integrity and cleanliness of data processed in ETL jobs. By integrating data quality checks directly into the ETL workflow, Glue enables the automatic detection and correction of common data issues like missing values, duplicates, or inconsistencies.
+
+With Glue Data Quality, you can define custom rules for data validation and use built-in metrics, alerts, and visualizations to monitor the health of your data pipeline. This ensures that the data feeding into your analytics platforms is accurate, reliable, and trustworthy, which is essential for business intelligence and decision-making.
