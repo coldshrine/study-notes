@@ -40,3 +40,7 @@ AWS Glue introduces a feature called Job Bookmarks, which tracks the state of ET
 AWS Glue Data Quality is a feature designed to ensure the integrity and cleanliness of data processed in ETL jobs. By integrating data quality checks directly into the ETL workflow, Glue enables the automatic detection and correction of common data issues like missing values, duplicates, or inconsistencies.
 
 With Glue Data Quality, you can define custom rules for data validation and use built-in metrics, alerts, and visualizations to monitor the health of your data pipeline. This ensures that the data feeding into your analytics platforms is accurate, reliable, and trustworthy, which is essential for business intelligence and decision-making.
+
+## Streaming Data
+
+AWS Glue also supports streaming ETL jobs, allowing you to process data in real-time as it arrives. By integrating with streaming data sources such as Amazon Kinesis, Apache Kafka, and Amazon MSK (Managed Streaming for Apache Kafka), AWS Glue can cleanse, transform, and load streaming data into Amazon S3 or other data stores.
