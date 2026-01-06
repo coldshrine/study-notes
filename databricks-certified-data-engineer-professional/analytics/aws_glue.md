@@ -46,3 +46,7 @@ With Glue Data Quality, you can define custom rules for data validation and use 
 AWS Glue also supports streaming ETL jobs, allowing you to process data in real-time as it arrives. By integrating with streaming data sources such as Amazon Kinesis, Apache Kafka, and Amazon MSK (Managed Streaming for Apache Kafka), AWS Glue can cleanse, transform, and load streaming data into Amazon S3 or other data stores.
 
 For example, streaming ETL jobs can be used to process web server logs and transform the data for analysis within a minute of arrival. This real-time processing capability is critical for time-sensitive analytics, such as monitoring application performance or tracking user activity.
+
+## Security and Data Protection
+
+Security is a key consideration in AWS Glue. It offers encryption both at rest and in transit. 
