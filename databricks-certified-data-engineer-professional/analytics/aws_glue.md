@@ -52,3 +52,5 @@ For example, streaming ETL jobs can be used to process web server logs and trans
 Security is a key consideration in AWS Glue. It offers encryption both at rest and in transit. The AWS Glue Data Catalog, which stores metadata related to ETL jobs, uses AWS Key Management Service (KMS) to manage encryption keys. Additionally, the data output by ETL jobs—whether stored in Amazon S3, Amazon Redshift, or Amazon RDS—is encrypted according to the security mechanisms of the target service. For example, Amazon S3 supports server-side encryption options like S3-managed keys (SSE-S3), KMS-managed keys (SSE-KMS), and customer-provided keys (SSE-C).
 
 AWS Glue can also be deployed within Amazon Virtual Private Cloud (VPC) for enhanced security. By operating within a VPC, AWS Glue resources can access data and services privately, without requiring public internet access.
+
+AWS Glue's built-in capabilities for connecting to various data sources via JDBC/ODBC with the secure management of credentials using AWS Secrets Manager. This approach ensures both efficiency in connectivity and security in credential management.
