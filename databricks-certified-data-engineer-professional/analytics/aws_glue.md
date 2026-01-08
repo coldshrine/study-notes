@@ -54,3 +54,7 @@ Security is a key consideration in AWS Glue. It offers encryption both at rest a
 AWS Glue can also be deployed within Amazon Virtual Private Cloud (VPC) for enhanced security. By operating within a VPC, AWS Glue resources can access data and services privately, without requiring public internet access.
 
 AWS Glue's built-in capabilities for connecting to various data sources via JDBC/ODBC with the secure management of credentials using AWS Secrets Manager. This approach ensures both efficiency in connectivity and security in credential management.
+
+## AWS Glue Crawlers
+
+AWS Glue Crawlers are an integral part of the service, providing automated schema discovery and metadata cataloging.
