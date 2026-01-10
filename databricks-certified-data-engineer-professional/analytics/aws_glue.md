@@ -58,3 +58,5 @@ AWS Glue's built-in capabilities for connecting to various data sources via JDBC
 ## AWS Glue Crawlers
 
 AWS Glue Crawlers are an integral part of the service, providing automated schema discovery and metadata cataloging.Crawlers scan data stored in Amazon S3 (or other data sources), infer schema, and create or update tables in the Glue Data Catalog. Crawlers can handle various file formats, including CSV, JSON, Parquet, and others, and can detect partitions, which help improve query performance.
+
+Scheduling crawlers to run at regular intervals ensures that the Glue Data Catalog is up-to-date with the latest data changes. Crawlers are also capable of detecting schema changes, which is essential for managing evolving datasets.
